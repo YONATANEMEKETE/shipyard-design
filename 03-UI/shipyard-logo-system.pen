@@ -1,0 +1,1307 @@
+{
+  "version": "2.14",
+  "children": [
+    {
+      "type": "frame",
+      "id": "agQod",
+      "x": 1320,
+      "y": 0,
+      "name": "2. Precision Loop",
+      "clip": true,
+      "width": 1200,
+      "height": 1248,
+      "fill": "$surface",
+      "layout": "vertical",
+      "gap": 32,
+      "padding": 64,
+      "children": [
+        {
+          "type": "frame",
+          "id": "b1dlQ",
+          "name": "Brand Board Header",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 10,
+          "children": [
+            {
+              "type": "text",
+              "id": "p2rqT",
+              "name": "Concept Index",
+              "fill": "$brand-indigo",
+              "content": "02 / PRECISION LOOP",
+              "fontFamily": "Geist Mono",
+              "fontSize": 12,
+              "fontWeight": "600",
+              "letterSpacing": 1.6
+            },
+            {
+              "type": "text",
+              "id": "Fi4xj",
+              "name": "Board Title",
+              "fill": "$ink",
+              "content": "Shipyard — identity system",
+              "fontFamily": "$font-brand",
+              "fontSize": 42,
+              "fontWeight": "650",
+              "letterSpacing": -1.4
+            },
+            {
+              "type": "text",
+              "id": "HcV22",
+              "name": "Board Description",
+              "fill": "$muted",
+              "content": "An abstract build path shaped into a disciplined S: plan, assemble, advance.",
+              "fontFamily": "$font-brand",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tKvUL",
+          "name": "Primary Logo Showcase",
+          "width": "fill_container",
+          "height": 360,
+          "fill": "$paper",
+          "stroke": "$line",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
+          "gap": 56,
+          "padding": 48,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "N97ur",
+              "name": "Primary Logo Stage",
+              "width": 470,
+              "height": "fill_container",
+              "fill": "#F0F0FF",
+              "layout": "vertical",
+              "gap": 22,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "YzkIF",
+                  "name": "Primary Stacked Logo",
+                  "layout": "vertical",
+                  "gap": 18,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "o2O4Ec",
+                      "name": "Primary Precision Loop Mark",
+                      "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                      "viewBox": [
+                        0,
+                        0,
+                        100,
+                        108
+                      ],
+                      "width": 128,
+                      "height": 128,
+                      "stroke": "$brand-indigo",
+                      "strokeWidth": 14,
+                      "strokeLinejoin": "bevel",
+                      "strokeLinecap": "square"
+                    },
+                    {
+                      "type": "text",
+                      "id": "f58Jr",
+                      "name": "Primary Shipyard Wordmark",
+                      "fill": "$ink",
+                      "content": "Shipyard",
+                      "fontFamily": "$font-brand",
+                      "fontSize": 44,
+                      "fontWeight": "650",
+                      "letterSpacing": -1.7
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "pLObV",
+                  "name": "Primary Descriptor",
+                  "fill": "$muted",
+                  "content": "OPEN-SOURCE PROJECT MANAGEMENT",
+                  "fontFamily": "Geist Mono",
+                  "fontSize": 9,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "axCN9",
+              "name": "Primary Logo Notes",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FyuBN",
+                  "name": "Primary Label",
+                  "fill": "$brand-indigo",
+                  "content": "PRIMARY LOGO",
+                  "fontFamily": "Geist Mono",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.4
+                },
+                {
+                  "type": "text",
+                  "id": "qP5uJ",
+                  "name": "Primary Heading",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Built to move work forward.",
+                  "lineHeight": 1.05,
+                  "fontFamily": "$font-brand",
+                  "fontSize": 30,
+                  "fontWeight": "650",
+                  "letterSpacing": -0.8
+                },
+                {
+                  "type": "text",
+                  "id": "SJkHs",
+                  "name": "Primary Description",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "The continuous rail maps a product’s path from intent to release. Angular joints signal precision; open terminals keep the system in motion.",
+                  "lineHeight": 1.45,
+                  "fontFamily": "$font-brand",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "m3hSTm",
+                  "name": "Design Principles",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "s55GBL",
+                      "name": "GEOMETRIC Tag",
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
+                      "padding": [
+                        7,
+                        10
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iym3W",
+                          "name": "GEOMETRIC Text",
+                          "fill": "$muted",
+                          "content": "GEOMETRIC",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.8
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Seyah",
+                      "name": "MONOLINE Tag",
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
+                      "padding": [
+                        7,
+                        10
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "c7trjW",
+                          "name": "MONOLINE Text",
+                          "fill": "$muted",
+                          "content": "MONOLINE",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.8
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "T2DnI",
+                      "name": "ONE-COLOR Tag",
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
+                      "padding": [
+                        7,
+                        10
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YG7Xx",
+                          "name": "ONE-COLOR Text",
+                          "fill": "$muted",
+                          "content": "ONE-COLOR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.8
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "gVdQd",
+          "name": "Variant Section Header",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "end",
+          "children": [
+            {
+              "type": "text",
+              "id": "NQr3e",
+              "name": "Variant Title",
+              "fill": "$ink",
+              "content": "Logo variants",
+              "fontFamily": "$font-brand",
+              "fontSize": 24,
+              "fontWeight": "650",
+              "letterSpacing": -0.5
+            },
+            {
+              "type": "text",
+              "id": "DAUt9",
+              "name": "Variant Count",
+              "fill": "$muted",
+              "content": "07 SYSTEM ASSETS",
+              "fontFamily": "Geist Mono",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 1.2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "S0I4r",
+          "name": "Logo Variant Grid",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "X4Xrmv",
+              "name": "Variant Row One",
+              "width": "fill_container",
+              "height": 250,
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "tWLke",
+                  "name": "Icon-only Version",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$paper",
+                  "stroke": "$line",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
+                  "layout": "vertical",
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "bf6yT",
+                      "name": "Icon-only Stage",
+                      "width": "fill_container",
+                      "height": 150,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "O5iSH",
+                          "name": "Icon-only Precision Loop",
+                          "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                          "viewBox": [
+                            0,
+                            0,
+                            100,
+                            108
+                          ],
+                          "width": 96,
+                          "height": 96,
+                          "stroke": "$brand-indigo",
+                          "strokeWidth": 14,
+                          "strokeLinejoin": "bevel",
+                          "strokeLinecap": "square"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e9tAF",
+                      "name": "Icon-only Metadata",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "kLBDX",
+                          "name": "Icon-only Label",
+                          "fill": "$ink",
+                          "content": "ICON ONLY",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.1
+                        },
+                        {
+                          "type": "text",
+                          "id": "fwaHr",
+                          "name": "Icon-only Spec",
+                          "fill": "$muted",
+                          "content": "1C / SVG",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.8
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wiZbR",
+                  "name": "Horizontal Lockup",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$paper",
+                  "stroke": "$line",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
+                  "layout": "vertical",
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "uKgUL",
+                      "name": "Horizontal Lockup Stage",
+                      "width": "fill_container",
+                      "height": 150,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "pQrnO",
+                          "name": "Horizontal Logo",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "A527D6",
+                              "name": "Horizontal Precision Loop",
+                              "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                              "viewBox": [
+                                0,
+                                0,
+                                100,
+                                108
+                              ],
+                              "width": 64,
+                              "height": 64,
+                              "stroke": "$brand-indigo",
+                              "strokeWidth": 14,
+                              "strokeLinejoin": "bevel",
+                              "strokeLinecap": "square"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Psuyc",
+                              "name": "Horizontal Shipyard Wordmark",
+                              "fill": "$ink",
+                              "content": "Shipyard",
+                              "fontFamily": "$font-brand",
+                              "fontSize": 30,
+                              "fontWeight": "650",
+                              "letterSpacing": -1.1
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "r72QbH",
+                      "name": "Horizontal Metadata",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "bcLAW",
+                          "name": "Horizontal Label",
+                          "fill": "$ink",
+                          "content": "HORIZONTAL LOCKUP",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.1
+                        },
+                        {
+                          "type": "text",
+                          "id": "a6cBo",
+                          "name": "Horizontal Spec",
+                          "fill": "$muted",
+                          "content": "4.6:1",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.8
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "xdrYh",
+                  "name": "Monochrome Version",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$paper",
+                  "stroke": "$line",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
+                  "layout": "vertical",
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "j9vdW",
+                      "name": "Monochrome Stage",
+                      "width": "fill_container",
+                      "height": 150,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "qKODA",
+                          "name": "Monochrome Logo",
+                          "gap": 14,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "vDZon",
+                              "name": "Monochrome Precision Loop",
+                              "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                              "viewBox": [
+                                0,
+                                0,
+                                100,
+                                108
+                              ],
+                              "width": 58,
+                              "height": 58,
+                              "stroke": "$ink",
+                              "strokeWidth": 14,
+                              "strokeLinejoin": "bevel",
+                              "strokeLinecap": "square"
+                            },
+                            {
+                              "type": "text",
+                              "id": "pQcM5",
+                              "name": "Monochrome Shipyard Wordmark",
+                              "fill": "$ink",
+                              "content": "Shipyard",
+                              "fontFamily": "$font-brand",
+                              "fontSize": 28,
+                              "fontWeight": "650",
+                              "letterSpacing": -1
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "k7CIIS",
+                      "name": "Monochrome Metadata",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gkaq6",
+                          "name": "Monochrome Label",
+                          "fill": "$ink",
+                          "content": "MONOCHROME",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.1
+                        },
+                        {
+                          "type": "text",
+                          "id": "F8FaC",
+                          "name": "Monochrome Spec",
+                          "fill": "$muted",
+                          "content": "#111318",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.8
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mrI21",
+              "name": "Variant Row Two",
+              "width": "fill_container",
+              "height": 250,
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xdTWT",
+                  "name": "Dark Mode Version",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$dark",
+                  "layout": "vertical",
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "SmnFy",
+                      "name": "Dark Mode Stage",
+                      "width": "fill_container",
+                      "height": 150,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "pG6Is",
+                          "name": "Dark Mode Logo",
+                          "gap": 14,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "RhFvA",
+                              "name": "Dark Mode Precision Loop",
+                              "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                              "viewBox": [
+                                0,
+                                0,
+                                100,
+                                108
+                              ],
+                              "width": 58,
+                              "height": 58,
+                              "stroke": "#818CF8",
+                              "strokeWidth": 14,
+                              "strokeLinejoin": "bevel",
+                              "strokeLinecap": "square"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ZwSpU",
+                              "name": "Dark Mode Shipyard Wordmark",
+                              "fill": "#FFFFFF",
+                              "content": "Shipyard",
+                              "fontFamily": "$font-brand",
+                              "fontSize": 28,
+                              "fontWeight": "650",
+                              "letterSpacing": -1
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "B5iK07",
+                      "name": "Dark Mode Metadata",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ePL9R",
+                          "name": "Dark Mode Label",
+                          "fill": "#FFFFFF",
+                          "content": "DARK MODE",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.1
+                        },
+                        {
+                          "type": "text",
+                          "id": "Y6X6T",
+                          "name": "Dark Mode Spec",
+                          "fill": "#9599A6",
+                          "content": "#0E1016",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.8
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ZQ2lS",
+                  "name": "Light Mode Version",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#F0F0FF",
+                  "stroke": "#DAD8FF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
+                  "layout": "vertical",
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "a8wlX",
+                      "name": "Light Mode Stage",
+                      "width": "fill_container",
+                      "height": 150,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "KOqWc",
+                          "name": "Light Mode Logo",
+                          "gap": 14,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "mxHUV",
+                              "name": "Light Mode Precision Loop",
+                              "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                              "viewBox": [
+                                0,
+                                0,
+                                100,
+                                108
+                              ],
+                              "width": 58,
+                              "height": 58,
+                              "stroke": "$brand-indigo",
+                              "strokeWidth": 14,
+                              "strokeLinejoin": "bevel",
+                              "strokeLinecap": "square"
+                            },
+                            {
+                              "type": "text",
+                              "id": "z99Sq",
+                              "name": "Light Mode Shipyard Wordmark",
+                              "fill": "$ink",
+                              "content": "Shipyard",
+                              "fontFamily": "$font-brand",
+                              "fontSize": 28,
+                              "fontWeight": "650",
+                              "letterSpacing": -1
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KgxgF",
+                      "name": "Light Mode Metadata",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ruJ6L",
+                          "name": "Light Mode Label",
+                          "fill": "$ink",
+                          "content": "LIGHT MODE",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.1
+                        },
+                        {
+                          "type": "text",
+                          "id": "LF6pv",
+                          "name": "Light Mode Spec",
+                          "fill": "$muted",
+                          "content": "#F0F0FF",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.8
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Kg2cK",
+                  "name": "Favicon and App Icon",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$paper",
+                  "stroke": "$line",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
+                  "layout": "vertical",
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "gfGP7",
+                      "name": "Favicon Stage",
+                      "width": "fill_container",
+                      "height": 150,
+                      "gap": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "oOJbP",
+                          "name": "App Icon 72",
+                          "width": 72,
+                          "height": 72,
+                          "fill": "$brand-indigo",
+                          "cornerRadius": 16,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "yK9Zi",
+                              "name": "App Icon Precision Loop",
+                              "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                              "viewBox": [
+                                0,
+                                0,
+                                100,
+                                108
+                              ],
+                              "width": 45,
+                              "height": 45,
+                              "stroke": "#FFFFFF",
+                              "strokeWidth": 15,
+                              "strokeLinejoin": "bevel",
+                              "strokeLinecap": "square"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Qisrv",
+                          "name": "Favicon 36",
+                          "width": 36,
+                          "height": 36,
+                          "fill": "$brand-indigo",
+                          "cornerRadius": 8,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "zMRjs",
+                              "name": "Favicon Precision Loop",
+                              "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                              "viewBox": [
+                                0,
+                                0,
+                                100,
+                                108
+                              ],
+                              "width": 23,
+                              "height": 23,
+                              "stroke": "#FFFFFF",
+                              "strokeWidth": 16,
+                              "strokeLinejoin": "bevel",
+                              "strokeLinecap": "square"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "a2Rbs",
+                      "name": "Favicon Metadata",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Tos4w",
+                          "name": "Favicon Label",
+                          "fill": "$ink",
+                          "content": "FAVICON / APP",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.1
+                        },
+                        {
+                          "type": "text",
+                          "id": "vjy6B",
+                          "name": "Favicon Spec",
+                          "fill": "$muted",
+                          "content": "72 / 36",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.8
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "qhptB",
+      "x": 2660,
+      "y": 0,
+      "name": "Building Shipyard — Episode 01 Cover",
+      "clip": true,
+      "width": 1200,
+      "height": 1200,
+      "fill": {
+        "type": "shader",
+        "enabled": true,
+        "url": "shipyard-cover-grid.glsl",
+        "uniforms": {
+          "u_background": "#FAFAFA",
+          "u_grid": "#4F46E5",
+          "u_opacity": 0.038
+        }
+      },
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+        72,
+        84
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "SBoLw",
+          "layoutPosition": "absolute",
+          "x": 480,
+          "y": 122,
+          "name": "Logo Construction Guide",
+          "width": 240,
+          "height": 220,
+          "layout": "none",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "trcOx",
+              "x": 32,
+              "y": 18,
+              "name": "Logo Guide Circle",
+              "fill": "#00000000",
+              "width": 176,
+              "height": 176,
+              "stroke": "#4F46E51A",
+              "strokeWidth": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "piChr",
+              "x": 0,
+              "y": 106,
+              "name": "Logo Guide Horizontal",
+              "fill": "#4F46E51A",
+              "width": 240,
+              "height": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "G8Mfq",
+              "x": 119,
+              "y": 0,
+              "name": "Logo Guide Vertical",
+              "fill": "#4F46E51A",
+              "width": 1,
+              "height": 220
+            },
+            {
+              "type": "rectangle",
+              "id": "BfreR",
+              "x": 115,
+              "y": 17,
+              "name": "Logo Guide Top Tick",
+              "fill": "#4F46E544",
+              "width": 9,
+              "height": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "C82SK",
+              "x": 207,
+              "y": 101,
+              "name": "Logo Guide Right Tick",
+              "fill": "#4F46E544",
+              "width": 1,
+              "height": 9
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "h3ArAU",
+          "name": "Series Header",
+          "width": "fill_container",
+          "height": 42,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "TwOxp",
+              "name": "Series Header Left",
+              "fill": "$muted",
+              "content": "OPEN SOURCE / ENGINEERING SERIES",
+              "fontFamily": "$font-brand",
+              "fontSize": 11,
+              "fontWeight": "650",
+              "letterSpacing": 1.5
+            },
+            {
+              "type": "text",
+              "id": "eORRR",
+              "name": "Series Header Right",
+              "fill": "$brand-indigo",
+              "content": "EPISODE 01 · 2026",
+              "fontFamily": "$font-brand",
+              "fontSize": 11,
+              "fontWeight": "650",
+              "letterSpacing": 1.5
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "E8Di3P",
+          "name": "Cover Brand Mark",
+          "layout": "vertical",
+          "gap": 18,
+          "padding": [
+            32,
+            0,
+            12,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "IyUWK",
+              "name": "Shipyard Cover App Icon",
+              "width": 96,
+              "height": 96,
+              "fill": "$brand-indigo",
+              "cornerRadius": 21,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "iwGKy",
+                  "name": "App Icon Precision Loop",
+                  "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                  "viewBox": [
+                    0,
+                    0,
+                    100,
+                    108
+                  ],
+                  "width": 60,
+                  "height": 60,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 20,
+                  "strokeLinejoin": "bevel",
+                  "strokeLinecap": "square"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "cfeGk",
+              "name": "Building Shipyard Label",
+              "fill": "$ink",
+              "content": "BUILDING SHIPYARD",
+              "fontFamily": "$font-brand",
+              "fontSize": 13,
+              "fontWeight": "650",
+              "letterSpacing": 2.4
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "wsvcN",
+          "name": "Cover Title Block",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            10,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "gtNYR",
+              "name": "Shipyard Main Title",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "SHIPYARD",
+              "textAlign": "center",
+              "fontFamily": "$font-brand",
+              "fontSize": 104,
+              "fontWeight": "720",
+              "letterSpacing": -3.2
+            },
+            {
+              "type": "text",
+              "id": "d25foC",
+              "name": "Cover Subtitle",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": 850,
+              "content": "Building an Open-Source\nLinear Alternative",
+              "lineHeight": 1.12,
+              "textAlign": "center",
+              "fontFamily": "$font-brand",
+              "fontSize": 46,
+              "fontWeight": "520",
+              "letterSpacing": -1.4
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "F06ES",
+          "name": "Flexible Whitespace",
+          "width": 1,
+          "height": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "oEmIt",
+          "name": "Episode Badge Card",
+          "width": 650,
+          "height": 88,
+          "fill": "$paper",
+          "cornerRadius": 22,
+          "stroke": "#D9DCE6",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
+          "gap": 22,
+          "padding": 12,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "FODXj",
+              "name": "Episode Number Chip",
+              "height": "fill_container",
+              "fill": "$brand-indigo",
+              "cornerRadius": 15,
+              "layout": "vertical",
+              "padding": [
+                0,
+                22
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Uyaib",
+                  "name": "Episode Number",
+                  "fill": "#FFFFFF",
+                  "content": "EPISODE 01",
+                  "fontFamily": "$font-brand",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "letterSpacing": 1.4
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jNHdb",
+              "name": "Episode Copy",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "nV9sn",
+                  "name": "Episode Title",
+                  "fill": "$ink",
+                  "content": "Introducing Shipyard",
+                  "fontFamily": "$font-brand",
+                  "fontSize": 22,
+                  "fontWeight": "650",
+                  "letterSpacing": -0.4
+                },
+                {
+                  "type": "text",
+                  "id": "ZgFot",
+                  "name": "Episode Series Label",
+                  "fill": "$muted",
+                  "content": "BUILDING SHIPYARD",
+                  "fontFamily": "$font-brand",
+                  "fontSize": 10,
+                  "fontWeight": "650",
+                  "letterSpacing": 1.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "gXTZx",
+          "name": "Cover Footer",
+          "width": "fill_container",
+          "height": 30,
+          "justifyContent": "space_between",
+          "alignItems": "end",
+          "children": [
+            {
+              "type": "text",
+              "id": "pFaNa",
+              "name": "Footer Product",
+              "fill": "$muted",
+              "content": "SHIPYARD · PROJECT MANAGEMENT",
+              "fontFamily": "$font-brand",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 1.2
+            },
+            {
+              "type": "text",
+              "id": "X5dAmt",
+              "name": "Footer Tag",
+              "fill": "$muted",
+              "content": "BUILD IN PUBLIC",
+              "fontFamily": "$font-brand",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 1.2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "brand-indigo": {
+      "type": "color",
+      "value": "#4F46E5"
+    },
+    "brand-indigo-dark": {
+      "type": "color",
+      "value": "#3730A3"
+    },
+    "ink": {
+      "type": "color",
+      "value": "#111318"
+    },
+    "muted": {
+      "type": "color",
+      "value": "#646A76"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#F6F7FB"
+    },
+    "paper": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "line": {
+      "type": "color",
+      "value": "#E2E5ED"
+    },
+    "dark": {
+      "type": "color",
+      "value": "#0E1016"
+    },
+    "font-brand": {
+      "type": "string",
+      "value": "Geist"
+    }
+  },
+  "fileToken": "eac8c368-6c4c-4668-9e51-235f3dfc1a57"
+}
