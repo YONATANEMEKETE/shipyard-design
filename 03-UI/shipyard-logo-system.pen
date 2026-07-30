@@ -931,7 +931,7 @@
       "fill": {
         "type": "shader",
         "enabled": true,
-        "url": "shipyard-cover-grid.glsl",
+        "url": "../../../shipyard-cover-grid.glsl",
         "uniforms": {
           "u_background": "#FAFAFA",
           "u_grid": "#4F46E5",
@@ -1303,5 +1303,5 @@
       "value": "Geist"
     }
   },
-  "fileToken": "eac8c368-6c4c-4668-9e51-235f3dfc1a57"
+  "fileToken": "5a617b65-c27e-42ec-9c79-d73c75a920cc"
 }
