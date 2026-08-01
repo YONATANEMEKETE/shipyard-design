@@ -338,7 +338,8 @@ Authentication is the entry point to Shipyard and must provide a secure, frictio
 ##### Logout
 
 - Users can log out from any device.
-- Logging out invalidates the current session.
+- Selecting Logout immediately invalidates the current session without a confirmation step.
+- Successful logout redirects the user to the login page.
 
 ##### Session Management
 
@@ -369,6 +370,10 @@ Given a new user, when valid registration details are submitted, then the accoun
 ##### Login
 
 Given an existing account, when valid credentials are entered, then access is granted.
+
+##### Logout
+
+Given an authenticated user, when they select Logout, then the current session is invalidated immediately without confirmation and they are redirected to the login page.
 
 ##### Protected Routes
 

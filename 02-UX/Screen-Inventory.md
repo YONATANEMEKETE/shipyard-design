@@ -14,7 +14,6 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Registration | Page | Login page | Allow new users to create an account. |
 | Forgot Password | Page | Login page | Allow users to request a password reset. |
 | Reset Password | Page | Password reset link | Allow users to create a new password after identity verification. |
-| Logout Confirmation *(Optional)* | Dialog | User account menu | Confirm logout before ending the current session, if confirmation is enabled. |
 
 ---
 ## 5.3 Workspace
@@ -132,4 +131,3 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Change Email | Modal | Profile Settings | Allow users to update their account email after providing their current password. |
 | Workspace Settings | Page | Sidebar → Workspace Settings | Allow authorized users to manage workspace configuration. |
 | Change Password | Modal | Security Settings | Allow users to securely update their account password. |
-| Logout Confirmation *(Optional)* | Dialog | User Menu | Confirm logout before ending the current session, if confirmation is enabled. |

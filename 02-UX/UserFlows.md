@@ -2559,7 +2559,7 @@ The user opens **Account Settings** from the User Menu or **Workspace Settings**
 
 1. The user opens the account menu.
 2. The user selects **Logout**.
-3. The system ends the active session.
+3. Without displaying a confirmation dialog, the system immediately ends the active session.
 4. The user is redirected to the login page.
 
 ---
