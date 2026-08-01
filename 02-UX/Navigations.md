@@ -58,18 +58,19 @@ Some sections provide local navigation for related views.
 
 ### Issues
 
-- My Issues
-- All Issues
-- Backlog
-- Blocked
-- Archived
+- My Issues *(List/Kanban toggle)*
+- All Issues *(List/Kanban toggle)*
+- Backlog *(List only)*
+- Blocked *(List only)*
+- Archived *(List only)*
 
 ### Projects
 
-- Active
-- Planned
-- Completed
-- Archived
+- Non-archived Projects *(List/Kanban toggle)*
+- Active *(List section)*
+- Planned *(List section)*
+- Completed *(List section)*
+- Archived *(List only)*
 
 ### Cycles
 
@@ -77,6 +78,17 @@ Some sections provide local navigation for related views.
 - Planned
 - Completed
 - Archived
+
+---
+
+# Resource View Toggles
+
+- All Issues, My Issues, and non-archived Projects expose a List/Kanban segmented control.
+- The last selected view is stored per user and workspace, independently for Issues and Projects.
+- List is the default before the user has saved a preference for that resource and workspace.
+- Navigating to a list-only subview does not overwrite the saved Kanban preference.
+- Search, filters, and sorting remain active when switching views.
+- Cycles and all Archived resource views remain list-only.
 
 ### Account Settings *(User Menu)*
 

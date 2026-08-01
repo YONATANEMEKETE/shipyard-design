@@ -49,12 +49,14 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
-| Projects List | Page | Sidebar → Projects, Dashboard | Display all projects within the active workspace. |
-| Project Details | Page | Projects List, Dashboard, Search | Display project information, Project Owner, progress, associated issues, project activity, and any cycle information derived from those issues. |
-| Create Project | Modal | Projects List, Global Create Menu | Allow authorized users to create a Project with a name unique within the workspace. |
+| Projects Page | Page | Sidebar → Projects, Dashboard | Display non-archived Projects using the user's saved List or Kanban view. |
+| Project View Toggle | Segmented Control | Projects Toolbar | Switch between List and Kanban without clearing search, filters, or sorting. |
+| Project Kanban | Board | Projects → Kanban | Group matching non-archived Projects into Planned, Active, and Completed columns using balanced Project cards. |
+| Project Details | Page | Projects Page, Dashboard, Search | Display project information, Project Owner, progress, associated issues, project activity, and any cycle information derived from those issues. |
+| Create Project | Modal | Projects Page, Global Create Menu | Allow authorized users to create a Project with a name unique within the workspace. |
 | Edit Project | Modal | Project Details | Allow authorized users to update project information while preserving workspace-scoped name uniqueness. |
 | Change Project Owner | Modal | Non-archived Project Details | Allow Workspace Owners and Admins to transfer Project ownership to any other current workspace member without changing that member's role or permissions. |
-| Update Project Status | Dropdown | Non-archived Project Details, Projects List | Allow editors to switch freely between Planned, Active, and Completed; Archived is excluded. |
+| Update Project Status | Dropdown or Kanban Drag | Non-archived Project Details, Projects Page, Project Kanban | Allow editors to switch freely between Planned, Active, and Completed; Archived is excluded. |
 | Archive Project Confirmation | Dialog | Non-archived Project Details | Confirm archiving a project before it becomes read-only. |
 | Restore Project Confirmation | Dialog | Archived Projects, Project Details | Confirm returning an archived project to its stored operational status. |
 | Delete Project Confirmation | Dialog | Project Details | Confirm permanent deletion, show the number of affected issues, and explain that those issues will be unassigned rather than deleted. |
@@ -64,7 +66,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
-| Cycles List | Page | Sidebar → Cycles, Dashboard | Display all cycles within the active workspace. |
+| Cycles List | Page | Sidebar → Cycles, Dashboard | Display all cycles within the active workspace using list-only lifecycle sections. |
 | Cycle Details | Page | Cycles List, Dashboard, Search | Display cycle information, progress, associated issues, statistics, and activity. |
 | Create Cycle | Modal | Cycles List, Global Create Menu | Allow authorized users to create a Cycle with a name unique within the workspace and a non-overlapping date range. |
 | Edit Cycle | Modal | Planned or Active Cycle Details | Allow authorized users to update Cycle information while preserving workspace-scoped name uniqueness and non-overlapping dates. |
@@ -80,13 +82,15 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
-| Issues List | Page | Sidebar → Issues, Dashboard | Display all issues within the active workspace. |
-| Issue Details | Page | Issues List, Dashboard, Search, Notifications, Project Details, Cycle Details | Display issue information, workflow status, planning details, activity history, and management actions. |
-| Create Issue | Modal | Issues List, Project Details, Cycle Details, Dashboard, Global Create Menu | Allow users to create a new issue with an optional Priority that defaults to No Priority. |
+| Issues Page | Page | Sidebar → Issues, Dashboard | Display All Issues or My Issues using the user's saved List or Kanban view; specialized Backlog, Blocked, and Archived views remain list-only. |
+| Issue View Toggle | Segmented Control | All Issues Toolbar, My Issues Toolbar | Switch between List and Kanban without clearing search, filters, or sorting. |
+| Issue Kanban | Board | All Issues → Kanban, My Issues → Kanban | Group matching non-archived Issues into Backlog, Todo, In Progress, and Done columns using balanced Issue cards. |
+| Issue Details | Page | Issues Page, Dashboard, Search, Notifications, Project Details, Cycle Details | Display issue information, workflow status, planning details, activity history, and management actions. |
+| Create Issue | Modal | Issues Page, Project Details, Cycle Details, Dashboard, Global Create Menu | Allow users to create a new issue with an optional Priority that defaults to No Priority. |
 | Edit Issue | Modal | Issue Details | Allow authorized users to update issue information. |
 | Assign Issue | Modal | Issue Details | Allow users to assign or reassign an issue. |
-| Update Workflow Status | Dropdown | Issue Details, Issues List | Allow users to move an issue through the workflow (Backlog → Todo → In Progress → Done). |
-| Update Blocked State | Inline Control | Issue Details, Issues List | Allow users to mark an unfinished issue as blocked with an optional reason or clear its blocked state. |
+| Update Workflow Status | Dropdown or Kanban Drag | Issue Details, Issues Page, Issue Kanban | Allow users to move an issue between Backlog, Todo, In Progress, and Done while retaining a keyboard-accessible status control. |
+| Update Blocked State | Inline Control | Issue Details, Issues Page | Allow users to mark an unfinished issue as blocked with an optional reason or clear its blocked state. |
 | Archive Issue Confirmation | Dialog | Issue Details | Confirm archiving an issue. |
 | Restore Issue Confirmation | Dialog | Archived Issues, Issue Details | Confirm restoring an archived issue. |
 | Delete Issue Confirmation | Dialog | Issue Details | Confirm permanent deletion of an issue. |
@@ -126,7 +130,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Global Search | Modal | Header Navigation, Keyboard Shortcut | Allow users to quickly search for issues, projects, cycles, and members across the active workspace. |
 | Search Results | Section | Global Search | Display matching resources and allow users to navigate directly to them. |
-| Filter Panel | Drawer | Issues List, Projects List, Cycles List | Display contextual filters: Issue planning fields for Issues; Status, Project Owner, Start Date, and Target Date for Projects; and Status, Start Date, and End Date for Cycles. |
+| Filter Panel | Drawer | Issues Page, Projects Page, Cycles List | Display contextual filters: Issue planning fields for Issues; Status, Project Owner, Start Date, and Target Date for Projects; and Status, Start Date, and End Date for Cycles. |
 | Save View | Modal | Filter Panel | Allow users to save the current filter configuration as a private view. |
 | Saved Views | Dropdown | Resource List Toolbar | Display previously saved views and allow users to apply, rename, delete, or set a default view. |
 

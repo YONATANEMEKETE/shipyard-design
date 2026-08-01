@@ -180,7 +180,7 @@ Changing Issue or Project status is a frequent action in the application.
 
 **Rationale**
 
-Inline controls reduce interaction cost compared to opening additional dialogs or pages. Issue workflow status follows its defined transitions, while a Project may switch freely between Planned, Active, and Completed. Archived is excluded from inline Project status controls and remains a separate confirmed action.
+Inline controls and Kanban drag-and-drop reduce interaction cost compared to opening additional dialogs or pages. Issue workflow status follows its defined transitions, while a Project may switch freely between Planned, Active, and Completed. Archived is excluded from Project status controls and Kanban columns and remains a separate confirmed action.
 
 **Impact**
 
@@ -320,9 +320,27 @@ Improves discoverability and encourages continued engagement.
 
 ---
 
-## 8.7 Future Scalability Decisions
+## 8.7 Resource View Decisions
 
-### Decision 20 — Post-MVP Features are Intentionally Deferred
+### Decision 20 — Issues and Projects Support List and Kanban Views
+
+**Context**
+
+Teams need both information-dense resource lists and a visual way to understand and update workflow state.
+
+**Rationale**
+
+All Issues and My Issues can switch between List and a four-column Kanban, while non-archived Projects can switch between List and a three-column Kanban. Cross-column dragging performs the same immediate status update as the existing status control. Filters, search, and sorting persist across the toggle, same-column card order remains sort-driven, and each resource stores its view preference per user and workspace. Archived resources and Cycles remain list-only.
+
+**Impact**
+
+Adds visual workflow management without introducing custom columns, manual ranking, or a second lifecycle model. Status controls remain available for keyboard and non-drag interaction, and failed drag updates return cards to their saved columns.
+
+---
+
+## 8.8 Future Scalability Decisions
+
+### Decision 21 — Post-MVP Features are Intentionally Deferred
 
 **Context**
 
@@ -330,7 +348,7 @@ The MVP prioritizes delivering a focused and maintainable product.
 
 **Rationale**
 
-Features such as Kanban, Timeline, Calendar, Attachments, Rich Text Editing, Advanced Search, and Shared Saved Views are excluded from the initial release to reduce complexity.
+Features such as advanced Kanban configuration, Timeline, Calendar, Attachments, Rich Text Editing, Advanced Search, and Shared Saved Views are excluded from the initial release to reduce complexity.
 
 **Impact**
 
@@ -338,7 +356,7 @@ Allows the MVP to remain focused while providing a clear path for future expansi
 
 ---
 
-### Decision 21 — Architecture Supports Incremental Growth
+### Decision 22 — Architecture Supports Incremental Growth
 
 **Context**
 

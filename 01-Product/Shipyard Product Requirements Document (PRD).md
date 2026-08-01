@@ -771,6 +771,7 @@ Issues represent individual units of work within a workspace. They are used to t
 - As a team lead, I want to assign issues to team members.
 - As a developer, I want to know the priority of my work.
 - As a team member, I want to discuss work within an issue.
+- As a workspace member, I want to visualize and update Issue workflow from a Kanban board.
 
 #### Functional Requirements
 
@@ -853,6 +854,31 @@ Users can:
 - View issue details.
 - View issue history.
 
+##### Issue Views
+
+- All Issues and My Issues support List and Kanban views.
+- Backlog, Blocked Issues, and Archived Issues remain list-only views.
+- The Issue Kanban columns are Backlog, Todo, In Progress, and Done.
+- Users with permission to update an Issue can drag its card between columns to change status immediately without confirmation.
+- Dragging within the same column does not create a manual order; cards follow the active applicable sort.
+- Search, filters, and sorting remain applied when switching between List and Kanban.
+- Each user's last selected Issue view is stored separately for each workspace and does not change the user's Project view preference.
+- List is the default on a user's first visit before an Issue view preference has been saved.
+- Visiting a list-only Issue subview does not overwrite the saved All Issues or My Issues view preference.
+- Empty Kanban columns remain visible as drop targets.
+- Selecting a card opens Issue Details.
+- The existing status control remains available as a keyboard-accessible and non-drag alternative.
+
+Issue cards display:
+
+- Identifier
+- Title
+- Priority
+- Assignee
+- Project and Cycle when assigned
+- Due date when set
+- Blocked indicator when blocked
+
 #### Business Rules
 
 - Every issue belongs to exactly one workspace.
@@ -871,6 +897,10 @@ Users can:
 - Issue identifiers are unique within a workspace.
 - Only authorized members can delete issues.
 - Changes to an issue are recorded in its activity history.
+- Archived Issues never appear on the Kanban board and Archived is never a Kanban column.
+- A successful cross-column drag follows the same workflow, blocked-state, progress-calculation, and history rules as any other Issue status update.
+- If a drag update fails, the card returns to its previous column and the system displays an error.
+- If a concurrent status change prevents the drag from being applied, the card refreshes to the latest saved state and the user is informed.
 
 #### Acceptance Criteria
 
@@ -881,6 +911,14 @@ Given a workspace member, when they create an issue with a valid title, then the
 ##### Update Status
 
 Given an existing issue, when its status is changed, then the new status is saved and recorded in the issue history.
+
+##### Use Issue Kanban
+
+Given All Issues or My Issues is active, when the user selects Kanban, then non-archived matching Issues appear in Backlog, Todo, In Progress, and Done columns with the active search, filters, and sort preserved.
+
+##### Drag Issue Between Columns
+
+Given a user with permission and a visible Issue card, when they drag it to another status column, then the Issue status is saved without confirmation and all existing status side effects are applied.
 
 ##### Assign Issue
 
@@ -919,6 +957,9 @@ Given matching issues exist, when a user performs a search, then relevant issues
 - Attempt to edit an archived issue.
 - Attempt to mark a Done or archived issue as blocked.
 - Empty or extremely long blocked reason.
+- Status update fails after an Issue card is dragged.
+- Another user changes the Issue status during a drag.
+- Search or filters leave one or more Kanban columns empty.
 
 #### Future Enhancements
 
@@ -953,6 +994,7 @@ Projects organize related issues into larger initiatives with a shared objective
 - As a developer, I want to understand how my work contributes to the project.
 - As a stakeholder, I want to monitor project progress.
 - As an Owner or Admin, I want to assign clear ownership for each Project.
+- As a workspace member, I want to visualize and update Project status from a Kanban board.
 
 #### Functional Requirements
 
@@ -1003,6 +1045,27 @@ Users can:
 - Search and filter project issues.
 - Navigate from a project to any associated issue.
 
+##### Project Views
+
+- The Projects page supports List and Kanban views for non-archived Projects.
+- List view retains the Active, Planned, and Completed status sections.
+- Kanban view combines all matching non-archived Projects into Planned, Active, and Completed columns.
+- Users with permission to update a Project can drag its card between columns to change status immediately without confirmation.
+- Dragging within the same column does not create a manual order; cards follow the active applicable sort.
+- Search, filters, and sorting remain applied when switching between List and Kanban.
+- Each user's last selected Project view is stored separately for each workspace and does not change the user's Issue view preference.
+- List is the default on a user's first visit before a Project view preference has been saved.
+- Empty Kanban columns remain visible as drop targets.
+- Selecting a card opens Project Details.
+- The existing status control remains available as a keyboard-accessible and non-drag alternative.
+
+Project cards display:
+
+- Name
+- Project Owner
+- Progress
+- Target date when set
+
 ##### Project Progress
 
 The system should:
@@ -1050,6 +1113,10 @@ Archived is not available in the status control. A Project enters or leaves Arch
 - When a project is deleted, every associated issue remains in the workspace and its project assignment is cleared automatically.
 - Project deletion and issue unassignment occur atomically; if either operation fails, neither change is saved.
 - Removing an issue from a project does not delete the issue.
+- Archived Projects never appear on the Kanban board and Archived is never a Kanban column.
+- A successful cross-column drag follows the same status, permission, and activity-history rules as any other Project status update.
+- If a drag update fails, the card returns to its previous column and the system displays an error.
+- If a concurrent status change prevents the drag from being applied, the card refreshes to the latest saved state and the user is informed.
 
 #### Acceptance Criteria
 
@@ -1077,6 +1144,14 @@ Given project issues change status, when progress is recalculated, then the proj
 
 Given a non-archived project and an authorized editor, when they select Planned, Active, or Completed, then the project changes directly to that status without confirmation.
 
+##### Use Project Kanban
+
+Given the non-archived Projects page is active, when the user selects Kanban, then matching Projects appear in Planned, Active, and Completed columns with the active search, filters, and sort preserved.
+
+##### Drag Project Between Columns
+
+Given an authorized editor and a visible Project card, when they drag it to another status column, then the Project status is saved without confirmation.
+
 ##### Archive Project
 
 Given a non-archived project and an authorized user, when they confirm Archive, then its operational status is stored and it becomes read-only in the Archived Projects list.
@@ -1100,6 +1175,9 @@ Given an existing project and an authorized user, when deletion is confirmed, th
 - Attempt to modify an archived project.
 - Project deleted while it has associated issues.
 - Project deletion fails while issue assignments are being cleared.
+- Status update fails after a Project card is dragged.
+- Another user changes the Project status during a drag.
+- Search or filters leave one or more Kanban columns empty.
 
 #### Future Enhancements
 
@@ -2197,6 +2275,8 @@ The initial release focuses on providing a complete project management experienc
 - Due dates
 - Search and filtering
 - Blocked issue visibility
+- List and Kanban views for All Issues and My Issues
+- Drag-and-drop Issue status updates
 
 #### Project Management
 
@@ -2206,6 +2286,8 @@ The initial release focuses on providing a complete project management experienc
 - Archive and restore projects
 - Delete projects and unassign their issues
 - Track project progress
+- List and Kanban views for non-archived Projects
+- Drag-and-drop Project status updates
 
 #### Cycle Management
 
@@ -2245,7 +2327,7 @@ These features are planned for future releases but are not part of Version 1.0.
 
 #### Planning
 
-- Kanban Board
+- Advanced Kanban features such as custom columns, swimlanes, WIP limits, and manual ranking
 - Timeline View
 - Calendar View
 - Roadmaps
@@ -2392,7 +2474,6 @@ The following decisions are intentionally deferred until future validation.
 
 #### Planning
 
-- What is the best Kanban experience for Shipyard?
 - Should Roadmaps become a core feature or remain optional?
 - Should Milestones be separate entities or part of Projects?
 

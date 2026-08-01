@@ -80,11 +80,13 @@ The central workspace for creating, organizing, tracking, and completing develop
 
 Contains:
 
-- My Issues
-- All Issues
-- Backlog
-- Blocked Issues
-- Archived Issues
+- My Issues *(List or Kanban)*
+- All Issues *(List or Kanban)*
+- Backlog *(List only)*
+- Blocked Issues *(List only)*
+- Archived Issues *(List only)*
+
+The Issue Kanban groups matching non-archived Issues into Backlog, Todo, In Progress, and Done columns.
 
 ---
 
@@ -94,10 +96,13 @@ Groups related issues into larger initiatives and provides progress tracking acr
 
 Contains:
 
-- Active Projects
-- Planned Projects
-- Completed Projects
-- Archived Projects
+- Non-archived Projects *(List or Kanban)*
+- Active Projects *(List section)*
+- Planned Projects *(List section)*
+- Completed Projects *(List section)*
+- Archived Projects *(List only)*
+
+The Project Kanban combines matching non-archived Projects into Planned, Active, and Completed columns. Cycles remain list-only because their controlled, chronological lifecycle is not a Kanban workflow.
 
 ---
 

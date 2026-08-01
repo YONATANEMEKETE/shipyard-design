@@ -158,12 +158,14 @@ The easiest way for small software teams to manage and ship software.
 - Due dates
 - Blocked flag with an optional reason
 - Search & filtering
+- List and Kanban views for All Issues and My Issues, with drag-and-drop status updates
 
 #### Projects
 
 - Project management
 - Project ownership, with the creator assigned by default and Owner/Admin transfer controls
 - Filtering by status, Project Owner, start date, and target date
+- List and Kanban views for non-archived Projects, with drag-and-drop status updates
 - Project archiving and restoration
 - Permanent project deletion with automatic issue unassignment
 - Issue grouping
@@ -202,7 +204,7 @@ The easiest way for small software teams to manage and ship software.
 
 ### Future Enhancements
 
-- Kanban Board
+- Advanced Kanban features such as custom columns, swimlanes, WIP limits, and manual ranking
 - Calendar View
 - Timeline View
 - Keyboard Shortcuts

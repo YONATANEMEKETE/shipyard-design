@@ -1021,13 +1021,13 @@ The user selects **Create Project** from the Projects page or the global **Creat
 
 ## Overview
 
-This flow describes how users manage a project's lifecycle after it has been created. Project management includes viewing project details, updating project information, monitoring progress, changing operational status, archiving projects, restoring archived projects, and deleting projects when appropriate.
+This flow describes how users view Projects in List or Kanban, update Project status, and manage a Project's lifecycle after creation. Project management includes viewing details, updating information, monitoring progress, archiving, restoring, and deleting Projects when appropriate.
 
 ---
 
 ## Trigger
 
-The user opens an existing project from the Projects page.
+The user opens the Projects page or an existing Project.
 
 ---
 
@@ -1035,12 +1035,36 @@ The user opens an existing project from the Projects page.
 
 - The user is authenticated.
 - A workspace is active.
-- At least one project exists.
-- The user has permission to manage the project.
+- The user has permission to view Projects.
+- Management and drag actions require the corresponding Project update permission.
 
 ---
 
 ## Main Flow
+
+### Switch Project View
+
+1. The user opens the non-archived **Projects** page.
+2. The toolbar displays a **List / Kanban** segmented control using the user's saved Project preference for the active workspace, defaulting to List when none exists.
+3. In List view, the user can use the Active, Planned, and Completed status sections.
+4. In Kanban view, the system combines all matching non-archived Projects into Planned, Active, and Completed columns.
+5. Search, filters, and sorting remain applied when the user switches views.
+6. The system saves the selection for this user and workspace without changing the user's Issue view preference.
+
+---
+
+### Update Project Status from Kanban
+
+1. Kanban cards display the Project name, Project Owner, progress, and target date when set.
+2. Empty status columns remain visible as drop targets.
+3. An authorized editor drags a Project card to another column.
+4. The interface moves the card and saves the corresponding Planned, Active, or Completed status without confirmation.
+5. The destination column re-sorts the card using the active applicable sort.
+6. The status update is reflected throughout the workspace and recorded in Project activity.
+7. Dragging within the same column does not manually reorder cards or save a rank.
+8. Selecting a card without dragging opens Project Details.
+
+---
 
 ### View Project
 
@@ -1141,6 +1165,8 @@ The user opens an existing project from the Projects page.
 2. The project details are displayed.
 3. Editing actions are hidden or disabled.
 
+The status dropdown remains available to authorized editors as the keyboard-accessible and non-drag alternative to Kanban movement.
+
 ---
 
 ### Archived Project Status
@@ -1179,6 +1205,22 @@ Project ownership controls are hidden while the Project is Archived. Automatic r
 
 ---
 
+### Kanban Status Update Failure
+
+1. A Project status cannot be saved after a cross-column drag.
+2. The card returns to its previous column and sorted position.
+3. The system displays an error and allows the user to retry through drag or the status control.
+
+---
+
+### Concurrent Project Status Update
+
+1. Another user changes the Project status while a drag is being completed.
+2. The system refreshes the card to the latest saved status and sorted position.
+3. The user is informed that their drag was not applied.
+
+---
+
 ### Server Error
 
 1. The requested operation cannot be completed.
@@ -1195,6 +1237,8 @@ Project ownership controls are hidden while the Project is Archived. Automatic r
 - A Project ownership transfer does not change the recipient's workspace role or permissions.
 - Status updates are visible throughout the workspace.
 - Archived projects remain available for future restoration.
+- The saved List/Kanban preference applies only to Projects for the current user and workspace.
+- Archived Projects remain list-only and never appear as a Kanban column.
 - Deleted projects cannot be restored.
 - A permanently deleted Project's name becomes available for reuse within the workspace.
 - Issues from a deleted project remain in the workspace with no project assignment; their other data and Cycle assignments are unchanged.
@@ -1862,13 +1906,13 @@ To clear the state, the user selects the same control and removes the blocked fl
 
 ## Overview
 
-This flow describes how an issue progresses through its lifecycle. It covers status transitions from creation to completion, ensuring work is tracked consistently while maintaining a complete history of changes.
+This flow describes how an issue progresses through its lifecycle from the status control or Kanban board. It covers status transitions from creation to completion, ensuring work is tracked consistently while maintaining a complete history of changes.
 
 ---
 
 ## Trigger
 
-A user updates an issue's status from the issue details page or an issue list.
+The user opens All Issues or My Issues, or updates an Issue status from Issue Details, a list, or Kanban.
 
 ---
 
@@ -1876,12 +1920,38 @@ A user updates an issue's status from the issue details page or an issue list.
 
 - The user is authenticated.
 - A workspace is active.
-- The issue exists.
-- The user has permission to update the issue.
+- The user can view All Issues or My Issues.
+- For a status update, the selected Issue exists.
+- Status changes and drag actions require Issue update permission.
 
 ---
 
 ## Main Flow
+
+### Switch Issue View
+
+1. The user opens **All Issues** or **My Issues**.
+2. The toolbar displays a **List / Kanban** segmented control using the user's saved Issue preference for the active workspace, defaulting to List when none exists.
+3. Kanban displays matching non-archived Issues in Backlog, Todo, In Progress, and Done columns.
+4. Search, filters, and sorting remain applied when the user switches views.
+5. The system saves the selection for this user and workspace without changing the user's Project view preference.
+6. Backlog, Blocked Issues, and Archived Issues remain list-only; visiting them does not overwrite the saved preference.
+
+---
+
+### Update Issue Status from Kanban
+
+1. Kanban cards display the Issue identifier, title, priority, assignee, Project and Cycle when assigned, due date when set, and blocked indicator when applicable.
+2. Empty workflow columns remain visible as drop targets.
+3. A user with update permission drags an Issue card to another status column.
+4. The interface moves the card and saves the corresponding status without confirmation.
+5. The destination column re-sorts the card using the active applicable sort.
+6. The system applies the same side effects as the existing status control and records the change in Issue history.
+7. If the destination is Done and the Issue was blocked, the blocked flag and reason are cleared.
+8. Dragging within the same column does not manually reorder cards or save a rank.
+9. Selecting a card without dragging opens Issue Details.
+
+---
 
 ### Move Issue Through Workflow
 
@@ -1960,6 +2030,8 @@ A user updates an issue's status from the issue details page or an issue list.
 2. The issue is moved directly from **Backlog** to **In Progress** or **Done**, if appropriate.
 3. The workflow history records the transition.
 
+The status dropdown remains available as the keyboard-accessible and non-drag alternative to Kanban movement.
+
 ---
 
 ## Error Flows
@@ -1991,16 +2063,17 @@ A user updates an issue's status from the issue details page or an issue list.
 ### Simultaneous Status Update
 
 1. Another user changes the issue status at the same time.
-2. The system refreshes the issue with the latest information.
-3. The user is informed if their update cannot be applied.
+2. The system refreshes the Issue or Kanban card to the latest saved status and sorted position.
+3. The user is informed if their update or drag cannot be applied.
 
 ---
 
 ### Server Error
 
 1. The status update cannot be completed.
-2. The system displays an error message.
-3. The user can retry the operation.
+2. If the update followed a Kanban drag, the card returns to its previous column and sorted position.
+3. The system displays an error message.
+4. The user can retry through drag or the status control.
 
 ---
 
@@ -2012,7 +2085,11 @@ A user updates an issue's status from the issue details page or an issue list.
 - The issue activity history records every status transition.
 - Completed issues remain searchable.
 - Archived issues cannot participate in the workflow.
+- The saved List/Kanban preference applies only to Issues for the current user and workspace.
+- Archived Issues remain list-only and never appear as a Kanban column.
+
 ---
+
 # User Flow 16 — Comments & Mentions
 
 ## Overview

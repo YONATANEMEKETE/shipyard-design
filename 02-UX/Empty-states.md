@@ -24,6 +24,7 @@ Empty-state actions are filtered using the current user's permissions. Unauthori
 | Projects List *(Owner/Admin)* | No projects exist in the workspace | No projects yet. Create your first project to start organizing work. | Create Project | — |
 | Projects List *(Member)* | No projects exist in the workspace | No projects yet. Projects created by a workspace Owner or Admin will appear here. | — | — |
 | Projects List | No projects match the current search or filters | No matching projects found. Try adjusting your search or filters. | Clear Filters | Create Project *(Owner/Admin only)* |
+| Project Kanban Column | No matching Projects have the column's status | No projects in this status. Authorized editors can drag a project here to update its status. | — | — |
 | Archived Projects | No archived projects exist | No archived projects available. | View Active Projects | — |
 | Project Details → Issues | The project has no issues | This project doesn't have any issues yet. Create the first issue to start tracking work. | Create Issue | — |
 | Project Activity | No project activity has been recorded | No activity yet. Project updates will appear here as work progresses. | — | — |
@@ -47,6 +48,7 @@ Empty-state actions are filtered using the current user's permissions. Unauthori
 |------------------|-----------|---------|----------------|------------------|
 | Issues List | No issues exist in the workspace | No issues yet. Create your first issue to start tracking work. | Create Issue | — |
 | Issues List | No issues match the current search or filters | No matching issues found. Try adjusting your search or filters. | Clear Filters | Create Issue |
+| Issue Kanban Column | No matching Issues have the column's status | No issues in this status. Users with update permission can drag an issue here to update its status. | — | — |
 | Archived Issues | No archived issues exist | No archived issues available. | View Active Issues | — |
 | Backlog | No issues are in the Backlog | Your backlog is empty. Create a new issue or reprioritize existing work. | Create Issue | View All Issues |
 | Blocked Issues | No active issues are marked as blocked | No blocked issues. Work can continue across all active issues. | View All Issues | — |
