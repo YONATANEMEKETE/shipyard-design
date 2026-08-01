@@ -2388,7 +2388,6 @@ The following decisions are intentionally deferred until future validation.
 #### Collaboration
 
 - Should emoji reactions be supported on comments?
-- Should threaded discussions be introduced?
 - Should users receive digest notifications in addition to real-time notifications?
 
 #### Planning
