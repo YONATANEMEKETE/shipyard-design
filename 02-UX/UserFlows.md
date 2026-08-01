@@ -1590,6 +1590,8 @@ The user opens an existing issue from the Dashboard, Issues page, Project, Cycle
    - Cycle
    - Labels
    - Due Date
+   - Blocked State
+   - Blocked Reason (when provided)
    - Creator
    - Created Date
    - Last Updated
@@ -1627,6 +1629,18 @@ The user may update:
 - Due Date
 
 The system validates each change and immediately updates the issue.
+
+---
+
+### Update Blocked State
+
+1. The user selects the inline blocked control on an issue in Backlog, Todo, or In Progress.
+2. The user marks the issue as blocked and may provide an optional reason.
+3. The system saves the blocked flag without changing workflow status.
+4. The blocked state and reason are displayed wherever the issue appears.
+5. The system records the change in issue activity history.
+
+To clear the state, the user selects the same control and removes the blocked flag and reason.
 
 ---
 
@@ -1727,6 +1741,7 @@ The system validates each change and immediately updates the issue.
 
 - The issue reflects the latest information.
 - Assignment and planning changes are immediately visible throughout the workspace.
+- Blocked-state changes are visible throughout the workspace and recorded in issue history.
 - Archived issues remain searchable, cannot be modified while archived, and may be restored by authorized users.
 - Deleted issues are permanently removed according to workspace policies.
 - All changes are recorded in the issue activity history.
@@ -1783,8 +1798,27 @@ A user updates an issue's status from the issue details page or an issue list.
 ### Complete Work
 
 1. The user changes the issue status to **Done**.
-2. The system marks the issue as completed.
-3. The completed issue remains searchable and visible in its associated Project and Cycle.
+2. If the issue is blocked, the system clears its blocked flag and reason.
+3. The system marks the issue as completed.
+4. The completed issue remains searchable and visible in its associated Project and Cycle.
+
+---
+
+### Mark Work as Blocked
+
+1. The user marks an issue in Backlog, Todo, or In Progress as blocked.
+2. The user may provide an optional blocked reason.
+3. The issue retains its current workflow status.
+4. The system displays the blocked state and records the change in issue history.
+
+---
+
+### Clear Blocked State
+
+1. The user clears the blocked flag.
+2. The system removes the blocked reason.
+3. The issue retains its current workflow status.
+4. The system records the change in issue history.
 
 ---
 
@@ -1803,7 +1837,8 @@ A user updates an issue's status from the issue details page or an issue list.
 1. A completed issue requires additional work.
 2. The user changes the status from **Done** to **In Progress** or **Todo**.
 3. The issue becomes active again.
-4. The activity history records the status change.
+4. The issue remains unblocked until a user explicitly marks it as blocked.
+5. The activity history records the status change.
 
 ---
 
@@ -1822,6 +1857,14 @@ A user updates an issue's status from the issue details page or an issue list.
 1. The user attempts to change the status of an archived issue.
 2. The system blocks the action.
 3. The issue remains read-only.
+
+---
+
+### Completed Issue
+
+1. The user attempts to mark a Done issue as blocked.
+2. The system prevents the action.
+3. The user must return the issue to an active workflow status before marking it as blocked.
 
 ---
 
@@ -1852,6 +1895,7 @@ A user updates an issue's status from the issue details page or an issue list.
 ## Postconditions
 
 - The issue reflects its current workflow status.
+- The blocked flag remains independent of workflow status and is available only for unfinished issues.
 - Project and Cycle progress update automatically when applicable.
 - The issue activity history records every status transition.
 - Completed issues remain searchable.
@@ -2149,6 +2193,7 @@ The user enters a workspace or navigates to the Dashboard.
    - Created Issues
    - Recently Viewed Issues
    - Overdue Issues
+   - Blocked Issues
    - Active Projects
    - Current Active Cycle
    - Recent Workspace Activity
@@ -2291,6 +2336,7 @@ The user opens the Search interface or applies filters within a supported resour
    - Labels
    - Creator
    - Due Date
+   - Blocked State
 3. The system updates the results immediately.
 
 ---

@@ -75,6 +75,7 @@ Contains:
 - My Issues
 - All Issues
 - Backlog
+- Blocked Issues
 - Archived Issues
 
 ---

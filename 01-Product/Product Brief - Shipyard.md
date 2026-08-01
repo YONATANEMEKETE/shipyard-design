@@ -152,6 +152,7 @@ The easiest way for small software teams to manage and ship software.
 - Assignees
 - Labels
 - Due dates
+- Blocked flag with an optional reason
 - Search & filtering
 
 #### Projects

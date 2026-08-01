@@ -60,6 +60,7 @@ Some sections provide local navigation for related views.
 - My Issues
 - All Issues
 - Backlog
+- Blocked
 - Archived
 
 ### Projects

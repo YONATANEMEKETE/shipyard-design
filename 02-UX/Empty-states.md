@@ -45,6 +45,7 @@
 | Issues List | No issues match the current search or filters | No matching issues found. Try adjusting your search or filters. | Clear Filters | Create Issue |
 | Archived Issues | No archived issues exist | No archived issues available. | View Active Issues | — |
 | Backlog | No issues are in the Backlog | Your backlog is empty. Create a new issue or reprioritize existing work. | Create Issue | View All Issues |
+| Blocked Issues | No active issues are marked as blocked | No blocked issues. Work can continue across all active issues. | View All Issues | — |
 | Todo | No issues are in Todo | No work is ready to start. Move issues into Todo to begin planning. | View Backlog | — |
 | In Progress | No issues are currently in progress | Nothing is being worked on right now. Move an issue into progress to begin. | View Todo | — |
 | Done | No completed issues yet | Completed work will appear here once issues are finished. | View In Progress | — |
@@ -68,6 +69,7 @@
 | Assigned Issues | The user has no assigned issues | You don't have any assigned issues. | View All Issues | — |
 | Recently Viewed Issues | The user has not viewed any issues yet | Recently viewed issues will appear here as you work. | View All Issues | — |
 | Overdue Issues | The user has no overdue issues | Great job! You don't have any overdue issues. | — | — |
+| Blocked Issues | The user has no blocked assigned issues | You don't have any blocked work. | View Assigned Issues | — |
 | Active Projects | No active projects exist | No active projects available. Create a project to start organizing work. | Create Project | — |
 | Current Active Cycle | No active cycle exists | No active cycle is currently running. | Create Cycle | — |
 | Recently Completed Issues | No issues have been completed | Completed issues will appear here once work is finished. | View All Issues | — |

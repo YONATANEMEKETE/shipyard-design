@@ -181,6 +181,7 @@ That sentence captures the outcome we're aiming for better than any individual m
 | Cycle | A fixed development period used to organize work. |
 | Assignee | The member responsible for an issue. |
 | Label | A tag used to categorize issues. |
+| Blocked | An issue flag indicating that work cannot currently proceed; it is separate from workflow status. |
 | Notification | An in-app alert about relevant activity. |
 
 ## 4. User Personas
@@ -649,6 +650,7 @@ The Dashboard is the default landing page within a workspace. It provides users 
 - Display issues created by the current user.
 - Display recently viewed issues.
 - Highlight overdue issues.
+- Highlight blocked issues assigned to the current user.
 
 ##### Workspace Overview
 
@@ -689,6 +691,10 @@ Given a logged-in workspace member, when they open the dashboard, then they see 
 ##### Personal Tasks
 
 Given assigned issues, when the dashboard loads, then those issues appear in the personal overview.
+
+##### Blocked Work
+
+Given the current user has blocked assigned issues, when the dashboard loads, then those issues are clearly identified as blocked.
 
 ##### Activity Feed
 
@@ -760,6 +766,8 @@ Each issue supports:
 - Cycle
 - Labels
 - Due date
+- Blocked flag
+- Blocked reason (optional)
 - Creator
 - Created date
 - Last updated date
@@ -775,6 +783,8 @@ Users can:
 - Associate an issue with a project.
 - Associate an issue with a cycle.
 - Set or update a due date.
+- Mark an issue as blocked with an optional reason.
+- Clear an issue's blocked flag and reason.
 - Archive an issue.
 - Restore an archived issue.
 - Delete an issue (subject to permissions).
@@ -789,6 +799,8 @@ Issues move through predefined workflow states:
 - Done
 
 The system records status changes in the issue history.
+
+Blocked is an independent issue flag, not a workflow status. Marking or clearing the flag does not change the issue's Backlog, Todo, or In Progress status.
 
 ##### Issue Relationships
 
@@ -816,7 +828,13 @@ Users can:
 - Every issue has one current status.
 - Archived issues are read-only.
 - Archived issues may be restored by members with permission to archive issues.
-- Restoring an issue returns it to the status it held before archiving.
+- Restoring an issue returns it to the workflow status and blocked state it held before archiving.
+- New issues are unblocked by default.
+- Only issues in Backlog, Todo, or In Progress may be marked as blocked.
+- A blocked issue may include an optional blocked reason.
+- Moving a blocked issue to Done automatically clears its blocked flag and reason.
+- Returning a Done issue to an active status does not restore its previous blocked state.
+- Blocked state does not affect Project or Cycle completion calculations.
 - Completed issues remain searchable.
 - Issue identifiers are unique within a workspace.
 - Only authorized members can delete issues.
@@ -842,7 +860,15 @@ Given an existing issue, when it is archived, then it no longer appears in activ
 
 ##### Restore Issue
 
-Given an archived issue and an authorized member, when the issue is restored, then it returns to its previous workflow status and becomes editable again.
+Given an archived issue and an authorized member, when the issue is restored, then it returns to its previous workflow status and blocked state and becomes editable again.
+
+##### Mark Issue as Blocked
+
+Given an active unfinished issue, when an authorized member marks it as blocked with an optional reason, then the blocked state is displayed and recorded in issue history without changing workflow status.
+
+##### Complete Blocked Issue
+
+Given a blocked issue, when its status changes to Done, then its blocked flag and reason are cleared and the changes are recorded in issue history.
 
 ##### Search Issues
 
@@ -859,6 +885,8 @@ Given matching issues exist, when a user performs a search, then relevant issues
 - Invalid due date.
 - Simultaneous edits by multiple users.
 - Attempt to edit an archived issue.
+- Attempt to mark a Done or archived issue as blocked.
+- Empty or extremely long blocked reason.
 
 #### Future Enhancements
 
@@ -1382,6 +1410,7 @@ Users can filter issues by:
 - Labels
 - Creator
 - Due date
+- Blocked state
 
 Users can apply multiple filters simultaneously.
 
@@ -1985,6 +2014,7 @@ The initial release focuses on providing a complete project management experienc
 - Labels
 - Due dates
 - Search and filtering
+- Blocked issue visibility
 
 #### Project Management
 

@@ -81,6 +81,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Edit Issue | Modal | Issue Details | Allow authorized users to update issue information. |
 | Assign Issue | Modal | Issue Details | Allow users to assign or reassign an issue. |
 | Update Workflow Status | Dropdown | Issue Details, Issues List | Allow users to move an issue through the workflow (Backlog → Todo → In Progress → Done). |
+| Update Blocked State | Inline Control | Issue Details, Issues List | Allow users to mark an unfinished issue as blocked with an optional reason or clear its blocked state. |
 | Archive Issue Confirmation | Dialog | Issue Details | Confirm archiving an issue. |
 | Restore Issue Confirmation | Dialog | Archived Issues, Issue Details | Confirm restoring an archived issue. |
 | Delete Issue Confirmation | Dialog | Issue Details | Confirm permanent deletion of an issue. |

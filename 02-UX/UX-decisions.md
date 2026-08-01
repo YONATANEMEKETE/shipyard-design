@@ -214,11 +214,11 @@ The MVP focuses on a lightweight project management experience.
 
 **Rationale**
 
-A fixed workflow of **Backlog → Todo → In Progress → Done** balances simplicity with effective work tracking.
+A fixed workflow of **Backlog → Todo → In Progress → Done** balances simplicity with effective work tracking. Blocked is an independent flag for unfinished issues, not a fifth workflow state, and does not introduce issue dependencies.
 
 **Impact**
 
-Reduces complexity while supporting common development workflows.
+Reduces complexity while supporting common development workflows and makes impeded work visible without complicating status transitions.
 
 ---
 
