@@ -130,7 +130,7 @@ Contains:
 
 ## Notifications
 
-Displays user-specific activity such as mentions, assignments, comments, and system updates.
+Displays user-specific Issue assignment or reassignment notifications and comment-mention notifications.
 
 Contains:
 

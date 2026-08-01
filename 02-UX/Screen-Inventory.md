@@ -50,7 +50,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
 | Projects List | Page | Sidebar → Projects, Dashboard | Display all projects within the active workspace. |
-| Project Details | Page | Projects List, Dashboard, Search, Notifications | Display project information, Project Owner, progress, associated issues, project activity, and any cycle information derived from those issues. |
+| Project Details | Page | Projects List, Dashboard, Search | Display project information, Project Owner, progress, associated issues, project activity, and any cycle information derived from those issues. |
 | Create Project | Modal | Projects List, Global Create Menu | Allow authorized users to create a Project with a name unique within the workspace. |
 | Edit Project | Modal | Project Details | Allow authorized users to update project information while preserving workspace-scoped name uniqueness. |
 | Change Project Owner | Modal | Non-archived Project Details | Allow Workspace Owners and Admins to transfer Project ownership to any other current workspace member without changing that member's role or permissions. |
@@ -65,7 +65,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
 | Cycles List | Page | Sidebar → Cycles, Dashboard | Display all cycles within the active workspace. |
-| Cycle Details | Page | Cycles List, Dashboard, Search, Notifications | Display cycle information, progress, associated issues, statistics, and activity. |
+| Cycle Details | Page | Cycles List, Dashboard, Search | Display cycle information, progress, associated issues, statistics, and activity. |
 | Create Cycle | Modal | Cycles List, Global Create Menu | Allow authorized users to create a Cycle with a name unique within the workspace and a non-overlapping date range. |
 | Edit Cycle | Modal | Planned or Active Cycle Details | Allow authorized users to update Cycle information while preserving workspace-scoped name uniqueness and non-overlapping dates. |
 | Start Cycle Confirmation | Dialog | Planned Cycle Details | Confirm starting a Planned cycle when no other cycle is Active. |
@@ -100,7 +100,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Edit Comment | Inline Editor | Comments Section | Allow users to modify their own comments without leaving the issue. |
 | Delete Comment Confirmation | Dialog | Comments Section | Allow a comment author to confirm permanent deletion of their own comment. |
 | Mention Suggestions | Popover | Comment Editor | Display matching workspace members while typing '@' in a comment. |
-| Notifications Panel | Panel | Header Navigation | Display recent notifications and provide quick access to related resources. |
+| Notifications Panel | Panel | Header Navigation | Display Issue assignment/reassignment and comment-mention notifications with quick access to the related Issue. |
 | Clear All Notifications Confirmation | Dialog | Notifications Panel | Confirm removal of all notifications. |
 
 ---

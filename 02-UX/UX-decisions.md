@@ -110,11 +110,11 @@ Improves collaboration while maintaining focus on the associated work item.
 
 **Context**
 
-Notifications may originate from any feature.
+MVP notifications originate from Issue assignment or reassignment and mentions in Issue comments.
 
 **Rationale**
 
-A centralized notification panel provides consistent access regardless of the user's current location.
+A centralized notification panel provides consistent access to these focused events regardless of the user's current location.
 
 **Impact**
 

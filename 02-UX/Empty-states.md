@@ -57,7 +57,7 @@
 | Screen / Section | Condition | Message | Primary Action | Secondary Action |
 |------------------|-----------|---------|----------------|------------------|
 | Comments Section | The issue has no comments | No discussion yet. Start the conversation by adding the first comment. | Add Comment | — |
-| Notifications Panel | The user has no notifications | You're all caught up. New notifications will appear here as workspace activity occurs. | — | — |
+| Notifications Panel | The user has no notifications | You're all caught up. New notifications will appear when you're assigned an Issue or mentioned in a comment. | — | — |
 | Notification Filter | No notifications match the current filter | No matching notifications found. Try adjusting your filters. | Clear Filters | — |
 
 ---

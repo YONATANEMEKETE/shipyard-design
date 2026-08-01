@@ -2144,7 +2144,7 @@ The user opens an active issue and interacts with the Comments section.
 
 ## Overview
 
-This flow describes how users review and manage notifications within their workspace. Notifications keep users informed about relevant events and provide quick access to related resources.
+This flow describes how users review and manage notifications within their workspace. In the MVP, notifications cover Issue assignment or reassignment and mentions in Issue comments, with quick access to the related Issue.
 
 ---
 
@@ -2181,7 +2181,7 @@ The user opens the Notifications panel.
 
 1. The user selects a notification.
 2. The system marks the notification as read.
-3. If the notification references a resource, the user is navigated to the related item.
+3. If the related Issue still exists, the user is navigated to its Issue Details page.
 
 ---
 
@@ -2235,19 +2235,19 @@ The user opens the Notifications panel.
 
 ## Error Flows
 
-### Referenced Resource No Longer Exists
+### Referenced Issue No Longer Exists
 
 1. The user opens a notification.
-2. The related issue, project, or cycle has been deleted.
-3. The system informs the user that the resource is no longer available.
+2. The related Issue has been deleted.
+3. The system informs the user that the Issue is no longer available.
 
 ---
 
-### Notification References Archived Resource
+### Notification References Archived Issue
 
 1. The user opens a notification.
-2. The related resource has been archived.
-3. The system opens the archived resource in read-only mode.
+2. The related Issue has been archived.
+3. The system opens the Archived Issue in read-only mode.
 
 ---
 
@@ -2263,8 +2263,8 @@ The user opens the Notifications panel.
 
 - Notification read status reflects the latest user actions.
 - Deleted notifications are permanently removed.
-- Remaining notifications continue to provide quick access to related resources.
-- Users stay informed about relevant workspace activity.
+- Remaining notifications continue to provide quick access to related Issues.
+- Users stay informed about their Issue assignments and comment mentions.
 ---
 # User Flow 18 — Dashboard
 

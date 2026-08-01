@@ -1374,14 +1374,13 @@ Notifications inform users about relevant activity within their workspace, helpi
 
 - Keep users informed about important events.
 - Surface actions that require attention.
-- Reduce the need to manually monitor issues and projects.
+- Reduce the need to manually monitor Issue assignments and mentions.
 - Support timely collaboration.
 
 #### User Stories
 
 - As a user, I want to know when I'm assigned an issue.
 - As a user, I want to know when someone mentions me.
-- As a project owner, I want to know about important project updates.
 - As a workspace member, I want to review notifications I've missed.
 
 #### Functional Requirements
@@ -1390,13 +1389,8 @@ Notifications inform users about relevant activity within their workspace, helpi
 
 The system generates notifications for:
 
-- Issue assignment.
-- Issue unassignment.
-- Issue status changes (when relevant).
-- Mentions in comments.
-- Workspace invitations.
-- Project ownership changes.
-- Cycle assignment or removal.
+- Issue assignment or reassignment, delivered to the new assignee.
+- Mentions in comments, delivered to each mentioned workspace member.
 
 ##### Notification Center
 
@@ -1431,15 +1425,20 @@ Users can:
 
 - Notifications are private to the recipient.
 - Notifications belong to one user.
+- Only Issue assignment or reassignment and comment mentions generate notifications in the MVP.
 - Read notifications remain accessible until deleted.
 - Deleted notifications cannot be restored.
-- Opening a notification navigates to the related resource when applicable.
+- Opening a notification navigates to the related Issue when it still exists.
 
 #### Acceptance Criteria
 
-##### Receive Notification
+##### Receive Assignment Notification
 
-Given a relevant event occurs, when the event is processed, then the affected user receives a notification.
+Given an Issue is assigned or reassigned, when the change is saved, then the new assignee receives a notification linked to that Issue.
+
+##### Receive Mention Notification
+
+Given a workspace member is mentioned in a comment, when the comment is submitted, then the mentioned member receives a notification linked to that Issue.
 
 ##### Mark as Read
 
@@ -1447,7 +1446,7 @@ Given an unread notification, when the user marks it as read, then its status ch
 
 ##### Open Notification
 
-Given a notification references an existing resource, when the user selects it, then they are taken to the related page.
+Given a notification references an existing Issue, when the user selects it, then they are taken to the Issue Details page.
 
 ##### Clear Notifications
 
@@ -1455,9 +1454,9 @@ Given existing notifications, when the user clears them, then they are removed f
 
 #### Edge Cases
 
-- Related issue or project is deleted.
+- Related Issue is deleted.
 - User is mentioned multiple times in the same comment.
-- Notification references an archived resource.
+- Notification references an Archived Issue.
 - Large number of unread notifications.
 - Duplicate events occurring in quick succession.
 
@@ -1470,6 +1469,7 @@ Given existing notifications, when the user clears them, then they are removed f
 - Notification snoozing.
 - Real-time desktop notifications.
 - Digest summaries.
+- Notifications for Issue unassignment or status changes, Workspace invitations, Project ownership changes, and Cycle changes.
 
 ### 5.10 Search & Filters
 
@@ -2299,7 +2299,7 @@ Version 1.0 will be considered successful if users can:
 - Collaborate with team members.
 - Organize work using issues, projects, and cycles.
 - Track progress from planning to completion.
-- Receive notifications about important events.
+- Receive notifications for Issue assignment or reassignment and comment mentions.
 - Find work quickly through search and filters.
 - Complete everyday project management tasks without requiring external tools.
 
