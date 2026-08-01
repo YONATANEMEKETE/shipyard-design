@@ -1263,6 +1263,351 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "RyZ4B",
+      "x": 3980,
+      "y": 0,
+      "name": "Building Shipyard — Episode 02 Cover",
+      "clip": true,
+      "width": 1200,
+      "height": 1200,
+      "fill": {
+        "type": "shader",
+        "enabled": true,
+        "url": "../../../shipyard-cover-grid.glsl",
+        "uniforms": {
+          "u_background": "#FAFAFA",
+          "u_grid": "#4F46E5",
+          "u_opacity": 0.038
+        }
+      },
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+        72,
+        84
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "N7IHF",
+          "layoutPosition": "absolute",
+          "x": 480,
+          "y": 122,
+          "name": "Logo Construction Guide",
+          "width": 240,
+          "height": 220,
+          "layout": "none",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "xuNsZ",
+              "x": 32,
+              "y": 18,
+              "name": "Logo Guide Circle",
+              "fill": "#00000000",
+              "width": 176,
+              "height": 176,
+              "stroke": "#4F46E51A",
+              "strokeWidth": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "wcgRe",
+              "x": 0,
+              "y": 106,
+              "name": "Logo Guide Horizontal",
+              "fill": "#4F46E51A",
+              "width": 240,
+              "height": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "RDXUj",
+              "x": 119,
+              "y": 0,
+              "name": "Logo Guide Vertical",
+              "fill": "#4F46E51A",
+              "width": 1,
+              "height": 220
+            },
+            {
+              "type": "rectangle",
+              "id": "eYFcT",
+              "x": 115,
+              "y": 17,
+              "name": "Logo Guide Top Tick",
+              "fill": "#4F46E544",
+              "width": 9,
+              "height": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "kF1cL",
+              "x": 207,
+              "y": 101,
+              "name": "Logo Guide Right Tick",
+              "fill": "#4F46E544",
+              "width": 1,
+              "height": 9
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "i2D5SL",
+          "name": "Series Header",
+          "width": "fill_container",
+          "height": 42,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "f93nu",
+              "name": "Series Header Left",
+              "fill": "$muted",
+              "content": "OPEN SOURCE / ENGINEERING SERIES",
+              "fontFamily": "$font-brand",
+              "fontSize": 11,
+              "fontWeight": "650",
+              "letterSpacing": 1.5
+            },
+            {
+              "type": "text",
+              "id": "sfzBN",
+              "name": "Series Header Right",
+              "fill": "$brand-indigo",
+              "content": "EPISODE 02 · 2026",
+              "fontFamily": "$font-brand",
+              "fontSize": 13,
+              "fontWeight": "650",
+              "letterSpacing": 1.5
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "MKy0Z",
+          "name": "Cover Brand Mark",
+          "layout": "vertical",
+          "gap": 18,
+          "padding": [
+            32,
+            0,
+            12,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "N5sUTP",
+              "name": "Shipyard Cover App Icon",
+              "width": 96,
+              "height": 96,
+              "fill": "$brand-indigo",
+              "cornerRadius": 21,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "NljWt",
+                  "name": "App Icon Precision Loop",
+                  "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                  "viewBox": [
+                    0,
+                    0,
+                    100,
+                    108
+                  ],
+                  "width": 60,
+                  "height": 60,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 20,
+                  "strokeLinejoin": "bevel",
+                  "strokeLinecap": "square"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "x7eKBu",
+              "name": "Building Shipyard Label",
+              "fill": "$ink",
+              "content": "BUILDING SHIPYARD",
+              "fontFamily": "$font-brand",
+              "fontSize": 13,
+              "fontWeight": "650",
+              "letterSpacing": 2.4
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "A00qSL",
+          "name": "Cover Title Block",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            10,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "RyJnv",
+              "name": "Shipyard Main Title",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "USER FLOWS",
+              "textAlign": "center",
+              "fontFamily": "$font-brand",
+              "fontSize": 108,
+              "fontWeight": "720",
+              "letterSpacing": -3.4
+            },
+            {
+              "type": "text",
+              "id": "H0FR9E",
+              "name": "Cover Subtitle",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": 850,
+              "content": "From Requirements to a\nUsable Product Experience",
+              "lineHeight": 1.1,
+              "textAlign": "center",
+              "fontFamily": "$font-brand",
+              "fontSize": 46,
+              "fontWeight": "520",
+              "letterSpacing": -1.2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cZsib",
+          "name": "Flexible Whitespace",
+          "width": 1,
+          "height": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "a5nOte",
+          "name": "Episode Badge Card",
+          "width": 820,
+          "height": 120,
+          "fill": "$paper",
+          "cornerRadius": 24,
+          "stroke": "#D9DCE6",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
+          "gap": 24,
+          "padding": 16,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "pmIa5",
+              "name": "Episode Number Chip",
+              "height": "fill_container",
+              "fill": "$brand-indigo",
+              "cornerRadius": 18,
+              "layout": "vertical",
+              "padding": [
+                0,
+                28
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "U9gGu3",
+                  "name": "Episode Number",
+                  "fill": "#FFFFFF",
+                  "content": "EPISODE 02",
+                  "fontFamily": "$font-brand",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "letterSpacing": 1.2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "iu7Yo",
+              "name": "Episode Copy",
+              "layout": "vertical",
+              "gap": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MNKGw",
+                  "name": "Episode Title",
+                  "fill": "$ink",
+                  "content": "From Requirements to User Flows",
+                  "fontFamily": "$font-brand",
+                  "fontSize": 28,
+                  "fontWeight": "650",
+                  "letterSpacing": -0.5
+                },
+                {
+                  "type": "text",
+                  "id": "UAxG3",
+                  "name": "Episode Series Label",
+                  "fill": "$muted",
+                  "content": "A PRD DEFINES THE PRODUCT · FLOWS DEFINE THE EXPERIENCE",
+                  "fontFamily": "$font-brand",
+                  "fontSize": 12,
+                  "fontWeight": "650",
+                  "letterSpacing": 1.05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "NeY8R",
+          "name": "Cover Footer",
+          "width": "fill_container",
+          "height": 30,
+          "justifyContent": "space_between",
+          "alignItems": "end",
+          "children": [
+            {
+              "type": "text",
+              "id": "nz9tn",
+              "name": "Footer Product",
+              "fill": "$muted",
+              "content": "SHIPYARD · PROJECT MANAGEMENT",
+              "fontFamily": "$font-brand",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 1.2
+            },
+            {
+              "type": "text",
+              "id": "m4UkDG",
+              "name": "Footer Tag",
+              "fill": "$muted",
+              "content": "BUILD IN PUBLIC",
+              "fontFamily": "$font-brand",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 1.2
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
