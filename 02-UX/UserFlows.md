@@ -759,7 +759,8 @@ The user opens the **Members** page or **Member Management** section in Workspac
    - Role
    - Status
    - Join Date
-4. The user selects a member to manage.
+4. The user selects a member to inspect or manage.
+5. The system opens the Member Details drawer over the Members page and displays actions allowed by the current user's role.
 
 ---
 
@@ -2439,7 +2440,8 @@ The user opens the Search interface or applies filters within a supported resour
    - Cycles
    - Members
 5. The user selects a result.
-6. The system opens the selected resource.
+6. For an Issue, Project, or Cycle result, the system opens its dedicated detail page.
+7. For a Member result, the system opens the contextual Member Details drawer without navigating to a standalone member URL.
 
 ---
 

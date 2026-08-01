@@ -38,7 +38,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Members Directory | Page | Sidebar → Members | Display all workspace members, their roles, and their current status to every workspace member. |
 | Invite Members | Modal | Members Directory | Allow Owners to invite Members or Admins and allow Admins to invite Members. |
-| Member Details | Drawer | Members Directory | Display member information and role-appropriate management actions. |
+| Member Details | Drawer | Members Directory, Global Search | Display member information and role-appropriate management actions contextually without a standalone URL. |
 | Change Role Confirmation | Dialog | Member Details | Allow an Owner to confirm a Member or Admin role change. |
 | Remove Member Confirmation | Dialog | Member Details | Confirm removal when an Owner removes a Member or Admin, or an Admin removes a Member; show any owned Projects that will transfer automatically to the Workspace Owner. |
 | Transfer Workspace Ownership Confirmation | Dialog | Member Details, Workspace Settings | Confirm transferring Workspace ownership to an existing Member or Admin and changing the current Owner to Admin. |

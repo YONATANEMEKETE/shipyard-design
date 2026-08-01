@@ -148,11 +148,11 @@ Projects, Cycles, and Issues contain significant information and multiple manage
 
 **Rationale**
 
-Dedicated pages provide sufficient space for complex information and future feature expansion.
+Dedicated pages provide sufficient space for complex information and future feature expansion. Member Details remains a contextual drawer because its information and management actions are smaller in scope and benefit from preserving the directory or search context.
 
 **Impact**
 
-Creates scalable interfaces without overwhelming users.
+Creates scalable interfaces without overwhelming users while avoiding an unnecessary Member Profile page in the MVP.
 
 ---
 

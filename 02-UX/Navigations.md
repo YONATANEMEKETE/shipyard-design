@@ -137,9 +137,10 @@ Examples:
 - Issue
 - Project
 - Cycle
-- Member Profile
 
 Users should be able to bookmark or share links to individual resources.
+
+Member Details is a contextual drawer opened from the Members Directory or Global Search. It does not have a standalone URL and cannot be bookmarked or shared in the MVP.
 
 ---
 
