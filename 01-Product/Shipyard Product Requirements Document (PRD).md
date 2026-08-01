@@ -948,6 +948,7 @@ Projects organize related issues into larger initiatives with a shared objective
 
 - Users with permission can create a project.
 - Every project must have a name.
+- A project name must be unique within its workspace.
 - Projects may include a description.
 - Projects may have a start date.
 - Projects may have a target completion date.
@@ -1017,6 +1018,10 @@ Archived is not available in the status control. A Project enters or leaves Arch
 #### Business Rules
 
 - Every project belongs to exactly one workspace.
+- Project-name uniqueness is scoped to a workspace; different workspaces may use the same project name.
+- Project-name comparison is case-insensitive after trimming leading and trailing whitespace.
+- Archived projects continue to reserve their names; permanent deletion releases a name for reuse.
+- Creating or renaming a project is blocked when the normalized name conflicts with another Project in the workspace.
 - A project can contain multiple issues.
 - An issue can belong to only one project.
 - Planned, Active, and Completed can be selected freely through the Project status control.
@@ -1033,7 +1038,11 @@ Archived is not available in the status control. A Project enters or leaves Arch
 
 ##### Create Project
 
-Given a user with permission, when they provide the required information, then a new project is created.
+Given a user with permission, when they provide the required information and a name unique within the workspace, then a new project is created.
+
+##### Rename Project
+
+Given an authorized editor and a non-archived project, when they enter a name that does not conflict with another Project in the workspace, then the new name is saved.
 
 ##### Add Issue to Project
 
@@ -1057,7 +1066,7 @@ Given an archived project and an authorized user, when they confirm Restore, the
 
 ##### Delete Project
 
-Given an existing project and an authorized user, when deletion is confirmed, then the project is permanently removed and all associated issues remain in the workspace without a project assignment.
+Given an existing project and an authorized user, when deletion is confirmed, then the project is permanently removed, its name becomes available for reuse in the workspace, and all associated issues remain without a project assignment.
 
 #### Edge Cases
 
@@ -1066,7 +1075,7 @@ Given an existing project and an authorized user, when deletion is confirmed, th
 - Project owner leaves the workspace.
 - Archived issue remains associated with a project.
 - Project reaches its target date with unfinished issues.
-- Duplicate project names.
+- Attempt to create or rename a project with a case-insensitive, whitespace-trimmed name conflict.
 - Attempt to modify an archived project.
 - Project deleted while it has associated issues.
 - Project deletion fails while issue assignments are being cleared.
@@ -1866,6 +1875,8 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 ### 7.3 Project Rules
 
 - Every project belongs to exactly one workspace.
+- Project names are unique within a workspace after case-insensitive comparison and trimming surrounding whitespace.
+- Archived projects reserve their names until permanently deleted.
 - Projects may contain zero or more issues.
 - Projects do not directly contain or own cycles.
 - Members can contribute to projects but cannot create or delete them.

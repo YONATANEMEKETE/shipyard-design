@@ -941,7 +941,7 @@ The user selects **Create Project** from the Projects page or the global **Creat
    - Start date (optional)
    - Target date (optional)
 5. The user submits the form.
-6. The system validates the provided information.
+6. The system validates the provided information and confirms that the trimmed, case-insensitive name is unique across all non-deleted Projects in the workspace, including Archived Projects.
 7. The project is created.
 8. The project is added to the workspace's Projects list.
 9. The user is redirected to the project's overview page.
@@ -981,9 +981,9 @@ The user selects **Create Project** from the Projects page or the global **Creat
 
 ### Duplicate Project Name
 
-1. A project with the same name already exists within the workspace.
-2. The system informs the user.
-3. The user chooses a different name or confirms creation if duplicate names are permitted.
+1. Another non-deleted Project in the workspace, including an Archived Project, has the same name after case-insensitive comparison and trimming surrounding whitespace.
+2. The system blocks creation and identifies the name conflict.
+3. The user enters a unique name before continuing.
 
 ---
 
@@ -1006,6 +1006,7 @@ The user selects **Create Project** from the Projects page or the global **Creat
 ## Postconditions
 
 - A new project exists within the workspace.
+- Its normalized name is unique among all non-deleted Projects in the workspace.
 - The project appears in the Projects list.
 - The project overview page is displayed.
 - The project is ready for issues to be associated with it.
@@ -1058,8 +1059,9 @@ The user opens an existing project from the Projects page.
 2. The system displays the editable project information.
 3. The user updates one or more project details.
 4. The user saves the changes.
-5. The system validates and updates the project.
-6. The updated information is displayed immediately.
+5. If the name changed, the system validates that its trimmed, case-insensitive value is unique across all non-deleted Projects in the workspace, including Archived Projects.
+6. The system updates the project.
+7. The updated information is displayed immediately.
 
 ---
 
@@ -1142,6 +1144,14 @@ The user opens an existing project from the Projects page.
 
 ---
 
+### Duplicate Project Name
+
+1. A Project rename conflicts with another non-deleted Project in the workspace, including an Archived Project, after case-insensitive comparison and trimming surrounding whitespace.
+2. The system blocks the update and keeps the existing name.
+3. The user enters a unique name or cancels editing.
+
+---
+
 ### Server Error
 
 1. The requested operation cannot be completed.
@@ -1157,6 +1167,7 @@ The user opens an existing project from the Projects page.
 - Status updates are visible throughout the workspace.
 - Archived projects remain available for future restoration.
 - Deleted projects cannot be restored.
+- A permanently deleted Project's name becomes available for reuse within the workspace.
 - Issues from a deleted project remain in the workspace with no project assignment; their other data and Cycle assignments are unchanged.
 - Cycle information remains consistent because Project–Cycle relationships are derived through Issues.
 

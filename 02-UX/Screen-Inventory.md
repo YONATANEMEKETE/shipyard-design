@@ -51,8 +51,8 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Projects List | Page | Sidebar → Projects, Dashboard | Display all projects within the active workspace. |
 | Project Details | Page | Projects List, Dashboard, Search, Notifications | Display project information, progress, associated issues, project activity, and any cycle information derived from those issues. |
-| Create Project | Modal | Projects List | Allow users to create a new project. |
-| Edit Project | Modal | Project Details | Allow authorized users to update project information. |
+| Create Project | Modal | Projects List | Allow authorized users to create a Project with a name unique within the workspace. |
+| Edit Project | Modal | Project Details | Allow authorized users to update project information while preserving workspace-scoped name uniqueness. |
 | Update Project Status | Dropdown | Non-archived Project Details, Projects List | Allow editors to switch freely between Planned, Active, and Completed; Archived is excluded. |
 | Archive Project Confirmation | Dialog | Non-archived Project Details | Confirm archiving a project before it becomes read-only. |
 | Restore Project Confirmation | Dialog | Archived Projects, Project Details | Confirm returning an archived project to its stored operational status. |
