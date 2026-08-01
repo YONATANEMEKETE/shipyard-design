@@ -1011,7 +1011,7 @@ The user selects **Create Project** from the Projects page or the global **Creat
 
 ## Overview
 
-This flow describes how users manage a project's lifecycle after it has been created. Project management includes viewing project details, updating project information, monitoring progress, changing project status, archiving completed projects, and deleting projects when appropriate.
+This flow describes how users manage a project's lifecycle after it has been created. Project management includes viewing project details, updating project information, monitoring progress, changing operational status, archiving projects, restoring archived projects, and deleting projects when appropriate.
 
 ---
 
@@ -1061,19 +1061,22 @@ The user opens an existing project from the Projects page.
 
 ### Update Project Status
 
-1. The user changes the project status.
-2. The system updates the project.
-3. The new status is reflected throughout the workspace.
+1. The user opens the inline Project status control.
+2. The control offers Planned, Active, and Completed; Archived is not an option.
+3. The user selects any offered status, regardless of the current operational status.
+4. The system updates the project without a confirmation dialog.
+5. The new status is reflected throughout the workspace.
 
 ---
 
 ### Archive Project
 
 1. The user selects **Archive Project**.
-2. The system displays a confirmation dialog.
+2. The system displays a confirmation dialog explaining that the project will become read-only.
 3. The user confirms the action.
-4. The project is moved to the Archived Projects list.
-5. The project becomes read-only but remains accessible.
+4. The system stores the project's current Planned, Active, or Completed status.
+5. The project is moved to the Archived Projects list.
+6. The project becomes read-only but remains accessible.
 
 ---
 
@@ -1081,9 +1084,9 @@ The user opens an existing project from the Projects page.
 
 1. The user opens the Archived Projects list.
 2. The user selects **Restore Project**.
-3. The system displays a confirmation dialog.
+3. The system displays a confirmation dialog showing the operational status that will be restored.
 4. The user confirms the action.
-5. The project returns to its pre-archive status and the non-archived Projects list.
+5. The project returns to its stored Planned, Active, or Completed status and the non-archived Projects list.
 6. The project becomes editable again for authorized users.
 
 ---
@@ -1114,6 +1117,14 @@ The user opens an existing project from the Projects page.
 1. A user without edit permissions opens a project.
 2. The project details are displayed.
 3. Editing actions are hidden or disabled.
+
+---
+
+### Archived Project Status
+
+1. A user opens an Archived project.
+2. The system displays Archived as its current state but does not display the inline status control.
+3. An authorized user can use the separate **Restore Project** action.
 
 ---
 

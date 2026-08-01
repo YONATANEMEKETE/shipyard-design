@@ -176,15 +176,15 @@ Improves user confidence and reduces irreversible mistakes while preserving Issu
 
 **Context**
 
-Changing issue status is one of the most frequent actions in the application.
+Changing Issue or Project status is a frequent action in the application.
 
 **Rationale**
 
-Inline controls reduce interaction cost compared to opening additional dialogs or pages.
+Inline controls reduce interaction cost compared to opening additional dialogs or pages. Issue workflow status follows its defined transitions, while a Project may switch freely between Planned, Active, and Completed. Archived is excluded from inline Project status controls and remains a separate confirmed action.
 
 **Impact**
 
-Enables faster issue management.
+Enables faster Issue and Project management without allowing inline status changes to bypass Archive or Restore confirmation.
 
 ---
 

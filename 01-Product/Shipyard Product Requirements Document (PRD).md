@@ -956,7 +956,7 @@ Users with permission can:
 - Restore an archived project.
 - Delete a project.
 - Change the project owner.
-- Update the project status.
+- Update the project between Planned, Active, and Completed.
 
 ##### Project Organization
 
@@ -979,18 +979,27 @@ The system should:
 
 ##### Project Status
 
-Projects support the following statuses:
+Projects support the following operational statuses:
 
 - Planned
 - Active
 - Completed
+
+Authorized editors can switch freely between these operational statuses in any direction without confirmation.
+
+Projects also support an Archived lifecycle state:
+
 - Archived
+
+Archived is not available in the status control. A Project enters or leaves Archived only through the separate Archive or Restore action, each of which requires confirmation.
 
 #### Business Rules
 
 - Every project belongs to exactly one workspace.
 - A project can contain multiple issues.
 - An issue can belong to only one project.
+- Planned, Active, and Completed can be selected freely through the Project status control.
+- The Project status control never includes Archived.
 - Archived projects are read-only.
 - Archived projects may be restored by users with permission to archive projects.
 - Restoring a project returns it to the status it held before archiving.
@@ -1013,13 +1022,17 @@ Given an existing project and issue, when the issue is added, then it appears in
 
 Given project issues change status, when progress is recalculated, then the project reflects the updated completion percentage.
 
+##### Update Project Status
+
+Given a non-archived project and an authorized editor, when they select Planned, Active, or Completed, then the project changes directly to that status without confirmation.
+
 ##### Archive Project
 
-Given an active project, when it is archived, then it becomes read-only and no longer appears in active project lists.
+Given a non-archived project and an authorized user, when they confirm Archive, then its operational status is stored and it becomes read-only in the Archived Projects list.
 
 ##### Restore Project
 
-Given an archived project and an authorized user, when the project is restored, then it returns to its previous status and becomes editable again.
+Given an archived project and an authorized user, when they confirm Restore, then it returns to its stored Planned, Active, or Completed status and becomes editable again.
 
 ##### Delete Project
 
@@ -1830,6 +1843,8 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - Projects may contain zero or more issues.
 - Projects do not directly contain or own cycles.
 - Members can contribute to projects but cannot create or delete them.
+- Project editors may switch freely between Planned, Active, and Completed.
+- Archived is available only through confirmed Archive and Restore actions, not through the Project status control.
 - Archived projects become read-only until restored.
 - Restoring a project returns it to its previous status.
 - Deleting a project permanently removes only the project and automatically clears that project from its issues.
