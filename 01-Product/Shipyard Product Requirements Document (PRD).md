@@ -1524,6 +1524,19 @@ Users can filter issues by:
 - Due date
 - Blocked state
 
+Users can filter projects by:
+
+- Status
+- Project Owner
+- Start date
+- Target date
+
+Users can filter cycles by:
+
+- Status
+- Start date
+- End date
+
 Users can apply multiple filters simultaneously.
 
 ##### Sorting
@@ -1560,6 +1573,9 @@ The system should:
 
 - Search only returns data from the current workspace.
 - Users only see resources they have permission to access.
+- Filter options are specific to the active Issues, Projects, or Cycles list.
+- Project and Cycle date filters accept date ranges.
+- Project and Cycle Status filters apply to non-archived lists; Archived resources remain in their dedicated Archived lists and do not appear in these results.
 - Multiple filters are combined together.
 - Saved views are private to the user.
 
@@ -1572,6 +1588,10 @@ Given matching resources exist, when a user enters a search query, then relevant
 ##### Apply Filters
 
 Given available filters, when one or more filters are applied, then only matching results are shown.
+
+Given the Projects list is active, when the filter panel opens, then it offers Status, Project Owner, Start Date, and Target Date filters.
+
+Given the Cycles list is active, when the filter panel opens, then it offers Status, Start Date, and End Date filters.
 
 ##### Save View
 

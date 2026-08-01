@@ -126,7 +126,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Global Search | Modal | Header Navigation, Keyboard Shortcut | Allow users to quickly search for issues, projects, cycles, and members across the active workspace. |
 | Search Results | Section | Global Search | Display matching resources and allow users to navigate directly to them. |
-| Filter Panel | Drawer | Issues List, Projects List, Cycles List | Allow users to refine displayed resources using available filters. |
+| Filter Panel | Drawer | Issues List, Projects List, Cycles List | Display contextual filters: Issue planning fields for Issues; Status, Project Owner, Start Date, and Target Date for Projects; and Status, Start Date, and End Date for Cycles. |
 | Save View | Modal | Filter Panel | Allow users to save the current filter configuration as a private view. |
 | Saved Views | Dropdown | Resource List Toolbar | Display previously saved views and allow users to apply, rename, delete, or set a default view. |
 

@@ -2445,18 +2445,15 @@ The user opens the Search interface or applies filters within a supported resour
 
 ### Filter Results
 
-1. The user opens the filter options.
-2. The user applies one or more filters, including:
-   - Status
-   - Priority
-   - Assignee
-   - Project
-   - Cycle
-   - Labels
-   - Creator
-   - Due Date
-   - Blocked State
-3. The system updates the results immediately.
+1. The user opens the filter options from an Issues, Projects, or Cycles list.
+2. The system displays filters for the active resource:
+   - Issues: Status, Priority, Assignee, Project, Cycle, Labels, Creator, Due Date, and Blocked State.
+   - Projects: Status, Project Owner, Start Date, and Target Date.
+   - Cycles: Status, Start Date, and End Date.
+3. Date fields accept a range.
+4. Project and Cycle Status filters apply to non-archived lists; Archived resources remain in their dedicated Archived lists.
+5. The user applies one or more available filters.
+6. The system updates the results immediately.
 
 ---
 

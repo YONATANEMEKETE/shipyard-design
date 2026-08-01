@@ -163,6 +163,7 @@ The easiest way for small software teams to manage and ship software.
 
 - Project management
 - Project ownership, with the creator assigned by default and Owner/Admin transfer controls
+- Filtering by status, Project Owner, start date, and target date
 - Project archiving and restoration
 - Permanent project deletion with automatic issue unassignment
 - Issue grouping
@@ -171,6 +172,7 @@ The easiest way for small software teams to manage and ship software.
 #### Cycles
 
 - Create cycles
+- Filtering by status, start date, and end date
 - Start, complete, and reopen cycles through controlled lifecycle actions
 - Prevent date overlap between non-archived cycles
 - Assign issues
