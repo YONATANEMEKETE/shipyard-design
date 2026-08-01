@@ -12,7 +12,7 @@
 
 | Screen / Section | Condition | Message | Primary Action | Secondary Action |
 |------------------|-----------|---------|----------------|------------------|
-| Members Directory | No members match the current search or filters | No matching members found. Try adjusting your search or filters. | Clear Filters | Invite Members |
+| Members Directory | No members match the current search or filters | No matching members found. Try adjusting your search or filters. | Clear Filters | Invite Members *(Owner/Admin only)* |
 
 ---
 ## 6.4 Projects

@@ -35,11 +35,12 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
-| Members Directory | Page | Sidebar → Members | Display all workspace members, their roles, and their current status. |
-| Invite Members | Modal | Members Directory | Invite new users to join the workspace via email. |
-| Member Details | Drawer | Members Directory | Display member information and available management actions. |
-| Change Role Confirmation | Dialog | Member Details | Confirm role changes before updating member permissions. |
-| Remove Member Confirmation | Dialog | Member Details | Confirm removal of a member from the workspace. |
+| Members Directory | Page | Sidebar → Members | Display all workspace members, their roles, and their current status to every workspace member. |
+| Invite Members | Modal | Members Directory | Allow Owners to invite Members or Admins and allow Admins to invite Members. |
+| Member Details | Drawer | Members Directory | Display member information and role-appropriate management actions. |
+| Change Role Confirmation | Dialog | Member Details | Allow an Owner to confirm a Member or Admin role change. |
+| Remove Member Confirmation | Dialog | Member Details | Confirm removal when an Owner removes a Member or Admin, or an Admin removes a Member. |
+| Leave Workspace Confirmation | Dialog | User Menu, Workspace Settings | Confirm that a Member or Admin wants to leave the workspace; Owners may leave only when another Owner remains. |
 
 ---
 ## 5.5 Projects

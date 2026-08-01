@@ -474,7 +474,7 @@ The user selects the **Workspace Switcher** from the application interface.
 
 ## Overview
 
-This flow describes how a Workspace Owner or Administrator invites new members to join a workspace. Invitations allow teams to collaborate within the same workspace while maintaining appropriate access permissions.
+This flow describes how a Workspace Owner or Admin invites new members to join a workspace. Owners can invite Members or Admins, while Admins can invite Members only.
 
 ---
 
@@ -498,7 +498,9 @@ The user selects **Invite Members** from the Members page or Workspace Settings.
 2. The user selects **Invite Members**.
 3. The system displays the invitation dialog.
 4. The user enters one or more email addresses.
-5. The user selects the role for each invited member.
+5. The role is selected according to the inviter's permissions:
+   - An Owner selects Member or Admin.
+   - An Admin can invite the user only as a Member.
 6. The user submits the invitation.
 7. The system validates the entered email addresses.
 8. The system generates invitation records.
@@ -569,6 +571,14 @@ The user selects **Invite Members** from the Members page or Workspace Settings.
 1. The user attempts to invite members without the required permission.
 2. The system denies the action.
 3. An appropriate error message is displayed.
+
+---
+
+### Restricted Invitation Role
+
+1. An Admin attempts to invite a user as an Admin or Owner.
+2. The system rejects the restricted role assignment.
+3. The inviter can continue by assigning the Member role.
 
 ---
 
@@ -714,7 +724,7 @@ The user opens a valid workspace invitation link received via email.
 
 ## Overview
 
-This flow describes how Workspace Owners and Administrators manage workspace members after they have joined. Member management includes viewing members, updating roles, removing members, and maintaining appropriate access permissions.
+This flow describes how Workspace Owners and Admins manage workspace members after they have joined. Owners can change roles and remove Members or Admins. Admins can remove Members only. Every workspace member can view the member directory.
 
 ---
 
@@ -728,7 +738,7 @@ The user opens the **Members** page or **Member Management** section in Workspac
 
 - The user is authenticated.
 - A workspace is active.
-- The user has permission to manage members.
+- The user is an Owner or Admin for management actions.
 - At least one member exists in the workspace.
 
 ---
@@ -751,10 +761,10 @@ The user opens the **Members** page or **Member Management** section in Workspac
 
 ### Change Member Role
 
-1. The user selects a member.
-2. The user chooses **Change Role**.
-3. The system displays the available roles.
-4. The user selects a new role.
+1. A Workspace Owner selects a Member or Admin.
+2. The Owner chooses **Change Role**.
+3. The system displays the Member and Admin roles.
+4. The Owner selects a new role.
 5. The system validates the permission change.
 6. The member's role is updated.
 7. The Members list reflects the new role immediately.
@@ -763,7 +773,7 @@ The user opens the **Members** page or **Member Management** section in Workspac
 
 ### Remove Member
 
-1. The user selects a member.
+1. An Owner selects a Member or Admin, or an Admin selects a Member.
 2. The user chooses **Remove Member**.
 3. The system displays a confirmation dialog.
 4. The user confirms the action.
@@ -801,6 +811,18 @@ The user opens the **Members** page or **Member Management** section in Workspac
 
 ---
 
+### Leave Workspace
+
+1. A Member or Admin selects **Leave Workspace** from the User Menu or Workspace Settings.
+2. The system displays a confirmation dialog.
+3. The user confirms the action.
+4. The system removes the user from the workspace.
+5. The user is redirected to another available workspace or workspace onboarding.
+
+An Owner may use the same flow only when another Owner remains in the workspace.
+
+---
+
 ## Error Flows
 
 ### Insufficient Permissions
@@ -819,11 +841,19 @@ The user opens the **Members** page or **Member Management** section in Workspac
 
 ---
 
+### Admin Attempts Restricted Management
+
+1. An Admin attempts to change a role or remove an Admin or Owner.
+2. The system prevents the action.
+3. The system explains that only an Owner can perform it.
+
+---
+
 ### Attempt to Remove Yourself
 
-1. The user attempts to remove themselves from the workspace.
-2. The system prevents the action if it would leave the workspace without an owner.
-3. Otherwise, the user is asked to confirm leaving the workspace.
+1. A user attempts to remove themselves through member-management controls.
+2. The system redirects them to the **Leave Workspace** flow.
+3. The system prevents an Owner from leaving if no other Owner remains.
 
 ---
 

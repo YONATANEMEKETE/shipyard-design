@@ -520,7 +520,10 @@ The Members feature allows teams to collaborate by inviting users to a workspace
 
 ##### Invitations
 
-- Workspace owners and authorized members can invite users.
+- Workspace Owners and Admins can invite users.
+- Owners can invite users as Members or Admins.
+- Admins can invite users only as Members.
+- The Owner role cannot be assigned through an invitation.
 - Invitations are sent using an email address.
 - Users can accept or decline an invitation.
 - Invitations expire after a defined period.
@@ -529,9 +532,11 @@ The Members feature allows teams to collaborate by inviting users to a workspace
 
 ##### Member Management
 
-- Workspace owners can view all members.
+- All workspace members can view the member directory.
 - Member information includes name, email, role, and join date.
-- Owners can remove members.
+- Owners can remove Members and Admins.
+- Admins can remove Members but cannot remove Admins or Owners.
+- Only Owners can change member roles.
 - Members can leave a workspace voluntarily.
 - Owners can transfer workspace ownership to another member.
 
@@ -550,7 +555,8 @@ The MVP supports three roles:
 
 - Manage projects.
 - Manage issues.
-- Invite members.
+- Invite users as Members.
+- Remove Members.
 - Manage cycles.
 
 ###### Member
@@ -569,6 +575,9 @@ The MVP supports three roles:
 - Pending invitations do not grant access.
 - Users cannot invite themselves.
 - Users already in the workspace cannot be invited again.
+- Admins cannot invite users as Admins or Owners.
+- Admins cannot remove Admins or Owners.
+- Only Owners can change roles or transfer ownership.
 
 #### Acceptance Criteria
 
@@ -582,11 +591,11 @@ Given a valid invitation, when it is accepted, then the user becomes a workspace
 
 ##### Remove Member
 
-Given an owner, when they remove a member, then the member immediately loses workspace access.
+Given an Owner or Admin with permission to remove the selected Member, when they confirm removal, then the Member immediately loses workspace access.
 
 ##### Leave Workspace
 
-Given a member, when they leave, then they are removed from the workspace.
+Given a Member or Admin, when they leave a workspace, then they are removed from it. An Owner may leave only when another Owner remains.
 
 ##### Transfer Ownership
 
@@ -1492,12 +1501,18 @@ Workspace owners can:
 
 ##### Member Management
 
-Authorized users can:
+All workspace members can view the member directory.
 
-- View workspace members.
-- Change member roles.
-- Remove members.
+Workspace Owners can:
+
+- Change Member and Admin roles.
+- Remove Members and Admins.
 - Transfer workspace ownership.
+
+Workspace Admins can:
+
+- Remove Members.
+- Invite users as Members.
 
 ##### Preferences
 
@@ -1584,9 +1599,12 @@ The MVP includes three roles:
 | Update workspace | ✅ | ❌ | ❌ |
 | Archive or restore workspace | ✅ | ❌ | ❌ |
 | Delete workspace | ✅ | ❌ | ❌ |
-| Invite members | ✅ | ✅ | ❌ |
-| Remove members | ✅ | ✅ | ❌ |
-| Change member roles | ✅ | ❌ | ❌ |
+| View member directory | ✅ | ✅ | ✅ |
+| Invite users as Members | ✅ | ✅ | ❌ |
+| Invite users as Admins | ✅ | ❌ | ❌ |
+| Remove Members | ✅ | ✅ | ❌ |
+| Remove Admins | ✅ | ❌ | ❌ |
+| Change Member/Admin roles | ✅ | ❌ | ❌ |
 | Transfer ownership | ✅ | ❌ | ❌ |
 | Create projects | ✅ | ✅ | ❌ |
 | Edit projects | ✅ | ✅ | ✅ |
@@ -1626,7 +1644,8 @@ Can:
 - Manage projects.
 - Manage issues.
 - Manage cycles.
-- Invite and remove members.
+- Invite users as Members.
+- Remove Members.
 - Perform all Member actions.
 
 Cannot:
@@ -1652,7 +1671,7 @@ Cannot:
 
 - Create projects.
 - Manage workspace administration.
-- Manage members.
+- Manage members or roles.
 - Delete projects.
 - Create or manage cycles.
 
@@ -1710,7 +1729,12 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - Every member has exactly one role within a workspace.
 - A member can only hold one role at a time.
 - Role changes take effect immediately.
+- All members can view the workspace member directory.
+- Owners can invite users as Members or Admins and can remove Members or Admins.
+- Admins can invite and remove Members only.
+- Only Owners can change roles or transfer ownership.
 - Removed members immediately lose access to the workspace.
+- Members and Admins may leave a workspace voluntarily.
 - The last remaining Owner cannot leave or be removed until ownership is transferred.
 
 ### 7.3 Project Rules
