@@ -941,7 +941,6 @@ The user selects **Create Project** from the Projects page or the global **Creat
 4. The user enters the project details:
    - Project name
    - Description (optional)
-   - Project icon (optional)
    - Start date (optional)
    - Target date (optional)
 5. The user submits the form.
@@ -1054,7 +1053,6 @@ The user opens an existing project from the Projects page.
    - Progress
    - Associated issues
    - Cycles represented by associated issues (derived)
-   - Team members
    - Activity history
 
 ---
