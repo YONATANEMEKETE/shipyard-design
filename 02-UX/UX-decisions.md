@@ -82,11 +82,11 @@ Each entity represents a distinct level of work organization.
 
 **Rationale**
 
-Treating them as independent modules improves scalability and allows users to navigate directly to each resource.
+Treating them as independent modules improves scalability and allows users to navigate directly to each resource. Projects and Cycles do not directly contain or own one another; Issues independently connect to either entity.
 
 **Impact**
 
-Supports future product expansion without restructuring the application.
+Supports future product expansion without restructuring the application. Any Project–Cycle connection shown in the interface is derived from Issues associated with both.
 
 ---
 

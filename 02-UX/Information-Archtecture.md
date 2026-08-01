@@ -162,6 +162,8 @@ Relationship Rules
 - Every Cycle belongs to one Workspace.
 - Every Member belongs to one Workspace.
 - Every Notification belongs to one User within a Workspace.
+- Projects and Cycles are independent and have no direct ownership relationship.
+- A Project may show Cycles represented by its Issues, but that relationship is derived through those Issues.
 
 ---
 

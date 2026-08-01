@@ -779,6 +779,8 @@ The system records status changes in the issue history.
 - An issue may belong to one cycle.
 - An issue may have one assignee.
 - An issue may have multiple labels.
+- Projects and cycles are independent workspace entities.
+- Any relationship shown between a project and a cycle is derived from issues that belong to both.
 
 ##### Issue Discovery
 
@@ -1687,6 +1689,7 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 
 - Every project belongs to exactly one workspace.
 - Projects may contain zero or more issues.
+- Projects do not directly contain or own cycles.
 - Members can contribute to projects but cannot create or delete them.
 - Archived projects become read-only.
 - Deleting a project does not delete its issues.
@@ -1705,6 +1708,7 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 ### 7.5 Cycle Rules
 
 - Every cycle belongs to exactly one workspace.
+- Cycles do not directly belong to projects.
 - Only one cycle may be active within a workspace at any time.
 - An issue may belong to only one cycle.
 - Completing a cycle does not automatically move unfinished issues.

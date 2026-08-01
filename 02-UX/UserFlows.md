@@ -918,7 +918,7 @@ The user selects **Create Project** from the Projects page or the global **Creat
 - A new project exists within the workspace.
 - The project appears in the Projects list.
 - The project overview page is displayed.
-- The project is ready for cycles and issues to be associated with it.
+- The project is ready for issues to be associated with it.
 
 ---
 # User Flow 10 — Manage Project
@@ -956,7 +956,7 @@ The user opens an existing project from the Projects page.
    - Current status
    - Progress
    - Associated issues
-   - Assigned cycle(s)
+   - Cycles represented by associated issues (derived)
    - Team members
    - Activity history
 
@@ -1059,7 +1059,7 @@ The user opens an existing project from the Projects page.
 - Status updates are visible throughout the workspace.
 - Archived projects remain available for future restoration.
 - Deleted projects are removed according to workspace policies.
-- All project information remains consistent across related issues and cycles.
+- All project information remains consistent across its associated issues and any cycle information derived from those issues.
 
 ---
 # User Flow 11 — Create Cycle

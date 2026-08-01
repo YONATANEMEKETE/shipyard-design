@@ -45,7 +45,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
 | Projects List | Page | Sidebar → Projects, Dashboard | Display all projects within the active workspace. |
-| Project Details | Page | Projects List, Dashboard, Search, Notifications | Display project information, progress, cycles, issues, and project activity. |
+| Project Details | Page | Projects List, Dashboard, Search, Notifications | Display project information, progress, associated issues, project activity, and any cycle information derived from those issues. |
 | Create Project | Modal | Projects List | Allow users to create a new project. |
 | Edit Project | Modal | Project Details | Allow authorized users to update project information. |
 | Archive Project Confirmation | Dialog | Project Details | Confirm archiving a project before it becomes read-only. |
@@ -59,7 +59,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Cycles List | Page | Sidebar → Cycles, Dashboard | Display all cycles within the active workspace. |
 | Cycle Details | Page | Cycles List, Dashboard, Search, Notifications | Display cycle information, progress, associated issues, statistics, and activity. |
-| Create Cycle | Modal | Cycles List, Project Details | Allow users to create a new cycle. |
+| Create Cycle | Modal | Cycles List, Global Create Menu | Allow authorized users to create a workspace cycle. |
 | Edit Cycle | Modal | Cycle Details | Allow authorized users to update cycle information. |
 | Complete Cycle Confirmation | Dialog | Cycle Details | Confirm completion of a cycle and finalize the iteration. |
 | Reopen Cycle Confirmation | Dialog | Cycle Details | Confirm reopening a completed cycle. |

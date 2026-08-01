@@ -22,7 +22,6 @@
 | Projects List | No projects match the current search or filters | No matching projects found. Try adjusting your search or filters. | Clear Filters | Create Project |
 | Archived Projects | No archived projects exist | No archived projects available. | View Active Projects | — |
 | Project Details → Issues | The project has no issues | This project doesn't have any issues yet. Create the first issue to start tracking work. | Create Issue | — |
-| Project Details → Cycles | The project has no cycles | No cycles have been created for this project yet. | Create Cycle | — |
 | Project Activity | No project activity has been recorded | No activity yet. Project updates will appear here as work progresses. | — | — |
 
 ---
