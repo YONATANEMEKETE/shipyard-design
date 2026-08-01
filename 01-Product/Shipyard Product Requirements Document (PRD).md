@@ -773,8 +773,10 @@ Issues represent individual units of work within a workspace. They are used to t
 - Users can create an issue.
 - Every issue must have a title.
 - Issues may include a description.
+- Issue priority is optional during creation.
 - Issues are automatically assigned a unique identifier.
 - New issues are created in the Backlog by default.
+- New issues use No Priority when no priority is selected.
 
 ##### Issue Details
 
@@ -849,6 +851,7 @@ Users can:
 
 - Every issue belongs to exactly one workspace.
 - Every issue has one current status.
+- Every issue has a priority value; when the creator does not select one, the value defaults to No Priority.
 - Archived issues are read-only.
 - Archived issues may be restored by members with permission to archive issues.
 - Restoring an issue returns it to the workflow status and blocked state it held before archiving.
@@ -867,7 +870,7 @@ Users can:
 
 ##### Create Issue
 
-Given a workspace member, when they create an issue with a valid title, then the issue is added to the workspace backlog.
+Given a workspace member, when they create an issue with a valid title, then the issue is added to the workspace backlog and uses No Priority if no priority was selected.
 
 ##### Update Status
 
@@ -1925,6 +1928,7 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - Every issue has exactly one status.
 - Every issue has exactly one creator.
 - Every issue may have one assignee.
+- Every issue has a priority value, defaulting to No Priority when omitted during creation.
 - Issues retain their history after updates.
 - Deleted issues cannot be recovered.
 

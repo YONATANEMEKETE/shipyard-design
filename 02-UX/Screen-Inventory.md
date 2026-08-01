@@ -82,7 +82,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Issues List | Page | Sidebar → Issues, Dashboard | Display all issues within the active workspace. |
 | Issue Details | Page | Issues List, Dashboard, Search, Notifications, Project Details, Cycle Details | Display issue information, workflow status, planning details, activity history, and management actions. |
-| Create Issue | Modal | Issues List, Project Details, Cycle Details, Dashboard, Global Create Menu | Allow users to create a new issue. |
+| Create Issue | Modal | Issues List, Project Details, Cycle Details, Dashboard, Global Create Menu | Allow users to create a new issue with an optional Priority that defaults to No Priority. |
 | Edit Issue | Modal | Issue Details | Allow authorized users to update issue information. |
 | Assign Issue | Modal | Issue Details | Allow users to assign or reassign an issue. |
 | Update Workflow Status | Dropdown | Issue Details, Issues List | Allow users to move an issue through the workflow (Backlog → Todo → In Progress → Done). |

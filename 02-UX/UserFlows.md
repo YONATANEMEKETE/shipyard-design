@@ -1565,12 +1565,12 @@ The user selects **Create Issue** from the Issues page, a Project, a Cycle, or t
    - Project (optional)
    - Cycle (optional)
    - Assignee (optional)
-   - Priority
+   - Priority (optional)
    - Labels (optional)
    - Due Date (optional)
 4. The user submits the form.
 5. The system validates the provided information.
-6. The issue is created.
+6. The issue is created with the selected priority, or No Priority when the field was omitted.
 7. The system generates a unique issue identifier.
 8. The issue is added to the appropriate issue list.
 9. If a Project or Cycle was selected, the issue is automatically associated with it.
@@ -1584,10 +1584,8 @@ The user selects **Create Issue** from the Issues page, a Project, a Cycle, or t
 
 1. Any workspace member opens the global **Create** menu in an active workspace.
 2. The permission-filtered menu includes **Issue**, and the user selects it.
-3. The user enters only:
-   - Title
-   - Priority (optional)
-4. The system creates the issue immediately.
+3. The user enters a Title and may select a Priority.
+4. The system creates the issue immediately, using No Priority when no priority was selected.
 5. Remaining information can be added later.
 
 ---
@@ -1658,6 +1656,7 @@ The user selects **Create Issue** from the Issues page, a Project, a Cycle, or t
 
 - A new issue exists within the workspace.
 - The issue receives a unique identifier.
+- The issue uses the selected priority or No Priority when the field was omitted.
 - Any selected Project, Cycle, and Assignee are linked to the issue.
 - The issue is visible in the relevant issue views.
 - The issue is ready to progress through its workflow.
