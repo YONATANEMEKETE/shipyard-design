@@ -98,7 +98,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Comments Section | Section | Issue Details | Display issue discussions, mentions, and the complete comment history. |
 | Edit Comment | Inline Editor | Comments Section | Allow users to modify their own comments without leaving the issue. |
-| Delete Comment Confirmation | Dialog | Comments Section | Confirm deletion of a comment before removing it permanently. |
+| Delete Comment Confirmation | Dialog | Comments Section | Allow a comment author to confirm permanent deletion of their own comment. |
 | Mention Suggestions | Popover | Comment Editor | Display matching workspace members while typing '@' in a comment. |
 | Notifications Panel | Panel | Header Navigation | Display recent notifications and provide quick access to related resources. |
 | Clear All Notifications Confirmation | Dialog | Notifications Panel | Confirm removal of all notifications. |

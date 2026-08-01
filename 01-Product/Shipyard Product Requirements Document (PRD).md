@@ -1303,8 +1303,6 @@ Users can:
 - Delete their own comments.
 - View the edit history indicator for modified comments.
 
-Users with appropriate permissions can remove any comment.
-
 ##### Mentions
 
 - Users can mention workspace members using `@`.
@@ -1322,7 +1320,7 @@ Users with appropriate permissions can remove any comment.
 - Comments belong to exactly one issue.
 - Only workspace members can comment.
 - Archived issues cannot receive new comments.
-- Users can only edit or delete their own comments unless they have elevated permissions.
+- Users can only edit or delete their own comments; Owner and Admin roles provide no moderation override in the MVP.
 - Comments are ordered chronologically.
 
 #### Acceptance Criteria
@@ -1334,6 +1332,10 @@ Given an active issue, when a member submits a comment, then the comment appears
 ##### Edit Comment
 
 Given an existing comment, when its author edits it, then the updated content is displayed and marked as edited.
+
+##### Delete Comment
+
+Given an existing comment, when its author confirms deletion, then the comment is removed from the issue.
 
 ##### Mention User
 
@@ -1350,6 +1352,7 @@ Given an archived issue, when a user attempts to comment, then the action is pre
 - Mentioning a non-existent user.
 - Mentioning a user who has left the workspace.
 - Editing a deleted comment.
+- Attempting to edit or delete another user's comment.
 - Simultaneous edits by multiple users.
 
 #### Future Enhancements
@@ -1773,6 +1776,8 @@ The MVP includes three roles:
 | Create cycles | ✅ | ✅ | ❌ |
 | Manage cycle lifecycle, including deletion | ✅ | ✅ | ❌ |
 | Comment on issues | ✅ | ✅ | ✅ |
+| Edit or delete own comments | ✅ | ✅ | ✅ |
+| Edit or delete another user's comments | ❌ | ❌ | ❌ |
 | View dashboard | ✅ | ✅ | ✅ |
 | Search workspace | ✅ | ✅ | ✅ |
 | Manage workspace settings | ✅ | ❌ | ❌ |
@@ -1950,7 +1955,7 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 
 - Every comment belongs to one issue.
 - Every comment has one author.
-- Users may edit or delete only their own comments.
+- Users may edit or delete only their own comments; workspace roles do not override comment authorship.
 - Mentioning a user generates a notification.
 
 ### 7.7 Notification Rules

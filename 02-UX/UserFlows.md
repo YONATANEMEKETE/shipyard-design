@@ -2081,14 +2081,6 @@ The user opens an active issue and interacts with the Comments section.
 
 ## Alternative Flows
 
-### Moderator Removes Comment
-
-1. A user with elevated permissions selects a comment.
-2. The user removes the comment.
-3. The comment is deleted from the issue.
-
----
-
 ### Multiple Mentions
 
 1. The user mentions multiple workspace members within a comment.
@@ -2123,11 +2115,11 @@ The user opens an active issue and interacts with the Comments section.
 
 ---
 
-### Insufficient Permissions
+### Not the Comment Author
 
-1. The user attempts to remove another user's comment without sufficient permissions.
-2. The system rejects the action.
-3. An appropriate error message is displayed.
+1. A user views another member's comment.
+2. The system does not display Edit or Delete controls, regardless of the viewer's workspace role.
+3. If the user attempts the action directly, the system rejects it and leaves the comment unchanged.
 
 ---
 
@@ -2144,7 +2136,8 @@ The user opens an active issue and interacts with the Comments section.
 - Comments remain associated with the issue.
 - Comments are displayed in chronological order.
 - Mentioned users receive notifications.
-- Comment edits and deletions are reflected immediately.
+- An author’s comment edits and deletions are reflected immediately.
+- Comments cannot be edited or deleted by anyone other than their author.
 - Archived issues preserve their discussion history but cannot receive new comments.
 ---
 # User Flow 17 — Notifications
