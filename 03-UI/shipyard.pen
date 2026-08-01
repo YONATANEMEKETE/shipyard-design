@@ -8595,8 +8595,8 @@
     {
       "type": "text",
       "id": "QN0Y5",
-      "x": 9167,
-      "y": -1021,
+      "x": 9059,
+      "y": -1232,
       "fill": "#000000",
       "content": "Auth Screens",
       "fontFamily": "Inter",
@@ -8608,8 +8608,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Signup",
-      "x": 8581,
-      "y": 168,
+      "x": 9059,
+      "y": -810,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -8933,8 +8933,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Signup / Verification Pending",
-      "x": 10117,
-      "y": 168,
+      "x": 9059,
+      "y": 143,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -9179,8 +9179,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Login",
-      "x": 11653,
-      "y": 168,
+      "x": 10557,
+      "y": -810,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -9547,8 +9547,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Forgot Password",
-      "x": 13189,
-      "y": 168,
+      "x": 10557,
+      "y": 143,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -9737,8 +9737,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Forgot Password / Email Sent",
-      "x": 14725,
-      "y": 168,
+      "x": 12038,
+      "y": -810,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -9983,8 +9983,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Reset Password",
-      "x": 16261,
-      "y": 168,
+      "x": 12038,
+      "y": 143,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -10267,8 +10267,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Reset Password / Invalid Token",
-      "x": 17797,
-      "y": 168,
+      "x": 9059,
+      "y": 1068,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -10445,8 +10445,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Reset Password / Success",
-      "x": 19333,
-      "y": 168,
+      "x": 10557,
+      "y": 1068,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -10595,8 +10595,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Email Verification / Success",
-      "x": 20869,
-      "y": 168,
+      "x": 12038,
+      "y": 1068,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -10745,8 +10745,8 @@
       "type": "ref",
       "ref": "p5iwKZ",
       "name": "Auth / Email Verification / Invalid Token",
-      "x": 22405,
-      "y": 168,
+      "x": 9059,
+      "y": 1968,
       "descendants": {
         "n0ieyf": {
           "children": [
@@ -10917,6 +10917,3176 @@
           ]
         }
       }
+    },
+    {
+      "type": "frame",
+      "id": "qC8J3",
+      "x": 13574,
+      "y": 971,
+      "name": "Inline Elements",
+      "clip": true,
+      "width": 1400,
+      "fill": "$ds-bg",
+      "layout": "vertical",
+      "gap": "$ds-space-6",
+      "padding": "$ds-space-10",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ChGHW",
+          "name": "Inline Elements Header",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": "$ds-space-2",
+          "children": [
+            {
+              "type": "text",
+              "id": "BUmg6",
+              "name": "Inline Elements Title",
+              "fill": "$ds-text",
+              "content": "Inline Elements",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 28,
+              "fontWeight": "700",
+              "letterSpacing": -0.5
+            },
+            {
+              "type": "text",
+              "id": "SuGXk",
+              "name": "Inline Elements Description",
+              "fill": "$ds-text-muted",
+              "content": "A scalable gallery of reusable floating and contextual interface elements. Each specimen keeps its purpose, rules, and preview together.",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "z6nob",
+          "name": "Inline Elements Gallery",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": "$ds-space-6",
+          "children": [
+            {
+              "type": "frame",
+              "id": "mSvAf",
+              "name": "Inline Elements Row 01",
+              "width": "fill_container",
+              "height": 560,
+              "gap": "$ds-space-6",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "U7wWeY",
+                  "name": "Account Menu Specimen",
+                  "width": 648,
+                  "height": "fill_container",
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": "$ds-border-thin",
+                  "layout": "vertical",
+                  "gap": "$ds-space-5",
+                  "padding": "$ds-space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wUoR7",
+                      "name": "Account Menu Specimen Description",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$ds-space-2",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ieHXW",
+                          "name": "Account Menu Section Label",
+                          "fill": "$ds-brand",
+                          "content": "ACCOUNT",
+                          "fontFamily": "$ds-font-mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.8
+                        },
+                        {
+                          "type": "text",
+                          "id": "r6DE3",
+                          "name": "Account Menu Section Title",
+                          "fill": "$ds-text",
+                          "content": "Account menu",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 18,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "X5uNE1",
+                          "name": "Account Menu Section Description",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Opened from the account control. The user is identified by email because a display name is not collected during signup.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "V7iZG",
+                          "name": "Account Menu Conditional Note",
+                          "width": "fill_container",
+                          "fill": "$ds-brand-soft",
+                          "cornerRadius": "$ds-radius-md",
+                          "gap": "$ds-space-2",
+                          "padding": "$ds-space-3",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "DgA8x",
+                              "name": "Account Menu Conditional Note Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "info",
+                              "library": "lucide",
+                              "fill": "$ds-brand"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ZirxK",
+                              "name": "Account Menu Conditional Note Text",
+                              "fill": "$ds-brand",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Leave workspace is hidden for workspace owners.",
+                              "lineHeight": 1.45,
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VGvS0",
+                      "name": "Account Menu Specimen Preview",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "$ds-surface-subtle",
+                      "cornerRadius": "$ds-radius-lg",
+                      "stroke": "$ds-border",
+                      "strokeWidth": "$ds-border-thin",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "p8EZtw",
+                          "name": "Account Menu / Default",
+                          "reusable": true,
+                          "width": 296,
+                          "fill": "$ds-surface",
+                          "cornerRadius": "$ds-radius-lg",
+                          "stroke": "$ds-border",
+                          "strokeWidth": "$ds-border-thin",
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#00000029",
+                            "offset": {
+                              "x": 0,
+                              "y": 8
+                            },
+                            "blur": 24,
+                            "spread": -4
+                          },
+                          "layout": "vertical",
+                          "gap": "$ds-space-1",
+                          "padding": "$ds-space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "YAfdP",
+                              "name": "Account Identity",
+                              "width": "fill_container",
+                              "height": 56,
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "m2t8j",
+                                  "name": "Account Avatar",
+                                  "width": 34,
+                                  "height": 34,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "fAT99",
+                                      "name": "Account Avatar Icon",
+                                      "width": 16,
+                                      "height": 16,
+                                      "icon": "user-round",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "ocWFi",
+                                  "name": "Account Email Identity",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 2,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "Y1ZQ1g",
+                                      "name": "Signed In Label",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Signed in as",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "WYGR8",
+                                      "name": "Account Email",
+                                      "fill": "$ds-text",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "you@company.com",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 13,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Q9mFz7",
+                              "name": "Account Menu Identity Separator",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "flBCt",
+                              "name": "Account Settings Menu Item",
+                              "width": "fill_container",
+                              "height": 38,
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-3"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "mA9jq",
+                                  "name": "Account Settings Menu Item Icon",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "settings",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "XgxSj",
+                                  "name": "Account Settings Menu Item Label",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Account settings",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "II1nD",
+                                  "name": "Account Settings Menu Item Chevron",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "pCL8v",
+                              "name": "Account Menu Session Separator",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "WPl07",
+                              "name": "Leave Workspace Menu Item",
+                              "width": "fill_container",
+                              "height": 38,
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-3"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "X1FdK",
+                                  "name": "Leave Workspace Menu Item Icon",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "door-open",
+                                  "library": "lucide",
+                                  "fill": "$ds-danger"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "am10S",
+                                  "name": "Leave Workspace Menu Item Label",
+                                  "fill": "$ds-danger",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Leave workspace",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "F9rtLb",
+                              "name": "Log Out Menu Item",
+                              "width": "fill_container",
+                              "height": 38,
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-3"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "e3P0py",
+                                  "name": "Log Out Menu Item Icon",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "log-out",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "ebhW8",
+                                  "name": "Log Out Menu Item Label",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Log out",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "iHnWs",
+                  "name": "Global Create Menu Specimen",
+                  "width": 648,
+                  "height": "fill_container",
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": "$ds-border-thin",
+                  "layout": "vertical",
+                  "gap": "$ds-space-5",
+                  "padding": "$ds-space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ovl02",
+                      "name": "Global Create Menu Specimen Description",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$ds-space-2",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iS7zU",
+                          "name": "Global Create Menu Category",
+                          "fill": "$ds-brand",
+                          "content": "GLOBAL ACTION",
+                          "fontFamily": "$ds-font-mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.8
+                        },
+                        {
+                          "type": "text",
+                          "id": "E5tE5",
+                          "name": "Global Create Menu Title",
+                          "fill": "$ds-text",
+                          "content": "Create options menu",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 18,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Usua8",
+                          "name": "Global Create Menu Description",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Opened from the header Create button. Options are filtered by the current user’s role before the menu is shown.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "EGqeA",
+                          "name": "Global Create Availability Note",
+                          "width": "fill_container",
+                          "fill": "$ds-brand-soft",
+                          "cornerRadius": "$ds-radius-md",
+                          "gap": "$ds-space-2",
+                          "padding": "$ds-space-3",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "QuQSO",
+                              "name": "Global Create Availability Note Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "shield-check",
+                              "library": "lucide",
+                              "fill": "$ds-brand"
+                            },
+                            {
+                              "type": "text",
+                              "id": "TBl8Q",
+                              "name": "Global Create Availability Note Text",
+                              "fill": "$ds-brand",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Hidden without an active workspace and unavailable for archived workspaces.",
+                              "lineHeight": 1.45,
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "OzH0r",
+                      "name": "Global Create Menu Specimen Preview",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "$ds-surface-subtle",
+                      "cornerRadius": "$ds-radius-lg",
+                      "stroke": "$ds-border",
+                      "strokeWidth": "$ds-border-thin",
+                      "gap": "$ds-space-5",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ceiD0",
+                          "name": "OWNER / ADMIN Create Menu Variant",
+                          "width": 266,
+                          "layout": "vertical",
+                          "gap": "$ds-space-2",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "k9GKV",
+                              "name": "OWNER / ADMIN Create Menu Variant Label",
+                              "fill": "$ds-text-muted",
+                              "content": "OWNER / ADMIN",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 9,
+                              "fontWeight": "600",
+                              "letterSpacing": 0.7
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Nej32",
+                              "name": "Global Create Menu / Owner Admin",
+                              "reusable": true,
+                              "width": 266,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-lg",
+                              "stroke": "$ds-border",
+                              "strokeWidth": "$ds-border-thin",
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "color": "#00000029",
+                                "offset": {
+                                  "x": 0,
+                                  "y": 8
+                                },
+                                "blur": 24,
+                                "spread": -4
+                              },
+                              "layout": "vertical",
+                              "gap": "$ds-space-1",
+                              "padding": "$ds-space-2",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "yV7qe",
+                                  "name": "Global Create Menu Header",
+                                  "width": "fill_container",
+                                  "height": 36,
+                                  "padding": [
+                                    0,
+                                    "$ds-space-3"
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "NgLYK",
+                                      "name": "Global Create Menu Header Label",
+                                      "fill": "$ds-text",
+                                      "content": "Create",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "700"
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "kcC4W",
+                                      "name": "Global Create Menu Header Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "plus",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "j12yzv",
+                                  "name": "Global Create Menu Header Separator",
+                                  "width": "fill_container",
+                                  "height": 1,
+                                  "fill": "$ds-border"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "L0ZXe",
+                                  "name": "Create Issue Option",
+                                  "width": "fill_container",
+                                  "height": 58,
+                                  "cornerRadius": "$ds-radius-md",
+                                  "gap": "$ds-space-3",
+                                  "padding": [
+                                    0,
+                                    "$ds-space-3"
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "yzxEy",
+                                      "name": "Create Issue Option Icon Container",
+                                      "width": 32,
+                                      "height": 32,
+                                      "fill": "$ds-surface-subtle",
+                                      "cornerRadius": "$ds-radius-md",
+                                      "stroke": "$ds-border",
+                                      "strokeWidth": "$ds-border-thin",
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "laIsl",
+                                          "name": "Create Issue Option Icon",
+                                          "width": 16,
+                                          "height": 16,
+                                          "icon": "circle-dot",
+                                          "library": "lucide",
+                                          "fill": "$ds-brand"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "GoRox",
+                                      "name": "Create Issue Option Copy",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 2,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "j0SWD",
+                                          "name": "Create Issue Option Label",
+                                          "fill": "$ds-text",
+                                          "content": "Issue",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 13,
+                                          "fontWeight": "600"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "FA3sB",
+                                          "name": "Create Issue Option Description",
+                                          "fill": "$ds-text-muted",
+                                          "textGrowth": "fixed-width",
+                                          "width": "fill_container",
+                                          "content": "Track a task, bug, or feature",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 10,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "igZXb",
+                                      "name": "Create Issue Option Chevron",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "chevron-right",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "mEkax",
+                                  "name": "Create Project Option",
+                                  "width": "fill_container",
+                                  "height": 58,
+                                  "cornerRadius": "$ds-radius-md",
+                                  "gap": "$ds-space-3",
+                                  "padding": [
+                                    0,
+                                    "$ds-space-3"
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "Q0yIL",
+                                      "name": "Create Project Option Icon Container",
+                                      "width": 32,
+                                      "height": 32,
+                                      "fill": "$ds-surface-subtle",
+                                      "cornerRadius": "$ds-radius-md",
+                                      "stroke": "$ds-border",
+                                      "strokeWidth": "$ds-border-thin",
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "dtt4q",
+                                          "name": "Create Project Option Icon",
+                                          "width": 16,
+                                          "height": 16,
+                                          "icon": "folder-kanban",
+                                          "library": "lucide",
+                                          "fill": "$ds-brand"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "Wbqgc",
+                                      "name": "Create Project Option Copy",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 2,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "L2q5J6",
+                                          "name": "Create Project Option Label",
+                                          "fill": "$ds-text",
+                                          "content": "Project",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 13,
+                                          "fontWeight": "600"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "RFpZx",
+                                          "name": "Create Project Option Description",
+                                          "fill": "$ds-text-muted",
+                                          "textGrowth": "fixed-width",
+                                          "width": "fill_container",
+                                          "content": "Organize related work",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 10,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "avQkC",
+                                      "name": "Create Project Option Chevron",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "chevron-right",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Ii52f",
+                                  "name": "Create Cycle Option",
+                                  "width": "fill_container",
+                                  "height": 58,
+                                  "cornerRadius": "$ds-radius-md",
+                                  "gap": "$ds-space-3",
+                                  "padding": [
+                                    0,
+                                    "$ds-space-3"
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "JEGZe",
+                                      "name": "Create Cycle Option Icon Container",
+                                      "width": 32,
+                                      "height": 32,
+                                      "fill": "$ds-surface-subtle",
+                                      "cornerRadius": "$ds-radius-md",
+                                      "stroke": "$ds-border",
+                                      "strokeWidth": "$ds-border-thin",
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "G0Sj7",
+                                          "name": "Create Cycle Option Icon",
+                                          "width": 16,
+                                          "height": 16,
+                                          "icon": "calendar-range",
+                                          "library": "lucide",
+                                          "fill": "$ds-brand"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "Ttwvg",
+                                      "name": "Create Cycle Option Copy",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 2,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "RSbNj",
+                                          "name": "Create Cycle Option Label",
+                                          "fill": "$ds-text",
+                                          "content": "Cycle",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 13,
+                                          "fontWeight": "600"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "EI0bJ",
+                                          "name": "Create Cycle Option Description",
+                                          "fill": "$ds-text-muted",
+                                          "textGrowth": "fixed-width",
+                                          "width": "fill_container",
+                                          "content": "Plan a focused timebox",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 10,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "PzdtG",
+                                      "name": "Create Cycle Option Chevron",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "chevron-right",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xkuqs",
+                          "name": "MEMBER Create Menu Variant",
+                          "width": 266,
+                          "layout": "vertical",
+                          "gap": "$ds-space-2",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "FotTD",
+                              "name": "MEMBER Create Menu Variant Label",
+                              "fill": "$ds-text-muted",
+                              "content": "MEMBER",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 9,
+                              "fontWeight": "600",
+                              "letterSpacing": 0.7
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Cym8D",
+                              "name": "Global Create Menu / Member",
+                              "reusable": true,
+                              "width": 266,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-lg",
+                              "stroke": "$ds-border",
+                              "strokeWidth": "$ds-border-thin",
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "color": "#00000029",
+                                "offset": {
+                                  "x": 0,
+                                  "y": 8
+                                },
+                                "blur": 24,
+                                "spread": -4
+                              },
+                              "layout": "vertical",
+                              "gap": "$ds-space-1",
+                              "padding": "$ds-space-2",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "DPpdN",
+                                  "name": "Member Global Create Menu Header",
+                                  "width": "fill_container",
+                                  "height": 36,
+                                  "padding": [
+                                    0,
+                                    "$ds-space-3"
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "TC94C",
+                                      "name": "Member Global Create Menu Header Label",
+                                      "fill": "$ds-text",
+                                      "content": "Create",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "700"
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "nWCWx",
+                                      "name": "Member Global Create Menu Header Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "plus",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "N9YASe",
+                                  "name": "Member Global Create Menu Separator",
+                                  "width": "fill_container",
+                                  "height": 1,
+                                  "fill": "$ds-border"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "K9KFuj",
+                                  "name": "Member Create Issue Option",
+                                  "width": "fill_container",
+                                  "height": 58,
+                                  "cornerRadius": "$ds-radius-md",
+                                  "gap": "$ds-space-3",
+                                  "padding": [
+                                    0,
+                                    "$ds-space-3"
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "udr2S",
+                                      "name": "Member Create Issue Icon Container",
+                                      "width": 32,
+                                      "height": 32,
+                                      "fill": "$ds-surface-subtle",
+                                      "cornerRadius": "$ds-radius-md",
+                                      "stroke": "$ds-border",
+                                      "strokeWidth": "$ds-border-thin",
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "HIgUu",
+                                          "name": "Member Create Issue Icon",
+                                          "width": 16,
+                                          "height": 16,
+                                          "icon": "circle-dot",
+                                          "library": "lucide",
+                                          "fill": "$ds-brand"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "h2fpcr",
+                                      "name": "Member Create Issue Copy",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 2,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "zO8Z4",
+                                          "name": "Member Create Issue Label",
+                                          "fill": "$ds-text",
+                                          "content": "Issue",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 13,
+                                          "fontWeight": "600"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "Pr5T8",
+                                          "name": "Member Create Issue Description",
+                                          "fill": "$ds-text-muted",
+                                          "textGrowth": "fixed-width",
+                                          "width": "fill_container",
+                                          "content": "Track a task, bug, or feature",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 10,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "L12pN",
+                                      "name": "Member Create Issue Chevron",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "chevron-right",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "kAdSt",
+              "name": "Inline Elements Row 02",
+              "width": "fill_container",
+              "height": 620,
+              "gap": "$ds-space-6",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "p7pq6",
+                  "name": "Workspace Switcher Specimen",
+                  "width": 648,
+                  "height": "fill_container",
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": "$ds-border-thin",
+                  "layout": "vertical",
+                  "gap": "$ds-space-5",
+                  "padding": "$ds-space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "tnrkl",
+                      "name": "Workspace Switcher Specimen Description",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$ds-space-2",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jUpHn",
+                          "name": "Workspace Switcher Section Label",
+                          "fill": "$ds-brand",
+                          "content": "WORKSPACE CONTEXT",
+                          "fontFamily": "$ds-font-mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.8
+                        },
+                        {
+                          "type": "text",
+                          "id": "YnsQj",
+                          "name": "Workspace Switcher Section Title",
+                          "fill": "$ds-text",
+                          "content": "Workspace switcher",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 18,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "T9vvX",
+                          "name": "Workspace Switcher Section Description",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Opened from the sidebar workspace control. Switching refreshes every workspace-scoped view around the selected workspace ID.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "tZESP",
+                          "name": "Workspace Switcher Identity Note",
+                          "width": "fill_container",
+                          "fill": "$ds-brand-soft",
+                          "cornerRadius": "$ds-radius-md",
+                          "gap": "$ds-space-2",
+                          "padding": "$ds-space-3",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "Qlali",
+                              "name": "Workspace Switcher Identity Note Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "info",
+                              "library": "lucide",
+                              "fill": "$ds-brand"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Kllsd",
+                              "name": "Workspace Switcher Identity Note Text",
+                              "fill": "$ds-brand",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Duplicate names remain clear through workspace icons and role labels.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NLNsX",
+                      "name": "Workspace Switcher Specimen Preview",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "$ds-surface-subtle",
+                      "cornerRadius": "$ds-radius-lg",
+                      "stroke": "$ds-border",
+                      "strokeWidth": "$ds-border-thin",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "HSKG8",
+                          "name": "Workspace Switcher / Default",
+                          "reusable": true,
+                          "width": 352,
+                          "fill": "$ds-surface",
+                          "cornerRadius": "$ds-radius-lg",
+                          "stroke": "$ds-border",
+                          "strokeWidth": "$ds-border-thin",
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#00000029",
+                            "offset": {
+                              "x": 0,
+                              "y": 8
+                            },
+                            "blur": 24,
+                            "spread": -4
+                          },
+                          "layout": "vertical",
+                          "gap": "$ds-space-1",
+                          "padding": "$ds-space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "R0QtAh",
+                              "name": "Workspace Switcher Header",
+                              "width": "fill_container",
+                              "height": 36,
+                              "gap": "$ds-space-2",
+                              "padding": [
+                                0,
+                                "$ds-space-1"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "WmSiy",
+                                  "name": "Workspace Switcher Header Icon",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "arrow-left-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "sqfR0",
+                                  "name": "Workspace Switcher Header Label",
+                                  "fill": "$ds-text",
+                                  "content": "Switch workspace",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "id": "M4IST",
+                              "type": "ref",
+                              "ref": "p4MRA",
+                              "name": "Workspace Search",
+                              "width": "fill_container",
+                              "descendants": {
+                                "N2C557": {
+                                  "enabled": false
+                                },
+                                "RIYED": {
+                                  "fill": "$ds-surface-subtle"
+                                },
+                                "RDPXq": {
+                                  "content": "Search workspaces…"
+                                }
+                              }
+                            },
+                            {
+                              "type": "frame",
+                              "id": "E1Wuw",
+                              "name": "Active Workspaces Section Label",
+                              "width": "fill_container",
+                              "height": 28,
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "PE25o",
+                                  "name": "Active Workspaces Label",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ACTIVE WORKSPACES",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "I9IJ0",
+                              "name": "Workspace Option / Shipyard Workspace / Admin",
+                              "width": "fill_container",
+                              "height": 52,
+                              "fill": "$ds-brand-soft",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "HwYgx",
+                                  "name": "Workspace Icon / Shipyard Workspace",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-brand",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "T2H5Gt",
+                                      "name": "Workspace Icon Glyph / Shipyard Workspace",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "anchor",
+                                      "library": "lucide",
+                                      "fill": "$ds-surface"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "dDsJA",
+                                  "name": "Workspace Identity / Shipyard Workspace",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 2,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "CROv7",
+                                      "name": "Workspace Name / Shipyard Workspace",
+                                      "fill": "$ds-text",
+                                      "content": "Shipyard Workspace",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "700"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "j4K4aR",
+                                      "name": "Workspace Role / Admin",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Admin",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "UF7Bm",
+                                  "name": "Active Workspace Check",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "check",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "MMIW8",
+                              "name": "Workspace Option / Northstar Labs / Owner",
+                              "width": "fill_container",
+                              "height": 52,
+                              "fill": "#FFFFFF00",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "V9Z0ZU",
+                                  "name": "Workspace Icon / Northstar Labs",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "ptPky",
+                                      "name": "Workspace Icon Glyph / Northstar Labs",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "boxes",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "d4M1k",
+                                  "name": "Workspace Identity / Northstar Labs",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 2,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "wAqkt",
+                                      "name": "Workspace Name / Northstar Labs",
+                                      "fill": "$ds-text",
+                                      "content": "Northstar Labs",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "mbKG2",
+                                      "name": "Workspace Role / Owner",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Owner",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "pxBW8",
+                                  "name": "Workspace Option Chevron",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-border-strong"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Ruw2N",
+                              "name": "Workspace Option / Northstar Labs / Member",
+                              "width": "fill_container",
+                              "height": 52,
+                              "fill": "#FFFFFF00",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "tcJhR",
+                                  "name": "Workspace Icon / Northstar Labs",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "HzdYI",
+                                      "name": "Workspace Icon Glyph / Northstar Labs",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "building-2",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "NHhON",
+                                  "name": "Workspace Identity / Northstar Labs",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 2,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "EXsUj",
+                                      "name": "Workspace Name / Northstar Labs",
+                                      "fill": "$ds-text",
+                                      "content": "Northstar Labs",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "JOMgl",
+                                      "name": "Workspace Role / Member",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Member",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "dIG0z",
+                                  "name": "Workspace Option Chevron",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-border-strong"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "WynfA",
+                              "name": "Workspace Actions Separator",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "vBRka",
+                              "name": "Archived Workspaces Action",
+                              "width": "fill_container",
+                              "height": 40,
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "fHJ02",
+                                  "name": "Archived Workspaces Icon",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "archive",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "EW3KI",
+                                  "name": "Archived Workspaces Label",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Archived workspaces",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "E9pVe",
+                                  "name": "Archived Workspaces Count Badge",
+                                  "height": 20,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    "$ds-space-2"
+                                  ],
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "m1Obmu",
+                                      "name": "Archived Workspaces Count",
+                                      "fill": "$ds-text-muted",
+                                      "content": "1",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 9,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "T8MSS",
+                                  "name": "Archived Workspaces Chevron",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "S9lpi",
+                              "name": "Create Workspace Action",
+                              "width": "fill_container",
+                              "height": 40,
+                              "fill": "$ds-brand-soft",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "J50Le",
+                                  "name": "Create Workspace Icon",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "plus",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "i7LbcD",
+                                  "name": "Create Workspace Label",
+                                  "fill": "$ds-brand",
+                                  "content": "Create workspace",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BNoSR",
+                  "name": "Notifications Panel Specimen",
+                  "width": 648,
+                  "height": "fill_container",
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": "$ds-border-thin",
+                  "layout": "vertical",
+                  "gap": "$ds-space-5",
+                  "padding": "$ds-space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "IeT72",
+                      "name": "Notifications Panel Specimen Description",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$ds-space-2",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iMFCY",
+                          "name": "Notifications Panel Section Label",
+                          "fill": "$ds-brand",
+                          "content": "GLOBAL ACTIVITY",
+                          "fontFamily": "$ds-font-mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.8
+                        },
+                        {
+                          "type": "text",
+                          "id": "p2OMXp",
+                          "name": "Notifications Panel Section Title",
+                          "fill": "$ds-text",
+                          "content": "Notifications panel",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 18,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "t6umo",
+                          "name": "Notifications Panel Section Description",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Opened from the header bell for quick review. It surfaces recent assignment and mention activity without leaving the current screen.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "FSrcY",
+                          "name": "Notifications Panel Scope Note",
+                          "width": "fill_container",
+                          "fill": "$ds-brand-soft",
+                          "cornerRadius": "$ds-radius-md",
+                          "gap": "$ds-space-2",
+                          "padding": "$ds-space-3",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "jOSou",
+                              "name": "Notifications Panel Scope Note Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "info",
+                              "library": "lucide",
+                              "fill": "$ds-brand"
+                            },
+                            {
+                              "type": "text",
+                              "id": "NUPuC",
+                              "name": "Notifications Panel Scope Note Text",
+                              "fill": "$ds-brand",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Shows the active workspace; View all opens the full Notifications page.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KU8se",
+                      "name": "Notifications Panel Specimen Preview",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "$ds-surface-subtle",
+                      "cornerRadius": "$ds-radius-lg",
+                      "stroke": "$ds-border",
+                      "strokeWidth": "$ds-border-thin",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "rJ5iy",
+                          "name": "Notifications Panel / Default",
+                          "reusable": true,
+                          "width": 368,
+                          "fill": "$ds-surface",
+                          "cornerRadius": "$ds-radius-lg",
+                          "stroke": "$ds-border",
+                          "strokeWidth": "$ds-border-thin",
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#00000029",
+                            "offset": {
+                              "x": 0,
+                              "y": 8
+                            },
+                            "blur": 24,
+                            "spread": -4
+                          },
+                          "layout": "vertical",
+                          "padding": "$ds-space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "cPAva",
+                              "name": "Notifications Panel Header",
+                              "width": "fill_container",
+                              "height": 42,
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "irSPp",
+                                  "name": "Notifications Panel Title Group",
+                                  "gap": "$ds-space-2",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "V7IEE",
+                                      "name": "Notifications Panel Bell Icon",
+                                      "width": 16,
+                                      "height": 16,
+                                      "icon": "bell",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "XjxXm",
+                                      "name": "Notifications Panel Title",
+                                      "fill": "$ds-text",
+                                      "content": "Notifications",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 13,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "kZCbV",
+                                  "name": "Mark All Notifications Read Action",
+                                  "fill": "$ds-brand",
+                                  "content": "Mark all as read",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "B01PRR",
+                              "name": "Notifications Panel Tabs",
+                              "width": "fill_container",
+                              "height": 36,
+                              "gap": "$ds-space-1",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "cEMnQ",
+                                  "name": "Notifications Tab / All / Active",
+                                  "height": 28,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "gap": "$ds-space-1",
+                                  "padding": [
+                                    0,
+                                    "$ds-space-3"
+                                  ],
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "Df9VB",
+                                      "name": "All Notifications Tab Label",
+                                      "fill": "$ds-brand",
+                                      "content": "All",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "MhiFX",
+                                  "name": "Notifications Tab / Unread",
+                                  "height": 28,
+                                  "cornerRadius": "$ds-radius-md",
+                                  "gap": "$ds-space-2",
+                                  "padding": [
+                                    0,
+                                    "$ds-space-3"
+                                  ],
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "pKs2J",
+                                      "name": "Unread Notifications Tab Label",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Unread",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "500"
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "dYLn6",
+                                      "name": "Unread Notifications Count Badge",
+                                      "height": 18,
+                                      "fill": "$ds-sidebar",
+                                      "cornerRadius": "$ds-radius-pill",
+                                      "padding": [
+                                        0,
+                                        6
+                                      ],
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "Y3BID",
+                                          "name": "Unread Notifications Count",
+                                          "fill": "$ds-text-muted",
+                                          "content": "2",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 9,
+                                          "fontWeight": "600"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "FilAA",
+                              "name": "Notifications List Top Separator",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "GL5j3",
+                              "name": "Notification Item / Assignment",
+                              "width": "fill_container",
+                              "height": 72,
+                              "fill": "#FFFFFF00",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": "$ds-space-2",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "uph4z",
+                                  "name": "Notification Type Icon / Assignment",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "QzTZ2",
+                                      "name": "Notification Type Glyph / Assignment",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "user-check",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "IIxzV",
+                                  "name": "Notification Content / Assignment",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "y4Hsz",
+                                      "name": "Notification Title Row / Assignment",
+                                      "width": "fill_container",
+                                      "justifyContent": "space_between",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "Q3tsS",
+                                          "name": "Notification Title / Assignment",
+                                          "fill": "$ds-text",
+                                          "content": "Assigned to you",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 11,
+                                          "fontWeight": "700"
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "aSthS",
+                                          "name": "Notification Status / Assignment",
+                                          "gap": 6,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "KzBLD",
+                                              "name": "Notification Time / Assignment",
+                                              "fill": "$ds-text-muted",
+                                              "content": "5m",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 9,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "ellipse",
+                                              "id": "X57ZB5",
+                                              "name": "Unread Notification Indicator / Assignment",
+                                              "fill": "$ds-brand",
+                                              "width": 7,
+                                              "height": 7
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "x58xD",
+                                      "name": "Notification Related Issue / Assignment",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "SY-142 · Set up deployment checks",
+                                      "lineHeight": 1.35,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "c6KTYe",
+                              "name": "Notification Item / Mention",
+                              "width": "fill_container",
+                              "height": 72,
+                              "fill": "#FFFFFF00",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": "$ds-space-2",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "Dvg6o",
+                                  "name": "Notification Type Icon / Mention",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "zOFKK",
+                                      "name": "Notification Type Glyph / Mention",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "at-sign",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "LmZWE",
+                                  "name": "Notification Content / Mention",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "V1JVD",
+                                      "name": "Notification Title Row / Mention",
+                                      "width": "fill_container",
+                                      "justifyContent": "space_between",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "fJYpB",
+                                          "name": "Notification Title / Mention",
+                                          "fill": "$ds-text",
+                                          "content": "Maya mentioned you",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 11,
+                                          "fontWeight": "700"
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "GLxZ2",
+                                          "name": "Notification Status / Mention",
+                                          "gap": 6,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "o6HCe",
+                                              "name": "Notification Time / Mention",
+                                              "fill": "$ds-text-muted",
+                                              "content": "18m",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 9,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "ellipse",
+                                              "id": "O9Uo48",
+                                              "name": "Unread Notification Indicator / Mention",
+                                              "fill": "$ds-brand",
+                                              "width": 7,
+                                              "height": 7
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "V8eDu",
+                                      "name": "Notification Related Issue / Mention",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "SY-128 · Review API rate limits",
+                                      "lineHeight": 1.35,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "yVGib",
+                              "name": "Notification Item / Reassignment",
+                              "width": "fill_container",
+                              "height": 72,
+                              "fill": "#FFFFFF00",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": "$ds-space-2",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "po5cQ",
+                                  "name": "Notification Type Icon / Reassignment",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "azKgN",
+                                      "name": "Notification Type Glyph / Reassignment",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "users",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Ixzj0",
+                                  "name": "Notification Content / Reassignment",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "mKYj2",
+                                      "name": "Notification Title Row / Reassignment",
+                                      "width": "fill_container",
+                                      "justifyContent": "space_between",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "bAtW7",
+                                          "name": "Notification Title / Reassignment",
+                                          "fill": "$ds-text",
+                                          "content": "Issue reassigned to you",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 11,
+                                          "fontWeight": "600"
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "CetEh",
+                                          "name": "Notification Status / Reassignment",
+                                          "gap": 6,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "r8KsSd",
+                                              "name": "Notification Time / Reassignment",
+                                              "fill": "$ds-text-muted",
+                                              "content": "2h",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 9,
+                                              "fontWeight": "500"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "YVT2q",
+                                      "name": "Notification Related Issue / Reassignment",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "SY-096 · Workspace onboarding",
+                                      "lineHeight": 1.35,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "kJk6v",
+                              "name": "Notifications Footer Separator",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "N75aZ1",
+                              "name": "View All Notifications Action",
+                              "width": "fill_container",
+                              "height": 40,
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-2",
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "L475qJ",
+                                  "name": "View All Notifications Label",
+                                  "fill": "$ds-brand",
+                                  "content": "View all notifications",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "G9AfRy",
+                                  "name": "View All Notifications Arrow",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "arrow-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GpSjk",
+              "name": "Inline Elements Row 03",
+              "width": "fill_container",
+              "height": 760,
+              "gap": "$ds-space-6",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ySVuZ",
+                  "name": "Global Search Results Specimen",
+                  "width": 648,
+                  "height": "fill_container",
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": "$ds-border-thin",
+                  "layout": "vertical",
+                  "gap": "$ds-space-5",
+                  "padding": "$ds-space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "vU2S8",
+                      "name": "Global Search Results Specimen Description",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$ds-space-2",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Jspbs",
+                          "name": "Global Search Results Section Label",
+                          "fill": "$ds-brand",
+                          "content": "GLOBAL SEARCH",
+                          "fontFamily": "$ds-font-mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 0.8
+                        },
+                        {
+                          "type": "text",
+                          "id": "DDxak",
+                          "name": "Global Search Results Section Title",
+                          "fill": "$ds-text",
+                          "content": "Grouped search results",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 18,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "FGEIj",
+                          "name": "Global Search Results Section Description",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "A mixed workspace search grouped by resource type so Issues, Projects, Cycles, and Members remain easy to scan.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kvG3p",
+                          "name": "Global Search Results Scope Note",
+                          "width": "fill_container",
+                          "fill": "$ds-brand-soft",
+                          "cornerRadius": "$ds-radius-md",
+                          "gap": "$ds-space-2",
+                          "padding": "$ds-space-3",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "Rf6Dt",
+                              "name": "Global Search Results Scope Note Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "info",
+                              "library": "lucide",
+                              "fill": "$ds-brand"
+                            },
+                            {
+                              "type": "text",
+                              "id": "IDHCe",
+                              "name": "Global Search Results Scope Note Text",
+                              "fill": "$ds-brand",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Current workspace only; Member results open the contextual details drawer.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "G6tnq",
+                      "name": "Global Search Results Specimen Preview",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "$ds-surface-subtle",
+                      "cornerRadius": "$ds-radius-lg",
+                      "stroke": "$ds-border",
+                      "strokeWidth": "$ds-border-thin",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "A7kvRz",
+                          "name": "Global Search Results / Grouped",
+                          "reusable": true,
+                          "width": 520,
+                          "fill": "$ds-surface",
+                          "cornerRadius": "$ds-radius-lg",
+                          "stroke": "$ds-border",
+                          "strokeWidth": "$ds-border-thin",
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#00000029",
+                            "offset": {
+                              "x": 0,
+                              "y": 8
+                            },
+                            "blur": 24,
+                            "spread": -4
+                          },
+                          "layout": "vertical",
+                          "padding": "$ds-space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "yVo2c",
+                              "name": "Global Search Query Field",
+                              "width": "fill_container",
+                              "height": 48,
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-3"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "AjBDF",
+                                  "name": "Global Search Query Icon",
+                                  "width": 18,
+                                  "height": 18,
+                                  "icon": "search",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Z2dcW",
+                                  "name": "Global Search Query Value",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "api",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "i1v06N",
+                                  "name": "Global Search Escape Key",
+                                  "height": 22,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-sm",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": "$ds-border-thin",
+                                  "padding": [
+                                    0,
+                                    "$ds-space-2"
+                                  ],
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "R12nU",
+                                      "name": "Global Search Escape Key Label",
+                                      "fill": "$ds-text-muted",
+                                      "content": "ESC",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 9,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "AMoTk",
+                              "name": "Global Search Query Separator",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "d4ncHs",
+                              "name": "Search Results Group / ISSUES",
+                              "width": "fill_container",
+                              "height": 26,
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "YYqke",
+                                  "name": "Search Results Group Label / ISSUES",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ISSUES",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "MDKVM",
+                                  "name": "Search Results Group Count / ISSUES",
+                                  "fill": "$ds-text-muted",
+                                  "content": "2",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Lhi6k",
+                              "name": "Search Result / Issue / Review API rate limits",
+                              "width": "fill_container",
+                              "height": 52,
+                              "fill": "$ds-brand-soft",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "a3AFNq",
+                                  "name": "Search Result Icon / Issue",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "NLm5I",
+                                      "name": "Search Result Icon Glyph / Issue",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "circle-dot",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Z3RwJ",
+                                  "name": "Search Result Copy / Review API rate limits",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "v0c5M",
+                                      "name": "Search Result Title / Review API rate limits",
+                                      "fill": "$ds-text",
+                                      "content": "Review API rate limits",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "700"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "J6MP0f",
+                                      "name": "Search Result Metadata / Review API rate limits",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "SY-128 · In progress · High",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 9,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "xiYGj",
+                                  "name": "Selected Search Result Enter Key",
+                                  "height": 22,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-sm",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": "$ds-border-thin",
+                                  "padding": [
+                                    0,
+                                    "$ds-space-2"
+                                  ],
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "hdVYd",
+                                      "name": "Selected Search Result Enter Label",
+                                      "fill": "$ds-brand",
+                                      "content": "ENTER",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "yAb2B",
+                              "name": "Search Result / Issue / Document API error responses",
+                              "width": "fill_container",
+                              "height": 52,
+                              "fill": "#FFFFFF00",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "AP8pW",
+                                  "name": "Search Result Icon / Issue",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "e9pT41",
+                                      "name": "Search Result Icon Glyph / Issue",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "circle-dot",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "gewWl",
+                                  "name": "Search Result Copy / Document API error responses",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "QCPZG",
+                                      "name": "Search Result Title / Document API error responses",
+                                      "fill": "$ds-text",
+                                      "content": "Document API error responses",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "XtSRN",
+                                      "name": "Search Result Metadata / Document API error responses",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "SY-133 · Todo · Medium",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 9,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "FvfqJ",
+                                  "name": "Search Result Open Indicator / Document API error responses",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-border-strong"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "qTAi6",
+                              "name": "Search Results Group / PROJECTS",
+                              "width": "fill_container",
+                              "height": 26,
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "wiBtN",
+                                  "name": "Search Results Group Label / PROJECTS",
+                                  "fill": "$ds-text-muted",
+                                  "content": "PROJECTS",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "do8la",
+                                  "name": "Search Results Group Count / PROJECTS",
+                                  "fill": "$ds-text-muted",
+                                  "content": "1",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "DoTpr",
+                              "name": "Search Result / Project / Public API",
+                              "width": "fill_container",
+                              "height": 52,
+                              "fill": "#FFFFFF00",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "Z3UaA",
+                                  "name": "Search Result Icon / Project",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "C259Yv",
+                                      "name": "Search Result Icon Glyph / Project",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "folder-kanban",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "R5F0kP",
+                                  "name": "Search Result Copy / Public API",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "SugIw",
+                                      "name": "Search Result Title / Public API",
+                                      "fill": "$ds-text",
+                                      "content": "Public API",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "Z5Ou8E",
+                                      "name": "Search Result Metadata / Public API",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Active · Owner: api-owner@company.com",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 9,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "c5zXfj",
+                                  "name": "Search Result Open Indicator / Public API",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-border-strong"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "uThbb",
+                              "name": "Search Results Group / CYCLES",
+                              "width": "fill_container",
+                              "height": 26,
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "vmuEb",
+                                  "name": "Search Results Group Label / CYCLES",
+                                  "fill": "$ds-text-muted",
+                                  "content": "CYCLES",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "G9IFRc",
+                                  "name": "Search Results Group Count / CYCLES",
+                                  "fill": "$ds-text-muted",
+                                  "content": "1",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "txqGz",
+                              "name": "Search Result / Cycle / API stabilization",
+                              "width": "fill_container",
+                              "height": 52,
+                              "fill": "#FFFFFF00",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "uLA54",
+                                  "name": "Search Result Icon / Cycle",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "rUYMl",
+                                      "name": "Search Result Icon Glyph / Cycle",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "repeat-2",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "KB1Gv",
+                                  "name": "Search Result Copy / API stabilization",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "W5XOPK",
+                                      "name": "Search Result Title / API stabilization",
+                                      "fill": "$ds-text",
+                                      "content": "API stabilization",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "PQyKE",
+                                      "name": "Search Result Metadata / API stabilization",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Aug 1–14 · Active",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 9,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "SMFfm",
+                                  "name": "Search Result Open Indicator / API stabilization",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-border-strong"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "x4hfk",
+                              "name": "Search Results Group / MEMBERS",
+                              "width": "fill_container",
+                              "height": 26,
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "N8J5Z",
+                                  "name": "Search Results Group Label / MEMBERS",
+                                  "fill": "$ds-text-muted",
+                                  "content": "MEMBERS",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "LVltO",
+                                  "name": "Search Results Group Count / MEMBERS",
+                                  "fill": "$ds-text-muted",
+                                  "content": "1",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "fPUJx",
+                              "name": "Search Result / Member / api-owner@company.com",
+                              "width": "fill_container",
+                              "height": 52,
+                              "fill": "#FFFFFF00",
+                              "cornerRadius": "$ds-radius-md",
+                              "gap": "$ds-space-3",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "sCDJn",
+                                  "name": "Search Result Icon / Member",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "Tbvlj",
+                                      "name": "Search Result Icon Glyph / Member",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "user-round",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "uYYtc",
+                                  "name": "Search Result Copy / api-owner@company.com",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "FCOG2",
+                                      "name": "Search Result Title / api-owner@company.com",
+                                      "fill": "$ds-text",
+                                      "content": "api-owner@company.com",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "sjkIt",
+                                      "name": "Search Result Metadata / api-owner@company.com",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Workspace admin",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 9,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "O1lYrZ",
+                                  "name": "Search Result Open Indicator / api-owner@company.com",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-border-strong"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "q9ORoH",
+                              "name": "Global Search Footer Separator",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "xJVnl",
+                              "name": "Global Search Keyboard Help",
+                              "width": "fill_container",
+                              "height": 32,
+                              "gap": "$ds-space-4",
+                              "padding": [
+                                0,
+                                "$ds-space-2"
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "rccp7",
+                                  "name": "Global Search Keyboard Help / Navigate",
+                                  "gap": "$ds-space-1",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "hdBAa",
+                                      "name": "Global Search Keyboard Help Icon / Navigate",
+                                      "width": 12,
+                                      "height": 12,
+                                      "icon": "arrow-up-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "U4PEeE",
+                                      "name": "Global Search Keyboard Help Label / Navigate",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Navigate",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 9,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "q6Ao1R",
+                                  "name": "Global Search Keyboard Help / Open",
+                                  "gap": "$ds-space-1",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "xK81Y",
+                                      "name": "Global Search Keyboard Help Icon / Open",
+                                      "width": 12,
+                                      "height": 12,
+                                      "icon": "corner-down-left",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "FPU55",
+                                      "name": "Global Search Keyboard Help Label / Open",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Open",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 9,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "YOXtO",
+                                  "name": "Global Search Keyboard Help / Close",
+                                  "gap": "$ds-space-1",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "V7YT3",
+                                      "name": "Global Search Keyboard Help Icon / Close",
+                                      "width": 12,
+                                      "height": 12,
+                                      "icon": "x",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "OdP8S",
+                                      "name": "Global Search Keyboard Help Label / Close",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Close",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 9,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
