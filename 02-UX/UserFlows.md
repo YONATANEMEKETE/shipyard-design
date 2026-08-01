@@ -2325,12 +2325,17 @@ The user enters a workspace or navigates to the Dashboard.
 
 ### Use Quick Actions
 
-1. The user selects a quick action.
-2. Available actions include:
+1. The system displays actions allowed by the current user's workspace role.
+2. Every role can use:
    - Create Issue
    - Search Workspace
    - View Assigned Issues
-3. The system navigates to the selected feature.
+3. Owners and Admins can additionally use:
+   - Create Project
+   - Create Cycle
+4. Unauthorized actions are omitted rather than disabled.
+5. The user selects a quick action.
+6. The system opens the corresponding workflow.
 
 ---
 
@@ -2355,6 +2360,15 @@ The user enters a workspace or navigates to the Dashboard.
 
 1. The workspace has no active cycle.
 2. The Dashboard indicates that no active cycle exists.
+3. Owners and Admins see **Create Cycle**; Members see no Cycle creation action.
+
+---
+
+### No Active Projects
+
+1. The workspace has no active Projects.
+2. Owners and Admins see **Create Project**.
+3. Members see a neutral empty state with no Project creation action.
 
 ---
 
@@ -2389,6 +2403,7 @@ The user enters a workspace or navigates to the Dashboard.
 - The user can quickly access relevant work.
 - The Dashboard reflects the latest workspace information.
 - The user can continue to other product workflows through the available navigation and quick actions.
+- Every displayed Dashboard or empty-state action is permitted for the current user's workspace role.
 ---
 # User Flow 19 — Search & Filters
 

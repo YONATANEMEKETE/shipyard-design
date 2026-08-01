@@ -262,7 +262,7 @@ Users frequently need quick access to current work.
 
 **Rationale**
 
-Centralizing assigned work, projects, cycles, and recent activity encourages users to begin work directly from the Dashboard.
+Centralizing assigned work, projects, cycles, and recent activity encourages users to begin work directly from the Dashboard. Quick actions follow workspace permissions: all roles can create Issues, search, and view assigned work, while only Owners and Admins see Project and Cycle creation.
 
 **Impact**
 
@@ -312,7 +312,7 @@ Users should never encounter blank interfaces without guidance.
 
 **Rationale**
 
-Every empty state includes a meaningful explanation and, where appropriate, a clear next action.
+Every empty state includes a meaningful explanation and, where appropriate, a clear next action. Actions are filtered by workspace permissions, and unauthorized actions are omitted instead of shown disabled.
 
 **Impact**
 

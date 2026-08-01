@@ -110,7 +110,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Dashboard | Page | Login, Workspace Switcher, Sidebar | Display a personalized overview of the user's workspace, assigned work, projects, cycles, and recent activity. |
 | Recent Activity Feed | Section | Dashboard | Display the latest workspace activity and provide quick navigation to related resources. |
-| Quick Actions | Section | Dashboard | Provide shortcuts to common actions such as creating an issue, searching the workspace, or viewing assigned work. |
+| Quick Actions | Section | Dashboard | Show Create Issue, Search Workspace, and View Assigned Issues to all roles; additionally show Create Project and Create Cycle to Owners and Admins while omitting unauthorized actions. |
 
 ---
 ## 5.10 Global Actions

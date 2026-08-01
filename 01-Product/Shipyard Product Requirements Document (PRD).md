@@ -684,10 +684,11 @@ The Dashboard is the default landing page within a workspace. It provides users 
 
 ##### Quick Actions
 
-- Create a new issue.
-- Create a new project (authorized users only).
-- Search for issues or projects.
-- View all assigned issues.
+- All roles can create a new Issue.
+- All roles can search the workspace.
+- All roles can view their assigned Issues.
+- Owners and Admins can create a new Project.
+- Owners and Admins can create a new Cycle.
 
 ##### Activity Feed
 
@@ -704,6 +705,7 @@ The Dashboard is the default landing page within a workspace. It provides users 
 - Personal sections are specific to the logged-in user.
 - Activity is displayed in reverse chronological order.
 - Archived items are excluded unless explicitly requested.
+- Dashboard quick actions and empty-state actions are filtered by the current user's workspace permissions; unauthorized actions are hidden rather than disabled.
 
 #### Acceptance Criteria
 
@@ -726,6 +728,10 @@ Given recent workspace activity, when the dashboard loads, then the latest activ
 ##### Quick Actions
 
 Given a user with permission, when they select a quick action, then the corresponding workflow begins immediately.
+
+Given an Owner or Admin views Dashboard actions, then Create Project and Create Cycle are available alongside the actions shared by all roles.
+
+Given a Member views Dashboard or empty-state actions, then Create Project and Create Cycle are not displayed.
 
 #### Edge Cases
 

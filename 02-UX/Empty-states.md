@@ -1,3 +1,5 @@
+Empty-state actions are filtered using the current user's permissions. Unauthorized actions are omitted rather than displayed in a disabled state.
+
 ## 6.2 Workspace
 
 | Screen / Section | Condition | Message | Primary Action | Secondary Action |
@@ -19,8 +21,9 @@
 
 | Screen / Section | Condition | Message | Primary Action | Secondary Action |
 |------------------|-----------|---------|----------------|------------------|
-| Projects List | No projects exist in the workspace | No projects yet. Create your first project to start organizing work. | Create Project | — |
-| Projects List | No projects match the current search or filters | No matching projects found. Try adjusting your search or filters. | Clear Filters | Create Project |
+| Projects List *(Owner/Admin)* | No projects exist in the workspace | No projects yet. Create your first project to start organizing work. | Create Project | — |
+| Projects List *(Member)* | No projects exist in the workspace | No projects yet. Projects created by a workspace Owner or Admin will appear here. | — | — |
+| Projects List | No projects match the current search or filters | No matching projects found. Try adjusting your search or filters. | Clear Filters | Create Project *(Owner/Admin only)* |
 | Archived Projects | No archived projects exist | No archived projects available. | View Active Projects | — |
 | Project Details → Issues | The project has no issues | This project doesn't have any issues yet. Create the first issue to start tracking work. | Create Issue | — |
 | Project Activity | No project activity has been recorded | No activity yet. Project updates will appear here as work progresses. | — | — |
@@ -30,8 +33,9 @@
 
 | Screen / Section | Condition | Message | Primary Action | Secondary Action |
 |------------------|-----------|---------|----------------|------------------|
-| Cycles List | No cycles exist in the workspace | No cycles yet. Create your first cycle to start planning work. | Create Cycle | — |
-| Cycles List | No cycles match the current search or filters | No matching cycles found. Try adjusting your search or filters. | Clear Filters | Create Cycle |
+| Cycles List *(Owner/Admin)* | No cycles exist in the workspace | No cycles yet. Create your first cycle to start planning work. | Create Cycle | — |
+| Cycles List *(Member)* | No cycles exist in the workspace | No cycles yet. Cycles created by a workspace Owner or Admin will appear here. | — | — |
+| Cycles List | No cycles match the current search or filters | No matching cycles found. Try adjusting your search or filters. | Clear Filters | Create Cycle *(Owner/Admin only)* |
 | Archived Cycles | No archived cycles exist | No archived cycles available. | View Active Cycles | — |
 | Cycle Details → Issues | The cycle has no assigned issues | No issues have been added to this cycle yet. | Create Issue | — |
 | Cycle Activity | No cycle activity has been recorded | No activity yet. Updates will appear here as work progresses. | — | — |
@@ -65,13 +69,16 @@
 
 | Screen / Section | Condition | Message | Primary Action | Secondary Action |
 |------------------|-----------|---------|----------------|------------------|
-| Dashboard | The workspace contains no projects, cycles, or issues | Welcome to Shipyard! Start by creating your first project or issue. | Create Project | Create Issue |
+| Dashboard *(Owner/Admin)* | The workspace contains no projects, cycles, or issues | Welcome to Shipyard! Start by creating your first project, cycle, or issue. | Create Project | Create Issue |
+| Dashboard *(Member)* | The workspace contains no projects, cycles, or issues | Welcome to Shipyard! Create the first issue to start tracking work. | Create Issue | — |
 | Assigned Issues | The user has no assigned issues | You don't have any assigned issues. | View All Issues | — |
 | Recently Viewed Issues | The user has not viewed any issues yet | Recently viewed issues will appear here as you work. | View All Issues | — |
 | Overdue Issues | The user has no overdue issues | Great job! You don't have any overdue issues. | — | — |
 | Blocked Issues | The user has no blocked assigned issues | You don't have any blocked work. | View Assigned Issues | — |
-| Active Projects | No active projects exist | No active projects available. Create a project to start organizing work. | Create Project | — |
-| Current Active Cycle | No active cycle exists | No active cycle is currently running. | Create Cycle | — |
+| Active Projects *(Owner/Admin)* | No active projects exist | No active projects available. Create a project to start organizing work. | Create Project | — |
+| Active Projects *(Member)* | No active projects exist | No active projects are currently available. | — | — |
+| Current Active Cycle *(Owner/Admin)* | No active cycle exists | No active cycle is currently running. Create a cycle to begin planning work. | Create Cycle | — |
+| Current Active Cycle *(Member)* | No active cycle exists | No active cycle is currently running. | — | — |
 | Recently Completed Issues | No issues have been completed | Completed issues will appear here once work is finished. | View All Issues | — |
 | Recent Activity Feed | No recent workspace activity exists | No recent activity yet. Updates will appear here as your team collaborates. | — | — |
 
