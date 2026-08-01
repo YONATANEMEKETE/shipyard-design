@@ -1069,6 +1069,8 @@ Cycles are fixed development periods used to plan, organize, and track work. The
 - Every cycle must have a start date.
 - Every cycle must have an end date.
 - A cycle may include a goal or description.
+- Every new cycle starts in Planned status.
+- A new cycle's date range must not overlap another non-archived cycle in the same workspace.
 
 ##### Cycle Management
 
@@ -1077,9 +1079,10 @@ Users with permission can:
 - Edit cycle details.
 - Start a cycle.
 - Complete a cycle.
+- Reopen a completed cycle.
 - Archive a cycle.
 - Restore an archived cycle.
-- Delete a cycle before it starts.
+- Delete a future Planned cycle before its start date.
 
 ##### Issue Planning
 
@@ -1109,25 +1112,39 @@ Cycles support the following statuses:
 - Completed
 - Archived
 
-Only one cycle can be Active within a workspace at a time.
+Status is changed only through the Start, Complete, Reopen, Archive, and Restore actions. Users cannot select an arbitrary status.
+
+Allowed transitions are:
+
+- Planned to Active through Start.
+- Active to Completed through Complete.
+- Completed to Active through Reopen.
+- Planned or Completed to Archived through Archive.
+- Archived to its stored pre-archive status through Restore.
+
+Only one cycle can be Active within a workspace at a time. An Active cycle cannot be archived; it must be completed first.
 
 #### Business Rules
 
 - Every cycle belongs to one workspace.
 - An issue can belong to only one cycle at a time.
-- Active cycles cannot overlap within the same workspace.
-- Completed cycles become read-only.
+- Date ranges of non-archived cycles cannot overlap within the same workspace.
+- Start and end dates are inclusive, so a following cycle must start after the preceding cycle's end date.
+- Editing cycle dates must preserve the no-overlap rule.
+- Completed cycles become read-only unless reopened.
 - Completing a cycle does not automatically complete unfinished issues.
 - Archived cycles remain available for historical reference.
 - Archived cycles may be restored by users with permission to manage cycles.
-- A cycle archived while Planned or Completed returns to that status when restored.
-- A cycle archived while Active returns to Active when no other active cycle exists; otherwise it returns to Planned.
+- Archived cycles do not block scheduling, but restoration is blocked when the restored date range would overlap a non-archived cycle.
+- A cycle archived while Planned or Completed returns to its stored pre-archive status when restored.
+- Reopening a Completed cycle is blocked when another cycle is Active or when the date range conflicts with another non-archived cycle.
+- Deleting a future Planned cycle permanently removes it and unassigns its issues from the cycle without deleting those issues.
 
 #### Acceptance Criteria
 
 ##### Create Cycle
 
-Given a user with permission, when they provide valid cycle information, then a new cycle is created.
+Given a user with permission, when they provide valid cycle information that does not overlap another non-archived cycle, then a new Planned cycle is created.
 
 ##### Assign Issue to Cycle
 
@@ -1135,7 +1152,7 @@ Given an existing issue, when it is assigned to a cycle, then it appears in that
 
 ##### Start Cycle
 
-Given a planned cycle, when it is started, then its status changes to Active.
+Given a Planned cycle and no other Active cycle, when an authorized user starts it, then its status changes to Active.
 
 ##### Complete Cycle
 
@@ -1143,7 +1160,15 @@ Given an active cycle, when it is completed, then its status changes to Complete
 
 ##### Restore Cycle
 
-Given an archived cycle and an authorized user, when the cycle is restored, then it returns to its permitted pre-archive status and becomes manageable again.
+Given an Archived cycle and an authorized user, when its dates do not overlap another non-archived cycle, then it returns to its stored Planned or Completed status.
+
+##### Reopen Cycle
+
+Given a Completed cycle, when no other cycle is Active and its dates do not conflict, then an authorized user can reopen it as Active.
+
+##### Delete Cycle
+
+Given a future Planned cycle, when an authorized user confirms deletion, then the cycle is permanently deleted and its issues become unassigned from any cycle.
 
 #### Edge Cases
 
@@ -1151,8 +1176,10 @@ Given an archived cycle and an authorized user, when the cycle is restored, then
 - Cycle reaches its end date before completion.
 - Issue moved out of an active cycle.
 - Attempt to activate a second cycle while another is active.
+- Attempt to create, restore, reopen, or reschedule a cycle with overlapping dates.
+- Attempt to archive an Active cycle before completing it.
 - Attempt to edit a completed cycle.
-- Cycle deleted while it still contains issues.
+- Future Planned cycle deleted while it still contains issues.
 
 #### Future Enhancements
 
@@ -1666,7 +1693,7 @@ The MVP includes three roles:
 | Archive or restore issues | ✅ | ✅ | ✅ |
 | Delete issues | ✅ | ✅ | ❌ |
 | Create cycles | ✅ | ✅ | ❌ |
-| Edit, complete, archive, or restore cycles | ✅ | ✅ | ❌ |
+| Manage cycle lifecycle, including deletion | ✅ | ✅ | ❌ |
 | Comment on issues | ✅ | ✅ | ✅ |
 | View dashboard | ✅ | ✅ | ✅ |
 | Search workspace | ✅ | ✅ | ✅ |
@@ -1815,10 +1842,12 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - Every cycle belongs to exactly one workspace.
 - Cycles do not directly belong to projects.
 - Only one cycle may be active within a workspace at any time.
+- Non-archived cycle date ranges may never overlap within a workspace.
 - An issue may belong to only one cycle.
 - Completing a cycle does not automatically move unfinished issues.
 - Archived cycles become read-only until restored.
-- Restoring a cycle must preserve the one-active-cycle rule.
+- Active cycles must be completed before they can be archived.
+- Restoring or reopening a cycle must preserve both the one-active-cycle and no-overlap rules.
 
 ### 7.6 Comment Rules
 
@@ -2046,8 +2075,10 @@ The initial release focuses on providing a complete project management experienc
 #### Cycle Management
 
 - Create cycles
-- Manage cycles
+- Start, complete, and reopen cycles
+- Enforce non-overlapping cycle schedules
 - Archive and restore cycles
+- Delete future planned cycles
 - Assign issues to cycles
 - Cycle progress tracking
 
@@ -2200,6 +2231,7 @@ The following assumptions guided the MVP definition:
 
 - Teams organize work using Issues, Projects, and Cycles.
 - Only one active cycle exists per workspace.
+- Non-archived cycles never overlap within a workspace.
 - Notifications help users stay informed but are not intended to replace communication tools.
 - Search is a primary method of navigating large workspaces.
 

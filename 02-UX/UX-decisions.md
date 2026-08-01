@@ -238,7 +238,23 @@ Maintains data integrity while keeping archival reversible. Restoration preserve
 
 ---
 
-### Decision 15 — Dashboard Serves as the Productivity Hub
+### Decision 15 — Cycle Lifecycle Uses Explicit Non-Overlapping Transitions
+
+**Context**
+
+Cycles define the workspace delivery schedule, so overlapping dates or arbitrary status changes would make the current iteration ambiguous.
+
+**Rationale**
+
+Non-archived Cycle date ranges never overlap. Lifecycle changes use explicit Start, Complete, Reopen, Archive, and Restore actions instead of a generic status selector. Only one Cycle may be Active, and an Active Cycle must be completed before it can be archived.
+
+**Impact**
+
+Creation, date editing, restoration, and reopening include conflict checks. The interface exposes only actions valid for the Cycle's current state and explains how to resolve blocked transitions.
+
+---
+
+### Decision 16 — Dashboard Serves as the Productivity Hub
 
 **Context**
 
@@ -256,7 +272,7 @@ Improves efficiency and reduces unnecessary navigation.
 
 ## 8.6 Consistency Decisions
 
-### Decision 16 — Shared Interaction Patterns Across Modules
+### Decision 17 — Shared Interaction Patterns Across Modules
 
 **Context**
 
@@ -272,7 +288,7 @@ Provides a predictable user experience throughout the application.
 
 ---
 
-### Decision 17 — Consistent Detail Page Structure
+### Decision 18 — Consistent Detail Page Structure
 
 **Context**
 
@@ -288,7 +304,7 @@ Improves usability and simplifies future feature additions.
 
 ---
 
-### Decision 18 — Empty States Always Guide Users Forward
+### Decision 19 — Empty States Always Guide Users Forward
 
 **Context**
 
@@ -306,7 +322,7 @@ Improves discoverability and encourages continued engagement.
 
 ## 8.7 Future Scalability Decisions
 
-### Decision 19 — Post-MVP Features are Intentionally Deferred
+### Decision 20 — Post-MVP Features are Intentionally Deferred
 
 **Context**
 
@@ -322,7 +338,7 @@ Allows the MVP to remain focused while providing a clear path for future expansi
 
 ---
 
-### Decision 20 — Architecture Supports Incremental Growth
+### Decision 21 — Architecture Supports Incremental Growth
 
 **Context**
 

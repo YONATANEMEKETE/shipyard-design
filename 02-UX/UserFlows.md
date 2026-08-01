@@ -1183,8 +1183,8 @@ The user selects **Create Cycle** from the Cycles page or the global **Create** 
    - Start date
    - End date
 5. The user submits the form.
-6. The system validates the provided information.
-7. The cycle is created.
+6. The system validates the provided information and confirms that the dates do not overlap another non-archived cycle.
+7. The cycle is created with Planned status.
 8. The cycle is added to the workspace's Cycles list.
 9. The user is redirected to the cycle overview page.
 10. The cycle is ready to receive issues.
@@ -1232,9 +1232,9 @@ The user selects **Create Cycle** from the Cycles page or the global **Create** 
 
 ### Overlapping Cycle
 
-1. The selected date range overlaps an existing active cycle.
-2. The system warns the user according to workspace rules.
-3. The user can adjust the dates or continue if overlapping cycles are permitted.
+1. The selected date range overlaps an existing non-archived cycle.
+2. The system blocks creation and identifies the conflicting cycle.
+3. The user adjusts the dates before continuing.
 
 ---
 
@@ -1257,6 +1257,7 @@ The user selects **Create Cycle** from the Cycles page or the global **Create** 
 ## Postconditions
 
 - A new cycle exists within the workspace.
+- The new cycle has Planned status and does not overlap another non-archived cycle.
 - The cycle appears in the Cycles list.
 - The cycle overview page is displayed.
 - The cycle is ready for issues to be planned and tracked.
@@ -1267,7 +1268,7 @@ The user selects **Create Cycle** from the Cycles page or the global **Create** 
 
 ## Overview
 
-This flow describes how users manage a cycle after it has been created. Cycle management includes viewing cycle progress, updating cycle details, monitoring completion, closing completed cycles, reopening cycles when necessary, and archiving historical cycles.
+This flow describes how users manage a cycle after it has been created. Cycle management includes viewing progress, editing details, using controlled lifecycle actions, archiving historical cycles, restoring archived cycles, and deleting future Planned cycles.
 
 ---
 
@@ -1311,16 +1312,18 @@ The user opens an existing cycle from the Cycles page.
 2. The system displays the editable cycle information.
 3. The user updates one or more cycle details.
 4. The user saves the changes.
-5. The system validates the updated information.
+5. The system validates the updated information, including the no-overlap rule when dates change.
 6. The cycle information is updated immediately.
 
 ---
 
-### Update Cycle Status
+### Start Cycle
 
-1. The user changes the cycle status.
-2. The system updates the cycle.
-3. The new status is reflected throughout the workspace.
+1. The user opens a Planned cycle and selects **Start Cycle**.
+2. The system confirms that no other cycle is Active.
+3. The system displays a confirmation dialog.
+4. The user confirms the action.
+5. The cycle becomes Active throughout the workspace.
 
 ---
 
@@ -1329,9 +1332,9 @@ The user opens an existing cycle from the Cycles page.
 1. The user selects **Complete Cycle**.
 2. The system evaluates all issues assigned to the cycle.
 3. The user reviews any incomplete issues.
-4. The user chooses how incomplete issues should be handled (for example, moving them to another cycle or leaving them in the backlog).
+4. The user may move incomplete issues to a later Planned cycle; issues not moved remain associated with this cycle and are not automatically completed.
 5. The user confirms completion.
-6. The system closes the cycle.
+6. The system changes the cycle from Active to Completed.
 7. The cycle becomes read-only.
 
 ---
@@ -1340,18 +1343,21 @@ The user opens an existing cycle from the Cycles page.
 
 1. The user opens a completed cycle.
 2. The user selects **Reopen Cycle**.
-3. The system restores the cycle to an active state.
-4. Issues can once again be updated within the cycle.
+3. The system confirms that no other cycle is Active and that the cycle dates do not overlap another non-archived cycle.
+4. The system displays a confirmation dialog.
+5. The user confirms the action.
+6. The system restores the cycle to Active and makes it editable.
 
 ---
 
 ### Archive Cycle
 
-1. The user selects **Archive Cycle**.
+1. The user opens a Planned or Completed cycle and selects **Archive Cycle**.
 2. The system displays a confirmation dialog.
 3. The user confirms the action.
-4. The cycle is moved to the Archived Cycles list.
-5. The archived cycle remains available for historical reference.
+4. The system stores the cycle's pre-archive status.
+5. The cycle is moved to the Archived Cycles list and becomes read-only.
+6. An Active cycle does not offer the Archive action; it must be completed first.
 
 ---
 
@@ -1359,11 +1365,21 @@ The user opens an existing cycle from the Cycles page.
 
 1. The user opens an archived cycle.
 2. The user selects **Restore Cycle**.
-3. The system displays a confirmation dialog.
+3. The system checks that the cycle's date range does not overlap another non-archived cycle.
+4. The system displays a confirmation dialog.
+5. The user confirms the action.
+6. The cycle returns to its stored Planned or Completed status.
+7. A restored Planned cycle becomes editable; a restored Completed cycle remains read-only unless reopened.
+
+---
+
+### Delete Cycle
+
+1. The user opens a Planned cycle whose start date is in the future.
+2. The user selects **Delete Cycle**.
+3. The system displays a confirmation that deletion is permanent and that associated issues will be unassigned from the cycle.
 4. The user confirms the action.
-5. A cycle previously Planned or Completed returns to that status.
-6. A cycle previously Active returns to Active if no other active cycle exists; otherwise it returns to Planned.
-7. The cycle becomes manageable again for authorized users.
+5. The system permanently deletes the cycle and preserves its issues without a cycle assignment.
 
 ---
 
@@ -1404,6 +1420,30 @@ The user opens an existing cycle from the Cycles page.
 
 ---
 
+### Cycle Date Conflict
+
+1. A create, edit, reopen, or restore action would overlap another non-archived cycle.
+2. The system blocks the action and identifies the conflicting cycle.
+3. The user keeps the existing state or chooses non-overlapping dates where editing is allowed.
+
+---
+
+### Active Cycle Conflict
+
+1. The user attempts to start or reopen a cycle while another cycle is Active.
+2. The system blocks the action and links to the Active cycle.
+3. The user completes the Active cycle before trying again.
+
+---
+
+### Invalid Lifecycle Action
+
+1. The user attempts an action that is not allowed for the cycle's current status or dates.
+2. The system hides or disables the action and explains the required preceding action.
+3. For example, an Active cycle must be completed before it can be archived, and only a future Planned cycle can be deleted.
+
+---
+
 ### Server Error
 
 1. The requested operation cannot be completed.
@@ -1418,6 +1458,7 @@ The user opens an existing cycle from the Cycles page.
 - Progress and completion statistics are updated.
 - Completed cycles preserve their historical information.
 - Archived cycles remain available for future reference and restoration.
+- Non-archived cycle dates do not overlap.
 - Related issues remain consistent with the updated cycle state.
 
 ---

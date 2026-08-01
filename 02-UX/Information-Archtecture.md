@@ -102,6 +102,8 @@ Contains:
 
 Organizes work into fixed development iterations and tracks progress toward cycle goals.
 
+Non-archived Cycles form a sequential workspace schedule: their date ranges never overlap, and no more than one Cycle can be Active.
+
 Contains:
 
 - Active Cycle

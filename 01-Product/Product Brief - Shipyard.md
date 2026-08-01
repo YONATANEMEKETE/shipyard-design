@@ -111,6 +111,7 @@ The easiest way for small software teams to manage and ship software.
 ### 3. Run Development Cycles
 
 - Create cycles
+- Schedule cycles without overlapping dates
 - Plan work
 - Track sprint progress
 - Complete cycles
@@ -166,10 +167,13 @@ The easiest way for small software teams to manage and ship software.
 #### Cycles
 
 - Create cycles
+- Start, complete, and reopen cycles through controlled lifecycle actions
+- Prevent date overlap between non-archived cycles
 - Assign issues
 - Track cycle progress
 - Complete cycles
 - Archive and restore cycles
+- Delete future planned cycles
 
 #### Collaboration
 
