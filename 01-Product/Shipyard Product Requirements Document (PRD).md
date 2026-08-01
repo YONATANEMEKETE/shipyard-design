@@ -431,6 +431,8 @@ A workspace is the primary container for a team's data. It groups members, proje
 - Workspace owners can update the workspace icon.
 - Workspace owners can archive the workspace.
 - Archived workspaces cannot be actively used.
+- Workspace owners can restore an archived workspace.
+- Restoring a workspace makes it active and usable again.
 - Workspace owners can permanently delete the workspace.
 
 ##### Workspace Membership
@@ -452,7 +454,7 @@ A workspace is the primary container for a team's data. It groups members, proje
 - Every cycle belongs to one workspace.
 - Workspace data is isolated from other workspaces.
 - Deleting a workspace removes all associated data.
-- Only workspace owners can archive or delete a workspace.
+- Only workspace owners can archive, restore, or delete a workspace.
 
 #### Acceptance Criteria
 
@@ -471,6 +473,10 @@ Given a user belongs to multiple workspaces, when they select a different worksp
 ##### Archive Workspace
 
 Given a workspace owner, when they archive the workspace, then the workspace becomes read-only and is no longer active.
+
+##### Restore Workspace
+
+Given a workspace owner and an archived workspace, when they restore it, then the workspace becomes active and usable again with its data preserved.
 
 #### Edge Cases
 
@@ -538,7 +544,7 @@ The MVP supports three roles:
 - Full workspace access.
 - Manage members.
 - Manage workspace settings.
-- Delete or archive the workspace.
+- Delete, archive, or restore the workspace.
 
 ###### Admin
 
@@ -759,6 +765,7 @@ Users can:
 - Associate an issue with a cycle.
 - Set or update a due date.
 - Archive an issue.
+- Restore an archived issue.
 - Delete an issue (subject to permissions).
 
 ##### Issue Workflow
@@ -797,6 +804,8 @@ Users can:
 - Every issue belongs to exactly one workspace.
 - Every issue has one current status.
 - Archived issues are read-only.
+- Archived issues may be restored by members with permission to archive issues.
+- Restoring an issue returns it to the status it held before archiving.
 - Completed issues remain searchable.
 - Issue identifiers are unique within a workspace.
 - Only authorized members can delete issues.
@@ -819,6 +828,10 @@ Given a workspace member, when they assign an issue, then the assignee is update
 ##### Archive Issue
 
 Given an existing issue, when it is archived, then it no longer appears in active issue lists.
+
+##### Restore Issue
+
+Given an archived issue and an authorized member, when the issue is restored, then it returns to its previous workflow status and becomes editable again.
 
 ##### Search Issues
 
@@ -901,6 +914,7 @@ Users with permission can:
 
 - Edit project information.
 - Archive a project.
+- Restore an archived project.
 - Delete a project.
 - Change the project owner.
 - Update the project status.
@@ -939,6 +953,8 @@ Projects support the following statuses:
 - A project can contain multiple issues.
 - An issue can belong to only one project.
 - Archived projects are read-only.
+- Archived projects may be restored by users with permission to archive projects.
+- Restoring a project returns it to the status it held before archiving.
 - Deleting a project does not delete its issues.
 - Removing an issue from a project does not delete the issue.
 
@@ -959,6 +975,10 @@ Given project issues change status, when progress is recalculated, then the proj
 ##### Archive Project
 
 Given an active project, when it is archived, then it becomes read-only and no longer appears in active project lists.
+
+##### Restore Project
+
+Given an archived project and an authorized user, when the project is restored, then it returns to its previous status and becomes editable again.
 
 #### Edge Cases
 
@@ -1019,6 +1039,7 @@ Users with permission can:
 - Start a cycle.
 - Complete a cycle.
 - Archive a cycle.
+- Restore an archived cycle.
 - Delete a cycle before it starts.
 
 ##### Issue Planning
@@ -1059,6 +1080,9 @@ Only one cycle can be Active within a workspace at a time.
 - Completed cycles become read-only.
 - Completing a cycle does not automatically complete unfinished issues.
 - Archived cycles remain available for historical reference.
+- Archived cycles may be restored by users with permission to manage cycles.
+- A cycle archived while Planned or Completed returns to that status when restored.
+- A cycle archived while Active returns to Active when no other active cycle exists; otherwise it returns to Planned.
 
 #### Acceptance Criteria
 
@@ -1077,6 +1101,10 @@ Given a planned cycle, when it is started, then its status changes to Active.
 ##### Complete Cycle
 
 Given an active cycle, when it is completed, then its status changes to Completed and no further edits are allowed.
+
+##### Restore Cycle
+
+Given an archived cycle and an authorized user, when the cycle is restored, then it returns to its permitted pre-archive status and becomes manageable again.
 
 #### Edge Cases
 
@@ -1554,7 +1582,7 @@ The MVP includes three roles:
 | --- | :---: | :---: | :---: |
 | View workspace | ✅ | ✅ | ✅ |
 | Update workspace | ✅ | ❌ | ❌ |
-| Archive workspace | ✅ | ❌ | ❌ |
+| Archive or restore workspace | ✅ | ❌ | ❌ |
 | Delete workspace | ✅ | ❌ | ❌ |
 | Invite members | ✅ | ✅ | ❌ |
 | Remove members | ✅ | ✅ | ❌ |
@@ -1562,14 +1590,14 @@ The MVP includes three roles:
 | Transfer ownership | ✅ | ❌ | ❌ |
 | Create projects | ✅ | ✅ | ❌ |
 | Edit projects | ✅ | ✅ | ✅ |
-| Archive projects | ✅ | ✅ | ❌ |
+| Archive or restore projects | ✅ | ✅ | ❌ |
 | Delete projects | ✅ | ✅ | ❌ |
 | Create issues | ✅ | ✅ | ✅ |
 | Edit issues | ✅ | ✅ | ✅ |
-| Archive issues | ✅ | ✅ | ✅ |
+| Archive or restore issues | ✅ | ✅ | ✅ |
 | Delete issues | ✅ | ✅ | ❌ |
 | Create cycles | ✅ | ✅ | ❌ |
-| Manage cycles | ✅ | ✅ | ❌ |
+| Edit, complete, archive, or restore cycles | ✅ | ✅ | ❌ |
 | Comment on issues | ✅ | ✅ | ✅ |
 | View dashboard | ✅ | ✅ | ✅ |
 | Search workspace | ✅ | ✅ | ✅ |
@@ -1691,7 +1719,8 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - Projects may contain zero or more issues.
 - Projects do not directly contain or own cycles.
 - Members can contribute to projects but cannot create or delete them.
-- Archived projects become read-only.
+- Archived projects become read-only until restored.
+- Restoring a project returns it to its previous status.
 - Deleting a project does not delete its issues.
 
 ### 7.4 Issue Rules
@@ -1712,7 +1741,8 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - Only one cycle may be active within a workspace at any time.
 - An issue may belong to only one cycle.
 - Completing a cycle does not automatically move unfinished issues.
-- Archived cycles become read-only.
+- Archived cycles become read-only until restored.
+- Restoring a cycle must preserve the one-active-cycle rule.
 
 ### 7.6 Comment Rules
 
@@ -1738,7 +1768,11 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 
 ### 7.9 General Rules
 
-- Archived resources cannot be modified.
+- Archived resources cannot be modified until restored.
+- Users who can archive a resource can also restore it.
+- Before archiving a resource, the system records the state required to restore it correctly.
+- Restoration preserves the resource's data and history.
+- Permanently deleted resources cannot be restored.
 - Unauthorized actions are rejected.
 - System timestamps are recorded automatically.
 - All user-generated content is associated with its creator.
@@ -1906,6 +1940,7 @@ The initial release focuses on providing a complete project management experienc
 
 - Create workspace
 - Update workspace
+- Archive and restore workspace
 - Invite members
 - Member roles
 - Workspace switching
@@ -1914,6 +1949,7 @@ The initial release focuses on providing a complete project management experienc
 
 - Create issues
 - Update issues
+- Archive and restore issues
 - Delete issues
 - Assign issues
 - Issue priorities
@@ -1926,13 +1962,14 @@ The initial release focuses on providing a complete project management experienc
 
 - Create projects
 - Update projects
-- Archive projects
+- Archive and restore projects
 - Track project progress
 
 #### Cycle Management
 
 - Create cycles
 - Manage cycles
+- Archive and restore cycles
 - Assign issues to cycles
 - Cycle progress tracking
 
@@ -2098,7 +2135,6 @@ The following decisions are intentionally deferred until future validation.
 
 #### Workflow
 
-- Should archived resources be restorable?
 - Should completed cycles generate automatic summary reports?
 - Should users be allowed to watch issues they are not assigned to?
 

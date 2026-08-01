@@ -26,6 +26,8 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Workspace Switcher | Modal | Sidebar, Header, User Menu | Display available workspaces and allow users to switch between them. |
 | Join Workspace Invitation | Page | Invitation link | Allow invited users to review and accept a workspace invitation. |
 | Workspace Loading | Full-Screen State | Login, Workspace Switcher | Display the workspace loading state while preparing the selected workspace. |
+| Archived Workspace Summary | Page | Workspace Switcher → Archived Workspaces | Display an archived workspace in read-only mode and allow its owner to restore it. |
+| Restore Workspace Confirmation | Dialog | Archived Workspace Summary | Confirm restoring an archived workspace to active use. |
 
 ---
 
@@ -49,7 +51,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Create Project | Modal | Projects List | Allow users to create a new project. |
 | Edit Project | Modal | Project Details | Allow authorized users to update project information. |
 | Archive Project Confirmation | Dialog | Project Details | Confirm archiving a project before it becomes read-only. |
-| Restore Project Confirmation | Dialog | Project Details | Confirm restoring an archived project. |
+| Restore Project Confirmation | Dialog | Archived Projects, Project Details | Confirm restoring an archived project. |
 | Delete Project Confirmation | Dialog | Project Details | Confirm permanent deletion of a project. |
 
 ---
@@ -64,6 +66,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Complete Cycle Confirmation | Dialog | Cycle Details | Confirm completion of a cycle and finalize the iteration. |
 | Reopen Cycle Confirmation | Dialog | Cycle Details | Confirm reopening a completed cycle. |
 | Archive Cycle Confirmation | Dialog | Cycle Details | Confirm archiving a cycle. |
+| Restore Cycle Confirmation | Dialog | Archived Cycles, Cycle Details | Confirm restoring an archived cycle. |
 
 ----
 ## 5.7 Issues
@@ -77,6 +80,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Assign Issue | Modal | Issue Details | Allow users to assign or reassign an issue. |
 | Update Workflow Status | Dropdown | Issue Details, Issues List | Allow users to move an issue through the workflow (Backlog → Todo → In Progress → Done). |
 | Archive Issue Confirmation | Dialog | Issue Details | Confirm archiving an issue. |
+| Restore Issue Confirmation | Dialog | Archived Issues, Issue Details | Confirm restoring an archived issue. |
 | Delete Issue Confirmation | Dialog | Issue Details | Confirm permanent deletion of an issue. |
 
 ---

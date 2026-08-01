@@ -138,12 +138,14 @@ The easiest way for small software teams to manage and ship software.
 
 - Authentication
 - Workspace creation
+- Workspace archiving and restoration
 - Team invitations
 - User profiles
 
 #### Issue Management
 
 - CRUD issues
+- Issue archiving and restoration
 - Statuses
 - Priorities
 - Assignees
@@ -154,6 +156,7 @@ The easiest way for small software teams to manage and ship software.
 #### Projects
 
 - Project management
+- Project archiving and restoration
 - Issue grouping
 - Progress tracking
 
@@ -163,6 +166,7 @@ The easiest way for small software teams to manage and ship software.
 - Assign issues
 - Track cycle progress
 - Complete cycles
+- Archive and restore cycles
 
 #### Collaboration
 

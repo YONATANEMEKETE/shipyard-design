@@ -35,6 +35,8 @@ Shipyard
     │   ├── Notifications
     │   └── Settings
     └── Workspace Switcher
+        ├── Active Workspaces
+        └── Archived Workspaces (Owner only)
 ```
 
 ---

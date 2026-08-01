@@ -230,11 +230,11 @@ Historical information should remain accessible without allowing accidental modi
 
 **Rationale**
 
-Read-only archived resources preserve historical accuracy while preventing unintended changes.
+Read-only archived resources preserve historical accuracy while preventing unintended changes. Authorized users can restore an archived resource when it needs to return to active use.
 
 **Impact**
 
-Maintains data integrity and simplifies lifecycle management.
+Maintains data integrity while keeping archival reversible. Restoration preserves the resource's data and history and returns it to its permitted pre-archive state.
 
 ---
 

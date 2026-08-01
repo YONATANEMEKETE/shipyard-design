@@ -4,6 +4,7 @@
 |------------------|-----------|---------|----------------|------------------|
 | Workspace Onboarding | User has no workspace | Welcome! Create your first workspace to get started. | Create Workspace | — |
 | Workspace Switcher | User belongs to only one workspace | No additional workspaces available. | Create Workspace | — |
+| Archived Workspaces | Workspace Owner has no archived workspaces | No archived workspaces available. | Back to Workspaces | — |
 | Workspace Members | Workspace has no members other than the owner | You're the only member in this workspace. Invite teammates to start collaborating. | Invite Members | — |
 
 ---

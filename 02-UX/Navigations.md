@@ -131,6 +131,7 @@ Users should be able to bookmark or share links to individual resources.
 - The current workspace is always visible.
 - Navigation state persists during normal browsing.
 - Switching workspaces refreshes all workspace-specific data.
+- Workspace owners can view archived workspaces in the Workspace Switcher and open them for restoration.
 - Unauthorized navigation redirects users appropriately.
 
 ---

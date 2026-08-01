@@ -334,6 +334,18 @@ The user successfully logs in to Shipyard.
 
 ---
 
+### Only Archived Workspaces
+
+1. The user has no active workspace but owns one or more archived workspaces.
+2. The system displays the archived workspaces in the workspace selection screen.
+3. The user selects a workspace and chooses **Restore Workspace**.
+4. The system displays a confirmation dialog.
+5. The user confirms the action.
+6. The workspace becomes active with its data and history preserved.
+7. The restored workspace Dashboard opens.
+
+---
+
 ## Error Flows
 
 ### Workspace No Longer Accessible
@@ -377,7 +389,7 @@ The user selects the **Workspace Switcher** from the application interface.
 ## Preconditions
 
 - The user is authenticated.
-- The user belongs to two or more workspaces.
+- The user belongs to two or more active workspaces or owns at least one archived workspace.
 - A workspace is currently active.
 
 ---
@@ -417,6 +429,19 @@ The user selects the **Workspace Switcher** from the application interface.
 
 ---
 
+### Restore Archived Workspace
+
+1. The Workspace Owner opens **Archived Workspaces** in the Workspace Switcher.
+2. The user selects an archived workspace.
+3. The system displays the workspace in read-only mode.
+4. The user selects **Restore Workspace**.
+5. The system displays a confirmation dialog.
+6. The user confirms the action.
+7. The workspace becomes active and usable again with its data and history preserved.
+8. The restored workspace opens on its Dashboard.
+
+---
+
 ## Error Flows
 
 ### Access Revoked
@@ -441,6 +466,7 @@ The user selects the **Workspace Switcher** from the application interface.
 - The selected workspace becomes the active workspace.
 - All workspace-specific data is refreshed.
 - Navigation, projects, issues, cycles, members, and settings reflect the newly selected workspace.
+- A restored workspace becomes active and retains its existing data and history.
 - The user can continue working within the selected workspace.
 ---
 
@@ -995,8 +1021,10 @@ The user opens an existing project from the Projects page.
 
 1. The user opens the Archived Projects list.
 2. The user selects **Restore Project**.
-3. The project returns to the active Projects list.
-4. The project becomes editable again.
+3. The system displays a confirmation dialog.
+4. The user confirms the action.
+5. The project returns to its pre-archive status and the non-archived Projects list.
+6. The project becomes editable again for authorized users.
 
 ---
 
@@ -1267,6 +1295,18 @@ The user opens an existing cycle from the Cycles page.
 
 ---
 
+### Restore Cycle
+
+1. The user opens an archived cycle.
+2. The user selects **Restore Cycle**.
+3. The system displays a confirmation dialog.
+4. The user confirms the action.
+5. A cycle previously Planned or Completed returns to that status.
+6. A cycle previously Active returns to Active if no other active cycle exists; otherwise it returns to Planned.
+7. The cycle becomes manageable again for authorized users.
+
+---
+
 ## Alternative Flows
 
 ### View Archived Cycles
@@ -1317,7 +1357,7 @@ The user opens an existing cycle from the Cycles page.
 - The cycle reflects the latest updates.
 - Progress and completion statistics are updated.
 - Completed cycles preserve their historical information.
-- Archived cycles remain available for future reference.
+- Archived cycles remain available for future reference and restoration.
 - Related issues remain consistent with the updated cycle state.
 
 ---
@@ -1540,6 +1580,17 @@ The system validates each change and immediately updates the issue.
 
 ---
 
+### Restore Issue
+
+1. The user opens an issue from the Archived Issues list.
+2. The user selects **Restore Issue**.
+3. The system displays a confirmation dialog.
+4. The user confirms the action.
+5. The issue returns to the workflow status it held before archiving.
+6. The issue becomes editable again and returns to the appropriate active issue views.
+
+---
+
 ### Delete Issue
 
 1. The user selects **Delete Issue**.
@@ -1616,7 +1667,7 @@ The system validates each change and immediately updates the issue.
 
 - The issue reflects the latest information.
 - Assignment and planning changes are immediately visible throughout the workspace.
-- Archived issues remain searchable but cannot be modified.
+- Archived issues remain searchable, cannot be modified while archived, and may be restored by authorized users.
 - Deleted issues are permanently removed according to workspace policies.
 - All changes are recorded in the issue activity history.
 ---
