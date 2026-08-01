@@ -792,11 +792,12 @@ The user opens the **Members** page or **Member Management** section in Workspac
 
 1. An Owner selects a Member or Admin, or an Admin selects a Member.
 2. The user chooses **Remove Member**.
-3. The system displays a confirmation dialog.
-4. The user confirms the action.
-5. The system removes the member from the workspace.
-6. The removed user immediately loses access to the workspace.
-7. The Members list is updated.
+3. The system checks whether the selected member owns any Projects.
+4. The system displays a confirmation dialog. If the member owns Projects, it shows the number of affected Projects and explains that they will transfer automatically to the Workspace Owner; the acting Admin cannot select another recipient.
+5. The user confirms the action.
+6. In one operation, the system transfers any owned Projects to the Workspace Owner and removes the member from the workspace.
+7. The removed user immediately loses access to the workspace.
+8. The Members list is updated.
 
 ---
 
@@ -831,10 +832,11 @@ The user opens the **Members** page or **Member Management** section in Workspac
 ### Leave Workspace
 
 1. A Member or Admin selects **Leave Workspace** from the User Menu or Workspace Settings.
-2. The system displays a confirmation dialog.
-3. The user confirms the action.
-4. The system removes the user from the workspace.
-5. The user is redirected to another available workspace or workspace onboarding.
+2. The system checks whether the user owns any Projects.
+3. The system displays a confirmation dialog. If the user owns Projects, it shows the number of affected Projects and explains that they will transfer automatically to the Workspace Owner.
+4. The user confirms the action.
+5. In one operation, the system transfers any owned Projects to the Workspace Owner and removes the user from the workspace.
+6. The user is redirected to another available workspace or workspace onboarding.
 
 The current Owner cannot leave through this flow. They must transfer ownership first, become an Admin, and then leave as an Admin.
 
@@ -893,8 +895,9 @@ The current Owner cannot leave through this flow. They must transfer ownership f
 ### Server Error
 
 1. The requested operation cannot be completed.
-2. The system displays an error message.
-3. The user can retry the operation.
+2. If member removal or departure fails, membership and Project ownership remain unchanged.
+3. The system displays an error message.
+4. The user can retry the operation.
 
 ---
 
@@ -904,6 +907,7 @@ The current Owner cannot leave through this flow. They must transfer ownership f
 - Updated roles take effect immediately.
 - A completed ownership transfer leaves exactly one Owner and changes the previous Owner to Admin.
 - Removed members no longer have access to the workspace.
+- No Project remains assigned to a removed or departed member; any such Project is owned by the Workspace Owner.
 - Pending invitations accurately reflect their current status.
 - Workspace permissions remain consistent with the assigned roles.
 ---
@@ -942,7 +946,7 @@ The user selects **Create Project** from the Projects page or the global **Creat
    - Target date (optional)
 5. The user submits the form.
 6. The system validates the provided information and confirms that the trimmed, case-insensitive name is unique across all non-deleted Projects in the workspace, including Archived Projects.
-7. The project is created.
+7. The project is created with the creator as its Project Owner.
 8. The project is added to the workspace's Projects list.
 9. The user is redirected to the project's overview page.
 10. The project is ready to receive issues.
@@ -1006,6 +1010,7 @@ The user selects **Create Project** from the Projects page or the global **Creat
 ## Postconditions
 
 - A new project exists within the workspace.
+- The creator is the Project Owner.
 - Its normalized name is unique among all non-deleted Projects in the workspace.
 - The project appears in the Projects list.
 - The project overview page is displayed.
@@ -1045,6 +1050,7 @@ The user opens an existing project from the Projects page.
    - Project name
    - Description
    - Current status
+   - Project Owner
    - Progress
    - Associated issues
    - Cycles represented by associated issues (derived)
@@ -1062,6 +1068,18 @@ The user opens an existing project from the Projects page.
 5. If the name changed, the system validates that its trimmed, case-insensitive value is unique across all non-deleted Projects in the workspace, including Archived Projects.
 6. The system updates the project.
 7. The updated information is displayed immediately.
+
+---
+
+### Transfer Project Ownership
+
+1. A Workspace Owner or Admin opens the owner control on a non-archived Project.
+2. The system lists all other current workspace members, including Owners, Admins, and Members.
+3. The user selects a new Project Owner.
+4. The system verifies that the selected user is still a current workspace member.
+5. The system transfers the Project to the selected member.
+6. The Project Details page and activity history show the new Project Owner.
+7. The selected member's workspace role and permissions remain unchanged.
 
 ---
 
@@ -1132,6 +1150,8 @@ The user opens an existing project from the Projects page.
 2. The system displays Archived as its current state but does not display the inline status control.
 3. An authorized user can use the separate **Restore Project** action.
 
+Project ownership controls are hidden while the Project is Archived. Automatic reassignment to the Workspace Owner during member removal or departure remains a system-level exception so an Archived Project never retains a former member as its owner.
+
 ---
 
 ## Error Flows
@@ -1152,6 +1172,14 @@ The user opens an existing project from the Projects page.
 
 ---
 
+### Invalid Project Ownership Transfer Target
+
+1. The selected member leaves or is removed before the transfer is saved.
+2. The system cancels the transfer and retains the current Project Owner.
+3. The Owner or Admin is prompted to select another eligible workspace member.
+
+---
+
 ### Server Error
 
 1. The requested operation cannot be completed.
@@ -1164,6 +1192,8 @@ The user opens an existing project from the Projects page.
 ## Postconditions
 
 - The project reflects the latest changes.
+- Every Project has exactly one current workspace member as its Project Owner.
+- A Project ownership transfer does not change the recipient's workspace role or permissions.
 - Status updates are visible throughout the workspace.
 - Archived projects remain available for future restoration.
 - Deleted projects cannot be restored.

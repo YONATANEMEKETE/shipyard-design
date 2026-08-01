@@ -160,11 +160,11 @@ Creates scalable interfaces without overwhelming users.
 
 **Context**
 
-Deleting or archiving resources and transferring workspace ownership may have significant consequences.
+Deleting or archiving resources and transferring Workspace or Project ownership may have significant consequences.
 
 **Rationale**
 
-Confirmation dialogs help prevent accidental destructive actions and unintended ownership transfers. For Project deletion, the dialog states that deletion is permanent, shows the number of associated Issues, and explains that those Issues will be unassigned rather than deleted. A Workspace must be archived before deletion, and its Owner must type the exact workspace name before permanent deletion can proceed.
+Confirmation dialogs help prevent accidental destructive actions and unintended Workspace ownership transfers. Project ownership is lower risk because it grants no permissions, so a Workspace Owner or Admin can change it directly from a non-archived Project after selecting a current workspace member. For Project deletion, the dialog states that deletion is permanent, shows the number of associated Issues, and explains that those Issues will be unassigned rather than deleted. A Workspace must be archived before deletion, and its Owner must type the exact workspace name before permanent deletion can proceed.
 
 **Impact**
 

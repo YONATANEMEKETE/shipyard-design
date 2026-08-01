@@ -183,6 +183,7 @@ Relationship Rules
 - Every Workspace has an immutable internal identifier; its display name may duplicate another Workspace name.
 - Navigation, permissions, invitations, and resource relationships reference the Workspace identifier rather than its display name.
 - Every Project belongs to one Workspace.
+- Every Project has exactly one Project Owner who is a current member of that Workspace; Project ownership represents accountability and grants no additional permissions.
 - Every non-deleted Project has a name unique within its Workspace; Archived Projects continue to reserve their names.
 - Every Issue belongs to one Workspace.
 - Every Issue may belong to one Project.

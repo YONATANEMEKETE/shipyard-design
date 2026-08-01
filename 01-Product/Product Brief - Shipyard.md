@@ -162,6 +162,7 @@ The easiest way for small software teams to manage and ship software.
 #### Projects
 
 - Project management
+- Project ownership, with the creator assigned by default and Owner/Admin transfer controls
 - Project archiving and restoration
 - Permanent project deletion with automatic issue unassignment
 - Issue grouping

@@ -40,9 +40,9 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Invite Members | Modal | Members Directory | Allow Owners to invite Members or Admins and allow Admins to invite Members. |
 | Member Details | Drawer | Members Directory | Display member information and role-appropriate management actions. |
 | Change Role Confirmation | Dialog | Member Details | Allow an Owner to confirm a Member or Admin role change. |
-| Remove Member Confirmation | Dialog | Member Details | Confirm removal when an Owner removes a Member or Admin, or an Admin removes a Member. |
-| Transfer Ownership Confirmation | Dialog | Member Details, Workspace Settings | Confirm transferring ownership to an existing Member or Admin and changing the current Owner to Admin. |
-| Leave Workspace Confirmation | Dialog | User Menu, Workspace Settings | Confirm that a Member or Admin wants to leave the workspace; the current Owner must transfer ownership first. |
+| Remove Member Confirmation | Dialog | Member Details | Confirm removal when an Owner removes a Member or Admin, or an Admin removes a Member; show any owned Projects that will transfer automatically to the Workspace Owner. |
+| Transfer Workspace Ownership Confirmation | Dialog | Member Details, Workspace Settings | Confirm transferring Workspace ownership to an existing Member or Admin and changing the current Owner to Admin. |
+| Leave Workspace Confirmation | Dialog | User Menu, Workspace Settings | Confirm that a Member or Admin wants to leave, show any owned Projects that will transfer automatically to the Workspace Owner, and require the current Owner to transfer Workspace ownership first. |
 
 ---
 ## 5.5 Projects
@@ -50,9 +50,10 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
 | Projects List | Page | Sidebar → Projects, Dashboard | Display all projects within the active workspace. |
-| Project Details | Page | Projects List, Dashboard, Search, Notifications | Display project information, progress, associated issues, project activity, and any cycle information derived from those issues. |
+| Project Details | Page | Projects List, Dashboard, Search, Notifications | Display project information, Project Owner, progress, associated issues, project activity, and any cycle information derived from those issues. |
 | Create Project | Modal | Projects List, Global Create Menu | Allow authorized users to create a Project with a name unique within the workspace. |
 | Edit Project | Modal | Project Details | Allow authorized users to update project information while preserving workspace-scoped name uniqueness. |
+| Change Project Owner | Modal | Non-archived Project Details | Allow Workspace Owners and Admins to transfer Project ownership to any other current workspace member without changing that member's role or permissions. |
 | Update Project Status | Dropdown | Non-archived Project Details, Projects List | Allow editors to switch freely between Planned, Active, and Completed; Archived is excluded. |
 | Archive Project Confirmation | Dialog | Non-archived Project Details | Confirm archiving a project before it becomes read-only. |
 | Restore Project Confirmation | Dialog | Archived Projects, Project Details | Confirm returning an archived project to its stored operational status. |

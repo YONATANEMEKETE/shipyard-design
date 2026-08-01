@@ -561,6 +561,7 @@ The Members feature allows teams to collaborate by inviting users to a workspace
 - Members can leave a workspace voluntarily.
 - The Owner can transfer workspace ownership to an existing Member or Admin.
 - Ownership transfer atomically promotes the recipient to Owner and changes the transferring Owner to Admin.
+- If a removed or departing Member or Admin owns Projects, those Projects transfer automatically to the Workspace Owner as part of the membership change.
 
 ##### Roles
 
@@ -599,7 +600,8 @@ The MVP supports three roles:
 - Users already in the workspace cannot be invited again.
 - Admins cannot invite users as Admins or Owners.
 - Admins cannot remove Admins or Owners.
-- Only Owners can change roles or transfer ownership.
+- Only Owners can change Member/Admin roles or transfer Workspace ownership.
+- Automatic Project reassignment during member removal or departure always targets the Workspace Owner; an Admin performing a permitted Member removal cannot choose another recipient.
 
 #### Acceptance Criteria
 
@@ -613,13 +615,13 @@ Given a valid invitation, when it is accepted, then the user becomes a workspace
 
 ##### Remove Member
 
-Given an Owner or Admin with permission to remove the selected Member, when they confirm removal, then the Member immediately loses workspace access.
+Given an Owner or Admin with permission to remove the selected Member, when they confirm removal, then any Projects owned by that Member transfer to the Workspace Owner and the Member immediately loses workspace access.
 
 ##### Leave Workspace
 
-Given a Member or Admin, when they leave a workspace, then they are removed from it. The Owner must transfer ownership and become an Admin before leaving.
+Given a Member or Admin, when they leave a workspace, then any Projects they own transfer to the Workspace Owner and they are removed. The Owner must transfer Workspace ownership and become an Admin before leaving.
 
-##### Transfer Ownership
+##### Transfer Workspace Ownership
 
 Given the current Owner selects an existing Member or Admin and confirms ownership transfer, then the recipient becomes the new Owner and the transferring Owner becomes an Admin in one atomic operation.
 
@@ -941,6 +943,7 @@ Projects organize related issues into larger initiatives with a shared objective
 - As a team lead, I want to group related issues under a project.
 - As a developer, I want to understand how my work contributes to the project.
 - As a stakeholder, I want to monitor project progress.
+- As an Owner or Admin, I want to assign clear ownership for each Project.
 
 #### Functional Requirements
 
@@ -952,7 +955,8 @@ Projects organize related issues into larger initiatives with a shared objective
 - Projects may include a description.
 - Projects may have a start date.
 - Projects may have a target completion date.
-- Every project has an owner.
+- Every project has one Project Owner.
+- The Project creator becomes the Project Owner by default.
 
 ##### Project Details
 
@@ -977,7 +981,7 @@ Users with permission can:
 - Archive a project.
 - Restore an archived project.
 - Delete a project.
-- Change the project owner.
+- Transfer a non-archived Project to another member when acting as a Workspace Owner or Admin.
 - Update the project between Planned, Active, and Completed.
 
 ##### Project Organization
@@ -1018,6 +1022,10 @@ Archived is not available in the status control. A Project enters or leaves Arch
 #### Business Rules
 
 - Every project belongs to exactly one workspace.
+- Every Project Owner is a current member of the Project's workspace.
+- Project ownership grants no additional workspace or resource permissions.
+- Workspace Owners and Admins may transfer a non-archived Project to any other current Owner, Admin, or Member.
+- If a Project Owner leaves or is removed, their Projects transfer automatically to the Workspace Owner in the same operation.
 - Project-name uniqueness is scoped to a workspace; different workspaces may use the same project name.
 - Project-name comparison is case-insensitive after trimming leading and trailing whitespace.
 - Archived projects continue to reserve their names; permanent deletion releases a name for reuse.
@@ -1038,11 +1046,15 @@ Archived is not available in the status control. A Project enters or leaves Arch
 
 ##### Create Project
 
-Given a user with permission, when they provide the required information and a name unique within the workspace, then a new project is created.
+Given a user with permission, when they provide the required information and a name unique within the workspace, then a new project is created with that user as its Project Owner.
 
 ##### Rename Project
 
 Given an authorized editor and a non-archived project, when they enter a name that does not conflict with another Project in the workspace, then the new name is saved.
+
+##### Transfer Project Ownership
+
+Given a Workspace Owner or Admin and a non-archived Project, when they select any other current workspace member, then that member becomes Project Owner without any change to their workspace role or permissions.
 
 ##### Add Issue to Project
 
@@ -1072,7 +1084,7 @@ Given an existing project and an authorized user, when deletion is confirmed, th
 
 - Project created without issues.
 - All issues removed from a project.
-- Project owner leaves the workspace.
+- Project Owner leaves or is removed while owning active or Archived Projects.
 - Archived issue remains associated with a project.
 - Project reaches its target date with unfinished issues.
 - Attempt to create or rename a project with a case-insensitive, whitespace-trimmed name conflict.
@@ -1735,9 +1747,10 @@ The MVP includes three roles:
 | Remove Members | ✅ | ✅ | ❌ |
 | Remove Admins | ✅ | ❌ | ❌ |
 | Change Member/Admin roles | ✅ | ❌ | ❌ |
-| Transfer ownership to a Member or Admin | ✅ | ❌ | ❌ |
+| Transfer Workspace ownership to a Member or Admin | ✅ | ❌ | ❌ |
 | Create projects | ✅ | ✅ | ❌ |
 | Edit projects | ✅ | ✅ | ✅ |
+| Transfer Project ownership | ✅ | ✅ | ❌ |
 | Archive or restore projects | ✅ | ✅ | ❌ |
 | Delete projects | ✅ | ✅ | ❌ |
 | Create issues | ✅ | ✅ | ✅ |
@@ -1761,7 +1774,8 @@ Can:
 
 - Manage workspace settings.
 - Manage members.
-- Transfer ownership to an existing Member or Admin, becoming an Admin afterward.
+- Transfer Workspace ownership to an existing Member or Admin, becoming an Admin afterward.
+- Transfer a non-archived Project to any other current workspace member.
 - Archive an active workspace or restore or delete it after archival.
 - Perform all Admin and Member actions.
 
@@ -1772,6 +1786,7 @@ Responsible for managing development work.
 Can:
 
 - Manage projects.
+- Transfer a non-archived Project to any other current workspace member.
 - Manage issues.
 - Manage cycles.
 - Invite users as Members.
@@ -1783,7 +1798,7 @@ Cannot:
 - Delete the workspace.
 - Modify workspace settings.
 - Change member roles.
-- Transfer ownership.
+- Transfer Workspace ownership.
 
 #### Member
 
@@ -1866,8 +1881,9 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - All members can view the workspace member directory.
 - Owners can invite users as Members or Admins and can remove Members or Admins.
 - Admins can invite and remove Members only.
-- Only the Owner can change Member/Admin roles or transfer ownership.
+- Only the Owner can change Member/Admin roles or transfer Workspace ownership.
 - Removed members immediately lose access to the workspace.
+- Projects owned by a removed or departing Member or Admin transfer automatically to the Workspace Owner.
 - Members and Admins may leave a workspace voluntarily.
 - Ownership transfer must update the recipient to Owner and the transferring Owner to Admin atomically.
 - The Owner cannot leave or be removed until ownership is transferred.
@@ -1875,6 +1891,10 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 ### 7.3 Project Rules
 
 - Every project belongs to exactly one workspace.
+- Every project has exactly one Project Owner, and the creator is the initial Project Owner.
+- Project ownership grants no additional permissions.
+- Workspace Owners and Admins may transfer a non-archived Project to any other current workspace member.
+- Projects owned by a departing or removed member transfer automatically to the Workspace Owner.
 - Project names are unique within a workspace after case-insensitive comparison and trimming surrounding whitespace.
 - Archived projects reserve their names until permanently deleted.
 - Projects may contain zero or more issues.
@@ -2135,6 +2155,7 @@ The initial release focuses on providing a complete project management experienc
 
 - Create projects
 - Update projects
+- Transfer Project ownership
 - Archive and restore projects
 - Delete projects and unassign their issues
 - Track project progress
