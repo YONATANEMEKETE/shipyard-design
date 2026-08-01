@@ -36,7 +36,8 @@ The Precision Loop mark is the Shipyard symbol. The logo system file remains the
 | `ds-bg` | `#F4F3EF` | Application canvas and page background |
 | `ds-surface` | `#FFFFFF` | Primary cards, panels and controls |
 | `ds-surface-subtle` | `#FBFAF7` | Table headers and quiet nested surfaces |
-| `ds-sidebar` | `#161512` | Dark navigation and high-contrast regions |
+| `ds-sidebar` | `#EEEDE8` | Default light-mode sidebar background |
+| `ds-sidebar-dark` | `#161512` | Dark-mode navigation and high-contrast regions |
 | `ds-text` | `#171717` | Primary text and icons |
 | `ds-text-muted` | `#6C6861` | Secondary copy, metadata and placeholders |
 | `ds-border` | `#DEDCD5` | Default borders and dividers |

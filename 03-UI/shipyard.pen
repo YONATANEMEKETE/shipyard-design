@@ -804,7 +804,7 @@
               "name": "Navigation Components",
               "width": 650,
               "height": "fill_container",
-              "fill": "$ds-sidebar",
+              "fill": "$ds-sidebar-dark",
               "cornerRadius": "$ds-radius-lg",
               "layout": "vertical",
               "gap": 12,
@@ -2783,7 +2783,7 @@
               "name": "Selection States",
               "width": 650,
               "height": "fill_container",
-              "fill": "$ds-sidebar",
+              "fill": "$ds-sidebar-dark",
               "cornerRadius": "$ds-radius-lg",
               "layout": "vertical",
               "gap": 12,
@@ -3590,7 +3590,7 @@
               "name": "Elevation Scale",
               "width": 650,
               "height": "fill_container",
-              "fill": "$ds-sidebar",
+              "fill": "$ds-sidebar-dark",
               "cornerRadius": "$ds-radius-lg",
               "layout": "vertical",
               "gap": 14,
@@ -4746,7 +4746,7 @@
               "name": "Twelve Column Grid",
               "width": 690,
               "height": "fill_container",
-              "fill": "$ds-sidebar",
+              "fill": "$ds-sidebar-dark",
               "cornerRadius": "$ds-radius-lg",
               "layout": "vertical",
               "gap": 14,
@@ -6070,7 +6070,7 @@
                   "id": "cQ2j1",
                   "name": "Geist Mono Family",
                   "width": "fill_container",
-                  "fill": "$ds-sidebar",
+                  "fill": "$ds-sidebar-dark",
                   "cornerRadius": "$ds-radius-md",
                   "layout": "vertical",
                   "gap": 8,
@@ -7468,6 +7468,822 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "Gk1Jh",
+      "x": 5509,
+      "y": -828,
+      "name": "App Sidebar / Default",
+      "reusable": true,
+      "clip": true,
+      "width": 252,
+      "height": 900,
+      "fill": "#00000000",
+      "stroke": "#00000000",
+      "layout": "vertical",
+      "gap": 10,
+      "padding": [
+        14,
+        12
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "Fa84A",
+          "name": "Sidebar Brand",
+          "width": "fill_container",
+          "height": 42,
+          "gap": 10,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "LSHOS",
+              "name": "Sidebar Shipyard Favicon",
+              "width": 34,
+              "height": 34,
+              "fill": "$ds-brand",
+              "cornerRadius": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "TtsjE",
+                  "name": "App Icon Precision Loop",
+                  "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                  "viewBox": [
+                    0,
+                    0,
+                    100,
+                    108
+                  ],
+                  "width": 24,
+                  "height": 24,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 8,
+                  "strokeLinejoin": "bevel",
+                  "strokeLinecap": "square"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "n8CZXS",
+              "name": "Sidebar Shipyard Wordmark",
+              "fill": "$ds-text",
+              "content": "Shipyard",
+              "fontFamily": "Geist",
+              "fontSize": 18,
+              "fontWeight": "650",
+              "letterSpacing": -0.5
+            },
+            {
+              "type": "frame",
+              "id": "L7SxFV",
+              "name": "Sidebar Brand Spacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "oMhYw",
+              "name": "Sidebar Collapse Button",
+              "width": 30,
+              "height": 30,
+              "cornerRadius": "$ds-radius-md",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "hlMhK",
+                  "name": "Sidebar Collapse Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "panel-left-close",
+                  "library": "lucide",
+                  "fill": "$ds-text-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "J784h",
+          "name": "Sidebar Workspace Switcher",
+          "width": "fill_container",
+          "height": 58,
+          "fill": "$ds-surface",
+          "cornerRadius": "$ds-radius-md",
+          "stroke": "$ds-border",
+          "strokeWidth": 1,
+          "gap": 10,
+          "padding": [
+            0,
+            10
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "sG0Jw",
+              "name": "Workspace Avatar",
+              "width": 30,
+              "height": 30,
+              "fill": "$ds-brand-soft",
+              "cornerRadius": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KC5Km",
+                  "name": "Workspace Avatar Text",
+                  "fill": "$ds-brand",
+                  "content": "SY",
+                  "fontFamily": "$ds-font-mono",
+                  "fontSize": 9,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "l3vWE",
+              "name": "Workspace Copy",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 2,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FFUCq",
+                  "name": "Workspace Name",
+                  "fill": "$ds-text",
+                  "content": "Shipyard Workspace",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "qezbE",
+                  "name": "Workspace Plan",
+                  "fill": "$ds-text-muted",
+                  "content": "Product team",
+                  "lineHeight": 1.2,
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 8,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "cjD2X",
+              "name": "Workspace Switch Icon",
+              "width": 14,
+              "height": 14,
+              "icon": "chevrons-up-down",
+              "library": "lucide",
+              "fill": "$ds-text-muted"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "CI3vN",
+          "name": "Sidebar Navigation",
+          "width": "fill_container",
+          "stroke": "$ds-border",
+          "strokeWidth": {
+            "top": 1
+          },
+          "layout": "vertical",
+          "gap": 5,
+          "padding": [
+            12,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "zzLMZ",
+              "name": "Sidebar Nav / Active / Dashboard",
+              "height": 34,
+              "fill": "$ds-surface",
+              "cornerRadius": "$ds-radius-md",
+              "stroke": "$ds-border",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              },
+              "gap": 10,
+              "padding": [
+                0,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "T8mgxW",
+                  "name": "Dashboard Nav Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "layout-dashboard",
+                  "library": "lucide",
+                  "fill": "$ds-text"
+                },
+                {
+                  "type": "text",
+                  "id": "RNGZM",
+                  "name": "Dashboard Nav Label",
+                  "fill": "$ds-text",
+                  "content": "Dashboard",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ggFoz",
+              "name": "Sidebar Nav / Default / Issues",
+              "height": 34,
+              "fill": "$ds-sidebar",
+              "cornerRadius": "$ds-radius-md",
+              "stroke": "#00000000",
+              "gap": 10,
+              "padding": [
+                0,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "GAD7w",
+                  "name": "Issues Nav Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "circle-check",
+                  "library": "lucide",
+                  "fill": "$ds-text"
+                },
+                {
+                  "type": "text",
+                  "id": "mIjuf",
+                  "name": "Issues Nav Label",
+                  "fill": "$ds-text",
+                  "content": "Issues",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "iO4LY",
+              "name": "Sidebar Nav / Default / Projects",
+              "height": 34,
+              "fill": "$ds-sidebar",
+              "cornerRadius": "$ds-radius-md",
+              "stroke": "#00000000",
+              "gap": 10,
+              "padding": [
+                0,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "eQYhL",
+                  "name": "Projects Nav Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "folder",
+                  "library": "lucide",
+                  "fill": "$ds-text"
+                },
+                {
+                  "type": "text",
+                  "id": "O0jBo",
+                  "name": "Projects Nav Label",
+                  "fill": "$ds-text",
+                  "content": "Projects",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uWH0s",
+              "name": "Sidebar Nav / Default / Cycles",
+              "height": 34,
+              "fill": "$ds-sidebar",
+              "cornerRadius": "$ds-radius-md",
+              "stroke": "#00000000",
+              "gap": 10,
+              "padding": [
+                0,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "uBzv9",
+                  "name": "Cycles Nav Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "calendar",
+                  "library": "lucide",
+                  "fill": "$ds-text"
+                },
+                {
+                  "type": "text",
+                  "id": "XhAru",
+                  "name": "Cycles Nav Label",
+                  "fill": "$ds-text",
+                  "content": "Cycles",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eeGhu",
+              "name": "Sidebar Nav / Default / Members",
+              "height": 34,
+              "fill": "$ds-sidebar",
+              "cornerRadius": "$ds-radius-md",
+              "stroke": "#00000000",
+              "gap": 10,
+              "padding": [
+                0,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "u1idq",
+                  "name": "Members Nav Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "users",
+                  "library": "lucide",
+                  "fill": "$ds-text"
+                },
+                {
+                  "type": "text",
+                  "id": "WetvZ",
+                  "name": "Members Nav Label",
+                  "fill": "$ds-text",
+                  "content": "Members",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bOkmd",
+              "name": "Sidebar Nav / Default / Notifications",
+              "height": 34,
+              "fill": "$ds-sidebar",
+              "cornerRadius": "$ds-radius-md",
+              "stroke": "#00000000",
+              "gap": 10,
+              "padding": [
+                0,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Y1ujq",
+                  "name": "Notifications Nav Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "bell",
+                  "library": "lucide",
+                  "fill": "$ds-text"
+                },
+                {
+                  "type": "text",
+                  "id": "aGzDP",
+                  "name": "Notifications Nav Label",
+                  "fill": "$ds-text",
+                  "content": "Notifications",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "bZRBc",
+                  "name": "Notifications Badge",
+                  "fill": "$ds-accent",
+                  "cornerRadius": "$ds-radius-pill",
+                  "padding": [
+                    3,
+                    7
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "kCAdN",
+                      "name": "Inbox Badge Text",
+                      "fill": "#FFFFFF",
+                      "content": "3",
+                      "fontFamily": "$ds-font-mono",
+                      "fontSize": 8,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "iKYFW",
+              "name": "Sidebar Nav / Default / Workspace Settings",
+              "height": 34,
+              "fill": "$ds-sidebar",
+              "cornerRadius": "$ds-radius-md",
+              "stroke": "#00000000",
+              "gap": 10,
+              "padding": [
+                0,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "F5xizy",
+                  "name": "Workspace Settings Nav Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "$ds-text"
+                },
+                {
+                  "type": "text",
+                  "id": "p4RoV",
+                  "name": "Workspace Settings Nav Label",
+                  "fill": "$ds-text",
+                  "content": "Workspace Settings",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lLvNQ",
+          "name": "Sidebar Flexible Spacer",
+          "width": "fill_container",
+          "height": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "pjA59",
+          "name": "Sidebar Footer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 5,
+          "children": [
+            {
+              "type": "frame",
+              "id": "W1s0SC",
+              "name": "Sidebar Footer / Help & support",
+              "height": 32,
+              "fill": "$ds-sidebar",
+              "cornerRadius": "$ds-radius-md",
+              "gap": 10,
+              "padding": [
+                0,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "qQV5A",
+                  "name": "Help & support Footer Icon",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "info",
+                  "library": "lucide",
+                  "fill": "$ds-text"
+                },
+                {
+                  "type": "text",
+                  "id": "JnELN",
+                  "name": "Help & support Footer Label",
+                  "fill": "$ds-text",
+                  "content": "Help & support",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 11,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wmdUs",
+              "name": "Sidebar Footer Divider",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "$ds-border"
+            },
+            {
+              "type": "frame",
+              "id": "A7nOZ",
+              "name": "Sidebar User Profile",
+              "width": "fill_container",
+              "height": 50,
+              "gap": 10,
+              "padding": [
+                0,
+                8
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "MjSAt",
+                  "name": "User Avatar",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "$ds-brand",
+                  "cornerRadius": "$ds-radius-pill",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "xdzYV",
+                      "name": "User Avatar Initials",
+                      "fill": "#FFFFFF",
+                      "content": "MC",
+                      "fontFamily": "$ds-font-mono",
+                      "fontSize": 9,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BYu5M",
+                  "name": "User Profile Copy",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "vmF4s",
+                      "name": "User Name",
+                      "fill": "$ds-text",
+                      "content": "Maya Chen",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NKUQg",
+                      "name": "User Role",
+                      "fill": "$ds-text-muted",
+                      "content": "Workspace admin",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 8,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "RmVxB",
+                  "name": "User Profile More",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "ellipsis",
+                  "library": "lucide",
+                  "fill": "$ds-text-muted"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "dEjH5",
+      "x": 5857,
+      "y": -828,
+      "name": "App Header / Default",
+      "reusable": true,
+      "width": 1188,
+      "height": 64,
+      "stroke": "$ds-border",
+      "gap": "$ds-space-3",
+      "padding": [
+        0,
+        "$ds-space-6"
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "T3rajd",
+          "name": "Header Page Context",
+          "gap": "$ds-space-2",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "F9fxa",
+              "name": "Dashboard Context Icon",
+              "width": 18,
+              "height": 18,
+              "icon": "layout-dashboard",
+              "library": "lucide",
+              "fill": "$ds-text-muted"
+            },
+            {
+              "type": "text",
+              "id": "kLH9d",
+              "name": "Header Page Title",
+              "fill": "$ds-text",
+              "content": "Dashboard",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 14,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uDU6u",
+          "name": "Header Flexible Spacer",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "q13BL",
+          "name": "Header Global Search",
+          "width": 280,
+          "height": 36,
+          "fill": "$ds-surface",
+          "cornerRadius": "$ds-radius-md",
+          "stroke": "$ds-border",
+          "strokeWidth": "$ds-border-thin",
+          "gap": "$ds-space-2",
+          "padding": [
+            0,
+            10
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "rTWem",
+              "name": "Global Search Icon",
+              "width": 15,
+              "height": 15,
+              "icon": "search",
+              "library": "lucide",
+              "fill": "$ds-text-muted"
+            },
+            {
+              "type": "text",
+              "id": "iFmr4",
+              "name": "Global Search Placeholder",
+              "fill": "$ds-text-muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Search workspace…",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 12
+            },
+            {
+              "type": "frame",
+              "id": "tRgUC",
+              "name": "Global Search Shortcut",
+              "height": 22,
+              "fill": "$ds-sidebar",
+              "cornerRadius": "$ds-radius-sm",
+              "stroke": "$ds-border",
+              "strokeWidth": "$ds-border-thin",
+              "padding": [
+                0,
+                6
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gp4Vn",
+                  "name": "Search Shortcut Label",
+                  "fill": "$ds-text-muted",
+                  "content": "⌘ K",
+                  "fontFamily": "$ds-font-mono",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "o0gkEj",
+          "name": "Header Notifications Control",
+          "width": 36,
+          "height": 36,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "HnCDv",
+              "type": "ref",
+              "ref": "c1CmN",
+              "name": "Notification Icon Button",
+              "x": 0,
+              "y": 0,
+              "descendants": {
+                "Y8JHAG": {
+                  "icon": "bell",
+                  "name": "Notification Bell Icon"
+                }
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "IHSL5",
+              "layoutPosition": "absolute",
+              "x": 25,
+              "y": 3,
+              "name": "Unread Notifications Indicator",
+              "fill": "$ds-accent",
+              "width": 8,
+              "height": 8,
+              "stroke": "$ds-bg",
+              "strokeWidth": 2
+            }
+          ]
+        },
+        {
+          "id": "brm9T",
+          "type": "ref",
+          "ref": "M1Im2",
+          "name": "Header Create Button",
+          "descendants": {
+            "ZNFT2": {
+              "icon": "plus",
+              "name": "Create Button Icon"
+            },
+            "oLhjB": {
+              "content": "Create",
+              "name": "Create Button Label"
+            }
+          }
+        }
+      ]
     }
   ],
   "variables": {
@@ -7485,7 +8301,7 @@
     },
     "ds-sidebar": {
       "type": "color",
-      "value": "#161512"
+      "value": "#EEEDE8"
     },
     "ds-text": {
       "type": "color",
@@ -7654,6 +8470,10 @@
     "brand-primary": {
       "type": "color",
       "value": "#B45309"
+    },
+    "ds-sidebar-dark": {
+      "type": "color",
+      "value": "#161512"
     }
   },
   "fileToken": "bc4a0fbf-9577-44df-9770-2ea2c0de53a7"
