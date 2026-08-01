@@ -123,8 +123,10 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
-| Profile Settings | Page | User Menu → Settings | Allow users to manage their personal profile information. |
-| Security Settings | Page | Profile Settings | Allow users to change their password and manage account security. |
-| Workspace Settings | Page | Sidebar, User Menu | Allow authorized users to manage workspace configuration. |
+| Profile Settings | Page | User Menu → Account Settings | Allow users to manage their display name, profile picture, and account email. |
+| Security Settings | Page | Account Settings | Allow users to change their password. |
+| Appearance Settings | Page | Account Settings | Allow users to select the Light, Dark, or System theme. |
+| Change Email | Modal | Profile Settings | Allow users to update their account email after providing their current password. |
+| Workspace Settings | Page | Sidebar → Workspace Settings | Allow authorized users to manage workspace configuration. |
 | Change Password | Modal | Security Settings | Allow users to securely update their account password. |
 | Logout Confirmation *(Optional)* | Dialog | User Menu | Confirm logout before ending the current session, if confirmation is enabled. |

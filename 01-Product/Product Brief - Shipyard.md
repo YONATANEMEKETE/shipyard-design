@@ -142,6 +142,7 @@ The easiest way for small software teams to manage and ship software.
 - Workspace ownership transfer
 - Team invitations
 - User profiles
+- Theme preference
 
 #### Issue Management
 

@@ -1492,12 +1492,12 @@ Given no matching resources exist, when a search or filter is applied, then an a
 
 #### Overview
 
-Settings allow users and workspace administrators to manage account preferences, workspace configuration, and team settings.
+Settings are divided into global Account Settings and workspace-specific Settings. Account Settings remain available without an active workspace; Workspace Settings apply only to the selected workspace.
 
 #### Goals
 
-- Provide a central place for configuration.
-- Allow users to manage their personal preferences.
+- Provide clear, separate locations for account and workspace configuration.
+- Allow users to manage their profile, security, and appearance.
 - Allow workspace administrators to manage workspace settings.
 - Keep administrative tasks organized and accessible.
 
@@ -1505,6 +1505,7 @@ Settings allow users and workspace administrators to manage account preferences,
 
 - As a user, I want to update my profile information.
 - As a user, I want to change my password.
+- As a user, I want to select my preferred interface theme.
 - As a workspace owner, I want to manage workspace settings.
 - As a workspace owner, I want to manage member roles.
 
@@ -1517,8 +1518,21 @@ Users can:
 - Update their display name.
 - Update their profile picture.
 - Update their email address.
-- Change their password.
 - View their account information.
+
+##### Security Settings
+
+Users can change their password after providing their current password.
+
+Changing an account email address also requires the user's current password.
+
+##### Appearance Settings
+
+Users can select a theme:
+
+- Light
+- Dark
+- System
 
 ##### Workspace Settings
 
@@ -1545,15 +1559,6 @@ Workspace Admins can:
 - Remove Members.
 - Invite users as Members.
 
-##### Preferences
-
-Users can:
-
-- Select a theme (Light, Dark, System).
-- Configure language (future-ready).
-- Manage notification preferences.
-- View active sessions.
-
 ##### Danger Zone
 
 Workspace owners can:
@@ -1566,6 +1571,10 @@ These actions require confirmation before completion.
 #### Business Rules
 
 - Users can only modify their own account settings.
+- Authenticated users can access Account Settings without selecting a workspace.
+- Account changes apply across every workspace the user belongs to.
+- Email addresses must remain valid and unique.
+- Changing an email address requires the current password.
 - Only workspace owners can modify workspace settings.
 - Only authorized users can manage members.
 - Every workspace has exactly one Owner.
@@ -1575,11 +1584,19 @@ These actions require confirmation before completion.
 
 ##### Update Profile
 
-Given a logged-in user, when they save valid profile changes, then the updated information is reflected throughout the workspace.
+Given a logged-in user, when they save valid profile changes, then the updated information is reflected across their account and every workspace they belong to.
+
+##### Change Email
+
+Given a logged-in user provides their current password and an unused valid email address, when they confirm the change, then the new email becomes their account email across all workspaces.
 
 ##### Change Password
 
 Given a logged-in user, when they provide valid credentials, then the password is updated successfully.
+
+##### Change Theme
+
+Given a logged-in user, when they choose Light, Dark, or System, then the selected theme is saved to their account and applied throughout the product.
 
 ##### Update Workspace
 
@@ -1601,6 +1618,9 @@ Given a workspace owner, when they confirm deletion, then the workspace and its 
 #### Future Enhancements
 
 - Custom branding.
+- Language and localization settings.
+- Notification preferences.
+- Active-session management.
 - Workspace domains.
 - API keys.
 - Webhooks.
@@ -2047,9 +2067,11 @@ The initial release focuses on providing a complete project management experienc
 #### Settings
 
 - Profile management
+- Email management
+- Password management
+- Theme preference
 - Workspace settings
 - Member management
-- User preferences
 
 ### 9.2 Post-MVP Scope
 

@@ -23,6 +23,7 @@ Navigation should be:
 
 ```text
 User
+├── Account Settings
 └── Workspace
     ├── Dashboard
     ├── Issues
@@ -30,7 +31,7 @@ User
     ├── Cycles
     ├── Members
     ├── Notifications
-    └── Settings
+    └── Workspace Settings
 ```
 
 ---
@@ -47,7 +48,7 @@ Items:
 - Cycles
 - Members
 - Notifications
-- Settings
+- Workspace Settings
 
 ---
 
@@ -77,11 +78,15 @@ Some sections provide local navigation for related views.
 - Completed
 - Archived
 
-### Settings
+### Account Settings *(User Menu)*
 
 - Profile
-- Preferences
-- Workspace
+- Security
+- Appearance
+
+### Workspace Settings
+
+- Workspace Details
 - Members
 - Danger Zone
 

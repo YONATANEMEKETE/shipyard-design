@@ -2438,20 +2438,20 @@ The user opens the Search interface or applies filters within a supported resour
 
 ## Overview
 
-This flow describes how users manage their personal account settings and workspace configuration. It includes updating profile information, managing workspace settings, and ending an active session.
+This flow describes how users manage global Account Settings and settings for the active workspace. Account Settings include profile, security, and appearance and remain available without an active workspace.
 
 ---
 
 ## Trigger
 
-The user opens the **Settings** page from the workspace navigation or user menu.
+The user opens **Account Settings** from the User Menu or **Workspace Settings** from workspace navigation.
 
 ---
 
 ## Preconditions
 
 - The user is authenticated.
-- A workspace is active.
+- An active workspace is required only for Workspace Settings.
 
 ---
 
@@ -2464,9 +2464,11 @@ The user opens the **Settings** page from the workspace navigation or user menu.
 3. The user updates one or more fields, including:
    - Full Name
    - Profile Picture
+   - Email Address
 4. The user saves the changes.
 5. The system validates the input.
-6. The updated profile information is saved and reflected throughout the workspace.
+6. If the email address changed, the system asks for the user's current password and verifies that the new email is valid and unused.
+7. The updated profile information is saved and reflected across every workspace the user belongs to.
 
 ---
 
@@ -2480,6 +2482,15 @@ The user opens the **Settings** page from the workspace navigation or user menu.
 3. The user submits the changes.
 4. The system validates the credentials.
 5. The password is updated successfully.
+
+---
+
+### Manage Appearance
+
+1. The user opens **Appearance Settings**.
+2. The user selects Light, Dark, or System.
+3. The system applies the selection immediately.
+4. The theme preference is saved to the user's account.
 
 ---
 
@@ -2535,8 +2546,16 @@ The user opens the **Settings** page from the workspace navigation or user menu.
 ### Incorrect Current Password
 
 1. The user enters an incorrect current password.
-2. The system rejects the password change.
+2. The system rejects the password or email change.
 3. The user is prompted to try again.
+
+---
+
+### Email Already in Use
+
+1. The user submits an email address associated with another account.
+2. The system rejects the change without modifying the current email.
+3. The user is prompted to provide a different email address.
 
 ---
 
@@ -2558,8 +2577,10 @@ The user opens the **Settings** page from the workspace navigation or user menu.
 
 ## Postconditions
 
-- Updated profile information is reflected throughout the workspace.
+- Updated profile information is reflected across every workspace the user belongs to.
+- Email changes update the user's global account after successful password and uniqueness validation.
 - Workspace settings reflect the latest authorized changes.
 - Password changes take effect immediately.
+- Theme changes apply throughout the product and persist on the user's account.
 - Logout terminates the active session and returns the user to the login page.
 ----

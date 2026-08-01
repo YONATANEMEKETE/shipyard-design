@@ -26,6 +26,10 @@ The information architecture follows these principles:
 ```text
 Shipyard
 └── User Account
+    ├── Account Settings
+    │   ├── Profile
+    │   ├── Security
+    │   └── Appearance
     ├── Workspace
     │   ├── Dashboard
     │   ├── Issues
@@ -33,7 +37,7 @@ Shipyard
     │   ├── Cycles
     │   ├── Members
     │   ├── Notifications
-    │   └── Settings
+    │   └── Workspace Settings
     └── Workspace Switcher
         ├── Active Workspaces
         └── Archived Workspaces (Owner only)
@@ -46,14 +50,15 @@ Shipyard
 ```text
 User
 │
-├── Workspaces
-│   ├── Members
-│   ├── Projects
-│   │   └── Issues
-│   ├── Cycles
-│   │   └── Issues
-│   ├── Notifications
-│   └── Settings
+├── Account Settings
+└── Workspaces
+    ├── Members
+    ├── Projects
+    │   └── Issues
+    ├── Cycles
+    │   └── Issues
+    ├── Notifications
+    └── Workspace Settings
 ```
 
 ---
@@ -129,15 +134,25 @@ Contains:
 
 ---
 
-## Settings
+## Account Settings
 
-Allows users and workspace administrators to configure personal preferences and workspace settings.
+Allows an authenticated user to manage account-level information without requiring an active workspace.
 
 Contains:
 
 - Profile
-- Preferences
-- Workspace Settings
+- Security
+- Appearance
+
+---
+
+## Workspace Settings
+
+Allows the Workspace Owner and other members with specific permissions to view or manage settings for the active workspace.
+
+Contains:
+
+- Workspace Details
 - Member Management
 - Danger Zone
 
@@ -153,7 +168,7 @@ Workspace
 ├── Cycles
 │   └── Issues
 ├── Notifications
-└── Settings
+└── Workspace Settings
 ```
 
 Relationship Rules
@@ -180,7 +195,8 @@ Relationship Rules
 | Issue | Workspace |
 | Cycle | Workspace |
 | Notification | User |
-| Settings | Workspace / User |
+| Account Settings | User |
+| Workspace Settings | Workspace |
 
 ---
 
