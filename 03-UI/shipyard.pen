@@ -8369,6 +8369,222 @@
           ]
         }
       ]
+    },
+    {
+      "type": "rectangle",
+      "id": "rAvzk",
+      "x": 2558,
+      "y": 3950,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "d9300926-02d7-40c8-8079-fef6b56a753e.jpg",
+        "mode": "fill"
+      },
+      "width": 1406,
+      "height": 2329
+    },
+    {
+      "type": "frame",
+      "id": "p5iwKZ",
+      "x": 7045,
+      "y": 168,
+      "name": "Auth Shell / Default",
+      "reusable": true,
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "$ds-bg",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "OT9BC",
+          "x": 32,
+          "y": 32,
+          "name": "Auth Shell Container",
+          "clip": true,
+          "width": 1376,
+          "height": 836,
+          "fill": "$ds-surface",
+          "cornerRadius": "$ds-radius-xl",
+          "stroke": "$ds-border",
+          "strokeWidth": 1,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#17171724",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 30,
+            "spread": -8
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "o4HEL",
+              "x": 8,
+              "y": 8,
+              "name": "Auth Visual Story Panel",
+              "clip": true,
+              "width": 520,
+              "height": 820,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "d9300926-02d7-40c8-8079-fef6b56a753e.jpg",
+                "mode": "fill"
+              },
+              "cornerRadius": "$ds-radius-lg",
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "q5DK0",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Auth Visual Readability Overlay",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 180,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#17130E40",
+                        "position": 0
+                      },
+                      {
+                        "color": "#17130ED9",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "width": 520,
+                  "height": 820
+                },
+                {
+                  "type": "frame",
+                  "id": "U0qKn",
+                  "x": 32,
+                  "y": 28,
+                  "name": "Auth Shipyard Logo",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "h9vKlS",
+                      "name": "Auth Shipyard Favicon",
+                      "width": 34,
+                      "height": 34,
+                      "fill": "$ds-brand",
+                      "cornerRadius": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "SlQn9",
+                          "name": "App Icon Precision Loop",
+                          "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                          "viewBox": [
+                            0,
+                            0,
+                            100,
+                            108
+                          ],
+                          "width": 24,
+                          "height": 24,
+                          "stroke": "#FFFFFF",
+                          "strokeWidth": 8,
+                          "strokeLinejoin": "bevel",
+                          "strokeLinecap": "square"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "T39dr",
+                      "name": "Auth Shipyard Wordmark",
+                      "fill": "#FFFFFF",
+                      "content": "Shipyard",
+                      "fontFamily": "Geist",
+                      "fontSize": 18,
+                      "fontWeight": "650",
+                      "letterSpacing": -0.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "B7hLbe",
+                  "x": 32,
+                  "y": 674,
+                  "name": "Auth Product Message",
+                  "width": 420,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "r1JCu2",
+                      "name": "Auth Product Headline",
+                      "fill": "#FFFFFF",
+                      "content": "Plan. Build. Ship.",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 32,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.8
+                    },
+                    {
+                      "type": "text",
+                      "id": "bmb4c",
+                      "name": "Auth Product Description",
+                      "fill": "#FFFFFFCC",
+                      "textGrowth": "fixed-width",
+                      "width": 400,
+                      "content": "The easiest way for small software teams to manage work and ship software.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 14
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "n0ieyf",
+              "x": 528,
+              "y": 8,
+              "name": "Authentication Area",
+              "width": 840,
+              "height": 820,
+              "layout": "vertical",
+              "padding": 64,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VHXTb",
+                  "name": "Auth Content Area",
+                  "width": 420,
+                  "height": "fill_container",
+                  "layout": "vertical"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
