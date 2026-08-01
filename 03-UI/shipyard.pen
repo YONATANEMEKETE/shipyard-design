@@ -67,6 +67,20 @@
           "content": "steal the sidebar and header UI | fully",
           "fontFamily": "Inter",
           "fontSize": 32
+        },
+        {
+          "type": "rectangle",
+          "id": "rAvzk",
+          "x": 1853,
+          "y": 1711,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "d9300926-02d7-40c8-8079-fef6b56a753e.jpg",
+            "mode": "fill"
+          },
+          "width": 1406,
+          "height": 2329
         }
       ]
     },
@@ -8377,20 +8391,6 @@
       ]
     },
     {
-      "type": "rectangle",
-      "id": "rAvzk",
-      "x": 2558,
-      "y": 3950,
-      "fill": {
-        "type": "image",
-        "enabled": true,
-        "url": "d9300926-02d7-40c8-8079-fef6b56a753e.jpg",
-        "mode": "fill"
-      },
-      "width": 1406,
-      "height": 2329
-    },
-    {
       "type": "frame",
       "id": "p5iwKZ",
       "x": 7045,
@@ -8602,6 +8602,2321 @@
       "fontFamily": "Inter",
       "fontSize": 44,
       "fontWeight": "700"
+    },
+    {
+      "id": "dQb3Q",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Signup",
+      "x": 8581,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "u47cBH",
+              "name": "Signup Form Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "RLOpd",
+                  "name": "Signup Form",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "vlxTM",
+                      "name": "Signup Header",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "QmVii",
+                          "name": "Signup Title",
+                          "fill": "$ds-text",
+                          "content": "Create your account",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "W9Wfxe",
+                          "name": "Signup Description",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Start planning and shipping software with your team.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Fh69N",
+                      "name": "Signup Credentials",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "CtSwF",
+                          "name": "Signup Email Field Group",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "zxw2B",
+                              "name": "Signup Email Label",
+                              "fill": "$ds-text",
+                              "content": "Email address",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "qwO3V",
+                              "name": "Signup Email Input",
+                              "width": "fill_container",
+                              "height": 40,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "iGwhd",
+                                  "name": "Signup Email Placeholder",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "you@company.com",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "CFXFy",
+                          "name": "Signup Password Field Group",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fiDEQ",
+                              "name": "Signup Password Label",
+                              "fill": "$ds-text",
+                              "content": "Password",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "PuPfy",
+                              "name": "Signup Password Input",
+                              "width": "fill_container",
+                              "height": 40,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "isRgB",
+                                  "name": "Signup Password Placeholder",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Create a password",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "n8enWs",
+                                  "name": "Signup Password Visibility",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "eye",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "Mellg",
+                              "name": "Signup Password Helper",
+                              "fill": "$ds-text-muted",
+                              "content": "Use at least 8 characters.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "duves",
+                      "type": "ref",
+                      "ref": "M1Im2",
+                      "name": "Signup Create Account Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "ZNFT2": {
+                          "enabled": false
+                        },
+                        "oLhjB": {
+                          "content": "Create account",
+                          "name": "Signup Create Account Label"
+                        }
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "r77BuA",
+                      "name": "Signup OAuth Divider",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Brgpe",
+                          "name": "Signup Divider Left",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Q6wnU2",
+                          "name": "Signup Divider Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Or continue with",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 11
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ur9Ij",
+                          "name": "Signup Divider Right",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HJR9i",
+                      "name": "Signup OAuth Buttons",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "id": "ieKus",
+                          "type": "ref",
+                          "ref": "zagTT",
+                          "name": "Signup GitHub Button",
+                          "width": "fill_container",
+                          "height": 40,
+                          "descendants": {
+                            "KCwN8": {
+                              "library": "phosphor",
+                              "icon": "github-logo",
+                              "name": "GitHub Logo"
+                            },
+                            "mBNLs": {
+                              "content": "GitHub",
+                              "name": "GitHub Label"
+                            }
+                          }
+                        },
+                        {
+                          "id": "FvBIP",
+                          "type": "ref",
+                          "ref": "zagTT",
+                          "name": "Signup Google Button",
+                          "width": "fill_container",
+                          "height": 40,
+                          "descendants": {
+                            "KCwN8": {
+                              "library": "phosphor",
+                              "icon": "google-logo",
+                              "name": "Google Logo"
+                            },
+                            "mBNLs": {
+                              "content": "Google",
+                              "name": "Google Label"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "c41j9J",
+                      "name": "Signup Login Link",
+                      "width": "fill_container",
+                      "gap": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m7Kllj",
+                          "name": "Signup Login Prompt",
+                          "fill": "$ds-text-muted",
+                          "content": "Already have an account?",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12
+                        },
+                        {
+                          "type": "text",
+                          "id": "DQXgx",
+                          "name": "Signup Login Action",
+                          "fill": "$ds-brand",
+                          "content": "Log in",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "vhx1x",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Signup / Verification Pending",
+      "x": 10117,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "igg7n",
+              "name": "Verification Pending Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wCmzn",
+                  "name": "Verification Pending Content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "uwM2P",
+                      "name": "Verification Email Icon",
+                      "width": 52,
+                      "height": 52,
+                      "fill": "$ds-brand-soft",
+                      "cornerRadius": "$ds-radius-pill",
+                      "stroke": "#F59E0B55",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "bqkDn",
+                          "name": "Mail Check Icon",
+                          "width": 22,
+                          "height": 22,
+                          "icon": "mail-check",
+                          "library": "lucide",
+                          "fill": "$ds-brand"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lu6M0",
+                      "name": "Verification Pending Copy",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "aYcoQ",
+                          "name": "Verification Pending Title",
+                          "fill": "$ds-text",
+                          "content": "Check your inbox",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "H6v3RN",
+                          "name": "Verification Pending Message",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "We sent a verification link to your email. Open it to verify your account and continue to Shipyard.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kPhzx",
+                      "name": "Verification Email Address",
+                      "width": "fill_container",
+                      "fill": "$ds-surface-subtle",
+                      "cornerRadius": "$ds-radius-md",
+                      "stroke": "$ds-border",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "av8MH",
+                          "name": "Verification Email Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Verification email",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 11,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bjabS",
+                          "name": "Verification Email Value",
+                          "fill": "$ds-text",
+                          "content": "you@company.com",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vqR7Y",
+                      "name": "Verification Email Sent Status",
+                      "width": "fill_container",
+                      "fill": "$ds-success-soft",
+                      "cornerRadius": "$ds-radius-md",
+                      "stroke": "#2E7D5B33",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        10,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "FKhW5",
+                          "name": "Email Sent Status Icon",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "circle-check",
+                          "library": "lucide",
+                          "fill": "$ds-success"
+                        },
+                        {
+                          "type": "text",
+                          "id": "iAFA2",
+                          "name": "Email Sent Status Label",
+                          "fill": "$ds-success",
+                          "content": "Email sent successfully",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "bYBnR",
+                      "type": "ref",
+                      "ref": "zagTT",
+                      "name": "Resend Verification Email Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "KCwN8": {
+                          "library": "lucide",
+                          "icon": "refresh-cw",
+                          "name": "Resend Email Icon"
+                        },
+                        "mBNLs": {
+                          "content": "Resend verification email",
+                          "name": "Resend Email Label"
+                        }
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ojKzy",
+                      "name": "Change Signup Email Action",
+                      "width": "fill_container",
+                      "gap": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "QQuYw",
+                          "name": "Wrong Email Prompt",
+                          "fill": "$ds-text-muted",
+                          "content": "Wrong email?",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12
+                        },
+                        {
+                          "type": "text",
+                          "id": "b3OAJ",
+                          "name": "Use Different Email Action",
+                          "fill": "$ds-brand",
+                          "content": "Use a different email",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "UDC46",
+                      "name": "Back To Login Action",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Q8EDJ",
+                          "name": "Back To Login Icon",
+                          "width": 13,
+                          "height": 13,
+                          "icon": "arrow-left",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "VRlNG",
+                          "name": "Back To Login Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Back to log in",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fl1y4",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Login",
+      "x": 11653,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "uzJJY",
+              "name": "Login Form Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "cQkhb",
+                  "name": "Login Form",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "yQhh0",
+                      "name": "Login Header",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "O2RNOH",
+                          "name": "Login Title",
+                          "fill": "$ds-text",
+                          "content": "Sign in",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "C9JbJ",
+                          "name": "Login Description",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Welcome back. Enter your details below.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "b5kSe7",
+                      "name": "Login Credentials",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "y3zJ0S",
+                          "name": "Login Email Field Group",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "KMuXj",
+                              "name": "Login Email Label",
+                              "fill": "$ds-text",
+                              "content": "Email address",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "us110",
+                              "name": "Login Email Input",
+                              "width": "fill_container",
+                              "height": 40,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "rYuUM",
+                                  "name": "Login Email Placeholder",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "you@company.com",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "P7RGg",
+                          "name": "Login Password Field Group",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "SAI3p",
+                              "name": "Login Password Label Row",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "FJIY2",
+                                  "name": "Login Password Label",
+                                  "fill": "$ds-text",
+                                  "content": "Password",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "W7zwE",
+                                  "name": "Login Forgot Password Action",
+                                  "fill": "$ds-brand",
+                                  "content": "Forgot password?",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "N5Lqf",
+                              "name": "Login Password Input",
+                              "width": "fill_container",
+                              "height": 40,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ZlrZF",
+                                  "name": "Login Password Placeholder",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Enter your password",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "Z4EKyu",
+                                  "name": "Login Password Visibility",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "eye",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XxWOr",
+                      "name": "Login Keep Signed In",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "rj7FZ",
+                          "name": "Login Keep Signed In Checkbox",
+                          "width": 15,
+                          "height": 15,
+                          "fill": "$ds-surface",
+                          "cornerRadius": 4,
+                          "stroke": "$ds-border-strong",
+                          "strokeWidth": 1,
+                          "justifyContent": "center",
+                          "alignItems": "center"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bIt6V",
+                          "name": "Login Keep Signed In Label",
+                          "fill": "$ds-text",
+                          "content": "Keep me signed in",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12
+                        }
+                      ]
+                    },
+                    {
+                      "id": "N2TL6",
+                      "type": "ref",
+                      "ref": "M1Im2",
+                      "name": "Login Sign In Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "ZNFT2": {
+                          "enabled": false
+                        },
+                        "oLhjB": {
+                          "content": "Sign in",
+                          "name": "Login Sign In Label"
+                        }
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wLdZT",
+                      "name": "Login OAuth Divider",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "zGw4y",
+                          "name": "Login Divider Left",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        },
+                        {
+                          "type": "text",
+                          "id": "u9ADc",
+                          "name": "Login Divider Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Or continue with",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 11
+                        },
+                        {
+                          "type": "frame",
+                          "id": "vyMIm",
+                          "name": "Login Divider Right",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "elQ4J",
+                      "name": "Login OAuth Buttons",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "id": "q9tQpc",
+                          "type": "ref",
+                          "ref": "zagTT",
+                          "name": "Login GitHub Button",
+                          "width": "fill_container",
+                          "height": 40,
+                          "descendants": {
+                            "KCwN8": {
+                              "library": "phosphor",
+                              "icon": "github-logo",
+                              "name": "Login GitHub Logo"
+                            },
+                            "mBNLs": {
+                              "content": "GitHub",
+                              "name": "Login GitHub Label"
+                            }
+                          }
+                        },
+                        {
+                          "id": "yFcSD",
+                          "type": "ref",
+                          "ref": "zagTT",
+                          "name": "Login Google Button",
+                          "width": "fill_container",
+                          "height": 40,
+                          "descendants": {
+                            "KCwN8": {
+                              "library": "phosphor",
+                              "icon": "google-logo",
+                              "name": "Login Google Logo"
+                            },
+                            "mBNLs": {
+                              "content": "Google",
+                              "name": "Login Google Label"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ptwBA",
+                      "name": "Login Signup Link",
+                      "width": "fill_container",
+                      "gap": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Vq5TW",
+                          "name": "Login Signup Prompt",
+                          "fill": "$ds-text-muted",
+                          "content": "Don’t have an account?",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12
+                        },
+                        {
+                          "type": "text",
+                          "id": "cJn9B",
+                          "name": "Login Signup Action",
+                          "fill": "$ds-brand",
+                          "content": "Sign up",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "o2kdT5",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Forgot Password",
+      "x": 13189,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "s8UXm0",
+              "name": "Forgot Password Form Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "o7a1Zh",
+                  "name": "Forgot Password Form",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "x2t54y",
+                      "name": "Forgot Password Icon",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$ds-brand-soft",
+                      "cornerRadius": "$ds-radius-pill",
+                      "stroke": "#F59E0B55",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "oGPu8",
+                          "name": "Forgot Password Key Icon",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "key-round",
+                          "library": "lucide",
+                          "fill": "$ds-brand"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AE3Xl",
+                      "name": "Forgot Password Header",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "DNVmO",
+                          "name": "Forgot Password Title",
+                          "fill": "$ds-text",
+                          "content": "Forgot your password?",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "E6wd6",
+                          "name": "Forgot Password Description",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Enter the email associated with your account and we’ll send you a password reset link.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "h5Mvns",
+                      "name": "Forgot Password Email Group",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Mdpte",
+                          "name": "Forgot Password Email Label",
+                          "fill": "$ds-text",
+                          "content": "Email address",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "x0jLNl",
+                          "name": "Forgot Password Email Input",
+                          "width": "fill_container",
+                          "height": 40,
+                          "fill": "$ds-surface",
+                          "cornerRadius": "$ds-radius-md",
+                          "stroke": "$ds-border",
+                          "strokeWidth": 1,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "tFQa6",
+                              "name": "Forgot Password Email Placeholder",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "you@company.com",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "FOcbI",
+                      "type": "ref",
+                      "ref": "M1Im2",
+                      "name": "Send Password Reset Link Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "ZNFT2": {
+                          "enabled": false
+                        },
+                        "oLhjB": {
+                          "content": "Send reset link",
+                          "name": "Send Reset Link Label"
+                        }
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LNCRt",
+                      "name": "Forgot Password Back To Login",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Og4zu",
+                          "name": "Forgot Password Back Icon",
+                          "width": 13,
+                          "height": 13,
+                          "icon": "arrow-left",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "gvPXR",
+                          "name": "Forgot Password Back Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Back to log in",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "VoyBi",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Forgot Password / Email Sent",
+      "x": 14725,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "LTVea",
+              "name": "Password Reset Email Sent Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "r1MQQ",
+                  "name": "Password Reset Email Sent Content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "D9hxf",
+                      "name": "Password Reset Email Icon",
+                      "width": 52,
+                      "height": 52,
+                      "fill": "$ds-brand-soft",
+                      "cornerRadius": "$ds-radius-pill",
+                      "stroke": "#F59E0B55",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "jSFxi",
+                          "name": "Password Reset Mail Icon",
+                          "width": 22,
+                          "height": 22,
+                          "icon": "mail",
+                          "library": "lucide",
+                          "fill": "$ds-brand"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pKTnc",
+                      "name": "Password Reset Email Copy",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Toi6T",
+                          "name": "Password Reset Email Sent Title",
+                          "fill": "$ds-text",
+                          "content": "Check your inbox",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "QW15w",
+                          "name": "Password Reset Email Sent Message",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "If an account exists for you@company.com, we sent password reset instructions. Open the email and follow the link to create a new password.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "X2PkKm",
+                      "name": "Password Reset Email Address",
+                      "width": "fill_container",
+                      "fill": "$ds-surface-subtle",
+                      "cornerRadius": "$ds-radius-md",
+                      "stroke": "$ds-border",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Kfbm7",
+                          "name": "Password Reset Email Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Password reset email",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 11,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "wFORU",
+                          "name": "Password Reset Email Value",
+                          "fill": "$ds-text",
+                          "content": "you@company.com",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "J4w2D",
+                      "name": "Password Reset Request Status",
+                      "width": "fill_container",
+                      "fill": "$ds-success-soft",
+                      "cornerRadius": "$ds-radius-md",
+                      "stroke": "#2E7D5B33",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        10,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "v8Fx08",
+                          "name": "Password Reset Status Icon",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "circle-check",
+                          "library": "lucide",
+                          "fill": "$ds-success"
+                        },
+                        {
+                          "type": "text",
+                          "id": "PFRFx",
+                          "name": "Password Reset Status Label",
+                          "fill": "$ds-success",
+                          "content": "Reset link requested",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "p5Ybc",
+                      "type": "ref",
+                      "ref": "zagTT",
+                      "name": "Resend Password Reset Email Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "KCwN8": {
+                          "name": "Resend Password Reset Icon",
+                          "icon": "refresh-cw",
+                          "library": "lucide"
+                        },
+                        "mBNLs": {
+                          "name": "Resend Password Reset Label",
+                          "content": "Resend reset email"
+                        }
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "DIlvA",
+                      "name": "Change Password Reset Email Action",
+                      "width": "fill_container",
+                      "gap": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jZUUO",
+                          "name": "Wrong Password Reset Email Prompt",
+                          "fill": "$ds-text-muted",
+                          "content": "Wrong email?",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12
+                        },
+                        {
+                          "type": "text",
+                          "id": "tqImG",
+                          "name": "Use Different Password Reset Email Action",
+                          "fill": "$ds-brand",
+                          "content": "Use a different email",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "R8pUsW",
+                      "name": "Back To Login Action",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "y3D4BR",
+                          "name": "Back To Login Icon",
+                          "width": 13,
+                          "height": 13,
+                          "icon": "arrow-left",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bEllV",
+                          "name": "Back To Login Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Back to log in",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "y8SGxj",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Reset Password",
+      "x": 16261,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "FyJMT",
+              "name": "Reset Password Form Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BgJIg",
+                  "name": "Reset Password Form",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "D5vd7",
+                      "name": "Reset Password Icon",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$ds-brand-soft",
+                      "cornerRadius": "$ds-radius-pill",
+                      "stroke": "#F59E0B55",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "msa1s",
+                          "name": "Reset Password Lock Icon",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "lock-keyhole",
+                          "library": "lucide",
+                          "fill": "$ds-brand"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "H8K6O",
+                      "name": "Reset Password Header",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ODaTQ",
+                          "name": "Reset Password Title",
+                          "fill": "$ds-text",
+                          "content": "Create a new password",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "wXmoR",
+                          "name": "Reset Password Description",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Choose a strong password you haven’t used before.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "X9Ora",
+                      "name": "Reset Password Fields",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Lg5uJ",
+                          "name": "New Password Group",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "GkOLC",
+                              "name": "New Password Label",
+                              "fill": "$ds-text",
+                              "content": "New password",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "i4bOMb",
+                              "name": "New Password Input",
+                              "width": "fill_container",
+                              "height": 40,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Y0C0ZC",
+                                  "name": "New Password Placeholder",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Enter a new password",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "NgL4y",
+                                  "name": "New Password Visibility",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "eye",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "u2Rhs",
+                              "name": "New Password Helper",
+                              "fill": "$ds-text-muted",
+                              "content": "Use at least 8 characters.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "wfOrb",
+                          "name": "Confirm New Password Group",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "r7Ank",
+                              "name": "Confirm New Password Label",
+                              "fill": "$ds-text",
+                              "content": "Confirm new password",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "CK30A",
+                              "name": "Confirm New Password Input",
+                              "width": "fill_container",
+                              "height": 40,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xdbqC",
+                                  "name": "Confirm New Password Placeholder",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Re-enter your new password",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "rHUrr",
+                                  "name": "Confirm New Password Visibility",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "eye",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "Vz5gI",
+                      "type": "ref",
+                      "ref": "M1Im2",
+                      "name": "Reset Password Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "ZNFT2": {
+                          "enabled": false
+                        },
+                        "oLhjB": {
+                          "content": "Reset password",
+                          "name": "Reset Password Label"
+                        }
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "p6OpA6",
+                      "name": "Reset Password Back To Login",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "WVctO",
+                          "name": "Reset Password Back Icon",
+                          "width": 13,
+                          "height": 13,
+                          "icon": "arrow-left",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "l5MGD",
+                          "name": "Reset Password Back Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Back to log in",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "H4uOP",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Reset Password / Invalid Token",
+      "x": 17797,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "x2ENiQ",
+              "name": "Invalid Reset Token Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BAlRV",
+                  "name": "Invalid Reset Token Content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "XUWPg",
+                      "name": "Invalid Reset Token Icon",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$ds-danger-soft",
+                      "cornerRadius": "$ds-radius-pill",
+                      "stroke": "#DC262644",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "GdRLU",
+                          "name": "Invalid Reset Link Icon",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "link-2-off",
+                          "library": "lucide",
+                          "fill": "$ds-danger"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "TV1ub",
+                      "name": "Invalid Reset Token Copy",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "e2ImlN",
+                          "name": "Invalid Reset Token Title",
+                          "fill": "$ds-text",
+                          "content": "This reset link is invalid",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "ewT2n",
+                          "name": "Invalid Reset Token Message",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "This password reset link has expired, has already been used, or is invalid. Request a new link to continue.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mOBMC",
+                      "name": "Reset Link Security Notice",
+                      "width": "fill_container",
+                      "fill": "$ds-danger-soft",
+                      "cornerRadius": "$ds-radius-md",
+                      "gap": 10,
+                      "padding": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "UzD2p",
+                          "name": "Reset Link Security Notice Icon",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "shield-alert",
+                          "library": "lucide",
+                          "fill": "$ds-danger"
+                        },
+                        {
+                          "type": "text",
+                          "id": "H2E4H",
+                          "name": "Reset Link Security Notice Text",
+                          "fill": "$ds-danger",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "For your security, reset links can only be used once and expire after a short time.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "cx0fn",
+                      "type": "ref",
+                      "ref": "M1Im2",
+                      "name": "Request New Reset Link Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "ZNFT2": {
+                          "enabled": false
+                        },
+                        "oLhjB": {
+                          "content": "Request a new reset link",
+                          "name": "Request New Reset Link Label"
+                        }
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "quU8Y",
+                      "name": "Invalid Token Back To Login",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "P1jxyp",
+                          "name": "Invalid Token Back Icon",
+                          "width": 13,
+                          "height": 13,
+                          "icon": "arrow-left",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "rM9JC",
+                          "name": "Invalid Token Back Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Back to log in",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "t6FR8",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Reset Password / Success",
+      "x": 19333,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "jN8kj",
+              "name": "Password Reset Success Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HClTj",
+                  "name": "Password Reset Success Content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "viXak",
+                      "name": "Password Reset Success Icon",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$ds-success-soft",
+                      "cornerRadius": "$ds-radius-pill",
+                      "stroke": "#16A34A44",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "aWDJj",
+                          "name": "Password Reset Success Check",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "circle-check",
+                          "library": "lucide",
+                          "fill": "$ds-success"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "scF0R",
+                      "name": "Password Reset Success Copy",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "bqlcc",
+                          "name": "Password Reset Success Title",
+                          "fill": "$ds-text",
+                          "content": "Password reset successful",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "bfVta",
+                          "name": "Password Reset Success Message",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Your password has been updated. You can now log in to Shipyard with your new password.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HnSAw",
+                      "name": "Password Updated Status",
+                      "width": "fill_container",
+                      "fill": "$ds-success-soft",
+                      "cornerRadius": "$ds-radius-md",
+                      "gap": 10,
+                      "padding": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "S1D9B",
+                          "name": "Password Updated Status Icon",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "shield-check",
+                          "library": "lucide",
+                          "fill": "$ds-success"
+                        },
+                        {
+                          "type": "text",
+                          "id": "jxIu9",
+                          "name": "Password Updated Status Label",
+                          "fill": "$ds-success",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Your account is ready for a secure sign-in.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "x7uFFt",
+                      "type": "ref",
+                      "ref": "M1Im2",
+                      "name": "Go To Login Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "ZNFT2": {
+                          "enabled": true,
+                          "icon": "arrow-right",
+                          "library": "lucide",
+                          "name": "Go To Login Icon"
+                        },
+                        "oLhjB": {
+                          "content": "Go to log in",
+                          "name": "Go To Login Label"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "Nn0hM",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Email Verification / Success",
+      "x": 20869,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "T7akw",
+              "name": "Email Verification Success Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kJnxs",
+                  "name": "Email Verification Success Content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "vDW1r",
+                      "name": "Email Verification Success Icon",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$ds-success-soft",
+                      "cornerRadius": "$ds-radius-pill",
+                      "stroke": "#16A34A44",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Ik0Jz",
+                          "name": "Email Verification Success Check",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "badge-check",
+                          "library": "lucide",
+                          "fill": "$ds-success"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "yJ4CN",
+                      "name": "Email Verification Success Copy",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "W2Mm8O",
+                          "name": "Email Verification Success Title",
+                          "fill": "$ds-text",
+                          "content": "Email verified",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "O4gVvY",
+                          "name": "Email Verification Success Message",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Your email address has been verified. You can now log in to Shipyard.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "A6cxeV",
+                      "name": "Verified Account Status",
+                      "width": "fill_container",
+                      "fill": "$ds-success-soft",
+                      "cornerRadius": "$ds-radius-md",
+                      "gap": 10,
+                      "padding": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "gd7dY",
+                          "name": "Verified Account Status Icon",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "shield-check",
+                          "library": "lucide",
+                          "fill": "$ds-success"
+                        },
+                        {
+                          "type": "text",
+                          "id": "r4fF1E",
+                          "name": "Verified Account Status Label",
+                          "fill": "$ds-success",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Your account is verified and ready.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "eOYVA",
+                      "type": "ref",
+                      "ref": "M1Im2",
+                      "name": "Verified Go To Login Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "ZNFT2": {
+                          "enabled": true,
+                          "icon": "arrow-right",
+                          "library": "lucide",
+                          "name": "Verified Go To Login Icon"
+                        },
+                        "oLhjB": {
+                          "content": "Go to log in",
+                          "name": "Verified Go To Login Label"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "p3a95F",
+      "type": "ref",
+      "ref": "p5iwKZ",
+      "name": "Auth / Email Verification / Invalid Token",
+      "x": 22405,
+      "y": 168,
+      "descendants": {
+        "n0ieyf": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "ZkLSi",
+              "name": "Invalid Verification Token Area",
+              "width": 420,
+              "height": 692,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "tH3NJ",
+                  "name": "Invalid Verification Token Content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "YaBZQ",
+                      "name": "Invalid Verification Token Icon",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "$ds-danger-soft",
+                      "cornerRadius": "$ds-radius-pill",
+                      "stroke": "#DC262644",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "XtUeJ",
+                          "name": "Invalid Verification Link Icon",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "link-2-off",
+                          "library": "lucide",
+                          "fill": "$ds-danger"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "cJbSH",
+                      "name": "Invalid Verification Token Copy",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "DyIr4",
+                          "name": "Invalid Verification Token Title",
+                          "fill": "$ds-text",
+                          "content": "This verification link is invalid",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 24,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "cyMTM",
+                          "name": "Invalid Verification Token Message",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "This email verification link has expired, has already been used, or is invalid. Request a new verification email to continue.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sGhYQ",
+                      "name": "Verification Link Security Notice",
+                      "width": "fill_container",
+                      "fill": "$ds-danger-soft",
+                      "cornerRadius": "$ds-radius-md",
+                      "gap": 10,
+                      "padding": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "lU8fa",
+                          "name": "Verification Link Security Notice Icon",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "shield-alert",
+                          "library": "lucide",
+                          "fill": "$ds-danger"
+                        },
+                        {
+                          "type": "text",
+                          "id": "dqRbZ",
+                          "name": "Verification Link Security Notice Text",
+                          "fill": "$ds-danger",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "For your security, verification links can only be used once and expire after a short time.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "P7IOxJ",
+                      "type": "ref",
+                      "ref": "M1Im2",
+                      "name": "Resend Verification Email Button",
+                      "width": "fill_container",
+                      "height": 40,
+                      "descendants": {
+                        "ZNFT2": {
+                          "enabled": false
+                        },
+                        "oLhjB": {
+                          "content": "Resend verification email",
+                          "name": "Resend Verification Email Label"
+                        }
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hCo1g",
+                      "name": "Invalid Verification Back To Login",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "xURCI",
+                          "name": "Invalid Verification Back Icon",
+                          "width": 13,
+                          "height": 13,
+                          "icon": "arrow-left",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vCALi",
+                          "name": "Invalid Verification Back Label",
+                          "fill": "$ds-text-muted",
+                          "content": "Back to log in",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   ],
   "variables": {
