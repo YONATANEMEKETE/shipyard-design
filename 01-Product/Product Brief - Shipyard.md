@@ -139,6 +139,7 @@ The easiest way for small software teams to manage and ship software.
 - Authentication
 - Workspace creation
 - Workspace archiving and restoration
+- Workspace ownership transfer
 - Team invitations
 - User profiles
 

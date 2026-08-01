@@ -40,7 +40,8 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Member Details | Drawer | Members Directory | Display member information and role-appropriate management actions. |
 | Change Role Confirmation | Dialog | Member Details | Allow an Owner to confirm a Member or Admin role change. |
 | Remove Member Confirmation | Dialog | Member Details | Confirm removal when an Owner removes a Member or Admin, or an Admin removes a Member. |
-| Leave Workspace Confirmation | Dialog | User Menu, Workspace Settings | Confirm that a Member or Admin wants to leave the workspace; Owners may leave only when another Owner remains. |
+| Transfer Ownership Confirmation | Dialog | Member Details, Workspace Settings | Confirm transferring ownership to an existing Member or Admin and changing the current Owner to Admin. |
+| Leave Workspace Confirmation | Dialog | User Menu, Workspace Settings | Confirm that a Member or Admin wants to leave the workspace; the current Owner must transfer ownership first. |
 
 ---
 ## 5.5 Projects

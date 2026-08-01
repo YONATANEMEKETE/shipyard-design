@@ -160,11 +160,11 @@ Creates scalable interfaces without overwhelming users.
 
 **Context**
 
-Deleting or archiving resources may have significant consequences.
+Deleting or archiving resources and transferring workspace ownership may have significant consequences.
 
 **Rationale**
 
-Confirmation dialogs help prevent accidental destructive actions.
+Confirmation dialogs help prevent accidental destructive actions and unintended ownership transfers.
 
 **Impact**
 

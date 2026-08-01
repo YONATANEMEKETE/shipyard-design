@@ -482,7 +482,7 @@ Given a workspace owner and an archived workspace, when they restore it, then th
 
 - Duplicate workspace names.
 - User attempts to access a workspace they are not a member of.
-- Last remaining owner attempts to leave the workspace.
+- The Owner attempts to leave before transferring ownership.
 - Workspace deleted while members are active.
 - Invalid or expired invitation link.
 - Archived workspace accessed directly via URL.
@@ -492,7 +492,6 @@ Given a workspace owner and an archived workspace, when they restore it, then th
 - Workspace templates.
 - Workspace duplication.
 - Custom branding.
-- Workspace transfer to another owner.
 - Organization-level management.
 
 ### 5.3 Members
@@ -538,7 +537,8 @@ The Members feature allows teams to collaborate by inviting users to a workspace
 - Admins can remove Members but cannot remove Admins or Owners.
 - Only Owners can change member roles.
 - Members can leave a workspace voluntarily.
-- Owners can transfer workspace ownership to another member.
+- The Owner can transfer workspace ownership to an existing Member or Admin.
+- Ownership transfer atomically promotes the recipient to Owner and changes the transferring Owner to Admin.
 
 ##### Roles
 
@@ -570,7 +570,7 @@ The MVP supports three roles:
 
 - Every member belongs to a workspace.
 - A user may belong to multiple workspaces.
-- Every workspace must always have at least one owner.
+- Every workspace has exactly one Owner.
 - Removed members immediately lose access.
 - Pending invitations do not grant access.
 - Users cannot invite themselves.
@@ -595,11 +595,11 @@ Given an Owner or Admin with permission to remove the selected Member, when they
 
 ##### Leave Workspace
 
-Given a Member or Admin, when they leave a workspace, then they are removed from it. An Owner may leave only when another Owner remains.
+Given a Member or Admin, when they leave a workspace, then they are removed from it. The Owner must transfer ownership and become an Admin before leaving.
 
 ##### Transfer Ownership
 
-Given a workspace owner, when ownership is transferred, then the selected member becomes the new owner.
+Given the current Owner selects an existing Member or Admin and confirms ownership transfer, then the recipient becomes the new Owner and the transferring Owner becomes an Admin in one atomic operation.
 
 #### Edge Cases
 
@@ -607,8 +607,10 @@ Given a workspace owner, when ownership is transferred, then the selected member
 - Invitation expires before acceptance.
 - Invitation revoked before acceptance.
 - User tries to use an expired invitation.
-- Owner attempts to remove themselves while they are the only owner.
-- Last owner attempts to leave the workspace.
+- Owner attempts to remove themselves before transferring ownership.
+- Owner attempts to leave before transferring ownership.
+- Ownership transfer target is no longer a workspace member.
+- Ownership transfer is interrupted before both role changes complete.
 - Removed member tries to access the workspace using an old link.
 
 #### Future Enhancements
@@ -1507,7 +1509,7 @@ Workspace Owners can:
 
 - Change Member and Admin roles.
 - Remove Members and Admins.
-- Transfer workspace ownership.
+- Transfer workspace ownership to an existing Member or Admin.
 
 Workspace Admins can:
 
@@ -1537,7 +1539,7 @@ These actions require confirmation before completion.
 - Users can only modify their own account settings.
 - Only workspace owners can modify workspace settings.
 - Only authorized users can manage members.
-- Every workspace must always have at least one owner.
+- Every workspace has exactly one Owner.
 - Destructive actions require confirmation.
 
 #### Acceptance Criteria
@@ -1563,7 +1565,7 @@ Given a workspace owner, when they confirm deletion, then the workspace and its 
 - Duplicate workspace name.
 - Invalid email address.
 - User attempts to change restricted settings.
-- Last owner attempts to leave the workspace.
+- Owner attempts to leave before transferring ownership.
 - Workspace deletion while members are active.
 - Attempt to perform destructive actions without confirmation.
 
@@ -1605,7 +1607,7 @@ The MVP includes three roles:
 | Remove Members | ✅ | ✅ | ❌ |
 | Remove Admins | ✅ | ❌ | ❌ |
 | Change Member/Admin roles | ✅ | ❌ | ❌ |
-| Transfer ownership | ✅ | ❌ | ❌ |
+| Transfer ownership to a Member or Admin | ✅ | ❌ | ❌ |
 | Create projects | ✅ | ✅ | ❌ |
 | Edit projects | ✅ | ✅ | ✅ |
 | Archive or restore projects | ✅ | ✅ | ❌ |
@@ -1631,8 +1633,8 @@ Can:
 
 - Manage workspace settings.
 - Manage members.
-- Transfer ownership.
-- Archive or delete the workspace.
+- Transfer ownership to an existing Member or Admin, becoming an Admin afterward.
+- Archive, restore, or delete the workspace.
 - Perform all Admin and Member actions.
 
 #### Admin
@@ -1677,7 +1679,7 @@ Cannot:
 
 ### Business Rules
 
-- Every workspace must always have at least one Owner.
+- Every workspace has exactly one Owner.
 - Permissions are evaluated within each workspace.
 - Users may have different roles in different workspaces.
 - Unauthorized actions are rejected.
@@ -1696,7 +1698,7 @@ Given a member attempts an action, when they lack permission, then the action is
 
 ### Edge Cases
 
-- Last owner attempts to leave the workspace.
+- Owner attempts to leave before transferring ownership.
 - Role changed while the user is active.
 - Removed member attempts to perform an action.
 - Workspace ownership transferred during an active session.
@@ -1717,7 +1719,7 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 
 ### 7.1 Workspace Rules
 
-- Every workspace must have at least one Owner.
+- Every workspace has exactly one Owner.
 - A user may belong to multiple workspaces.
 - User roles are assigned independently for each workspace.
 - All projects, issues, cycles, and members belong to exactly one workspace.
@@ -1732,10 +1734,11 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - All members can view the workspace member directory.
 - Owners can invite users as Members or Admins and can remove Members or Admins.
 - Admins can invite and remove Members only.
-- Only Owners can change roles or transfer ownership.
+- Only the Owner can change Member/Admin roles or transfer ownership.
 - Removed members immediately lose access to the workspace.
 - Members and Admins may leave a workspace voluntarily.
-- The last remaining Owner cannot leave or be removed until ownership is transferred.
+- Ownership transfer must update the recipient to Owner and the transferring Owner to Admin atomically.
+- The Owner cannot leave or be removed until ownership is transferred.
 
 ### 7.3 Project Rules
 
@@ -1965,6 +1968,7 @@ The initial release focuses on providing a complete project management experienc
 - Create workspace
 - Update workspace
 - Archive and restore workspace
+- Transfer workspace ownership
 - Invite members
 - Member roles
 - Workspace switching
@@ -2135,7 +2139,7 @@ The following assumptions guided the MVP definition:
 
 #### Team Structure
 
-- Every workspace has at least one Owner.
+- Every workspace has exactly one Owner.
 - Teams have a relatively flat organizational structure.
 - Projects are managed by Owners or Admins.
 - Members primarily contribute by working on issues.

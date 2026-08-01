@@ -771,6 +771,19 @@ The user opens the **Members** page or **Member Management** section in Workspac
 
 ---
 
+### Transfer Workspace Ownership
+
+1. The Workspace Owner selects an existing Member or Admin.
+2. The Owner chooses **Transfer Ownership**.
+3. The system explains that the selected user will become Owner and the current Owner will become Admin.
+4. The system displays a confirmation dialog.
+5. The Owner confirms the transfer.
+6. The system verifies that the selected user is still an active workspace member.
+7. The system atomically promotes the selected user to Owner and changes the transferring Owner to Admin.
+8. The Members list and available administrative actions update immediately.
+
+---
+
 ### Remove Member
 
 1. An Owner selects a Member or Admin, or an Admin selects a Member.
@@ -819,7 +832,7 @@ The user opens the **Members** page or **Member Management** section in Workspac
 4. The system removes the user from the workspace.
 5. The user is redirected to another available workspace or workspace onboarding.
 
-An Owner may use the same flow only when another Owner remains in the workspace.
+The current Owner cannot leave through this flow. They must transfer ownership first, become an Admin, and then leave as an Admin.
 
 ---
 
@@ -837,7 +850,23 @@ An Owner may use the same flow only when another Owner remains in the workspace.
 
 1. A user attempts to change or remove the Workspace Owner.
 2. The system prevents the action.
-3. An explanatory message is displayed.
+3. The system explains that ownership can change only through the **Transfer Ownership** flow.
+
+---
+
+### Invalid Ownership Transfer Target
+
+1. The selected Member or Admin leaves or is removed before the transfer is confirmed.
+2. The system cancels the transfer without changing either role.
+3. The Owner is prompted to select another active workspace member.
+
+---
+
+### Ownership Transfer Failure
+
+1. The ownership transfer cannot be completed.
+2. The system rolls back the operation so the current Owner and recipient retain their original roles.
+3. The system displays an error and allows the Owner to retry.
 
 ---
 
@@ -853,7 +882,7 @@ An Owner may use the same flow only when another Owner remains in the workspace.
 
 1. A user attempts to remove themselves through member-management controls.
 2. The system redirects them to the **Leave Workspace** flow.
-3. The system prevents an Owner from leaving if no other Owner remains.
+3. The system prevents the Owner from leaving until ownership has been transferred.
 
 ---
 
@@ -869,6 +898,7 @@ An Owner may use the same flow only when another Owner remains in the workspace.
 
 - Member information reflects the latest changes.
 - Updated roles take effect immediately.
+- A completed ownership transfer leaves exactly one Owner and changes the previous Owner to Admin.
 - Removed members no longer have access to the workspace.
 - Pending invitations accurately reflect their current status.
 - Workspace permissions remain consistent with the assigned roles.
