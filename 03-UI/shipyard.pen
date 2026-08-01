@@ -8284,6 +8284,91 @@
           }
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "ePp64",
+      "x": 5509,
+      "y": 168,
+      "name": "App Shell / Default",
+      "reusable": true,
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "$ds-bg",
+      "layout": "none",
+      "children": [
+        {
+          "id": "sEAKC",
+          "type": "ref",
+          "ref": "Gk1Jh",
+          "name": "App Shell Sidebar",
+          "width": 252,
+          "height": 900,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "type": "frame",
+          "id": "L3b9XK",
+          "x": 252,
+          "y": 0,
+          "name": "App Shell Workspace",
+          "width": 1188,
+          "height": 900,
+          "layout": "none",
+          "children": [
+            {
+              "id": "ZND29",
+              "type": "ref",
+              "ref": "dEjH5",
+              "name": "App Shell Header",
+              "width": 1188,
+              "height": 64,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "type": "frame",
+              "id": "RJq6z",
+              "x": 0,
+              "y": 64,
+              "name": "Main Content Region",
+              "width": 1188,
+              "height": 836,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b0eiV8",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Main Content Surface",
+                  "clip": true,
+                  "width": 1176,
+                  "height": 824,
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "q4mW7J",
+                      "name": "Main Content Slot",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
