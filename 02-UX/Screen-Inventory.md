@@ -25,8 +25,10 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Workspace Switcher | Modal | Sidebar, Header, User Menu | Display available workspaces and allow users to switch between them. |
 | Join Workspace Invitation | Page | Invitation link | Allow invited users to review and accept a workspace invitation. |
 | Workspace Loading | Full-Screen State | Login, Workspace Switcher | Display the workspace loading state while preparing the selected workspace. |
-| Archived Workspace Summary | Page | Workspace Switcher → Archived Workspaces | Display an archived workspace in read-only mode and allow its owner to restore it. |
+| Archive Workspace Confirmation | Dialog | Workspace Settings → Danger Zone | Confirm making an active workspace read-only before it can be restored or permanently deleted. |
+| Archived Workspace Summary | Page | Workspace Switcher → Archived Workspaces | Display an archived workspace in read-only mode and allow its Owner to restore or permanently delete it. |
 | Restore Workspace Confirmation | Dialog | Archived Workspace Summary | Confirm restoring an archived workspace to active use. |
+| Delete Workspace Confirmation | Dialog | Archived Workspace Summary | Require the Owner to enter the exact workspace name before permanently deleting all workspace-scoped data and memberships. |
 
 ---
 

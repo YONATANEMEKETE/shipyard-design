@@ -164,11 +164,11 @@ Deleting or archiving resources and transferring workspace ownership may have si
 
 **Rationale**
 
-Confirmation dialogs help prevent accidental destructive actions and unintended ownership transfers. For Project deletion, the dialog states that deletion is permanent, shows the number of associated Issues, and explains that those Issues will be unassigned rather than deleted.
+Confirmation dialogs help prevent accidental destructive actions and unintended ownership transfers. For Project deletion, the dialog states that deletion is permanent, shows the number of associated Issues, and explains that those Issues will be unassigned rather than deleted. A Workspace must be archived before deletion, and its Owner must type the exact workspace name before permanent deletion can proceed.
 
 **Impact**
 
-Improves user confidence and reduces irreversible mistakes while preserving Issue data when a Project is removed.
+Improves user confidence and reduces irreversible mistakes. Project deletion preserves its Issues, while the stronger Workspace deletion gate protects the complete workspace data boundary.
 
 ---
 

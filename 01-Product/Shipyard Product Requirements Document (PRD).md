@@ -439,7 +439,8 @@ A workspace is the primary container for a team's data. It groups members, proje
 - Archived workspaces cannot be actively used.
 - Workspace owners can restore an archived workspace.
 - Restoring a workspace makes it active and usable again.
-- Workspace owners can permanently delete the workspace.
+- Workspace owners can permanently delete an Archived workspace.
+- The Owner must enter the exact workspace name before permanent deletion can be confirmed.
 
 ##### Workspace Membership
 
@@ -459,7 +460,10 @@ A workspace is the primary container for a team's data. It groups members, proje
 - Every issue belongs to one workspace.
 - Every cycle belongs to one workspace.
 - Workspace data is isolated from other workspaces.
-- Deleting a workspace removes all associated data.
+- An active workspace must be archived before it can be permanently deleted.
+- Deleting an Archived workspace removes all workspace-scoped resources, settings, history, memberships, and invitations.
+- Workspace deletion does not delete member user accounts or their data in other workspaces.
+- Workspace deletion is irreversible and must succeed or fail as one operation; a failed deletion leaves the Archived workspace unchanged.
 - Only workspace owners can archive, restore, or delete a workspace.
 
 #### Acceptance Criteria
@@ -478,18 +482,24 @@ Given a user belongs to multiple workspaces, when they select a different worksp
 
 ##### Archive Workspace
 
-Given a workspace owner, when they archive the workspace, then the workspace becomes read-only and is no longer active.
+Given a workspace owner, when they confirm Archive, then the workspace becomes read-only and is no longer active.
 
 ##### Restore Workspace
 
 Given a workspace owner and an archived workspace, when they restore it, then the workspace becomes active and usable again with its data preserved.
+
+##### Delete Workspace
+
+Given a workspace owner and an Archived workspace, when they enter the exact workspace name and confirm deletion, then the workspace and all workspace-scoped data and memberships are permanently removed while member user accounts remain intact.
 
 #### Edge Cases
 
 - Duplicate workspace names.
 - User attempts to access a workspace they are not a member of.
 - The Owner attempts to leave before transferring ownership.
-- Workspace deleted while members are active.
+- Owner attempts to delete an active workspace before archiving it.
+- Entered deletion confirmation does not exactly match the workspace name.
+- Permanent deletion fails before all workspace-scoped data can be removed.
 - Invalid or expired invitation link.
 - Archived workspace accessed directly via URL.
 
@@ -555,7 +565,7 @@ The MVP supports three roles:
 - Full workspace access.
 - Manage members.
 - Manage workspace settings.
-- Delete, archive, or restore the workspace.
+- Archive the active workspace or restore or delete it after archival.
 
 ###### Admin
 
@@ -1594,7 +1604,7 @@ Workspace owners can:
 - Update the workspace name.
 - Update the workspace icon.
 - Archive the workspace.
-- Delete the workspace.
+- Open an Archived workspace to permanently delete it.
 - View workspace information.
 
 ##### Member Management
@@ -1617,9 +1627,9 @@ Workspace Admins can:
 Workspace owners can:
 
 - Archive the workspace.
-- Permanently delete the workspace.
+- Permanently delete the workspace after it has been archived.
 
-These actions require confirmation before completion.
+Archiving requires confirmation. Permanent deletion requires the Owner to type the exact workspace name before confirming.
 
 #### Business Rules
 
@@ -1657,7 +1667,7 @@ Given a workspace owner, when they modify workspace information, then the change
 
 ##### Delete Workspace
 
-Given a workspace owner, when they confirm deletion, then the workspace and its associated data are permanently removed.
+Given a workspace owner and an Archived workspace, when they enter the exact workspace name and confirm deletion, then all workspace-scoped data and memberships are permanently removed without deleting member user accounts.
 
 #### Edge Cases
 
@@ -1665,7 +1675,8 @@ Given a workspace owner, when they confirm deletion, then the workspace and its 
 - Invalid email address.
 - User attempts to change restricted settings.
 - Owner attempts to leave before transferring ownership.
-- Workspace deletion while members are active.
+- Owner attempts to delete a workspace before archiving it.
+- Workspace name confirmation does not match exactly.
 - Attempt to perform destructive actions without confirmation.
 
 #### Future Enhancements
@@ -1702,7 +1713,7 @@ The MVP includes three roles:
 | View workspace | ✅ | ✅ | ✅ |
 | Update workspace | ✅ | ❌ | ❌ |
 | Archive or restore workspace | ✅ | ❌ | ❌ |
-| Delete workspace | ✅ | ❌ | ❌ |
+| Delete archived workspace | ✅ | ❌ | ❌ |
 | View member directory | ✅ | ✅ | ✅ |
 | Invite users as Members | ✅ | ✅ | ❌ |
 | Invite users as Admins | ✅ | ❌ | ❌ |
@@ -1736,7 +1747,7 @@ Can:
 - Manage workspace settings.
 - Manage members.
 - Transfer ownership to an existing Member or Admin, becoming an Admin afterward.
-- Archive, restore, or delete the workspace.
+- Archive an active workspace or restore or delete it after archival.
 - Perform all Admin and Member actions.
 
 #### Admin
@@ -1826,7 +1837,9 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - User roles are assigned independently for each workspace.
 - All projects, issues, cycles, and members belong to exactly one workspace.
 - Users can only access workspaces they are members of.
-- Deleting a workspace permanently removes all associated data.
+- An active workspace must be archived before permanent deletion.
+- Only the Owner can permanently delete an Archived workspace, and the exact workspace name must be entered to confirm.
+- Deleting a workspace permanently removes all workspace-scoped data and memberships without deleting user accounts.
 
 ### 7.2 Member Rules
 
@@ -2075,6 +2088,7 @@ The initial release focuses on providing a complete project management experienc
 - Create workspace
 - Update workspace
 - Archive and restore workspace
+- Permanently delete archived workspace
 - Transfer workspace ownership
 - Invite members
 - Member roles

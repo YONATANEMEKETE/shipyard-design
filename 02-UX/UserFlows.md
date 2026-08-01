@@ -2486,20 +2486,21 @@ The user opens the Search interface or applies filters within a supported resour
 
 ## Overview
 
-This flow describes how users manage global Account Settings and settings for the active workspace. Account Settings include profile, security, and appearance and remain available without an active workspace.
+This flow describes how users manage global Account Settings, settings for an active workspace, and Owner-only lifecycle actions for active or Archived workspaces. Account Settings include profile, security, and appearance and remain available without an active workspace.
 
 ---
 
 ## Trigger
 
-The user opens **Account Settings** from the User Menu or **Workspace Settings** from workspace navigation.
+The user opens **Account Settings** from the User Menu, **Workspace Settings** from workspace navigation, or an **Archived Workspace Summary** from the Workspace Switcher.
 
 ---
 
 ## Preconditions
 
 - The user is authenticated.
-- An active workspace is required only for Workspace Settings.
+- An active workspace is required for editing Workspace Settings or archiving.
+- An Archived workspace owned by the user is required for permanent deletion.
 
 ---
 
@@ -2552,6 +2553,29 @@ The user opens **Account Settings** from the User Menu or **Workspace Settings**
 4. The user saves the changes.
 5. The system validates the input.
 6. The workspace settings are updated.
+
+---
+
+### Archive Workspace
+
+1. The Workspace Owner opens the **Danger Zone** in Workspace Settings.
+2. The Owner selects **Archive Workspace**.
+3. The system displays a confirmation dialog explaining that the workspace will become read-only and must be restored before it can be used again.
+4. The Owner confirms the action.
+5. The system archives the workspace and ends active use for every member.
+6. The Owner is redirected to the workspace selection screen, where the workspace appears under **Archived Workspaces**.
+
+---
+
+### Delete Archived Workspace
+
+1. The Workspace Owner opens **Archived Workspaces** from the Workspace Switcher.
+2. The Owner opens the Archived Workspace Summary and selects **Delete Workspace**.
+3. The system displays a permanent deletion warning describing that all workspace-scoped resources, settings, history, memberships, and invitations will be removed while user accounts remain intact.
+4. The system asks the Owner to enter the exact workspace name and keeps the final confirmation action disabled until it matches.
+5. The Owner enters the exact workspace name and confirms deletion.
+6. The system permanently removes the workspace and all workspace-scoped data as one operation.
+7. The Owner is redirected to workspace selection or onboarding when no workspaces remain.
 
 ---
 
@@ -2615,11 +2639,27 @@ The user opens **Account Settings** from the User Menu or **Workspace Settings**
 
 ---
 
+### Active Workspace Deletion Attempt
+
+1. The Owner attempts to permanently delete an active workspace.
+2. The system blocks deletion and directs the Owner to archive the workspace first.
+
+---
+
+### Workspace Name Does Not Match
+
+1. The Owner enters a value that does not exactly match the Archived workspace name.
+2. The final deletion action remains disabled.
+3. The Owner corrects the value or cancels.
+
+---
+
 ### Server Error
 
-1. A settings update cannot be completed.
+1. A settings or Workspace lifecycle action cannot be completed.
 2. The system displays an error message.
-3. The user can retry the operation.
+3. If permanent Workspace deletion fails, the Archived workspace and all its data and memberships remain unchanged.
+4. The user can retry the operation.
 
 ---
 
@@ -2628,6 +2668,8 @@ The user opens **Account Settings** from the User Menu or **Workspace Settings**
 - Updated profile information is reflected across every workspace the user belongs to.
 - Email changes update the user's global account after successful password and uniqueness validation.
 - Workspace settings reflect the latest authorized changes.
+- Archived workspaces remain read-only and available to their Owner for restoration or permanent deletion.
+- Permanently deleted workspaces and their workspace-scoped data cannot be restored; member user accounts remain intact.
 - Password changes take effect immediately.
 - Theme changes apply throughout the product and persist on the user's account.
 - Logout terminates the active session and returns the user to the login page.

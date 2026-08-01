@@ -41,6 +41,9 @@ Shipyard
     └── Workspace Switcher
         ├── Active Workspaces
         └── Archived Workspaces (Owner only)
+            └── Archived Workspace Summary
+                ├── Restore Workspace
+                └── Delete Workspace
 ```
 
 ---
@@ -157,6 +160,8 @@ Contains:
 - Workspace Details
 - Member Management
 - Danger Zone
+
+The active Workspace Danger Zone provides Archive. Permanent deletion is available only from the Archived Workspace Summary after archival.
 
 ---
 
