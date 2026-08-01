@@ -1935,6 +1935,10 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 ### 7.9 General Rules
 
 - Archived resources cannot be modified until restored.
+- The Global Create Menu is available only when an active workspace is selected.
+- The Global Create Menu offers Create Issue to Owners, Admins, and Members.
+- The Global Create Menu offers Create Project and Create Cycle only to Owners and Admins.
+- Creation actions the current user lacks permission to perform are omitted from the Global Create Menu rather than shown disabled.
 - Users who can archive a resource can also restore it.
 - Before archiving a resource, the system records the state required to restore it correctly.
 - Restoration preserves the resource's data and history.

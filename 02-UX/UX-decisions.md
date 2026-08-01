@@ -132,11 +132,11 @@ Creating resources should be fast and minimally disruptive.
 
 **Rationale**
 
-Using modals allows users to create new entities while remaining within their current context.
+Using modals allows users to create new entities while remaining within their current context. In an active Workspace, the Global Create Menu exposes Issue, Project, and Cycle creation according to the current user's permissions and omits unauthorized actions.
 
 **Impact**
 
-Reduces unnecessary page transitions and improves workflow efficiency.
+Reduces unnecessary page transitions, improves workflow efficiency, and keeps the global action surface aligned with RBAC.
 
 ---
 

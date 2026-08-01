@@ -51,7 +51,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Projects List | Page | Sidebar → Projects, Dashboard | Display all projects within the active workspace. |
 | Project Details | Page | Projects List, Dashboard, Search, Notifications | Display project information, progress, associated issues, project activity, and any cycle information derived from those issues. |
-| Create Project | Modal | Projects List | Allow authorized users to create a Project with a name unique within the workspace. |
+| Create Project | Modal | Projects List, Global Create Menu | Allow authorized users to create a Project with a name unique within the workspace. |
 | Edit Project | Modal | Project Details | Allow authorized users to update project information while preserving workspace-scoped name uniqueness. |
 | Update Project Status | Dropdown | Non-archived Project Details, Projects List | Allow editors to switch freely between Planned, Active, and Completed; Archived is excluded. |
 | Archive Project Confirmation | Dialog | Non-archived Project Details | Confirm archiving a project before it becomes read-only. |
@@ -81,7 +81,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Issues List | Page | Sidebar → Issues, Dashboard | Display all issues within the active workspace. |
 | Issue Details | Page | Issues List, Dashboard, Search, Notifications, Project Details, Cycle Details | Display issue information, workflow status, planning details, activity history, and management actions. |
-| Create Issue | Modal | Issues List, Project Details, Cycle Details, Dashboard | Allow users to create a new issue. |
+| Create Issue | Modal | Issues List, Project Details, Cycle Details, Dashboard, Global Create Menu | Allow users to create a new issue. |
 | Edit Issue | Modal | Issue Details | Allow authorized users to update issue information. |
 | Assign Issue | Modal | Issue Details | Allow users to assign or reassign an issue. |
 | Update Workflow Status | Dropdown | Issue Details, Issues List | Allow users to move an issue through the workflow (Backlog → Todo → In Progress → Done). |
@@ -112,7 +112,14 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Quick Actions | Section | Dashboard | Provide shortcuts to common actions such as creating an issue, searching the workspace, or viewing assigned work. |
 
 ---
-## 5.10 Search
+## 5.10 Global Actions
+
+| Screen | Type | Entry Points | Purpose |
+|---------|------|--------------|----------|
+| Global Create Menu | Popover | Global Create Button | Display Create Issue to every workspace role and Create Project or Create Cycle only to Owners and Admins; omit unauthorized actions. |
+
+---
+## 5.11 Search
 
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
@@ -123,7 +130,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Saved Views | Dropdown | Resource List Toolbar | Display previously saved views and allow users to apply, rename, delete, or set a default view. |
 
 ---
-## 5.11 Settings
+## 5.12 Settings
 
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|

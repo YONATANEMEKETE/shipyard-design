@@ -953,8 +953,8 @@ The user selects **Create Project** from the Projects page or the global **Creat
 
 ### Create Project from Global Menu
 
-1. The user selects the global **Create** button.
-2. The user chooses **Project**.
+1. An Owner or Admin selects the global **Create** button in an active workspace.
+2. The permission-filtered menu includes **Project**, and the user selects it.
 3. The project creation form is displayed.
 4. The remaining steps follow the main flow.
 
@@ -1217,8 +1217,8 @@ The user selects **Create Cycle** from the Cycles page or the global **Create** 
 
 ### Create Cycle from Global Menu
 
-1. The user selects the global **Create** button.
-2. The user chooses **Cycle**.
+1. An Owner or Admin selects the global **Create** button in an active workspace.
+2. The permission-filtered menu includes **Cycle**, and the user selects it.
 3. The cycle creation form is displayed.
 4. The remaining steps follow the main flow.
 
@@ -1534,12 +1534,13 @@ The user selects **Create Issue** from the Issues page, a Project, a Cycle, or t
 
 ### Quick Create
 
-1. The user opens the global **Create** menu.
-2. The user enters only:
+1. Any workspace member opens the global **Create** menu in an active workspace.
+2. The permission-filtered menu includes **Issue**, and the user selects it.
+3. The user enters only:
    - Title
    - Priority (optional)
-3. The system creates the issue immediately.
-4. Remaining information can be added later.
+4. The system creates the issue immediately.
+5. Remaining information can be added later.
 
 ---
 

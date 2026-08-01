@@ -98,9 +98,21 @@ Available from any page:
 
 - Workspace Switcher
 - Global Search
-- Create Button
+- Create Button *(active workspace only)*
 - User Menu
 - Notifications
+
+---
+
+# Global Create Behavior
+
+The Create Button opens a menu containing only actions available to the current user:
+
+- **Create Issue** for Owners, Admins, and Members.
+- **Create Project** for Owners and Admins.
+- **Create Cycle** for Owners and Admins.
+
+Unauthorized creation actions are hidden, not disabled. The Create Button is unavailable when no active workspace is selected or while viewing an Archived Workspace.
 
 ---
 
