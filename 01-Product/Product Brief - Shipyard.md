@@ -107,6 +107,7 @@ The easiest way for small software teams to manage and ship software.
 - Create projects
 - Organize related work
 - Monitor project progress
+- Delete projects without deleting their issues
 
 ### 3. Run Development Cycles
 
@@ -161,6 +162,7 @@ The easiest way for small software teams to manage and ship software.
 
 - Project management
 - Project archiving and restoration
+- Permanent project deletion with automatic issue unassignment
 - Issue grouping
 - Progress tracking
 

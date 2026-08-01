@@ -1091,9 +1091,11 @@ The user opens an existing project from the Projects page.
 ### Delete Project
 
 1. The user selects **Delete Project**.
-2. The system displays a confirmation dialog explaining the consequences.
-3. The user confirms the deletion.
-4. The project is permanently removed from the workspace.
+2. The system displays a confirmation dialog stating that deletion is permanent.
+3. If the project has associated issues, the dialog displays their count and explains that the issues will remain in the workspace without a project assignment.
+4. The user confirms the deletion.
+5. The system permanently removes the project and clears the project assignment from every associated issue as one operation.
+6. The system returns the user to the Projects list and confirms how many issues were unassigned.
 
 ---
 
@@ -1125,19 +1127,12 @@ The user opens an existing project from the Projects page.
 
 ---
 
-### Active Dependencies
-
-1. The user attempts to delete a project that still contains active issues.
-2. The system prevents deletion.
-3. The user is instructed to resolve, move, or archive the remaining issues before deleting the project.
-
----
-
 ### Server Error
 
 1. The requested operation cannot be completed.
 2. The system displays an error message.
-3. The user can retry the operation.
+3. If project deletion fails, the project and all issue assignments remain unchanged.
+4. The user can retry the operation.
 
 ---
 
@@ -1146,8 +1141,9 @@ The user opens an existing project from the Projects page.
 - The project reflects the latest changes.
 - Status updates are visible throughout the workspace.
 - Archived projects remain available for future restoration.
-- Deleted projects are removed according to workspace policies.
-- All project information remains consistent across its associated issues and any cycle information derived from those issues.
+- Deleted projects cannot be restored.
+- Issues from a deleted project remain in the workspace with no project assignment; their other data and Cycle assignments are unchanged.
+- Cycle information remains consistent because Project–Cycle relationships are derived through Issues.
 
 ---
 # User Flow 11 — Create Cycle

@@ -994,7 +994,9 @@ Projects support the following statuses:
 - Archived projects are read-only.
 - Archived projects may be restored by users with permission to archive projects.
 - Restoring a project returns it to the status it held before archiving.
-- Deleting a project does not delete its issues.
+- Deleting a project is permanent and does not delete its issues.
+- When a project is deleted, every associated issue remains in the workspace and its project assignment is cleared automatically.
+- Project deletion and issue unassignment occur atomically; if either operation fails, neither change is saved.
 - Removing an issue from a project does not delete the issue.
 
 #### Acceptance Criteria
@@ -1019,6 +1021,10 @@ Given an active project, when it is archived, then it becomes read-only and no l
 
 Given an archived project and an authorized user, when the project is restored, then it returns to its previous status and becomes editable again.
 
+##### Delete Project
+
+Given an existing project and an authorized user, when deletion is confirmed, then the project is permanently removed and all associated issues remain in the workspace without a project assignment.
+
 #### Edge Cases
 
 - Project created without issues.
@@ -1028,6 +1034,8 @@ Given an archived project and an authorized user, when the project is restored, 
 - Project reaches its target date with unfinished issues.
 - Duplicate project names.
 - Attempt to modify an archived project.
+- Project deleted while it has associated issues.
+- Project deletion fails while issue assignments are being cleared.
 
 #### Future Enhancements
 
@@ -1824,7 +1832,8 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 - Members can contribute to projects but cannot create or delete them.
 - Archived projects become read-only until restored.
 - Restoring a project returns it to its previous status.
-- Deleting a project does not delete its issues.
+- Deleting a project permanently removes only the project and automatically clears that project from its issues.
+- Project deletion and issue unassignment must succeed or fail as one operation.
 
 ### 7.4 Issue Rules
 
@@ -2070,6 +2079,7 @@ The initial release focuses on providing a complete project management experienc
 - Create projects
 - Update projects
 - Archive and restore projects
+- Delete projects and unassign their issues
 - Track project progress
 
 #### Cycle Management

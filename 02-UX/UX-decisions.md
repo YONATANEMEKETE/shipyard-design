@@ -164,11 +164,11 @@ Deleting or archiving resources and transferring workspace ownership may have si
 
 **Rationale**
 
-Confirmation dialogs help prevent accidental destructive actions and unintended ownership transfers.
+Confirmation dialogs help prevent accidental destructive actions and unintended ownership transfers. For Project deletion, the dialog states that deletion is permanent, shows the number of associated Issues, and explains that those Issues will be unassigned rather than deleted.
 
 **Impact**
 
-Improves user confidence and reduces irreversible mistakes.
+Improves user confidence and reduces irreversible mistakes while preserving Issue data when a Project is removed.
 
 ---
 

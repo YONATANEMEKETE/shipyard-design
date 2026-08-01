@@ -54,7 +54,7 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Edit Project | Modal | Project Details | Allow authorized users to update project information. |
 | Archive Project Confirmation | Dialog | Project Details | Confirm archiving a project before it becomes read-only. |
 | Restore Project Confirmation | Dialog | Archived Projects, Project Details | Confirm restoring an archived project. |
-| Delete Project Confirmation | Dialog | Project Details | Confirm permanent deletion of a project. |
+| Delete Project Confirmation | Dialog | Project Details | Confirm permanent deletion, show the number of affected issues, and explain that those issues will be unassigned rather than deleted. |
 
 ---
 ## 5.6 Cycles
