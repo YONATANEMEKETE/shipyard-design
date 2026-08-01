@@ -427,7 +427,9 @@ A workspace is the primary container for a team's data. It groups members, proje
 
 - Users can create a new workspace.
 - A workspace must have a name.
+- Workspace names are display labels and do not need to be unique.
 - A workspace may have an icon or logo.
+- The system assigns every workspace an immutable, unique internal identifier.
 - The creator becomes the workspace owner.
 - A newly created workspace is immediately available for use.
 
@@ -452,6 +454,7 @@ A workspace is the primary container for a team's data. It groups members, proje
 
 - Users can view all workspaces they belong to.
 - Users can switch between workspaces.
+- The Workspace Switcher displays each workspace's name, icon, and the user's role to help distinguish duplicate names.
 - Switching workspaces updates all visible data to the selected workspace.
 
 #### Business Rules
@@ -459,6 +462,9 @@ A workspace is the primary container for a team's data. It groups members, proje
 - Every project belongs to one workspace.
 - Every issue belongs to one workspace.
 - Every cycle belongs to one workspace.
+- Duplicate workspace names are allowed, including among workspaces visible to the same user.
+- Routing, permissions, invitations, and data relationships use the immutable workspace identifier, never the workspace name.
+- Renaming a workspace does not change its internal identifier or break existing references.
 - Workspace data is isolated from other workspaces.
 - An active workspace must be archived before it can be permanently deleted.
 - Deleting an Archived workspace removes all workspace-scoped resources, settings, history, memberships, and invitations.
@@ -470,7 +476,7 @@ A workspace is the primary container for a team's data. It groups members, proje
 
 ##### Create Workspace
 
-Given an authenticated user, when they create a workspace with valid information, then the workspace is created and they become its owner.
+Given an authenticated user, when they create a workspace with valid information, then the workspace receives a unique internal identifier and is created even when another workspace has the same display name, and the user becomes its owner.
 
 ##### Join Workspace
 
@@ -494,7 +500,7 @@ Given a workspace owner and an Archived workspace, when they enter the exact wor
 
 #### Edge Cases
 
-- Duplicate workspace names.
+- Multiple accessible workspaces share the same display name.
 - User attempts to access a workspace they are not a member of.
 - The Owner attempts to leave before transferring ownership.
 - Owner attempts to delete an active workspace before archiving it.
@@ -1671,7 +1677,7 @@ Given a workspace owner and an Archived workspace, when they enter the exact wor
 
 #### Edge Cases
 
-- Duplicate workspace name.
+- Multiple workspaces visible to a user share the same display name.
 - Invalid email address.
 - User attempts to change restricted settings.
 - Owner attempts to leave before transferring ownership.
@@ -1833,6 +1839,8 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 ### 7.1 Workspace Rules
 
 - Every workspace has exactly one Owner.
+- Every workspace has one immutable, unique internal identifier.
+- Workspace names may duplicate and are never used as identifiers.
 - A user may belong to multiple workspaces.
 - User roles are assigned independently for each workspace.
 - All projects, issues, cycles, and members belong to exactly one workspace.

@@ -64,11 +64,11 @@ Changing workspaces is an occasional context switch rather than a primary workfl
 
 **Rationale**
 
-A modal allows users to switch workspaces without leaving their current screen or disrupting the overall navigation structure.
+A modal allows users to switch workspaces without leaving their current screen or disrupting the overall navigation structure. Workspace names are non-unique display labels, so matching names are distinguished with icon and role or ownership context while selection uses the immutable internal Workspace identifier.
 
 **Impact**
 
-Provides a lightweight workspace switching experience.
+Provides a lightweight workspace switching experience without treating a user-facing name as identity.
 
 ---
 

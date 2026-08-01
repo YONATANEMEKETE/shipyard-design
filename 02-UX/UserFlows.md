@@ -201,10 +201,11 @@ The user successfully completes account registration and signs in for the first 
    - Workspace name
    - Workspace icon (optional)
 4. The user submits the form.
-5. The system creates the workspace.
-6. The user becomes the Workspace Owner.
-7. The system redirects the user to the new workspace dashboard.
-8. The onboarding process is completed.
+5. The system validates the display name without checking it for uniqueness.
+6. The system creates the workspace with an immutable internal identifier.
+7. The user becomes the Workspace Owner.
+8. The system redirects the user to the new workspace dashboard.
+9. The onboarding process is completed.
 
 ---
 
@@ -248,12 +249,14 @@ The user successfully completes account registration and signs in for the first 
 
 ---
 
-### Duplicate Workspace Name
+### Invalid Workspace Name
 
-1. The chosen workspace name is unavailable or invalid.
+1. The chosen workspace name is missing or fails display-name validation.
 2. The system displays a validation message.
 3. The user updates the workspace information.
 4. Workspace creation continues.
+
+Duplicate workspace names do not trigger this error and are accepted.
 
 ---
 
@@ -270,6 +273,7 @@ The user successfully completes account registration and signs in for the first 
 ### Create Workspace
 
 - A new workspace exists.
+- The workspace has an immutable internal identifier independent of its display name.
 - The user is the Workspace Owner.
 - The workspace dashboard is displayed.
 
@@ -308,9 +312,9 @@ The user successfully logs in to Shipyard.
 1. The system retrieves all workspaces associated with the user.
 2. The system determines the number of available workspaces.
 3. If only one workspace exists, it is opened automatically.
-4. If multiple workspaces exist, the workspace selection screen is displayed.
-5. The user selects a workspace.
-6. The system loads the selected workspace.
+4. If multiple workspaces exist, the workspace selection screen displays each name, icon, and the user's role or ownership context.
+5. The user selects a workspace entry; duplicate names remain separate entries.
+6. The system loads the workspace associated with that entry's internal identifier.
 7. The workspace dashboard is displayed.
 8. The user's previous session context (if available) is restored.
 
@@ -337,7 +341,7 @@ The user successfully logs in to Shipyard.
 ### Only Archived Workspaces
 
 1. The user has no active workspace but owns one or more archived workspaces.
-2. The system displays the archived workspaces in the workspace selection screen.
+2. The system displays the archived workspaces with name, icon, and ownership context in the workspace selection screen.
 3. The user selects a workspace and chooses **Restore Workspace**.
 4. The system displays a confirmation dialog.
 5. The user confirms the action.
@@ -397,10 +401,10 @@ The user selects the **Workspace Switcher** from the application interface.
 ## Main Flow
 
 1. The user clicks the Workspace Switcher.
-2. The system displays a list of workspaces the user has access to.
+2. The system displays each accessible workspace with its name, icon, and the user's role or ownership context.
 3. The currently active workspace is highlighted.
 4. The user selects a different workspace.
-5. The system verifies the user's access to the selected workspace.
+5. The system uses the selected workspace's internal identifier to verify access.
 6. The current workspace context is unloaded.
 7. The selected workspace is loaded.
 8. The user is redirected to the selected workspace's dashboard.
@@ -423,9 +427,9 @@ The user selects the **Workspace Switcher** from the application interface.
 
 1. The user has access to many workspaces.
 2. The user searches for a workspace by name.
-3. The matching workspaces are displayed.
+3. All matching workspaces are displayed, including duplicates, with icon and role or ownership context.
 4. The user selects a workspace.
-5. The selected workspace is opened.
+5. The workspace associated with the selected internal identifier is opened.
 
 ---
 
@@ -2571,11 +2575,12 @@ The user opens **Account Settings** from the User Menu, **Workspace Settings** f
 
 1. The Workspace Owner opens **Archived Workspaces** from the Workspace Switcher.
 2. The Owner opens the Archived Workspace Summary and selects **Delete Workspace**.
-3. The system displays a permanent deletion warning describing that all workspace-scoped resources, settings, history, memberships, and invitations will be removed while user accounts remain intact.
-4. The system asks the Owner to enter the exact workspace name and keeps the final confirmation action disabled until it matches.
-5. The Owner enters the exact workspace name and confirms deletion.
-6. The system permanently removes the workspace and all workspace-scoped data as one operation.
-7. The Owner is redirected to workspace selection or onboarding when no workspaces remain.
+3. The system identifies the selected Workspace by its internal identifier and displays its name, icon, and ownership context in a permanent deletion warning.
+4. The warning explains that all workspace-scoped resources, settings, history, memberships, and invitations will be removed while user accounts remain intact.
+5. The system asks the Owner to enter the exact workspace name and keeps the final confirmation action disabled until it matches.
+6. The Owner enters the exact workspace name and confirms deletion.
+7. The system permanently removes the selected Workspace and all workspace-scoped data as one operation.
+8. The Owner is redirected to workspace selection or onboarding when no workspaces remain.
 
 ---
 

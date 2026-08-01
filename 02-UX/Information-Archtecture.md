@@ -180,6 +180,8 @@ Workspace
 
 Relationship Rules
 
+- Every Workspace has an immutable internal identifier; its display name may duplicate another Workspace name.
+- Navigation, permissions, invitations, and resource relationships reference the Workspace identifier rather than its display name.
 - Every Project belongs to one Workspace.
 - Every Issue belongs to one Workspace.
 - Every Issue may belong to one Project.

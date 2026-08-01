@@ -22,13 +22,13 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Workspace Onboarding | Page | First login, users without a workspace | Guide first-time users through creating their initial workspace. |
 | Create Workspace | Modal | Workspace Onboarding, Workspace Switcher | Allow users to create a new workspace. |
-| Workspace Switcher | Modal | Sidebar, Header, User Menu | Display available workspaces and allow users to switch between them. |
+| Workspace Switcher | Modal | Sidebar, Header, User Menu | Display available workspaces with name, icon, and role or ownership context, allowing duplicate names to remain distinguishable and selectable. |
 | Join Workspace Invitation | Page | Invitation link | Allow invited users to review and accept a workspace invitation. |
 | Workspace Loading | Full-Screen State | Login, Workspace Switcher | Display the workspace loading state while preparing the selected workspace. |
 | Archive Workspace Confirmation | Dialog | Workspace Settings → Danger Zone | Confirm making an active workspace read-only before it can be restored or permanently deleted. |
 | Archived Workspace Summary | Page | Workspace Switcher → Archived Workspaces | Display an archived workspace in read-only mode and allow its Owner to restore or permanently delete it. |
 | Restore Workspace Confirmation | Dialog | Archived Workspace Summary | Confirm restoring an archived workspace to active use. |
-| Delete Workspace Confirmation | Dialog | Archived Workspace Summary | Require the Owner to enter the exact workspace name before permanently deleting all workspace-scoped data and memberships. |
+| Delete Workspace Confirmation | Dialog | Archived Workspace Summary | Identify the selected workspace with name, icon, and ownership context, then require its exact name before permanently deleting all workspace-scoped data and memberships. |
 
 ---
 
