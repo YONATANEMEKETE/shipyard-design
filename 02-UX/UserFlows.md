@@ -1233,7 +1233,7 @@ The user selects **Create Cycle** from the Cycles page or the global **Create** 
    - Start date
    - End date
 5. The user submits the form.
-6. The system validates the provided information and confirms that the dates do not overlap another non-archived cycle.
+6. The system validates the provided information, confirms that the trimmed, case-insensitive name is unique across all non-deleted Cycles in the workspace, including Archived Cycles, and confirms that the dates do not overlap another non-archived cycle.
 7. The cycle is created with Planned status.
 8. The cycle is added to the workspace's Cycles list.
 9. The user is redirected to the cycle overview page.
@@ -1280,6 +1280,14 @@ The user selects **Create Cycle** from the Cycles page or the global **Create** 
 
 ---
 
+### Duplicate Cycle Name
+
+1. Another non-deleted Cycle in the workspace, including an Archived Cycle, has the same name after case-insensitive comparison and trimming surrounding whitespace.
+2. The system blocks creation and identifies the name conflict.
+3. The user enters a unique name before continuing.
+
+---
+
 ### Overlapping Cycle
 
 1. The selected date range overlaps an existing non-archived cycle.
@@ -1307,6 +1315,7 @@ The user selects **Create Cycle** from the Cycles page or the global **Create** 
 ## Postconditions
 
 - A new cycle exists within the workspace.
+- Its normalized name is unique among all non-deleted Cycles in the workspace.
 - The new cycle has Planned status and does not overlap another non-archived cycle.
 - The cycle appears in the Cycles list.
 - The cycle overview page is displayed.
@@ -1362,8 +1371,9 @@ The user opens an existing cycle from the Cycles page.
 2. The system displays the editable cycle information.
 3. The user updates one or more cycle details.
 4. The user saves the changes.
-5. The system validates the updated information, including the no-overlap rule when dates change.
-6. The cycle information is updated immediately.
+5. If the name changed, the system validates that its trimmed, case-insensitive value is unique across all non-deleted Cycles in the workspace, including Archived Cycles.
+6. If the dates changed, the system validates the no-overlap rule.
+7. The cycle information is updated immediately.
 
 ---
 
@@ -1430,6 +1440,7 @@ The user opens an existing cycle from the Cycles page.
 3. The system displays a confirmation that deletion is permanent and that associated issues will be unassigned from the cycle.
 4. The user confirms the action.
 5. The system permanently deletes the cycle and preserves its issues without a cycle assignment.
+6. The deleted Cycle's name becomes available for reuse within the workspace.
 
 ---
 
@@ -1470,6 +1481,14 @@ The user opens an existing cycle from the Cycles page.
 
 ---
 
+### Duplicate Cycle Name
+
+1. A Cycle rename conflicts with another non-deleted Cycle in the workspace, including an Archived Cycle, after case-insensitive comparison and trimming surrounding whitespace.
+2. The system blocks the update and keeps the existing name.
+3. The user enters a unique name or cancels editing.
+
+---
+
 ### Cycle Date Conflict
 
 1. A create, edit, reopen, or restore action would overlap another non-archived cycle.
@@ -1505,6 +1524,7 @@ The user opens an existing cycle from the Cycles page.
 ## Postconditions
 
 - The cycle reflects the latest updates.
+- Its normalized name remains unique among all non-deleted Cycles in the workspace.
 - Progress and completion statistics are updated.
 - Completed cycles preserve their historical information.
 - Archived cycles remain available for future reference and restoration.

@@ -66,8 +66,8 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 |---------|------|--------------|----------|
 | Cycles List | Page | Sidebar → Cycles, Dashboard | Display all cycles within the active workspace. |
 | Cycle Details | Page | Cycles List, Dashboard, Search, Notifications | Display cycle information, progress, associated issues, statistics, and activity. |
-| Create Cycle | Modal | Cycles List, Global Create Menu | Allow authorized users to create a workspace cycle. |
-| Edit Cycle | Modal | Planned or Active Cycle Details | Allow authorized users to update cycle information without creating a date conflict. |
+| Create Cycle | Modal | Cycles List, Global Create Menu | Allow authorized users to create a Cycle with a name unique within the workspace and a non-overlapping date range. |
+| Edit Cycle | Modal | Planned or Active Cycle Details | Allow authorized users to update Cycle information while preserving workspace-scoped name uniqueness and non-overlapping dates. |
 | Start Cycle Confirmation | Dialog | Planned Cycle Details | Confirm starting a Planned cycle when no other cycle is Active. |
 | Complete Cycle Confirmation | Dialog | Cycle Details | Confirm completion of a cycle and finalize the iteration. |
 | Reopen Cycle Confirmation | Dialog | Cycle Details | Confirm reopening a completed cycle. |

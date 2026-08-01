@@ -1129,6 +1129,7 @@ Cycles are fixed development periods used to plan, organize, and track work. The
 
 - Users with permission can create a cycle.
 - Every cycle must have a name.
+- A cycle name must be unique within its workspace.
 - Every cycle must have a start date.
 - Every cycle must have an end date.
 - A cycle may include a goal or description.
@@ -1190,6 +1191,10 @@ Only one cycle can be Active within a workspace at a time. An Active cycle canno
 #### Business Rules
 
 - Every cycle belongs to one workspace.
+- Cycle-name uniqueness is scoped to a workspace; different workspaces may use the same cycle name.
+- Cycle-name comparison is case-insensitive after trimming leading and trailing whitespace.
+- Archived cycles continue to reserve their names; permanent deletion releases a name for reuse.
+- Creating or renaming a cycle is blocked when the normalized name conflicts with another Cycle in the workspace.
 - An issue can belong to only one cycle at a time.
 - Date ranges of non-archived cycles cannot overlap within the same workspace.
 - Start and end dates are inclusive, so a following cycle must start after the preceding cycle's end date.
@@ -1207,7 +1212,11 @@ Only one cycle can be Active within a workspace at a time. An Active cycle canno
 
 ##### Create Cycle
 
-Given a user with permission, when they provide valid cycle information that does not overlap another non-archived cycle, then a new Planned cycle is created.
+Given a user with permission, when they provide valid cycle information with a name unique within the workspace and dates that do not overlap another non-archived cycle, then a new Planned cycle is created.
+
+##### Rename Cycle
+
+Given an authorized editor and an editable cycle, when they enter a name that does not conflict with another Cycle in the workspace, then the new name is saved.
 
 ##### Assign Issue to Cycle
 
@@ -1240,6 +1249,7 @@ Given a future Planned cycle, when an authorized user confirms deletion, then th
 - Issue moved out of an active cycle.
 - Attempt to activate a second cycle while another is active.
 - Attempt to create, restore, reopen, or reschedule a cycle with overlapping dates.
+- Attempt to create or rename a cycle with a case-insensitive, whitespace-trimmed name conflict.
 - Attempt to archive an Active cycle before completing it.
 - Attempt to edit a completed cycle.
 - Future Planned cycle deleted while it still contains issues.
@@ -1921,6 +1931,8 @@ Business Rules define the constraints and behaviors that govern how Shipyard ope
 ### 7.5 Cycle Rules
 
 - Every cycle belongs to exactly one workspace.
+- Cycle names are unique within a workspace after case-insensitive comparison and trimming surrounding whitespace.
+- Archived cycles reserve their names; permanently deleting an eligible future Planned cycle releases its name.
 - Cycles do not directly belong to projects.
 - Only one cycle may be active within a workspace at any time.
 - Non-archived cycle date ranges may never overlap within a workspace.

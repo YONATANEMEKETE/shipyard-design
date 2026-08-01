@@ -189,6 +189,7 @@ Relationship Rules
 - Every Issue may belong to one Project.
 - Every Issue may belong to one Cycle.
 - Every Cycle belongs to one Workspace.
+- Every non-deleted Cycle has a name unique within its Workspace; Archived Cycles continue to reserve their names.
 - Every Member belongs to one Workspace.
 - Every Notification belongs to one User within a Workspace.
 - Projects and Cycles are independent and have no direct ownership relationship.
