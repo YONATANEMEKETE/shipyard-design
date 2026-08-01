@@ -369,3 +369,37 @@ The information architecture, navigation, and interaction patterns are designed 
 **Impact**
 
 Supports long-term maintainability and product evolution.
+
+---
+
+## 8.9 Authentication Decisions
+
+### Decision 23 — Email Verification Gates Protected Access
+
+**Context**
+
+Email/password registration and account email changes must establish that the user controls the submitted address.
+
+**Rationale**
+
+Email/password accounts remain unverified until a single-use verification link succeeds. Unverified users can resend the message but cannot access protected product areas. During an account email change, the existing verified email remains active until the replacement address is verified.
+
+**Impact**
+
+Prevents unverified addresses from gaining product access without locking users out during a pending email change.
+
+---
+
+### Decision 24 — Google and GitHub OAuth are MVP Authentication Methods
+
+**Context**
+
+Software teams benefit from familiar, low-friction authentication methods in addition to email/password credentials.
+
+**Rationale**
+
+The MVP supports Google and GitHub OAuth. A provider-verified email satisfies Shipyard's verification requirement, and a matching verified email resolves to one Shipyard account rather than creating a duplicate.
+
+**Impact**
+
+Reduces sign-up and login friction while preserving one account identity per verified email address.

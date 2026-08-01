@@ -10,10 +10,16 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 
 | Screen | Type | Entry Points | Purpose |
 |---------|------|--------------|----------|
-| Login | Page | Application entry, Logout redirect | Authenticate existing users and grant access to the workspace. |
-| Registration | Page | Login page | Allow new users to create an account. |
+| Login | Page | Application entry, Logout redirect | Authenticate existing users with email/password, Google, or GitHub and grant verified accounts access to Shipyard. |
+| Registration | Page | Login page | Allow new users to create an account with email/password, Google, or GitHub. |
+| Email Verification Pending | Page | Email/password registration, unverified login | Explain that verification is required, identify the destination email, and allow the user to resend the verification message or return to login. |
+| Email Verification Result | Page | Email verification link | Confirm successful verification or present invalid, expired, and already-used link variants with a recoverable next action. |
+| OAuth Callback | Full-Screen State | Google or GitHub authorization redirect | Complete provider authentication, resolve the Shipyard account, and communicate loading or retryable provider errors. |
 | Forgot Password | Page | Login page | Allow users to request a password reset. |
+| Forgot Password Email Sent | Page State | Forgot Password submission | Confirm that password-reset instructions were requested without revealing whether the email belongs to an account. |
 | Reset Password | Page | Password reset link | Allow users to create a new password after identity verification. |
+| Reset Password Invalid or Expired Token | Page State | Invalid or expired password reset link | Explain why the reset cannot continue and provide a path to request another link. |
+| Reset Password Success | Page State | Successful password reset | Confirm the password change and direct the user to login. |
 
 ---
 ## 5.3 Workspace
@@ -142,6 +148,6 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Profile Settings | Page | User Menu → Account Settings | Allow users to manage their display name, profile picture, and account email. |
 | Security Settings | Page | Account Settings | Allow users to change their password. |
 | Appearance Settings | Page | Account Settings | Allow users to select the Light, Dark, or System theme. |
-| Change Email | Modal | Profile Settings | Allow users to update their account email after providing their current password. |
+| Change Email | Modal | Profile Settings | Allow users to request an account email change after password or OAuth re-authentication and explain that the new address must be verified before it replaces the current email. |
 | Workspace Settings | Page | Sidebar → Workspace Settings | Allow authorized users to manage workspace configuration. |
 | Change Password | Modal | Security Settings | Allow users to securely update their account password. |

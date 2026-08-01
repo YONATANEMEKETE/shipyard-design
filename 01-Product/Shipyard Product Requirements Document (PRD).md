@@ -302,7 +302,7 @@ Every feature in this section follows the same structure:
 
 #### Overview
 
-Authentication allows users to securely create an account, sign in, access their workspaces, and manage their sessions.
+Authentication allows users to securely create an account, verify their email address, sign in with credentials or a supported OAuth provider, access their workspaces, and manage their sessions.
 
 Authentication is the entry point to Shipyard and must provide a secure, frictionless experience while supporting future workspace collaboration.
 
@@ -312,10 +312,13 @@ Authentication is the entry point to Shipyard and must provide a secure, frictio
 - Fast onboarding.
 - Support individual users and teams.
 - Minimize login friction.
+- Provide trusted, low-friction sign-in through Google and GitHub.
 
 #### User Stories
 
 - As a new user, I want to create an account so I can start using Shipyard.
+- As a new user, I want to verify my email so my account cannot be activated with an address I do not control.
+- As a user, I want to continue with Google or GitHub so I can access Shipyard without creating another password.
 - As a returning user, I want to sign in quickly.
 - As a logged-in user, I want to remain signed in across sessions.
 - As a user, I want to sign out securely.
@@ -325,14 +328,34 @@ Authentication is the entry point to Shipyard and must provide a secure, frictio
 ##### Registration
 
 - Users can register using an email and password.
+- Users can register or sign in using Google OAuth or GitHub OAuth.
 - Email must be unique.
 - Password must meet minimum security requirements.
-- New users are automatically signed in after successful registration.
+- Email/password registration creates an unverified account and sends a verification email.
+- Email/password users cannot access protected product areas until their email is verified.
+- After successful verification, the user is signed in and redirected to workspace onboarding or their pending invitation.
+
+##### Email Verification
+
+- Verification links expire after a configurable time and can be used only once.
+- Users can request another verification email from the verification-pending screen.
+- Resending verification email is rate-limited and does not create duplicate accounts.
+- Invalid, expired, or already-used links display a recoverable result with an option to request a new link or continue to login.
+
+##### OAuth
+
+- Google and GitHub are the supported OAuth providers in the MVP.
+- A successful provider response must include an email address verified by that provider.
+- Provider-verified email addresses satisfy Shipyard's email-verification requirement.
+- A verified provider email matching an existing Shipyard account resolves to that account rather than creating a duplicate.
+- Users who cancel provider authorization or encounter a provider error return to the authentication screen with a clear, retryable message.
 
 ##### Login
 
 - Users can log in with their email and password.
+- Users can log in with Google or GitHub.
 - Invalid credentials display a generic error message.
+- An email/password user with an unverified email is directed to the verification-pending screen and can request another verification email.
 - Successful login redirects users to their workspace selection or dashboard.
 
 ##### Logout
@@ -356,8 +379,10 @@ Authentication is the entry point to Shipyard and must provide a secure, frictio
 #### Business Rules
 
 - Email addresses are unique.
+- A single Shipyard account may use email/password and one or more supported OAuth identities when they resolve to the same verified email address.
 - Passwords are never stored in plain text.
-- Authentication is required for all protected routes.
+- Authentication with a verified email address is required for all protected routes.
+- Provider access tokens and OAuth secrets are handled securely and are never exposed in client-visible content.
 - Users may belong to multiple workspaces.
 - Authentication is separate from workspace permissions.
 
@@ -365,11 +390,19 @@ Authentication is the entry point to Shipyard and must provide a secure, frictio
 
 ##### Registration
 
-Given a new user, when valid registration details are submitted, then the account is created and the user is signed in.
+Given a new user, when valid email/password registration details are submitted, then an unverified account is created, a verification email is sent, and protected access remains unavailable until verification succeeds.
+
+##### Email Verification
+
+Given an unverified user follows a valid verification link, then the email is marked verified, the user is signed in, and the appropriate onboarding or invitation flow opens.
+
+##### OAuth
+
+Given a user completes Google or GitHub authorization and the provider supplies a verified email address, then Shipyard creates or resolves the matching account, authenticates the user, and redirects them to the appropriate workspace destination.
 
 ##### Login
 
-Given an existing account, when valid credentials are entered, then access is granted.
+Given an existing verified account, when valid credentials or a supported OAuth identity are provided, then access is granted.
 
 ##### Logout
 
@@ -388,6 +421,12 @@ Given a registered email, when a password reset is requested, then a reset email
 - Duplicate email registration.
 - Invalid email format.
 - Weak password.
+- Unverified user attempts to log in.
+- Verification email is delayed or requested repeatedly.
+- Expired, invalid, or already-used verification link.
+- OAuth authorization is cancelled or denied.
+- OAuth provider is unavailable.
+- OAuth provider does not return a verified email address.
 - Expired password reset link.
 - Invalid reset token.
 - Expired session.
@@ -395,7 +434,6 @@ Given a registered email, when a password reset is requested, then a reset email
 
 #### Future Enhancements
 
-- OAuth (Google, GitHub).
 - Passkeys.
 - Two-factor authentication.
 - Single Sign-On (SSO).
@@ -1736,6 +1774,10 @@ Users can change their password after providing their current password.
 
 Changing an account email address also requires the user's current password.
 
+OAuth-only users must re-authenticate with their connected provider before changing their account email address.
+
+A changed email address does not replace the current account email until the user verifies the new address.
+
 ##### Appearance Settings
 
 Users can select a theme:
@@ -1784,7 +1826,8 @@ Archiving requires confirmation. Permanent deletion requires the Owner to type t
 - Authenticated users can access Account Settings without selecting a workspace.
 - Account changes apply across every workspace the user belongs to.
 - Email addresses must remain valid and unique.
-- Changing an email address requires the current password.
+- Changing an email address requires recent re-authentication using the current password or a connected OAuth provider.
+- The existing account email remains active until the new email address is successfully verified.
 - Only workspace owners can modify workspace settings.
 - Only authorized users can manage members.
 - Every workspace has exactly one Owner.
@@ -1798,7 +1841,9 @@ Given a logged-in user, when they save valid profile changes, then the updated i
 
 ##### Change Email
 
-Given a logged-in user provides their current password and an unused valid email address, when they confirm the change, then the new email becomes their account email across all workspaces.
+Given a logged-in user completes recent re-authentication and submits an unused valid email address, when they confirm the change, then a verification email is sent to the new address and the current account email remains active.
+
+Given the user follows the valid verification link for a pending email change, then the verified address becomes their account email across all workspaces.
 
 ##### Change Password
 
@@ -1820,6 +1865,8 @@ Given a workspace owner and an Archived workspace, when they enter the exact wor
 
 - Multiple workspaces visible to a user share the same display name.
 - Invalid email address.
+- Expired or invalid email-change verification link.
+- Email change remains pending while the existing account email stays active.
 - User attempts to change restricted settings.
 - Owner attempts to leave before transferring ownership.
 - Owner attempts to delete a workspace before archiving it.
@@ -2245,8 +2292,10 @@ The initial release focuses on providing a complete project management experienc
 
 #### Authentication
 
-- User registration
-- User login
+- Email/password registration and login
+- Email verification
+- Google OAuth
+- GitHub OAuth
 - Logout
 - Password management
 - Session management

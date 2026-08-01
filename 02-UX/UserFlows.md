@@ -2,7 +2,7 @@
 
 ## Overview
 
-This flow describes how a new user creates a Shipyard account. Registration is the first step in the onboarding experience and grants the user access to the platform.
+This flow describes how a new user creates a Shipyard account with email/password, Google, or GitHub. Email/password registration requires email verification before the user can access protected product areas.
 
 ---
 
@@ -22,19 +22,42 @@ The user selects **Sign Up** from the authentication screen.
 ## Main Flow
 
 1. The user opens the registration page.
-2. The user enters:
+2. The user chooses email/password registration.
+3. The user enters:
    - Email address
    - Password
-3. The user submits the registration form.
-4. The system validates the submitted information.
-5. The system creates the user account.
-6. The user is automatically signed in.
-7. The system redirects the user to the onboarding flow.
-8. The user is prompted to create or join a workspace.
+4. The user submits the registration form.
+5. The system validates the submitted information.
+6. The system creates an unverified account and sends a verification email.
+7. The system opens the **Email Verification Pending** screen.
+8. The user follows the verification link.
+9. The system validates the single-use link, marks the email as verified, and signs the user in.
+10. The system redirects the user to a pending invitation when one exists; otherwise it opens workspace onboarding.
+11. The user is prompted to join or create a workspace.
 
 ---
 
 ## Alternative Flows
+
+### Continue with Google or GitHub
+
+1. The user selects **Continue with Google** or **Continue with GitHub**.
+2. The provider asks the user to authenticate and authorize Shipyard.
+3. The provider returns a verified email address.
+4. Shipyard creates a new account or resolves the existing account with that verified email.
+5. The provider-verified email satisfies Shipyard's verification requirement.
+6. The user is authenticated and continues to a pending invitation or workspace onboarding.
+
+---
+
+### Resend Verification Email
+
+1. The user remains on the **Email Verification Pending** screen.
+2. The user requests another verification email after the resend cooldown.
+3. The system sends a new verification link without creating another account.
+4. The pending screen confirms the request and keeps the destination email visible.
+
+---
 
 ### Email Already Exists
 
@@ -53,6 +76,14 @@ The user selects **Sign Up** from the authentication screen.
 
 ---
 
+### Email Already Verified
+
+1. The user opens a verification link that was already used.
+2. The system explains that the email is already verified.
+3. The user can continue to login.
+
+---
+
 ## Error Flows
 
 ### Server Error
@@ -63,10 +94,27 @@ The user selects **Sign Up** from the authentication screen.
 
 ---
 
+### Invalid or Expired Verification Link
+
+1. The system cannot validate the verification link.
+2. The **Email Verification Result** screen explains that the link is invalid or expired.
+3. The user can request another verification email or return to login.
+
+---
+
+### OAuth Failure
+
+1. The user cancels authorization, the provider is unavailable, or the provider does not return a verified email address.
+2. Shipyard returns the user to the registration screen with a clear, retryable message.
+3. No duplicate account is created.
+
+---
+
 ## Postconditions
 
 - A new Shipyard account exists.
-- The user is authenticated.
+- The account has a verified email address.
+- The user is authenticated only after email verification or successful Google/GitHub OAuth.
 - No workspace has been created yet.
 - The onboarding process continues with workspace setup.
 
@@ -76,7 +124,7 @@ The user selects **Sign Up** from the authentication screen.
 
 ## Overview
 
-This flow describes how an existing user signs in to Shipyard and gains access to their workspaces.
+This flow describes how an existing verified user signs in with email/password, Google, or GitHub and gains access to their workspaces.
 
 ---
 
@@ -96,20 +144,31 @@ The user selects **Log In** from the authentication screen.
 ## Main Flow
 
 1. The user opens the login page.
-2. The user enters:
+2. The user chooses email/password login.
+3. The user enters:
    - Email address
    - Password
-3. The user submits the login form.
-4. The system validates the credentials.
-5. The user is successfully authenticated.
-6. The system checks the user's workspaces.
-7. If the user belongs to only one workspace, they are redirected to that workspace's dashboard.
-8. If the user belongs to multiple workspaces, they are redirected to the workspace selection screen.
-9. The user begins their session.
+4. The user submits the login form.
+5. The system validates the credentials and confirms that the account email is verified.
+6. The user is successfully authenticated.
+7. The system opens a pending invitation when one exists.
+8. If the user belongs to no workspace, they are redirected to workspace onboarding.
+9. If the user belongs to only one workspace, they are redirected to that workspace's dashboard.
+10. If the user belongs to multiple workspaces, they are redirected to the workspace selection screen.
+11. The user begins their session.
 
 ---
 
 ## Alternative Flows
+
+### Continue with Google or GitHub
+
+1. The user selects **Continue with Google** or **Continue with GitHub**.
+2. The provider authenticates the user and returns a verified email address.
+3. Shipyard resolves the account associated with that verified email and completes authentication.
+4. The user continues to a pending invitation, onboarding, the only available workspace, or workspace selection.
+
+---
 
 ### Single Workspace
 
@@ -134,6 +193,22 @@ The user selects **Log In** from the authentication screen.
 1. The user enters an incorrect email or password.
 2. The system displays a generic authentication error.
 3. The user remains on the login page.
+
+---
+
+### Email Not Verified
+
+1. The user submits valid email/password credentials for an unverified account.
+2. The system does not grant protected access and opens **Email Verification Pending**.
+3. The user can resend the verification email or return to login.
+
+---
+
+### OAuth Failure
+
+1. Provider authorization is cancelled, unavailable, or does not return a verified email address.
+2. The system returns the user to login with a clear, retryable message.
+3. No duplicate account or session is created.
 
 ---
 
@@ -172,13 +247,13 @@ This flow describes the onboarding experience immediately after a user registers
 
 ## Trigger
 
-The user successfully completes account registration and signs in for the first time.
+The user successfully verifies an email/password account or completes Google/GitHub OAuth and signs in for the first time.
 
 ---
 
 ## Preconditions
 
-- The user is authenticated.
+- The user is authenticated with a verified account email.
 - The user does not belong to any workspace.
 
 ---
@@ -627,8 +702,8 @@ The user opens a valid workspace invitation link received via email.
 
 1. The user opens the invitation link.
 2. The system validates the invitation.
-3. If the user is not authenticated, they are prompted to log in or create an account.
-4. After authentication, the invitation details are displayed, including:
+3. If the user is not authenticated with a verified account email, they are prompted to log in or create and verify an account.
+4. After verified authentication, the invitation details are displayed, including:
    - Workspace name
    - Invited role
    - Inviter (optional)
@@ -658,8 +733,8 @@ The user opens a valid workspace invitation link received via email.
 
 1. The user does not have a Shipyard account.
 2. The system redirects the user to the registration page.
-3. The user creates an account.
-4. Authentication is completed.
+3. The user creates and verifies an email/password account or completes Google/GitHub OAuth.
+4. Verified authentication is completed.
 5. The invitation is automatically resumed.
 6. The user accepts the invitation.
 7. The workspace is opened.
@@ -2663,8 +2738,10 @@ The user opens **Account Settings** from the User Menu, **Workspace Settings** f
    - Email Address
 4. The user saves the changes.
 5. The system validates the input.
-6. If the email address changed, the system asks for the user's current password and verifies that the new email is valid and unused.
-7. The updated profile information is saved and reflected across every workspace the user belongs to.
+6. If the email address changed, the system requires recent re-authentication using the user's current password or connected OAuth provider and verifies that the new email is valid and unused.
+7. The system sends a verification message to the new email while keeping the current account email active.
+8. After the user follows a valid verification link, the new email becomes the account email.
+9. The updated profile information is reflected across every workspace the user belongs to.
 
 ---
 
@@ -2779,6 +2856,14 @@ The user opens **Account Settings** from the User Menu, **Workspace Settings** f
 
 ---
 
+### Invalid or Expired Email-Change Verification Link
+
+1. The system cannot validate the pending email-change link.
+2. The current account email remains active and unchanged.
+3. The user can request another verification message from Profile Settings.
+
+---
+
 ### Insufficient Permissions
 
 1. The user attempts to modify workspace settings without sufficient permissions.
@@ -2814,7 +2899,7 @@ The user opens **Account Settings** from the User Menu, **Workspace Settings** f
 ## Postconditions
 
 - Updated profile information is reflected across every workspace the user belongs to.
-- Email changes update the user's global account after successful password and uniqueness validation.
+- Email changes update the user's global account only after successful re-authentication, uniqueness validation, and verification of the new address; the previous email remains active until then.
 - Workspace settings reflect the latest authorized changes.
 - Archived workspaces remain read-only and available to their Owner for restoration or permanent deletion.
 - Permanently deleted workspaces and their workspace-scoped data cannot be restored; member user accounts remain intact.

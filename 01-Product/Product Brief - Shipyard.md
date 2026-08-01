@@ -138,7 +138,11 @@ The easiest way for small software teams to manage and ship software.
 
 #### Authentication & Workspace
 
-- Authentication
+- Email/password registration and login
+- Email verification for registration and account email changes
+- Google OAuth
+- GitHub OAuth
+- Password reset and session management
 - Workspace creation
 - Workspace archiving and restoration
 - Permanent deletion of archived workspaces

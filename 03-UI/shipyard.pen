@@ -8306,7 +8306,13 @@
           "width": 252,
           "height": 900,
           "x": 0,
-          "y": 0
+          "y": 0,
+          "descendants": {
+            "n8CZXS": {
+              "fontStyle": "normal",
+              "fontWeight": "800"
+            }
+          }
         },
         {
           "type": "frame",
@@ -8517,7 +8523,7 @@
                       "content": "Shipyard",
                       "fontFamily": "Geist",
                       "fontSize": 18,
-                      "fontWeight": "650",
+                      "fontWeight": "800",
                       "letterSpacing": -0.5
                     }
                   ]
@@ -8585,6 +8591,17 @@
           ]
         }
       ]
+    },
+    {
+      "type": "text",
+      "id": "QN0Y5",
+      "x": 9167,
+      "y": -1021,
+      "fill": "#000000",
+      "content": "Auth Screens",
+      "fontFamily": "Inter",
+      "fontSize": 44,
+      "fontWeight": "700"
     }
   ],
   "variables": {
