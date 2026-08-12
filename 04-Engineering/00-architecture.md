@@ -12,12 +12,12 @@ This document is the **map of the entire Shipyard system**. It defines the high-
 
 | Document | Contents | Status |
 |---|---|---|
-| `00-architecture.md` | This document — system context, principles, modules, request lifecycle | ✅ here |
-| `adr/ADR-001-stack.md` | Tech stack decisions (Next.js, Express, Prisma, Better Auth, Zod) | ⏳ planned |
-| `adr/ADR-002-repo-layout.md` | Monorepo layout, pnpm workspaces, Turborepo, shared contracts | ⏳ planned |
-| `adr/ADR-003-web-api-communication.md` | Next.js proxy, internal API, no CORS | ⏳ planned |
-| `adr/ADR-004-deployment-infra.md` | Oracle VPS, Neon, R2, Caddy, CI/CD | ⏳ planned |
-| `features/*` | Per-module specs: domain model, data model, request lifecycle, API design | ⏳ planned |
+| `00-architecture.md` | This document — system context, principles, modules, request lifecycle | ✅ done |
+| `adr/ADR-001-stack.md` | Tech stack decisions (Next.js, Express, Prisma, Better Auth, Zod) | ✅ done |
+| `adr/ADR-002-repo-layout.md` | Monorepo layout, pnpm workspaces, Turborepo, shared contracts | ✅ done |
+| `adr/ADR-003-web-api-communication.md` | Next.js proxy, internal API, no CORS | ✅ done |
+| `adr/ADR-004-deployment-infra.md` | Oracle VPS, Neon, R2, Caddy, CI/CD | ✅ done |
+| `features/*` | Per-module specs: domain model, data model, request lifecycle, API design | ⏳ next |
 | `deployment.md` | Compose layout, CI/CD pipeline, backups, observability runbook | ⏳ planned |
 
 **Reading order:** 00-architecture → ADRs → features (per module) → deployment.
