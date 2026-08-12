@@ -1,5 +1,5 @@
 {
-  "version": "2.14",
+  "version": "2.17",
   "children": [
     {
       "type": "frame",
@@ -66,7 +66,8 @@
           "height": 76,
           "content": "steal the sidebar and header UI | fully",
           "fontFamily": "Inter",
-          "fontSize": 32
+          "fontSize": 32,
+          "fontWeight": "normal"
         },
         {
           "type": "rectangle",
@@ -1497,6 +1498,7 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
+                  "strokeLinejoin": "round",
                   "padding": [
                     0,
                     14
@@ -1599,6 +1601,7 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
+                  "strokeLinejoin": "round",
                   "padding": [
                     0,
                     14
@@ -1660,7 +1663,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Maya Chen",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -1679,7 +1683,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Apr 24",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -1695,6 +1700,7 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
+                  "strokeLinejoin": "round",
                   "padding": [
                     0,
                     14
@@ -1756,7 +1762,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Noah Kim",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -1775,7 +1782,8 @@
                           "fill": "$ds-text-muted",
                           "content": "May 02",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -1849,7 +1857,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Eli Ward",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -1868,7 +1877,8 @@
                           "fill": "$ds-text-muted",
                           "content": "May 12",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -5247,6 +5257,7 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
+                  "strokeLinejoin": "round",
                   "padding": [
                     7,
                     0
@@ -5305,6 +5316,7 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
+                  "strokeLinejoin": "round",
                   "padding": [
                     7,
                     0
@@ -5363,6 +5375,7 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
+                  "strokeLinejoin": "round",
                   "padding": [
                     7,
                     0
@@ -5421,6 +5434,7 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
+                  "strokeLinejoin": "round",
                   "padding": [
                     7,
                     0
@@ -5479,6 +5493,7 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
+                  "strokeLinejoin": "round",
                   "padding": [
                     7,
                     0
@@ -5970,7 +5985,8 @@
                       "content": "Plan, assign and track delivery without losing context.",
                       "lineHeight": 1.5,
                       "fontFamily": "$ds-font-ui",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6005,7 +6021,8 @@
                       "content": "Updated 8 minutes ago by Maya",
                       "lineHeight": 1.5,
                       "fontFamily": "$ds-font-ui",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -6352,7 +6369,8 @@
                   "content": "Warm, focused, and close to the dashboard inspiration.",
                   "lineHeight": 1.35,
                   "fontFamily": "Inter",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -6459,7 +6477,8 @@
                       "content": "#F4F3EF",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6507,7 +6526,8 @@
                       "content": "#FFFFFF",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6555,7 +6575,8 @@
                       "content": "#EEEDE8",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6603,7 +6624,8 @@
                       "content": "#171717",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6651,7 +6673,8 @@
                       "content": "#6C6861",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6699,7 +6722,8 @@
                       "content": "#DEDCD5",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6747,7 +6771,8 @@
                       "content": "#B45309",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6795,7 +6820,8 @@
                       "content": "#F59E0B",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -6890,7 +6916,8 @@
                               "content": "Overview",
                               "lineHeight": 1.35,
                               "fontFamily": "Geist Mono",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -6939,7 +6966,8 @@
                               "content": "Projects",
                               "lineHeight": 1.35,
                               "fontFamily": "Geist Mono",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -6963,7 +6991,8 @@
                               "content": "Cycles",
                               "lineHeight": 1.35,
                               "fontFamily": "Geist Mono",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -7015,7 +7044,8 @@
                           "content": "Warm neutrals keep dense project data calm.",
                           "lineHeight": 1.35,
                           "fontFamily": "Geist Mono",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "frame",
@@ -7178,7 +7208,8 @@
                       "content": "Search workspace…",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -7354,7 +7385,8 @@
                   "content": "Brown-black surfaces preserve the amber character.",
                   "lineHeight": 1.35,
                   "fontFamily": "Geist Mono",
-                  "fontSize": 11
+                  "fontSize": 11,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -7399,7 +7431,8 @@
                       "content": "#161512",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -7436,7 +7469,8 @@
                       "content": "#1B1916",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -7473,7 +7507,8 @@
                       "content": "#332513",
                       "lineHeight": 1.35,
                       "fontFamily": "Geist Mono",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -7676,6 +7711,7 @@
           "strokeWidth": {
             "top": 1
           },
+          "strokeLinejoin": "round",
           "layout": "vertical",
           "gap": 5,
           "padding": [
@@ -8211,7 +8247,8 @@
               "width": "fill_container",
               "content": "Search workspace…",
               "fontFamily": "$ds-font-ui",
-              "fontSize": 12
+              "fontSize": 12,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
@@ -8559,7 +8596,8 @@
                       "content": "The easiest way for small software teams to manage work and ship software.",
                       "lineHeight": 1.5,
                       "fontFamily": "$ds-font-ui",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -8659,7 +8697,8 @@
                           "content": "Start planning and shipping software with your team.",
                           "lineHeight": 1.45,
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -8714,7 +8753,8 @@
                                   "width": "fill_container",
                                   "content": "you@company.com",
                                   "fontFamily": "$ds-font-ui",
-                                  "fontSize": 13
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
                                 }
                               ]
                             }
@@ -8764,7 +8804,8 @@
                                   "width": "fill_container",
                                   "content": "Create a password",
                                   "fontFamily": "$ds-font-ui",
-                                  "fontSize": 13
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
                                 },
                                 {
                                   "type": "icon",
@@ -8785,7 +8826,8 @@
                               "fill": "$ds-text-muted",
                               "content": "Use at least 8 characters.",
                               "fontFamily": "$ds-font-ui",
-                              "fontSize": 11
+                              "fontSize": 11,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -8831,7 +8873,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Or continue with",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "frame",
@@ -8906,7 +8949,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Already have an account?",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 12
+                          "fontSize": 12,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "text",
@@ -9009,7 +9053,8 @@
                           "content": "We sent a verification link to your email. Open it to verify your account and continue to Shipyard.",
                           "lineHeight": 1.5,
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -9121,7 +9166,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Wrong email?",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 12
+                          "fontSize": 12,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "text",
@@ -9230,7 +9276,8 @@
                           "content": "Welcome back. Enter your details below.",
                           "lineHeight": 1.45,
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -9285,7 +9332,8 @@
                                   "width": "fill_container",
                                   "content": "you@company.com",
                                   "fontFamily": "$ds-font-ui",
-                                  "fontSize": 13
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
                                 }
                               ]
                             }
@@ -9355,7 +9403,8 @@
                                   "width": "fill_container",
                                   "content": "Enter your password",
                                   "fontFamily": "$ds-font-ui",
-                                  "fontSize": 13
+                                  "fontSize": 13,
+                                  "fontWeight": "normal"
                                 },
                                 {
                                   "type": "icon",
@@ -9401,7 +9450,8 @@
                           "fill": "$ds-text",
                           "content": "Keep me signed in",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 12
+                          "fontSize": 12,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -9445,7 +9495,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Or continue with",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "frame",
@@ -9520,7 +9571,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Don’t have an account?",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 12
+                          "fontSize": 12,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "text",
@@ -9623,7 +9675,8 @@
                           "content": "Enter the email associated with your account and we’ll send you a password reset link.",
                           "lineHeight": 1.5,
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -9670,7 +9723,8 @@
                               "width": "fill_container",
                               "content": "you@company.com",
                               "fontFamily": "$ds-font-ui",
-                              "fontSize": 13
+                              "fontSize": 13,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -9813,7 +9867,8 @@
                           "content": "If an account exists for you@company.com, we sent password reset instructions. Open the email and follow the link to create a new password.",
                           "lineHeight": 1.5,
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -9925,7 +9980,8 @@
                           "fill": "$ds-text-muted",
                           "content": "Wrong email?",
                           "fontFamily": "$ds-font-ui",
-                          "fontSize": 12
+                          "fontSize": 12,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "text",
@@ -10921,8 +10977,8 @@
     {
       "type": "frame",
       "id": "qC8J3",
-      "x": 13574,
-      "y": 971,
+      "x": 5509,
+      "y": 1127,
       "name": "Inline Elements",
       "clip": true,
       "width": 1400,

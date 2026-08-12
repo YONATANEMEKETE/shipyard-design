@@ -1,10 +1,12 @@
 # Shipyard UI Design System
 
-Status: Approved working direction  
+Status: Approved — finalized for implementation  
 Theme: Harbor Amber  
-Last updated: 2026-08-01
+Last updated: 2026-08-12
 
 This document defines the visual foundation and starter component rules for Shipyard. The editable source of truth is [`shipyard.pen`](./shipyard.pen); the logo and social identity source is [`shipyard-logo-system.pen`](./shipyard-logo-system.pen).
+
+> **Finalization note (2026-08-12):** This document was audited against the `shipyard.pen` canvas token layer (47 `$ds-*` variables). All light-mode values, type scale, spacing, radii, control sizes, and component states match the canvas exactly. This revision adds the approved dark-mode palette from the `Theme 01 — Harbor Amber / Dark Foundation` frame and the heading tracking values from the Type Scale frame.
 
 ## 1. Design direction
 
@@ -65,6 +67,18 @@ The Precision Loop mark is the Shipyard symbol. The logo system file remains the
 
 Neutral states use `ds-text-muted` on a quiet neutral surface such as `#F0EFEB`.
 
+### Dark mode palette
+
+Approved direction from the `Theme 01 — Harbor Amber / Dark Foundation` canvas frame — *"Warm without glare: brown-black surfaces preserve the amber character."* Only `ds-sidebar-dark` is currently tokenized in `shipyard.pen`; the remaining values are the approved canvas samples and should be tokenized as `ds-*` variables when dark-mode implementation begins.
+
+| Token (proposed) | Value | Purpose |
+|---|---:|---|
+| `ds-sidebar-dark` | `#161512` | Dark-mode sidebar and high-contrast regions (tokenized) |
+| `ds-surface-dark` | `#1B1916` | Dark-mode card and panel surface |
+| `ds-accent-soft-dark` | `#332513` | Dark-mode selection tint, active nav and amber-tinted surfaces |
+| `ds-text-dark` | `#F7F4ED` | Dark-mode primary text |
+| `ds-text-muted-dark` | `#AAA39A` | Dark-mode secondary copy and metadata |
+
 ### Color usage
 
 - Reserve solid `ds-brand` for the most important action or selected control in a section.
@@ -82,25 +96,28 @@ Neutral states use `ds-text-muted` on a quiet neutral surface such as `#F0EFEB`.
 | `ds-font-ui` | Inter | Headings, body text, controls and navigation |
 | `ds-font-mono` | Geist Mono | Labels, IDs, statuses, metadata and compact numeric data |
 
+Inter weights in use: 400 Regular, 500 Medium, 600 Semibold, 700 Bold (650 is rendered as semibold in headings).
+
 The Shipyard wordmark uses Geist as defined in the logo system; it is not a general interface font.
 
 ### Product type scale
 
-| Style | Size | Weight | Line height | Typical use |
-|---|---:|---:|---:|---|
-| Display | 40px | 700 | 1.08 | Product moments and major empty states |
-| Heading 1 | 32px | 650 | 1.15 | Page title |
-| Heading 2 | 24px | 650 | 1.20 | Major page section |
-| Heading 3 | 20px | 600 | 1.25 | Card or panel heading |
-| Body | 14px | 400 | 1.50 | Default product copy |
-| Small | 12px | 400 | 1.50 | Supporting text and metadata |
-| System label | 9–11px | 600–700 | 1.35 | Uppercase labels and statuses |
+| Style | Size | Weight | Line height | Tracking | Typical use |
+|---|---:|---:|---:|---:|---|
+| Display | 40px | 700 | 1.08 | -0.8px | Product moments and major empty states |
+| Heading 1 | 32px | 650 | 1.15 | -0.8px | Page title |
+| Heading 2 | 24px | 650 | 1.20 | -0.8px | Major page section |
+| Heading 3 | 20px | 600 | 1.25 | 0 | Card or panel heading |
+| Body | 14px | 400 | 1.50 | 0 | Default product copy |
+| Small | 12px | 400 | 1.50 | 0 | Supporting text and metadata |
+| System label | 9–11px | 600–700 | 1.35 | 0.7–1.5px | Uppercase labels and statuses |
 
 ### Typography rules
 
 - Use sentence case for product copy, navigation and controls.
 - Use uppercase Geist Mono sparingly for system labels.
 - Give uppercase mono labels generous letter spacing, generally `0.7–1.5px`.
+- Apply `-0.8px` tracking to Display, Heading 1 and Heading 2 only.
 - Prefer verbs and concrete nouns: “Create task,” “Assign owner,” “Move to sprint.”
 - Keep headings short enough to scan without wrapping when possible.
 
@@ -218,7 +235,7 @@ Use Lucide outline icons throughout the product.
 
 ### Selection
 
-- Active navigation: dark amber tint with amber text and icon.
+- Active navigation: dark amber tint (`#332513` on dark surfaces) with amber text and icon.
 - Selected row: `ds-brand-soft` plus a check or other explicit selection cue.
 - Active filter: solid brand treatment when it represents an applied action.
 
@@ -302,7 +319,41 @@ Before a screen is considered ready:
 - Reusable components are used before creating new variants.
 - Layout works at the intended dashboard widths without clipping or overlap.
 
-## 15. Governance
+## 15. Token inventory
+
+Canonical `$ds-*` variables defined in `shipyard.pen` (47 variables). Values marked with a note are canvas samples pending tokenization.
+
+### Colors
+
+| Token | Value | Token | Value |
+|---|---|---|---|
+| `ds-bg` | `#F4F3EF` | `ds-success` | `#2E7D5B` |
+| `ds-surface` | `#FFFFFF` | `ds-success-soft` | `#EAF5EF` |
+| `ds-surface-subtle` | `#FBFAF7` | `ds-warning` | `#A65F00` |
+| `ds-sidebar` | `#EEEDE8` | `ds-warning-soft` | `#FFF1D6` |
+| `ds-sidebar-dark` | `#161512` | `ds-danger` | `#B42318` |
+| `ds-text` | `#171717` | `ds-danger-soft` | `#FDECEA` |
+| `ds-text-muted` | `#6C6861` | `ds-info` | `#2563EB` |
+| `ds-border` | `#DEDCD5` | `ds-info-soft` | `#EAF2FF` |
+| `ds-border-strong` | `#B9B5AC` | `ds-brand` | `#B45309` |
+| `ds-accent` | `#F59E0B` | `ds-focus` | `#F59E0B` |
+| `ds-brand-soft` | `#FFF4DB` | `brand-primary` *(alias)* | `#B45309` |
+
+### Dimensions and families
+
+| Token | Value | Token | Value |
+|---|---|---|---|
+| `ds-font-ui` | Inter | `ds-font-mono` | Geist Mono |
+| `ds-space-1..6` | 4, 8, 12, 16, 20, 24px | `ds-space-8..16` | 32, 40, 48, 64px |
+| `ds-radius-sm` | 4px | `ds-radius-md` | 8px |
+| `ds-radius-lg` | 12px | `ds-radius-xl` | 16px |
+| `ds-radius-pill` | 999px | `ds-border-thin` | 1px |
+| `ds-border-strong-width` | 2px | `ds-control-sm` | 32px |
+| `ds-control-md` | 36px | `ds-control-lg` | 44px |
+| `ds-icon-sm` | 14px | `ds-icon-md` | 18px |
+| `ds-icon-lg` | 24px | `ds-sidebar-dark` | `#161512` |
+
+## 16. Governance
 
 Update the Pencil design system first when changing a shared visual decision. Once the canvas direction is approved, update this document in the same change.
 
