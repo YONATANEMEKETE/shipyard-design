@@ -358,3 +358,5 @@ Canonical `$ds-*` variables defined in `shipyard.pen` (47 variables). Values mar
 Update the Pencil design system first when changing a shared visual decision. Once the canvas direction is approved, update this document in the same change.
 
 New tokens or component variants must solve a recurring product need. Avoid adding a new value when an existing token or component can be reused.
+
+**Implementation export:** the shadcn v4 / Tailwind v4 token export of this design system lives in [`03-UI/exports/globals.css`](./exports/globals.css) (with `components.json` and the token-mapping reference in the same folder). Re-export whenever the canvas token layer changes; never edit the export values directly.
