@@ -1,10 +1,12 @@
-# Shipyard Design
+# Shipyard Design & Plan
 
-The official planning and design repository for **Shipyard**.
+The official **design and planning repository** for [**Shipyard**](https://github.com/YONATANEMEKETE/shipyard) — *Plan. Build. Ship.* — an open-source project management platform for small software engineering teams.
 
 This repository contains all product documentation, UX artifacts, UI designs, technical planning, and architecture documents created before implementation. It serves as the single source of truth for product decisions and provides a complete history of how Shipyard evolves from an idea into a production-ready application.
 
-The application source code is maintained separately in the `shipyard` repository.
+The application source code is maintained separately in the [**shipyard**](https://github.com/YONATANEMEKETE/shipyard) repository — created when engineering kicks off.
+
+**Status (2026-08-12):** Product ✅ · UX ✅ · UI ✅ (Harbor Amber design system finalized, shadcn v4 theme exported to `03-ui/exports/`) · Engineering ⏳ (next: `04-engineering/`)
 
 ---
 
@@ -24,7 +26,7 @@ shipyard-design/
 │
 ├── 03-ui/
 │   ├── pencil/
-│   ├── exports/
+│   ├── exports/          ← shadcn v4 / Tailwind v4 theme export (globals.css)
 │   ├── Design System.md
 │   └── Components.md
 │
@@ -74,8 +76,8 @@ This repository exists to:
 
 | Repository | Purpose |
 |------------|---------|
-| **shipyard-design** | Product planning, UX, UI, architecture, and documentation |
-| **shipyard** | Application source code and implementation |
+| [**shipyard-design**](https://github.com/YONATANEMEKETE/shipyard-design) | Product planning, UX, UI, architecture, and documentation — this repo |
+| [**shipyard**](https://github.com/YONATANEMEKETE/shipyard) | Application source code and implementation — created at engineering kickoff |
 
 ---
 
