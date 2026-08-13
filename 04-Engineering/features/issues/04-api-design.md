@@ -29,6 +29,8 @@
 | DELETE | `/workspaces/{wsId}/issues/{issueId}` | deleteIssue | **Owner / Admin** |
 | GET | `/workspaces/{wsId}/labels` | list labels | member |
 | POST | `/workspaces/{wsId}/labels` | create label | member |
+| PATCH | `/workspaces/{wsId}/labels/{labelId}` | update label (rename/recolor) | member |
+| DELETE | `/workspaces/{wsId}/labels/{labelId}` | delete label (unlinks from all issues) | member |
 
 ---
 
@@ -103,6 +105,12 @@
 `GET /workspaces/{wsId}/labels` → `200 { labels: [{ id, name, color }] }`.
 `POST /workspaces/{wsId}/labels` body `{ name, color? }` → `201 { label }` · `409 LABEL_ALREADY_EXISTS` (normalized name conflict).
 
+`PATCH /workspaces/{wsId}/labels/{labelId}` body `{ name?, color? }` → `200 { label }` · `409 LABEL_ALREADY_EXISTS` (rename conflict) · `404 LABEL_NOT_FOUND`.
+
+`DELETE /workspaces/{wsId}/labels/{labelId}` → `204` — **removes the tag from every issue** (IssueLabel join rows cascade; issues themselves are untouched — label deletion never deletes work) · `404 LABEL_NOT_FOUND`.
+
+**Permission note:** any member can manage labels, symmetric with creation (labels are cosmetic workspace tags; the alternatives — Owner/Admin-only deletion — can be revisited if abuse appears).
+
 ---
 
 ## 4. Error Codes (issues domain)
@@ -117,6 +125,7 @@
 | `ISSUE_ARCHIVED` | 409 | Write on an archived issue |
 | `ISSUE_CONFLICT` | 409 | Concurrent change (drag refresh path) / state conflict |
 | `LABEL_ALREADY_EXISTS` | 409 | Normalized label name conflict |
+| `LABEL_NOT_FOUND` | 404 | Unknown label id in this workspace |
 | `ISSUE_RATE_LIMITED` | 429 | Rate limit hit |
 
 ---
@@ -127,7 +136,7 @@
 |---|---|
 | `POST /issues` · `PATCH /issues/{id}` · archive/restore/delete | 60/min per user |
 | `GET /issues` · `GET /issues/{id}` | 120/min per user |
-| `POST /labels` | 30/min per user |
+| `POST /labels` · `PATCH /labels/{id}` · `DELETE /labels/{id}` | 30/min per user |
 
 ---
 
@@ -146,7 +155,7 @@
 | Blocked toggle (details + list row) | `PATCH /issues/{id}` `{ isBlocked, blockedReason? }` |
 | Archive/Restore (details + archived view) | `archive` · `restore` |
 | Delete (details, Owner/Admin only) | `DELETE /issues/{id}` |
-| Label management (filter bar / issue modal) | `GET/POST /labels` |
+| Label management (filter bar / issue modal) | `GET/POST /labels` · `PATCH/DELETE /labels/{id}` |
 | Global search (search module) | Reuses the issue repository via internal service, not this endpoint |
 
 All calls go **through the Next proxy** (ADR-003).

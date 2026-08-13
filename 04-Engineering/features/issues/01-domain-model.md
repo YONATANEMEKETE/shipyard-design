@@ -123,6 +123,7 @@ From PRD §5.5 business rules + §7.4, condensed:
 | `archiveIssue` / `restoreIssue` | Read-only round-trip preserving state | member |
 | `deleteIssue` | Permanent; cascade comments/notifications | **Owner / Admin** |
 | `setViewPreference` | Per-user per-workspace List/Kanban choice | member (stored via settings) |
+| `updateLabel` / `deleteLabel` | Rename/recolor a label; delete unlinks it from all issues (issues untouched) | member |
 
 ---
 
