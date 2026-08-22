@@ -238,6 +238,7 @@ Implement the account and session foundation using Better Auth as decided in ADR
 - Add authentication rate limits.
 - Add generic responses where the PRD forbids account-existence leaks.
 - Add the auth data model and migration for User, Account, Session, and Verification.
+- **Tests:** write route and service tests with the prepared harness (see `testing-infrastructure-plan.md`): Supertest against `app.ts` via Vitest with a Testcontainers Postgres; the first migration lands in `prisma/migrations` and is applied automatically by `vitest.global-setup.ts` on every test run.
 
 ### Shared and web work
 
