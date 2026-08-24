@@ -8,7 +8,7 @@
 
 ## 1. Purpose & Document Map
 
-This document is the **map of the entire Shipyard system**. It defines the high-level architecture that every other engineering document builds on.
+This document is the **map of the entire Shipyard system**. It defines the high-level architecture that every other engineering document builds on. Per-feature technical design (domain model, data model, API design) is intentionally **not** pre-written here — it is produced during each feature's implementation step, driven by the behavioral feature spec (`features/*/spec.md`).
 
 | Document | Contents | Status |
 |---|---|---|
@@ -17,10 +17,10 @@ This document is the **map of the entire Shipyard system**. It defines the high-
 | `adr/ADR-002-repo-layout.md` | Monorepo layout, pnpm workspaces, Turborepo, shared contracts | ✅ done |
 | `adr/ADR-003-web-api-communication.md` | Next.js proxy, internal API, no CORS | ✅ done |
 | `adr/ADR-004-deployment-infra.md` | Oracle VPS, Neon, R2, Caddy, CI/CD | ✅ done |
-| `features/*` | Per-module specs: domain model, data model, request lifecycle, API design | ⏳ next |
+| `features/*` | Per-feature behavior specs (`spec.md`); technical design produced at each feature's implementation step | ⏳ next |
 | `deployment.md` | Compose layout, CI/CD pipeline, backups, observability runbook | ⏳ planned |
 
-**Reading order:** 00-architecture → ADRs → features (per module) → deployment.
+**Reading order:** 00-architecture → ADRs → features (behavior specs) → deployment. Per-feature technical design is produced during each feature's implementation step (Implementation Plan §5, Step 2).
 
 ---
 
@@ -216,7 +216,7 @@ Same path up to the service, then:
 
 ## 9. Data Layer Strategy
 
-- **ORM:** Prisma; schema owned per module but defined in one Prisma schema file (or split schema files, decided in feature docs).
+- **ORM:** Prisma; schema owned per module but defined in one Prisma schema file (or split schema files, decided at implementation).
 - **Database:** Neon Postgres in production (managed — backups, PITR, SSL); local Postgres container in dev (Docker Compose); Neon branch optional for dev DB parity.
 - **Migrations:** `prisma migrate` — generated in dev, applied in CI before deploy (`prisma migrate deploy`), never hand-edited.
 - **Full-text search:** `tsvector` generated columns + GIN index; `ts_rank` ordering; English config (post-MVP: Meilisearch).

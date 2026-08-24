@@ -6,7 +6,7 @@ This repository contains all product documentation, UX artifacts, UI designs, te
 
 The application source code is maintained separately in the [**shipyard**](https://github.com/YONATANEMEKETE/shipyard) repository — created when engineering kicks off.
 
-**Status (2026-08-12):** Product ✅ · UX ✅ · UI ✅ (Harbor Amber design system finalized, shadcn v4 theme exported to `03-ui/exports/`) · Engineering ⏳ (next: `04-engineering/`)
+**Status (2026-08-22):** Product ✅ · UX ✅ · UI ✅ (Harbor Amber design system finalized, shadcn v4 theme exported to `03-UI/exports/`) · Engineering ⏳ (per-feature behavior specs in `04-engineering/features/*/spec.md`; technical design is produced per feature at implementation time) — next: F1 Auth (Implementation Plan)
 
 ---
 
@@ -14,30 +14,39 @@ The application source code is maintained separately in the [**shipyard**](https
 
 ```text
 shipyard-design/
-├── 01-product/
+├── 01-Product/
 │   ├── Product Brief.md
 │   └── PRD.md
 │
-├── 02-ux/
-│   ├── User Flows.md
-│   ├── Information Architecture.md
-│   ├── Wireframes/
-│   └── UX Decisions.md
+├── 02-UX/
+│   ├── UserFlows.md
+│   ├── Information-Archtecture.md
+│   ├── Screen-Inventory.md
+│   ├── Navigations.md
+│   ├── UX-decisions.md
+│   ├── Empty-states.md
+│   ├── User-Personas.md
+│   └── wireframes/
 │
-├── 03-ui/
-│   ├── pencil/
-│   ├── exports/          ← shadcn v4 / Tailwind v4 theme export (globals.css)
-│   ├── Design System.md
-│   └── Components.md
+├── 03-UI/
+│   ├── design.md (Design System)
+│   ├── shipyard.pen                    ← UI design (Pencil)
+│   ├── exports/                        ← shadcn v4 / Tailwind v4 theme export
+│   └── references/ · Inpos/
 │
-├── 04-engineering/
-│   ├── Implementation Plan.md
-│   ├── Architecture.md
-│   ├── Database Schema.md
-│   ├── API Specification.md
-│   └── Technical Decisions.md
-│
-├── assets/
+├── 04-Engineering/
+│   ├── 00-architecture.md              ← high-level system architecture
+│   ├── adr/                            ← architecture decision records (stack, mono- repo, web↔api, deployment)
+│   ├── features/
+│   │   └── <feature>/spec.md           ← BEHAVIOR-ONLY feature specs: what the
+│   │                                       feature is about, user capabilities,
+│   │                                       main behaviors, user flows, business
+│   │                                       rules. No data model / API design —
+│   │                                       technical design is produced per
+│   │                                       feature at implementation time.
+│   └── implementation/
+│       └── Implementation Plan.md      ← ordered milestones (F0–F12) + the
+│                                            per-feature implementation loop
 │
 └── README.md
 ```
@@ -53,9 +62,8 @@ Every major feature follows the same planning process:
 3. Product Requirements Document (PRD)
 4. UX Planning
 5. UI Design
-6. Technical Planning
-7. Engineering Handoff
-8. Implementation (Shipyard Repository)
+6. Feature Spec (behavior only — `04-engineering/features/<feature>/spec.md`)
+7. Implementation — each feature starts with its own technical planning (domain model, data model, API design, system design), driven by the feature spec and recorded in the shipyard repository
 
 ---
 

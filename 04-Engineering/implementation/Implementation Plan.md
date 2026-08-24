@@ -5,17 +5,15 @@
 **Planning repository:** [`shipyard-design`](https://github.com/YONATANEMEKETE/shipyard-design)  
 **Scope:** MVP implementation sequence
 
-This document is the ordered implementation plan for Shipyard. It converts the engineering feature specifications into implementable milestones named `F1`, `F2`, `F3`, and so on.
+This document is the ordered implementation plan for Shipyard. It converts the feature specifications into implementable milestones named `F1`, `F2`, `F3`, and so on.
 
-The feature specifications remain the detailed source of truth for each module:
+Each feature specification is **behavior-only**:
 
 ```text
-04-Engineering/features/<feature>/
-├── 01-domain-model.md
-├── 02-data-model.md
-├── 03-request-lifecycle.md
-└── 04-api-design.md
+04-Engineering/features/<feature>/spec.md
 ```
+
+Technical details (data model, API design, system design) are deliberately **not** pre-written. They are planned per feature at the start of its implementation milestone (see §5, Step 2), driven by the behavioral spec — so the plan stays relevant at implementation time instead of being second-guessed.
 
 This plan answers a different question:
 
@@ -217,7 +215,7 @@ Some dependencies are intentionally completed through integration checkpoints:
 
 ## F1 — Auth and identity
 
-**Specification:** [`features/auth/`](../features/auth/)  
+**Specification:** [`features/auth/spec.md`](../features/auth/spec.md)  
 **Depends on:** F0  
 **Unblocks:** every authenticated feature
 
@@ -272,7 +270,7 @@ Implement the account and session foundation using Better Auth as decided in ADR
 
 ## F2 — Workspace lifecycle
 
-**Specification:** [`features/workspace/`](../features/workspace/)  
+**Specification:** [`features/workspace/spec.md`](../features/workspace/spec.md)  
 **Depends on:** F1  
 **Unblocks:** every workspace-scoped feature
 
@@ -316,7 +314,7 @@ Implement workspace creation, selection, switching, archive, restore, and deleti
 
 ## F3 — Members, invitations, and RBAC
 
-**Specification:** [`features/members/`](../features/members/)  
+**Specification:** [`features/members/spec.md`](../features/members/spec.md)  
 **Depends on:** F1 and F2  
 **Integration dependency:** F4 provides project ownership transfer
 
@@ -368,7 +366,7 @@ After F4 exposes `projectsService.transferOwnedProjects(...)`, complete:
 
 ## F4 — Projects
 
-**Specification:** [`features/projects/`](../features/projects/)  
+**Specification:** [`features/projects/spec.md`](../features/projects/spec.md)  
 **Depends on:** F1, F2, and F3 core membership
 
 ### Scope
@@ -407,7 +405,7 @@ Implement project CRUD, status lifecycle, ownership, progress contract, archive/
 
 ## F5 — Issues and labels
 
-**Specification:** [`features/issues/`](../features/issues/)  
+**Specification:** [`features/issues/spec.md`](../features/issues/spec.md)  
 **Depends on:** F1, F2, F3, and F4
 
 ### Scope
@@ -451,7 +449,7 @@ The Cycle relation is added in the F7 integration checkpoint; F5 should not crea
 
 ## F6 — Notifications
 
-**Specification:** [`features/notifications/`](../features/notifications/)  
+**Specification:** [`features/notifications/spec.md`](../features/notifications/spec.md)  
 **Depends on:** F5 for issue references and assignment events
 
 ### Scope
@@ -486,7 +484,7 @@ Implement in-app notifications as synchronous transaction side effects. The MVP 
 
 ## F7 — Cycles
 
-**Specification:** [`features/cycles/`](../features/cycles/)  
+**Specification:** [`features/cycles/spec.md`](../features/cycles/spec.md)  
 **Depends on:** F5 issue foundation and F6 shared notification contracts
 
 ### Scope
@@ -524,7 +522,7 @@ Implement cycle scheduling, lifecycle transitions, no-overlap rules, one-active-
 
 ## F8 — Comments and mentions
 
-**Specification:** [`features/comments/`](../features/comments/)  
+**Specification:** [`features/comments/spec.md`](../features/comments/spec.md)  
 **Depends on:** F3 members, F5 issues, and F6 notifications
 
 ### Scope
@@ -563,7 +561,7 @@ Implement issue comments, author-only editing/deletion, mention parsing, and men
 
 ## F9 — Dashboard
 
-**Specification:** [`features/dashboard/`](../features/dashboard/)  
+**Specification:** [`features/dashboard/spec.md`](../features/dashboard/spec.md)  
 **Depends on:** F4 projects, F5 issues, and F7 cycles
 
 ### Scope
@@ -597,7 +595,7 @@ Implement the composed workspace dashboard as a read-only aggregation surface.
 
 ## F10 — Search
 
-**Specification:** [`features/search/`](../features/search/)  
+**Specification:** [`features/search/spec.md`](../features/search/spec.md)  
 **Depends on:** F3 members, F4 projects, F5 issues, and F7 cycles
 
 ### Scope
@@ -631,7 +629,7 @@ Implement workspace-scoped global search using PostgreSQL full-text search and t
 
 ## F11 — Settings and preferences
 
-**Specification:** [`features/settings/`](../features/settings/)  
+**Specification:** [`features/settings/spec.md`](../features/settings/spec.md)  
 **Depends on:** F1–F10 ownership and guard contracts
 
 ### Scope
@@ -718,27 +716,28 @@ and the deployment smoke test passes against the production-like environment.
 
 Use this loop for every `F1`–`F11` milestone.
 
-### Step 1 — Read the feature specification
+### Step 1 — Read the feature spec
 
-Read all four files in the feature directory:
+Read the behavioral feature spec:
 
 ```text
-01-domain-model.md
-02-data-model.md
-03-request-lifecycle.md
-04-api-design.md
+04-Engineering/features/<feature>/spec.md
 ```
 
-Check the related PRD, UX flow, screen inventory, and UI design before writing code.
+It defines what the feature is about, what users can do, the main behaviors, and the business rules. Check the related PRD, UX flows, screen inventory, and UI design before writing code.
 
-### Step 2 — Confirm dependencies and contracts
+### Step 2 — Plan the feature's technical design
 
-Before implementation:
+This is where the technical details are decided — per feature, at implementation time, driven by the spec:
 
-- Confirm which existing modules the feature reads or calls.
-- Confirm which module owns each table and invariant.
+- Confirm dependencies and contracts with existing modules (which service calls which, who owns each table and invariant).
+- Produce the feature's technical design: domain model, data model, API design, and system-design decisions.
+- Record decisions that change the high-level architecture as ADRs in the shipyard repository.
 - Add or update shared Zod schemas and enums.
-- Record unresolved decisions before coding around them.
+- Resolve the spec's open product questions, or record them as explicitly deferred.
+- Keep the design artifacts with the implementation (shipyard repo docs), so code and design live together.
+
+The behavioral spec is the requirements source; the technical design serves it — never the other way around.
 
 ### Step 3 — Implement the data layer
 
