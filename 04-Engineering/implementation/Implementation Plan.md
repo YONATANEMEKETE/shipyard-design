@@ -285,7 +285,7 @@ Implement workspace creation, selection, switching, archive, restore, and deleti
 - Create the workspace and initial owner relationship atomically.
 - Implement `workspaceId` route context resolution.
 - Implement the shared `requireWorkspaceMember` guard chain.
-- Enforce the `ownerId` and Owner membership invariant.
+- Enforce the exactly-one-Owner invariant through the membership table's partial unique index (no denormalized `ownerId` column — see `features/workspace/data-model.md` §3 D1).
 - Enforce archived workspace read-only behavior.
 - Implement confirmed archive and permanent deletion behavior.
 - Add workspace-scoped error codes and response envelopes.
@@ -754,7 +754,7 @@ Never hand-edit generated migrations after Prisma creates them.
 Follow the module structure:
 
 ```text
-apps/api/src/modules/<feature>/
+apps/api/src/features/<feature>/
 ├── routes.ts
 ├── controller.ts
 ├── service.ts
