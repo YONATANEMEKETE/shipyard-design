@@ -196,8 +196,8 @@ Some dependencies are intentionally completed through integration checkpoints:
 | ID | Feature | Main dependency | Status |
 |---|---|---|---|
 | F0 | Repository and engineering foundation | None | ✅ complete |
-| F1 | Auth and identity | F0 | ⏳ next |
-| F2 | Workspace lifecycle | F1 | planned |
+| F1 | Auth and identity | F0 | ✅ complete |
+| F2 | Workspace lifecycle | F1 | ⏳ next |
 | F3 | Members, invitations, and RBAC | F1, F2, F4 integration | planned |
 | F4 | Projects | F1, F2, F3 core | planned |
 | F5 | Issues and labels | F1, F2, F3, F4 | planned |
@@ -877,19 +877,28 @@ The MVP remains a modular monolith with synchronous transactions, polling for no
 
 ## 8. Immediate next milestone
 
-The next implementation milestone is:
+The most recently completed milestone is:
 
 ```text
 F1 — Auth and identity
 ```
 
-Before starting F1, prepare:
+F1 delivered registration, email verification, password reset and change, Google and GitHub OAuth, Better Auth sessions mounted under `/api/v1/auth`, session middleware consumed by other modules, and the post-auth routing decision (pending invitation → onboarding → dashboard → workspace selection).
 
-- Better Auth configuration plan
-- Local email delivery strategy
-- OAuth credentials strategy for local development
-- Auth database migration plan
-- Auth route and screen checklist
-- Session cookie and Next proxy verification
+The next implementation milestone is:
 
-F1 is complete only when a clean user can register, verify, authenticate, restore a session, and reach the correct onboarding or workspace route.
+```text
+F2 — Workspace lifecycle
+```
+
+Before starting F2, prepare:
+
+- Workspace data model and migration plan
+- URL-based workspace context resolution design
+- Shared `requireWorkspaceMember` guard chain approach
+- Owner membership invariant enforcement plan
+- Archive/restore semantics and confirmed deletion cascade contract
+- Workspace-scoped error codes and response envelope conventions
+- Onboarding creation, selection, switching, archive/restore, and danger-zone deletion screen checklist
+
+F2 is complete only when a verified user can create a workspace and become its Owner, move between zero, one, and multiple workspace states, switch workspaces through the approved flows, and every workspace-scoped request validates membership without leaking cross-workspace resource existence.
