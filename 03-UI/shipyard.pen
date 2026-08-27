@@ -8629,6 +8629,3593 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "cyTQl",
+      "x": 8905,
+      "y": -1219,
+      "name": "UI Designs",
+      "width": 9200,
+      "height": 3727,
+      "fill": "#E9E7E1",
+      "cornerRadius": 32,
+      "stroke": "$ds-border-strong",
+      "strokeWidth": 1,
+      "layout": "vertical",
+      "gap": 56,
+      "padding": 72,
+      "children": [
+        {
+          "type": "frame",
+          "id": "k9q24N",
+          "name": "UI Designs Header",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 10,
+          "children": [
+            {
+              "type": "text",
+              "id": "IVw2z",
+              "name": "UI Designs Index",
+              "fill": "$ds-brand",
+              "content": "SHIPYARD / UI DESIGNS",
+              "fontFamily": "$ds-font-mono",
+              "fontSize": 11,
+              "fontWeight": "600",
+              "letterSpacing": 1.5
+            },
+            {
+              "type": "text",
+              "id": "ow56L",
+              "name": "UI Designs Title",
+              "fill": "$ds-text",
+              "content": "Screen designs by feature.",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 34,
+              "fontWeight": "650",
+              "letterSpacing": -1.2
+            },
+            {
+              "type": "text",
+              "id": "J9KGcY",
+              "name": "UI Designs Description",
+              "fill": "$ds-text-muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Full-page screens first, then shared elements discovered along the way. One section per feature milestone.",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kMnno",
+          "name": "F2 — Workspace Lifecycle",
+          "width": "fill_container",
+          "height": 2339,
+          "layout": "vertical",
+          "gap": 36,
+          "children": [
+            {
+              "type": "frame",
+              "id": "wpZs1",
+              "name": "F2 Label Block",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Z4wPlc",
+                  "fill": "$ds-brand",
+                  "content": "F2 / WORKSPACE LIFECYCLE",
+                  "fontFamily": "$ds-font-mono",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.5
+                },
+                {
+                  "type": "text",
+                  "id": "mN1LY",
+                  "fill": "$ds-text",
+                  "content": "Onboarding · Selection · Settings · Danger zone · Archived",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rSSkW",
+              "name": "F2 Screens",
+              "width": "fill_container",
+              "height": 1980,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "FggVb",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Screen / Onboarding — Create Workspace",
+                  "clip": true,
+                  "width": 1440,
+                  "height": 900,
+                  "fill": "$ds-bg",
+                  "cornerRadius": 16,
+                  "stroke": "#00000000",
+                  "strokeWidth": 1.5,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "nE2YV",
+                      "x": 48,
+                      "y": 28,
+                      "name": "Onboarding Top Bar",
+                      "width": 1344,
+                      "height": 40,
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "A0UVs",
+                          "name": "Shipyard Logo Lockup",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "egTgr",
+                              "name": "Logo Mark Tile",
+                              "width": 30,
+                              "height": 30,
+                              "fill": "$ds-brand",
+                              "cornerRadius": 8,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "i6UcJE",
+                                  "name": "Logo Precision Loop",
+                                  "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    100,
+                                    108
+                                  ],
+                                  "width": 18,
+                                  "height": 18,
+                                  "stroke": "#FFFFFF",
+                                  "strokeWidth": 9,
+                                  "strokeLinejoin": "bevel",
+                                  "strokeLinecap": "square"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "XSLyq",
+                              "fill": "$ds-text",
+                              "content": "Shipyard",
+                              "fontFamily": "Geist",
+                              "fontSize": 15,
+                              "fontWeight": "800",
+                              "letterSpacing": -0.4
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ygBEO",
+                          "name": "Top Bar Spacer",
+                          "width": "fill_container",
+                          "height": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "BTjX1",
+                          "name": "User Chip",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "ZKfc6",
+                              "name": "User Avatar",
+                              "width": 26,
+                              "height": 26,
+                              "fill": "$ds-brand",
+                              "cornerRadius": "$ds-radius-pill",
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "whWF3",
+                                  "fill": "#FFFFFF",
+                                  "content": "MC",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "Xr2EV",
+                              "fill": "$ds-text-muted",
+                              "content": "maya@acme.io",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "opMOI",
+                              "name": "Chip Divider",
+                              "width": 1,
+                              "height": 16,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "fpsXb",
+                              "name": "Sign Out Action",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "WyiCQ",
+                                  "width": 13,
+                                  "height": 13,
+                                  "icon": "log-out",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "eXq1E",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Sign out",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jM9jt",
+                      "x": 430,
+                      "y": 150,
+                      "name": "Onboarding Column",
+                      "width": 580,
+                      "layout": "vertical",
+                      "gap": 32,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "G71Yc6",
+                          "name": "Intro Block",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 14,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rTjPR",
+                              "name": "Display Heading",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Set up your team's home base.",
+                              "lineHeight": 1.12,
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 38,
+                              "fontWeight": "700",
+                              "letterSpacing": -1.2
+                            },
+                            {
+                              "type": "text",
+                              "id": "NRnpp",
+                              "name": "Support Copy",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Every project, issue, and teammate in Shipyard lives inside a workspace. Pick a name and an icon — you can change both later.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "H7kPQW",
+                          "name": "Live Preview Group",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Kusqt",
+                              "name": "Workspace Preview Card",
+                              "width": "fill_container",
+                              "height": 76,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-lg",
+                              "stroke": "$ds-border-strong",
+                              "strokeWidth": 1,
+                              "gap": 14,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "co7LA",
+                                  "name": "Preview Icon Tile",
+                                  "width": 44,
+                                  "height": 44,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "#EACB98",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "X03NhC",
+                                      "width": 22,
+                                      "height": 22,
+                                      "icon": "boxes",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "vwetb",
+                                  "name": "Preview Texts",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "uYCDW",
+                                      "fill": "$ds-text",
+                                      "content": "Acme Studio",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 15,
+                                      "fontWeight": "650",
+                                      "letterSpacing": -0.2
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "c0Xgru",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Workspace · You're the Owner",
+                                      "lineHeight": 1.3,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "RBTEB",
+                                  "name": "Preview Ready Chip",
+                                  "height": 22,
+                                  "fill": "$ds-success-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "gap": 6,
+                                  "padding": [
+                                    0,
+                                    10
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "CNY5g",
+                                      "width": 12,
+                                      "height": 12,
+                                      "icon": "check",
+                                      "library": "lucide",
+                                      "fill": "$ds-success"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "kdRTE",
+                                      "fill": "$ds-success",
+                                      "content": "Ready",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "AYpbz",
+                          "name": "Fields Stack",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 22,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Ygr6e",
+                              "name": "Name Field Group",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 8,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "w5s4UR",
+                                  "fill": "$ds-text",
+                                  "content": "Workspace name",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "id": "Vt77D",
+                                  "type": "ref",
+                                  "ref": "eqdKn",
+                                  "name": "Name Input Large",
+                                  "width": "fill_container",
+                                  "height": 44,
+                                  "descendants": {
+                                    "D9PFmY": {
+                                      "icon": "container"
+                                    },
+                                    "GhdjP": {
+                                      "content": "Acme Studio"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "N2hPe3",
+                              "name": "Icon Field Group",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 8,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "yYVGq",
+                                  "fill": "$ds-text",
+                                  "content": "Icon",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "NjrG7",
+                                  "name": "Icon Dropdown Trigger",
+                                  "width": "fill_container",
+                                  "height": 44,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 10,
+                                  "padding": [
+                                    0,
+                                    12
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "w2kRld",
+                                      "name": "Selected Icon Mini Tile",
+                                      "width": 24,
+                                      "height": 24,
+                                      "fill": "$ds-brand-soft",
+                                      "cornerRadius": 6,
+                                      "stroke": "#EACB98",
+                                      "strokeWidth": 1,
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "GqLND",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "boxes",
+                                          "library": "lucide",
+                                          "fill": "$ds-brand"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "EDL2c",
+                                      "fill": "$ds-text",
+                                      "content": "Boxes",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 13,
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "rDIlz",
+                                      "name": "Dropdown Spacer",
+                                      "width": "fill_container",
+                                      "height": 1
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "g8EkM",
+                                      "width": 16,
+                                      "height": 16,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "QWVyj",
+                          "name": "Actions Stack",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "id": "gqLRX",
+                              "type": "ref",
+                              "ref": "M1Im2",
+                              "name": "Button Create Workspace XL",
+                              "width": "fill_container",
+                              "height": 46,
+                              "descendants": {
+                                "ZNFT2": {
+                                  "icon": "arrow-right"
+                                },
+                                "oLhjB": {
+                                  "content": "Create workspace"
+                                }
+                              }
+                            },
+                            {
+                              "type": "frame",
+                              "id": "q50AF",
+                              "name": "Helper Row",
+                              "width": "fill_container",
+                              "justifyContent": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "F3Y3d",
+                                  "fill": "$ds-text-muted",
+                                  "content": "You can rename the workspace or change its icon anytime in settings.",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rBC0X",
+                  "x": 1620,
+                  "y": 0,
+                  "name": "Screen / Workspace Selection",
+                  "clip": true,
+                  "width": 1440,
+                  "height": 900,
+                  "fill": "$ds-bg",
+                  "cornerRadius": 16,
+                  "stroke": "$ds-border-strong",
+                  "strokeWidth": 1.5,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "eRodH",
+                      "x": 48,
+                      "y": 28,
+                      "name": "Selection Top Bar",
+                      "width": 1344,
+                      "height": 40,
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "BPX3B",
+                          "name": "Shipyard Logo Lockup",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "NKIQr",
+                              "name": "Logo Mark Tile",
+                              "width": 30,
+                              "height": 30,
+                              "fill": "$ds-brand",
+                              "cornerRadius": 8,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "CUPyC",
+                                  "name": "Logo Precision Loop",
+                                  "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    100,
+                                    108
+                                  ],
+                                  "width": 18,
+                                  "height": 18,
+                                  "stroke": "#FFFFFF",
+                                  "strokeWidth": 9,
+                                  "strokeLinejoin": "bevel",
+                                  "strokeLinecap": "square"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "GR5kq",
+                              "fill": "$ds-text",
+                              "content": "Shipyard",
+                              "fontFamily": "Geist",
+                              "fontSize": 15,
+                              "fontWeight": "800",
+                              "letterSpacing": -0.4
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "lhmbM",
+                          "name": "Top Bar Spacer",
+                          "width": "fill_container",
+                          "height": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "nCClh",
+                          "name": "User Chip",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "eaqrR",
+                              "name": "User Avatar",
+                              "width": 26,
+                              "height": 26,
+                              "fill": "$ds-brand",
+                              "cornerRadius": "$ds-radius-pill",
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "SwdZU",
+                                  "fill": "#FFFFFF",
+                                  "content": "MC",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "Mrcat",
+                              "fill": "$ds-text-muted",
+                              "content": "maya@acme.io",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "D2PcU",
+                              "name": "Chip Divider",
+                              "width": 1,
+                              "height": 16,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "jF4Ba",
+                              "name": "Sign Out Action",
+                              "gap": 6,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "BRagq",
+                                  "width": 13,
+                                  "height": 13,
+                                  "icon": "log-out",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "hDdLk",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Sign out",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "o181r",
+                      "x": 430,
+                      "y": 120,
+                      "name": "Selection Column",
+                      "width": 580,
+                      "layout": "vertical",
+                      "gap": 28,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "hV69a",
+                          "name": "Intro Block",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "c4Wmk",
+                              "name": "Display Heading",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Choose a workspace.",
+                              "lineHeight": 1.12,
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 34,
+                              "fontWeight": "700",
+                              "letterSpacing": -1.1
+                            },
+                            {
+                              "type": "text",
+                              "id": "KT3aj",
+                              "name": "Support Copy",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "You belong to several workspaces. Pick one to continue — your recent context is restored when you return.",
+                              "lineHeight": 1.55,
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "QyDjl",
+                          "name": "Active List Group",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 10,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Vm0d5",
+                              "name": "Active Mono Label",
+                              "fill": "$ds-text-muted",
+                              "content": "YOUR WORKSPACES  ·  3 ACTIVE",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VoNmj",
+                          "name": "Workspace List",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 10,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "TzHdH",
+                              "name": "Workspace Card / Acme Studio 1",
+                              "width": "fill_container",
+                              "height": 68,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-lg",
+                              "stroke": "$ds-border-strong",
+                              "strokeWidth": 1,
+                              "gap": 14,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "COsWY",
+                                  "name": "Card Icon Tile",
+                                  "width": 40,
+                                  "height": 40,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "#EACB98",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "Ge12T",
+                                      "name": "Card Icon Glyph",
+                                      "width": 20,
+                                      "height": 20,
+                                      "icon": "boxes",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "w6KLE",
+                                  "name": "Card Texts",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "ukhro",
+                                      "name": "Card Name",
+                                      "fill": "$ds-text",
+                                      "content": "Acme Studio",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 15,
+                                      "fontWeight": "650",
+                                      "letterSpacing": -0.2
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "IOpVL",
+                                      "name": "Card Meta",
+                                      "fill": "$ds-text-muted",
+                                      "content": "You're the Owner · 14 members",
+                                      "lineHeight": 1.3,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "ixEf9",
+                                  "name": "Role Chip",
+                                  "height": 22,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "stroke": "#EACB98",
+                                  "strokeWidth": 1,
+                                  "gap": 6,
+                                  "padding": [
+                                    0,
+                                    10
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "F5HUX",
+                                      "name": "Role Chip Label",
+                                      "fill": "$ds-brand",
+                                      "content": "OWNER",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 9,
+                                      "fontWeight": "600",
+                                      "letterSpacing": 0.8
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "yeeEN",
+                                  "name": "Card Chevron",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Q4dGXv",
+                              "name": "Workspace Card / Harbor Labs 2",
+                              "width": "fill_container",
+                              "height": 68,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-lg",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 14,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "e5TeU3",
+                                  "name": "Card Icon Tile",
+                                  "width": 40,
+                                  "height": 40,
+                                  "fill": "$ds-surface-subtle",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "oq4uU",
+                                      "name": "Card Icon Glyph",
+                                      "width": 20,
+                                      "height": 20,
+                                      "icon": "ship",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "K6wEO",
+                                  "name": "Card Texts",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "DaEtX",
+                                      "name": "Card Name",
+                                      "fill": "$ds-text",
+                                      "content": "Harbor Labs",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 15,
+                                      "fontWeight": "650",
+                                      "letterSpacing": -0.2
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "WHqOI",
+                                      "name": "Card Meta",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Member · 8 members",
+                                      "lineHeight": 1.3,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "l3Y9RD",
+                                  "name": "Role Chip",
+                                  "height": 22,
+                                  "fill": "$ds-surface-subtle",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 6,
+                                  "padding": [
+                                    0,
+                                    10
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "V206O",
+                                      "name": "Role Chip Label",
+                                      "fill": "$ds-text-muted",
+                                      "content": "MEMBER",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 9,
+                                      "fontWeight": "600",
+                                      "letterSpacing": 0.8
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "HGDxB",
+                                  "name": "Card Chevron",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "mch8b",
+                              "name": "Workspace Card / Acme Studio 3",
+                              "width": "fill_container",
+                              "height": 68,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-lg",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 14,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "C3rGqP",
+                                  "name": "Card Icon Tile",
+                                  "width": 40,
+                                  "height": 40,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "#EACB98",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "n2hUa",
+                                      "name": "Card Icon Glyph",
+                                      "width": 20,
+                                      "height": 20,
+                                      "icon": "anchor",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "kII6d",
+                                  "name": "Card Texts",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "u5JlvL",
+                                      "name": "Card Name",
+                                      "fill": "$ds-text",
+                                      "content": "Acme Studio",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 15,
+                                      "fontWeight": "650",
+                                      "letterSpacing": -0.2
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "E9FvId",
+                                      "name": "Card Meta",
+                                      "fill": "$ds-text-muted",
+                                      "content": "You're the Owner · 26 members",
+                                      "lineHeight": 1.3,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "nBuOp",
+                                  "name": "Role Chip",
+                                  "height": 22,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "stroke": "#EACB98",
+                                  "strokeWidth": 1,
+                                  "gap": 6,
+                                  "padding": [
+                                    0,
+                                    10
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "FIs53",
+                                      "name": "Role Chip Label",
+                                      "fill": "$ds-brand",
+                                      "content": "OWNER",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 9,
+                                      "fontWeight": "600",
+                                      "letterSpacing": 0.8
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "Kv1En",
+                                  "name": "Card Chevron",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "chevron-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "owZDi",
+                          "name": "Archived List Group",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 10,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "e1ENv",
+                              "name": "Archived Mono Label",
+                              "fill": "$ds-text-muted",
+                              "content": "ARCHIVED WORKSPACES  ·  READ ONLY",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.2
+                            },
+                            {
+                              "type": "frame",
+                              "id": "L0BuFc",
+                              "name": "Archived Workspace Card",
+                              "width": "fill_container",
+                              "height": 60,
+                              "fill": "$ds-surface-subtle",
+                              "cornerRadius": "$ds-radius-lg",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 14,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "Co2db",
+                                  "name": "Archived Icon Tile",
+                                  "width": 36,
+                                  "height": 36,
+                                  "fill": "$ds-sidebar",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "kehhP",
+                                      "name": "Archived Icon Glyph",
+                                      "width": 18,
+                                      "height": 18,
+                                      "icon": "archive",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "LZnKC",
+                                  "name": "Archived Texts",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "C1UlN",
+                                      "name": "Archived Name",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Northwind Vault",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 14,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "YHhzk",
+                                      "name": "Archived Meta",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Archived · You're the Owner · restore to reopen",
+                                      "lineHeight": 1.3,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "QGv7F",
+                                  "type": "ref",
+                                  "ref": "Poa4g",
+                                  "name": "Button Restore Workspace",
+                                  "descendants": {
+                                    "FkMhJ": {
+                                      "icon": "archive-restore"
+                                    },
+                                    "Tn0Xr": {
+                                      "content": "Restore"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "EVY5v",
+                          "name": "Actions Row",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "JNNp2",
+                              "type": "ref",
+                              "ref": "CCK5Y",
+                              "name": "Button Create Workspace",
+                              "descendants": {
+                                "F687mP": {
+                                  "icon": "plus"
+                                },
+                                "AGbmf": {
+                                  "content": "New workspace"
+                                }
+                              }
+                            },
+                            {
+                              "id": "oYUtP",
+                              "type": "ref",
+                              "ref": "Poa4g",
+                              "name": "Button Sign Out",
+                              "descendants": {
+                                "FkMhJ": {
+                                  "icon": "log-out"
+                                },
+                                "Tn0Xr": {
+                                  "content": "Sign out"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BuOBf",
+                  "x": 3240,
+                  "y": 0,
+                  "name": "Screen / Workspace Settings",
+                  "clip": true,
+                  "width": 1440,
+                  "height": 900,
+                  "fill": "$ds-bg",
+                  "cornerRadius": 16,
+                  "stroke": "$ds-border-strong",
+                  "strokeWidth": 1.5,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "id": "WT3BZ",
+                      "type": "ref",
+                      "ref": "ePp64",
+                      "name": "Workspace App Shell",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1440,
+                      "height": 900
+                    },
+                    {
+                      "type": "frame",
+                      "id": "BMjQd",
+                      "x": 292,
+                      "y": 112,
+                      "name": "Settings Page Column",
+                      "width": 1108,
+                      "layout": "vertical",
+                      "gap": 24,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "fomqQ",
+                          "name": "Settings Mono Label",
+                          "fill": "$ds-brand",
+                          "content": "WORKSPACE SETTINGS",
+                          "fontFamily": "$ds-font-mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "frame",
+                          "id": "fJUKX",
+                          "name": "Settings Heading Block",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Lz6BD",
+                              "name": "Settings Heading",
+                              "fill": "$ds-text",
+                              "content": "Manage Acme Studio.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 28,
+                              "fontWeight": "700",
+                              "letterSpacing": -1
+                            },
+                            {
+                              "type": "text",
+                              "id": "h2de5r",
+                              "name": "Settings Subcopy",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Update how your workspace appears everywhere — its name and icon stay display-only.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kg72L",
+                          "name": "Settings Tabs",
+                          "fill": "$ds-surface-subtle",
+                          "cornerRadius": "$ds-radius-md",
+                          "stroke": "$ds-border",
+                          "strokeWidth": 1,
+                          "gap": 2,
+                          "padding": 3,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "S0XZ9",
+                              "name": "Tab / General Active",
+                              "height": 28,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 6,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xlkGO",
+                                  "name": "Tab Label",
+                                  "fill": "$ds-text",
+                                  "content": "General",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Naa8R",
+                              "name": "Tab / Members",
+                              "height": 28,
+                              "fill": "#00000000",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "#00000000",
+                              "gap": 6,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "I53jbV",
+                                  "name": "Tab Label",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Members",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "APXZs",
+                          "name": "General Card",
+                          "width": "fill_container",
+                          "fill": "$ds-surface",
+                          "cornerRadius": "$ds-radius-lg",
+                          "stroke": "$ds-border-strong",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 18,
+                          "padding": 24,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "BVpNJ",
+                              "name": "Identity Mono Label",
+                              "fill": "$ds-text-muted",
+                              "content": "GENERAL  /  IDENTITY",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.2
+                            },
+                            {
+                              "type": "frame",
+                              "id": "EN4E4",
+                              "name": "Fields Column",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 18,
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "lIKPB",
+                                  "name": "Name Field Group",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 8,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "dhXhx",
+                                      "name": "Name Field Label",
+                                      "fill": "$ds-text",
+                                      "content": "Workspace name",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "id": "HQQRO",
+                                      "type": "ref",
+                                      "ref": "eqdKn",
+                                      "name": "Name Input Large",
+                                      "width": "fill_container",
+                                      "height": 44,
+                                      "descendants": {
+                                        "D9PFmY": {
+                                          "icon": "container"
+                                        },
+                                        "GhdjP": {
+                                          "content": "Acme Studio"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "zkeoo",
+                                  "name": "Icon Field Group",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 8,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "C8d9G",
+                                      "name": "Icon Field Label",
+                                      "fill": "$ds-text",
+                                      "content": "Icon",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "XHVO3",
+                                      "name": "Icon Dropdown Trigger",
+                                      "width": 320,
+                                      "height": 44,
+                                      "fill": "$ds-surface",
+                                      "cornerRadius": "$ds-radius-md",
+                                      "stroke": "$ds-border",
+                                      "strokeWidth": 1,
+                                      "gap": 12,
+                                      "padding": [
+                                        0,
+                                        12
+                                      ],
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "d9BoX",
+                                          "name": "Selected Icon Mini Tile",
+                                          "width": 24,
+                                          "height": 24,
+                                          "fill": "$ds-brand-soft",
+                                          "cornerRadius": 6,
+                                          "stroke": "#EACB98",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "IGMCR",
+                                              "name": "Selected Icon Glyph",
+                                              "width": 14,
+                                              "height": 14,
+                                              "icon": "boxes",
+                                              "library": "lucide",
+                                              "fill": "$ds-brand"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "A1G6AE",
+                                          "name": "Selected Icon Name",
+                                          "fill": "$ds-text",
+                                          "content": "Boxes",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 13,
+                                          "fontWeight": "500"
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "blJod",
+                                          "name": "Dropdown Spacer",
+                                          "width": "fill_container",
+                                          "height": 1
+                                        },
+                                        {
+                                          "type": "icon",
+                                          "id": "ibTsu",
+                                          "name": "Trigger Chevron",
+                                          "width": 16,
+                                          "height": 16,
+                                          "icon": "chevron-down",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "h5FIJF",
+                                  "name": "Save Row",
+                                  "width": "fill_container",
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "id": "c6eGJw",
+                                      "type": "ref",
+                                      "ref": "M1Im2",
+                                      "name": "Button Save Changes",
+                                      "descendants": {
+                                        "ZNFT2": {
+                                          "icon": "check"
+                                        },
+                                        "oLhjB": {
+                                          "content": "Save changes"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "dISKv",
+                          "name": "Danger Zone Card",
+                          "width": "fill_container",
+                          "fill": "$ds-surface",
+                          "cornerRadius": "$ds-radius-lg",
+                          "stroke": "#F1C9C2",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 18,
+                          "padding": 24,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "LWEXN",
+                              "name": "Danger Mono Label",
+                              "fill": "$ds-danger",
+                              "content": "DANGER ZONE  ·  OWNER ONLY",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.2
+                            },
+                            {
+                              "type": "frame",
+                              "id": "vm7tW",
+                              "name": "Archive Row",
+                              "width": "fill_container",
+                              "gap": 16,
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "IqJQF",
+                                  "name": "Archive Texts",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "hPxnw",
+                                      "name": "Archive Title",
+                                      "fill": "$ds-text",
+                                      "content": "Archive this workspace",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 13,
+                                      "fontWeight": "650"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "NVfzP",
+                                      "name": "Archive Desc",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Becomes read-only for every member. Fully restorable, history preserved.",
+                                      "lineHeight": 1.45,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "JKwPx",
+                                  "name": "Button Archive",
+                                  "height": 32,
+                                  "fill": "$ds-danger-soft",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-danger",
+                                  "strokeWidth": 1,
+                                  "gap": 7,
+                                  "padding": [
+                                    0,
+                                    12
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "CZJYT",
+                                      "name": "Archive Btn Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "archive",
+                                      "library": "lucide",
+                                      "fill": "$ds-danger"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "LLLGU",
+                                      "name": "Archive Btn Label",
+                                      "fill": "$ds-danger",
+                                      "content": "Archive…",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "juFov",
+                              "name": "Danger Divider",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "EDnbf",
+                              "name": "Delete Row",
+                              "width": "fill_container",
+                              "gap": 16,
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "zR5uw",
+                                  "name": "Delete Texts",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "uolSI",
+                                      "name": "Delete Title",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Permanently delete workspace",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 13,
+                                      "fontWeight": "650"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "G1KRF",
+                                  "name": "Button Delete Disabled",
+                                  "height": 32,
+                                  "fill": "#00000000",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 7,
+                                  "padding": [
+                                    0,
+                                    12
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "r83lDp",
+                                      "name": "Delete Btn Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "trash-2",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "NDY9P",
+                                      "name": "Delete Btn Label",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Delete…",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "T09EU",
+                          "name": "Page Footnote",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "owsCl",
+                              "name": "Footnote Icon",
+                              "width": 13,
+                              "height": 13,
+                              "icon": "info",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ufzn8",
+                              "name": "Footnote Text",
+                              "fill": "$ds-text-muted",
+                              "content": "Changes propagate instantly to the switcher, header and every member's sidebar.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "spu3i",
+                  "x": 0,
+                  "y": 1080,
+                  "name": "Element Sheet / Icon Dropdown + Create Dialog",
+                  "width": 1440,
+                  "height": 1159,
+                  "fill": "$ds-bg",
+                  "cornerRadius": 16,
+                  "stroke": "$ds-border-strong",
+                  "strokeWidth": 1.5,
+                  "layout": "vertical",
+                  "gap": 26,
+                  "padding": [
+                    56,
+                    64
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NHgZ1",
+                      "name": "Sheet Mono Label",
+                      "fill": "$ds-brand",
+                      "content": "ELEMENT SHEET  /  ICON DROPDOWN",
+                      "fontFamily": "$ds-font-mono",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "K2JhmB",
+                      "name": "Sheet Title",
+                      "fill": "$ds-text",
+                      "content": "Workspace flow elements",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 30,
+                      "fontWeight": "650",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "CwduL",
+                      "name": "Sheet Description",
+                      "fill": "$ds-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Reusable element studies from the workspace feature: the icon dropdown shown open, and the create-workspace dialog opened by the selection screen.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fIuzb",
+                      "name": "Element Stage",
+                      "width": "fill_container",
+                      "gap": 40,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Vd8ks",
+                          "name": "Trigger Column",
+                          "width": 420,
+                          "layout": "vertical",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "E46M8p",
+                              "name": "Icon Field Label",
+                              "fill": "$ds-text",
+                              "content": "Workspace icon",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "z3D3V",
+                              "name": "Icon Dropdown Trigger",
+                              "width": "fill_container",
+                              "height": 44,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 12,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "egIy5",
+                                  "name": "Selected Icon Mini Tile",
+                                  "width": 24,
+                                  "height": 24,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": 6,
+                                  "stroke": "#EACB98",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "C5OjMR",
+                                      "name": "Selected Icon Glyph",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "boxes",
+                                      "library": "lucide",
+                                      "fill": "$ds-brand"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "l5Ibru",
+                                  "name": "Selected Icon Name",
+                                  "fill": "$ds-text",
+                                  "content": "Boxes",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "utBEV",
+                                  "name": "Dropdown Spacer",
+                                  "width": "fill_container",
+                                  "height": 1
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "NDl9l",
+                                  "name": "Trigger Chevron",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "chevron-down",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "vsYsB",
+                              "name": "Open State Hint",
+                              "fill": "$ds-text-muted",
+                              "content": "Open state ↓ · applies instantly to the preview above",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Z0vXaP",
+                              "name": "Dropdown Panel",
+                              "width": "fill_container",
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-lg",
+                              "stroke": "$ds-border-strong",
+                              "strokeWidth": 1.5,
+                              "layout": "vertical",
+                              "gap": 14,
+                              "padding": 16,
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "HSXar",
+                                  "name": "Search Row",
+                                  "width": "fill_container",
+                                  "height": 36,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "lu8b6",
+                                      "name": "Search Icon",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "search",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "jFAj7",
+                                      "name": "Search Placeholder",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Search icons…",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "RzcJg",
+                                  "name": "Icon Grid",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 6,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "bxpWy",
+                                      "name": "Grid Row 1",
+                                      "width": "fill_container",
+                                      "justifyContent": "space_between",
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "RtqEr",
+                                          "name": "Selected Icon Tile",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-brand",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-brand",
+                                          "strokeWidth": 1.5,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "xQpPQ",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "boxes",
+                                              "library": "lucide",
+                                              "fill": "#FFFFFF"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "aa9Fw",
+                                          "name": "Icon Tile / ship",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "X2Iiz",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "ship",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "P0O4VZ",
+                                          "name": "Icon Tile / anchor",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "IZQ6l",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "anchor",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "RyDLR",
+                                          "name": "Icon Tile / compass",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "hRimv",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "compass",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "DVWWS",
+                                          "name": "Icon Tile / globe",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "ZSTD9",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "globe",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "RMBLZ",
+                                          "name": "Icon Tile / briefcase",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "eED04",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "briefcase",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "clXNh",
+                                          "name": "Icon Tile / building-2",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "kHHuy",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "building-2",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "d54Y0",
+                                          "name": "Icon Tile / users",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "Ytzh1",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "users",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "wQt4X",
+                                      "name": "Grid Row 2",
+                                      "width": "fill_container",
+                                      "justifyContent": "space_between",
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "DLls8",
+                                          "name": "Icon Tile / shield",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "coW6o",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "shield",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "WhrYb",
+                                          "name": "Icon Tile / heart",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "t7AojR",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "heart",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "tHNCP",
+                                          "name": "Icon Tile / star",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "lpt5l",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "star",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "umtux",
+                                          "name": "Icon Tile / zap",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "OPOQr",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "zap",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "enuZM",
+                                          "name": "Icon Tile / house",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "b8zCV",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "house",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "oE9iN",
+                                          "name": "Icon Tile / layers",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "ORJWt",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "layers",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "WEdkh",
+                                          "name": "Icon Tile / package",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "v0xFu",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "package",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "Msbc9",
+                                          "name": "Icon Tile / palette",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "Cl2kZ",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "palette",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "NHEiV",
+                                      "name": "Grid Row 3",
+                                      "width": "fill_container",
+                                      "justifyContent": "space_between",
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "kq3DG",
+                                          "name": "Icon Tile / lightbulb",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "F2CFX",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "lightbulb",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "txkTf",
+                                          "name": "Icon Tile / trophy",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "jpVXt",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "trophy",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "APp3y",
+                                          "name": "Icon Tile / timer",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "PO79v",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "timer",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "q25sn",
+                                          "name": "Icon Tile / bookmark",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "E1zrbX",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "bookmark",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "TO9qD",
+                                          "name": "Icon Tile / wrench",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "e7ME3",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "wrench",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "tLZIU",
+                                          "name": "Icon Tile / settings",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "tqVpV",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "settings",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "dLB7A",
+                                          "name": "Icon Tile / tag",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "pRnjO",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "tag",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "qhyBV",
+                                          "name": "Icon Tile / bell",
+                                          "width": 38,
+                                          "height": 38,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "RhZ0d",
+                                              "name": "Icon Glyph",
+                                              "width": 17,
+                                              "height": 17,
+                                              "icon": "bell",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "kDQE4",
+                                  "name": "Panel Footer",
+                                  "width": "fill_container",
+                                  "gap": 10,
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "AOvX2",
+                                      "name": "Icons Meta",
+                                      "fill": "$ds-text-muted",
+                                      "content": "24 ICONS · 8 PER ROW",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "600",
+                                      "letterSpacing": 1.2
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "Qg44G",
+                                      "name": "Footer Actions",
+                                      "gap": 10,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "id": "X84e8",
+                                          "type": "ref",
+                                          "ref": "Poa4g",
+                                          "name": "Button Cancel Dropdown",
+                                          "descendants": {
+                                            "FkMhJ": {
+                                              "icon": "x"
+                                            },
+                                            "Tn0Xr": {
+                                              "content": "Cancel"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "bZop0",
+                                          "type": "ref",
+                                          "ref": "M1Im2",
+                                          "name": "Button Apply Icon",
+                                          "descendants": {
+                                            "ZNFT2": {
+                                              "icon": "check"
+                                            },
+                                            "oLhjB": {
+                                              "content": "Done"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "eHeKp",
+                          "name": "Dialog Column",
+                          "width": 660,
+                          "layout": "vertical",
+                          "gap": 14,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "qDzNT",
+                              "name": "Dialog Mono Label",
+                              "fill": "$ds-text-muted",
+                              "content": "CREATE WORKSPACE DIALOG  ·  OPENED FROM SELECTION",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.2
+                            },
+                            {
+                              "type": "frame",
+                              "id": "I1ygH",
+                              "name": "Dialog Backdrop",
+                              "clip": true,
+                              "width": "fill_container",
+                              "fill": "#16151259",
+                              "cornerRadius": "$ds-radius-lg",
+                              "padding": [
+                                36,
+                                0
+                              ],
+                              "justifyContent": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "P0C7WN",
+                                  "name": "Create Workspace Dialog",
+                                  "width": 500,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-xl",
+                                  "stroke": "$ds-border-strong",
+                                  "strokeWidth": 1.5,
+                                  "layout": "vertical",
+                                  "gap": 22,
+                                  "padding": 28,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "P06Yvq",
+                                      "name": "Dialog Header",
+                                      "width": "fill_container",
+                                      "justifyContent": "space_between",
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "Vo8m7",
+                                          "name": "Dialog Heading",
+                                          "width": "fill_container",
+                                          "layout": "vertical",
+                                          "gap": 5,
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "e3U9LT",
+                                              "name": "Dialog Title",
+                                              "fill": "$ds-text",
+                                              "content": "Create a workspace.",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 20,
+                                              "fontWeight": "700",
+                                              "letterSpacing": -0.6
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "t14Ao",
+                                              "name": "Dialog Subcopy",
+                                              "fill": "$ds-text-muted",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "You become its Owner immediately — everything else ships later.",
+                                              "lineHeight": 1.5,
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "normal"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "sVkzu",
+                                          "type": "ref",
+                                          "ref": "c1CmN",
+                                          "name": "Dialog Close Button",
+                                          "descendants": {
+                                            "Y8JHAG": {
+                                              "icon": "x"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "osqLl",
+                                      "name": "Dialog Name Field Group",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 8,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "HYi0D",
+                                          "name": "Dialog Name Label",
+                                          "fill": "$ds-text",
+                                          "content": "Workspace name",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "600"
+                                        },
+                                        {
+                                          "id": "yfNfG",
+                                          "type": "ref",
+                                          "ref": "eqdKn",
+                                          "name": "Dialog Name Input",
+                                          "width": "fill_container",
+                                          "height": 44,
+                                          "descendants": {
+                                            "D9PFmY": {
+                                              "icon": "container"
+                                            },
+                                            "GhdjP": {
+                                              "content": "Sable & Co"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "J3zAn",
+                                      "name": "Dialog Icon Field Group",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 8,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "FEU0k",
+                                          "name": "Dialog Icon Label",
+                                          "fill": "$ds-text",
+                                          "content": "Icon",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "600"
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "L3c33p",
+                                          "name": "Dialog Icon Dropdown Trigger",
+                                          "width": "fill_container",
+                                          "height": 44,
+                                          "fill": "$ds-surface",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "gap": 12,
+                                          "padding": [
+                                            0,
+                                            12
+                                          ],
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "frame",
+                                              "id": "Qa7JN",
+                                              "name": "Selected Icon Mini Tile",
+                                              "width": 24,
+                                              "height": 24,
+                                              "fill": "$ds-brand-soft",
+                                              "cornerRadius": 6,
+                                              "stroke": "#EACB98",
+                                              "strokeWidth": 1,
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "icon",
+                                                  "id": "W0HEjp",
+                                                  "name": "Selected Icon Glyph",
+                                                  "width": 14,
+                                                  "height": 14,
+                                                  "icon": "anchor",
+                                                  "library": "lucide",
+                                                  "fill": "$ds-brand"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "uUWaJ",
+                                              "name": "Selected Icon Name",
+                                              "fill": "$ds-text",
+                                              "content": "Anchor",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 13,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "K4dNJA",
+                                              "name": "Dropdown Spacer",
+                                              "width": "fill_container",
+                                              "height": 1
+                                            },
+                                            {
+                                              "type": "icon",
+                                              "id": "k98tLu",
+                                              "name": "Trigger Chevron",
+                                              "width": 16,
+                                              "height": 16,
+                                              "icon": "chevron-down",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "E80r2",
+                                      "name": "Dialog Footer",
+                                      "width": "fill_container",
+                                      "gap": 10,
+                                      "justifyContent": "end",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "id": "YGU3u",
+                                          "type": "ref",
+                                          "ref": "Poa4g",
+                                          "name": "Button Cancel Dialog",
+                                          "descendants": {
+                                            "FkMhJ": {
+                                              "icon": "x"
+                                            },
+                                            "Tn0Xr": {
+                                              "content": "Cancel"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "N2XxM",
+                                          "type": "ref",
+                                          "ref": "M1Im2",
+                                          "name": "Button Create Dialog",
+                                          "descendants": {
+                                            "ZNFT2": {
+                                              "icon": "plus"
+                                            },
+                                            "oLhjB": {
+                                              "content": "Create workspace"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VPDtB",
+                      "name": "Confirmation Stage",
+                      "width": "fill_container",
+                      "gap": 40,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "BVgZb",
+                          "name": "Archive Confirmation Column",
+                          "width": 620,
+                          "layout": "vertical",
+                          "gap": 14,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "y4nExG",
+                              "name": "Archive Confirmation Mono Label",
+                              "fill": "$ds-text-muted",
+                              "content": "ARCHIVE CONFIRMATION  ·  OWNER ONLY",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.2
+                            },
+                            {
+                              "type": "frame",
+                              "id": "RrSw9",
+                              "name": "Archive Confirmation Backdrop",
+                              "clip": true,
+                              "width": "fill_container",
+                              "fill": "#16151259",
+                              "cornerRadius": "$ds-radius-lg",
+                              "padding": [
+                                36,
+                                0
+                              ],
+                              "justifyContent": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "N3vuV",
+                                  "name": "Archive Confirmation Dialog",
+                                  "width": 520,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-xl",
+                                  "stroke": "#EFD9AC",
+                                  "strokeWidth": 1.5,
+                                  "layout": "vertical",
+                                  "gap": 18,
+                                  "padding": 26,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "QCVO9",
+                                      "name": "Archive Head Row",
+                                      "width": "fill_container",
+                                      "gap": 14,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "H8Roy",
+                                          "name": "Archive Icon Tile",
+                                          "width": 44,
+                                          "height": 44,
+                                          "fill": "$ds-warning-soft",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "#EDD9A8",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "ASxQ2",
+                                              "name": "Archive Icon Glyph",
+                                              "width": 22,
+                                              "height": 22,
+                                              "icon": "archive",
+                                              "library": "lucide",
+                                              "fill": "$ds-warning"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "wc5Hh",
+                                          "name": "Archive Title",
+                                          "fill": "$ds-text",
+                                          "content": "Archive Acme Studio?",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 17,
+                                          "fontWeight": "700",
+                                          "letterSpacing": -0.4
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "bksCX",
+                                      "name": "Archive Body",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Acme Studio becomes read-only for every member until you restore it. Projects, issues, cycles and history are preserved exactly as they are.",
+                                      "lineHeight": 1.55,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 13,
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "sUK7t",
+                                      "name": "Archive Actions",
+                                      "width": "fill_container",
+                                      "gap": 10,
+                                      "justifyContent": "end",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "id": "JctUX",
+                                          "type": "ref",
+                                          "ref": "Poa4g",
+                                          "name": "Button Cancel Archive",
+                                          "descendants": {
+                                            "FkMhJ": {
+                                              "icon": "x"
+                                            },
+                                            "Tn0Xr": {
+                                              "content": "Cancel"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "d3cex",
+                                          "name": "Button Confirm Archive",
+                                          "height": 36,
+                                          "fill": "$ds-warning",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-warning",
+                                          "strokeWidth": 1,
+                                          "gap": 8,
+                                          "padding": [
+                                            0,
+                                            14
+                                          ],
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "CcIxj",
+                                              "name": "Archive Btn Icon",
+                                              "width": 15,
+                                              "height": 15,
+                                              "icon": "archive",
+                                              "library": "lucide",
+                                              "fill": "#FFFFFF"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "slWqD",
+                                              "name": "Archive Btn Label",
+                                              "fill": "#FFFFFF",
+                                              "content": "Archive workspace",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "600"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "PvjIN",
+                          "name": "Delete Confirmation Column",
+                          "width": 620,
+                          "layout": "vertical",
+                          "gap": 14,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "frwRr",
+                              "name": "Delete Confirmation Mono Label",
+                              "fill": "$ds-text-muted",
+                              "content": "DELETE CONFIRMATION  ·  OWNER ONLY",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.2
+                            },
+                            {
+                              "type": "frame",
+                              "id": "zvUvV",
+                              "name": "Delete Confirmation Backdrop",
+                              "clip": true,
+                              "width": "fill_container",
+                              "fill": "#16151259",
+                              "cornerRadius": "$ds-radius-lg",
+                              "padding": [
+                                36,
+                                0
+                              ],
+                              "justifyContent": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "oaMmO",
+                                  "name": "Delete Confirmation Dialog",
+                                  "width": 520,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-xl",
+                                  "stroke": "#F1C9C2",
+                                  "strokeWidth": 1.5,
+                                  "layout": "vertical",
+                                  "gap": 18,
+                                  "padding": 26,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "iWaaC",
+                                      "name": "Delete Head Row",
+                                      "width": "fill_container",
+                                      "gap": 14,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "Yni4p",
+                                          "name": "Delete Icon Tile",
+                                          "width": 44,
+                                          "height": 44,
+                                          "fill": "$ds-danger-soft",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "#F1C9C2",
+                                          "strokeWidth": 1,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "e2MWcR",
+                                              "name": "Delete Icon Glyph",
+                                              "width": 22,
+                                              "height": 22,
+                                              "icon": "trash-2",
+                                              "library": "lucide",
+                                              "fill": "$ds-danger"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "twYtt",
+                                          "name": "Delete Heading Texts",
+                                          "width": "fill_container",
+                                          "layout": "vertical",
+                                          "gap": 2,
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "Q1BUkE",
+                                              "name": "Delete Title",
+                                              "fill": "$ds-text",
+                                              "content": "Delete Northwind Vault?",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 17,
+                                              "fontWeight": "700",
+                                              "letterSpacing": -0.4
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "btg8O",
+                                              "name": "Delete Subtitle",
+                                              "fill": "$ds-danger",
+                                              "content": "Irreversible · Owner only",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 10,
+                                              "fontWeight": "600",
+                                              "letterSpacing": 0.8
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "MGEuz",
+                                      "name": "Delete Fact Row",
+                                      "width": "fill_container",
+                                      "gap": 9,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "h1KDe",
+                                          "name": "Fact Icon",
+                                          "width": 13,
+                                          "height": 13,
+                                          "icon": "x",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "LthjH",
+                                          "name": "Fact Text",
+                                          "fill": "$ds-text-muted",
+                                          "content": "Removes all projects, issues and cycles",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "aZFmm",
+                                      "name": "Delete Fact Row",
+                                      "width": "fill_container",
+                                      "gap": 9,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "n286h",
+                                          "name": "Fact Icon",
+                                          "width": 13,
+                                          "height": 13,
+                                          "icon": "x",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "XZYwB",
+                                          "name": "Fact Text",
+                                          "fill": "$ds-text-muted",
+                                          "content": "Removes every membership and invitation",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "gbInp",
+                                      "name": "Delete Fact Row",
+                                      "width": "fill_container",
+                                      "gap": 9,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "C0NEL",
+                                          "name": "Fact Icon",
+                                          "width": 13,
+                                          "height": 13,
+                                          "icon": "x",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "KCX3N",
+                                          "name": "Fact Text",
+                                          "fill": "$ds-text-muted",
+                                          "content": "Your Shipyard account stays untouched",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "cjddl",
+                                      "name": "Exact Name Group",
+                                      "width": "fill_container",
+                                      "layout": "vertical",
+                                      "gap": 8,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "GFZ4d",
+                                          "name": "Exact Name Label",
+                                          "fill": "$ds-text",
+                                          "content": "Type “Northwind Vault” to confirm",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "600"
+                                        },
+                                        {
+                                          "id": "qqTPa",
+                                          "type": "ref",
+                                          "ref": "eqdKn",
+                                          "name": "Exact Name Input",
+                                          "width": "fill_container",
+                                          "height": 40,
+                                          "descendants": {
+                                            "D9PFmY": {
+                                              "icon": "pencil"
+                                            },
+                                            "GhdjP": {
+                                              "content": "",
+                                              "fill": "$ds-text-muted"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "vY3NL",
+                                      "name": "Delete Actions",
+                                      "width": "fill_container",
+                                      "gap": 10,
+                                      "justifyContent": "end",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "id": "JyGGB",
+                                          "type": "ref",
+                                          "ref": "Poa4g",
+                                          "name": "Button Cancel Delete",
+                                          "descendants": {
+                                            "FkMhJ": {
+                                              "icon": "x"
+                                            },
+                                            "Tn0Xr": {
+                                              "content": "Cancel"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "ZaK6E",
+                                          "name": "Button Delete Disabled",
+                                          "height": 36,
+                                          "fill": "#00000000",
+                                          "cornerRadius": "$ds-radius-md",
+                                          "stroke": "$ds-border",
+                                          "strokeWidth": 1,
+                                          "gap": 8,
+                                          "padding": [
+                                            0,
+                                            14
+                                          ],
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "ILZD5",
+                                              "name": "Delete Btn Icon",
+                                              "width": 15,
+                                              "height": 15,
+                                              "icon": "trash-2",
+                                              "library": "lucide",
+                                              "fill": "$ds-text-muted"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "fMzII",
+                                              "name": "Delete Btn Label",
+                                              "fill": "$ds-text-muted",
+                                              "content": "Delete forever",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "600"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
