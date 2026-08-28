@@ -8748,158 +8748,14 @@
                   "cornerRadius": 16,
                   "stroke": "#00000000",
                   "strokeWidth": 1.5,
-                  "layout": "none",
+                  "layout": "vertical",
+                  "padding": 32,
+                  "justifyContent": "center",
+                  "alignItems": "center",
                   "children": [
                     {
                       "type": "frame",
-                      "id": "nE2YV",
-                      "x": 48,
-                      "y": 28,
-                      "name": "Onboarding Top Bar",
-                      "width": 1344,
-                      "height": 40,
-                      "gap": 16,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "A0UVs",
-                          "name": "Shipyard Logo Lockup",
-                          "gap": 10,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "egTgr",
-                              "name": "Logo Mark Tile",
-                              "width": 30,
-                              "height": 30,
-                              "fill": "$ds-brand",
-                              "cornerRadius": 8,
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "path",
-                                  "id": "i6UcJE",
-                                  "name": "Logo Precision Loop",
-                                  "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
-                                  "viewBox": [
-                                    0,
-                                    0,
-                                    100,
-                                    108
-                                  ],
-                                  "width": 18,
-                                  "height": 18,
-                                  "stroke": "#FFFFFF",
-                                  "strokeWidth": 9,
-                                  "strokeLinejoin": "bevel",
-                                  "strokeLinecap": "square"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "text",
-                              "id": "XSLyq",
-                              "fill": "$ds-text",
-                              "content": "Shipyard",
-                              "fontFamily": "Geist",
-                              "fontSize": 15,
-                              "fontWeight": "800",
-                              "letterSpacing": -0.4
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "ygBEO",
-                          "name": "Top Bar Spacer",
-                          "width": "fill_container",
-                          "height": 1
-                        },
-                        {
-                          "type": "frame",
-                          "id": "BTjX1",
-                          "name": "User Chip",
-                          "gap": 10,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "ZKfc6",
-                              "name": "User Avatar",
-                              "width": 26,
-                              "height": 26,
-                              "fill": "$ds-brand",
-                              "cornerRadius": "$ds-radius-pill",
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "whWF3",
-                                  "fill": "#FFFFFF",
-                                  "content": "MC",
-                                  "fontFamily": "$ds-font-mono",
-                                  "fontSize": 9,
-                                  "fontWeight": "700"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "text",
-                              "id": "Xr2EV",
-                              "fill": "$ds-text-muted",
-                              "content": "maya@acme.io",
-                              "fontFamily": "$ds-font-ui",
-                              "fontSize": 11,
-                              "fontWeight": "normal"
-                            },
-                            {
-                              "type": "frame",
-                              "id": "opMOI",
-                              "name": "Chip Divider",
-                              "width": 1,
-                              "height": 16,
-                              "fill": "$ds-border"
-                            },
-                            {
-                              "type": "frame",
-                              "id": "fpsXb",
-                              "name": "Sign Out Action",
-                              "gap": 6,
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon",
-                                  "id": "WyiCQ",
-                                  "width": 13,
-                                  "height": 13,
-                                  "icon": "log-out",
-                                  "library": "lucide",
-                                  "fill": "$ds-text-muted"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "eXq1E",
-                                  "fill": "$ds-text-muted",
-                                  "content": "Sign out",
-                                  "fontFamily": "$ds-font-ui",
-                                  "fontSize": 11,
-                                  "fontWeight": "600"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
                       "id": "jM9jt",
-                      "x": 430,
-                      "y": 150,
                       "name": "Onboarding Column",
                       "width": 580,
                       "layout": "vertical",
@@ -8944,123 +8800,6 @@
                         },
                         {
                           "type": "frame",
-                          "id": "H7kPQW",
-                          "name": "Live Preview Group",
-                          "width": "fill_container",
-                          "layout": "vertical",
-                          "gap": 8,
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "Kusqt",
-                              "name": "Workspace Preview Card",
-                              "width": "fill_container",
-                              "height": 76,
-                              "fill": "$ds-surface",
-                              "cornerRadius": "$ds-radius-lg",
-                              "stroke": "$ds-border-strong",
-                              "strokeWidth": 1,
-                              "gap": 14,
-                              "padding": [
-                                0,
-                                16
-                              ],
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "frame",
-                                  "id": "co7LA",
-                                  "name": "Preview Icon Tile",
-                                  "width": 44,
-                                  "height": 44,
-                                  "fill": "$ds-brand-soft",
-                                  "cornerRadius": "$ds-radius-md",
-                                  "stroke": "#EACB98",
-                                  "strokeWidth": 1,
-                                  "justifyContent": "center",
-                                  "alignItems": "center",
-                                  "children": [
-                                    {
-                                      "type": "icon",
-                                      "id": "X03NhC",
-                                      "width": 22,
-                                      "height": 22,
-                                      "icon": "boxes",
-                                      "library": "lucide",
-                                      "fill": "$ds-brand"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "frame",
-                                  "id": "vwetb",
-                                  "name": "Preview Texts",
-                                  "width": "fill_container",
-                                  "layout": "vertical",
-                                  "gap": 3,
-                                  "children": [
-                                    {
-                                      "type": "text",
-                                      "id": "uYCDW",
-                                      "fill": "$ds-text",
-                                      "content": "Acme Studio",
-                                      "fontFamily": "$ds-font-ui",
-                                      "fontSize": 15,
-                                      "fontWeight": "650",
-                                      "letterSpacing": -0.2
-                                    },
-                                    {
-                                      "type": "text",
-                                      "id": "c0Xgru",
-                                      "fill": "$ds-text-muted",
-                                      "content": "Workspace · You're the Owner",
-                                      "lineHeight": 1.3,
-                                      "fontFamily": "$ds-font-ui",
-                                      "fontSize": 11,
-                                      "fontWeight": "normal"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "frame",
-                                  "id": "RBTEB",
-                                  "name": "Preview Ready Chip",
-                                  "height": 22,
-                                  "fill": "$ds-success-soft",
-                                  "cornerRadius": "$ds-radius-pill",
-                                  "gap": 6,
-                                  "padding": [
-                                    0,
-                                    10
-                                  ],
-                                  "alignItems": "center",
-                                  "children": [
-                                    {
-                                      "type": "icon",
-                                      "id": "CNY5g",
-                                      "width": 12,
-                                      "height": 12,
-                                      "icon": "check",
-                                      "library": "lucide",
-                                      "fill": "$ds-success"
-                                    },
-                                    {
-                                      "type": "text",
-                                      "id": "kdRTE",
-                                      "fill": "$ds-success",
-                                      "content": "Ready",
-                                      "fontFamily": "$ds-font-mono",
-                                      "fontSize": 10,
-                                      "fontWeight": "600"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
                           "id": "AYpbz",
                           "name": "Fields Stack",
                           "width": "fill_container",
@@ -9091,7 +8830,19 @@
                                   "name": "Name Input Large",
                                   "width": "fill_container",
                                   "height": 44,
+                                  "gap": 0,
                                   "descendants": {
+                                    "Goufo": {
+                                      "enabled": false
+                                    },
+                                    "l3WWN": {
+                                      "height": 44,
+                                      "padding": [
+                                        0,
+                                        12
+                                      ],
+                                      "gap": 10
+                                    },
                                     "D9PFmY": {
                                       "icon": "container"
                                     },
@@ -9254,151 +9005,6 @@
                   "strokeWidth": 1.5,
                   "layout": "none",
                   "children": [
-                    {
-                      "type": "frame",
-                      "id": "eRodH",
-                      "x": 48,
-                      "y": 28,
-                      "name": "Selection Top Bar",
-                      "width": 1344,
-                      "height": 40,
-                      "gap": 16,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "BPX3B",
-                          "name": "Shipyard Logo Lockup",
-                          "gap": 10,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "NKIQr",
-                              "name": "Logo Mark Tile",
-                              "width": 30,
-                              "height": 30,
-                              "fill": "$ds-brand",
-                              "cornerRadius": 8,
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "path",
-                                  "id": "CUPyC",
-                                  "name": "Logo Precision Loop",
-                                  "geometry": "M82 18h-46l-18 18 18 18h28l18 18-18 18h-46",
-                                  "viewBox": [
-                                    0,
-                                    0,
-                                    100,
-                                    108
-                                  ],
-                                  "width": 18,
-                                  "height": 18,
-                                  "stroke": "#FFFFFF",
-                                  "strokeWidth": 9,
-                                  "strokeLinejoin": "bevel",
-                                  "strokeLinecap": "square"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "text",
-                              "id": "GR5kq",
-                              "fill": "$ds-text",
-                              "content": "Shipyard",
-                              "fontFamily": "Geist",
-                              "fontSize": 15,
-                              "fontWeight": "800",
-                              "letterSpacing": -0.4
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "lhmbM",
-                          "name": "Top Bar Spacer",
-                          "width": "fill_container",
-                          "height": 1
-                        },
-                        {
-                          "type": "frame",
-                          "id": "nCClh",
-                          "name": "User Chip",
-                          "gap": 10,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "frame",
-                              "id": "eaqrR",
-                              "name": "User Avatar",
-                              "width": 26,
-                              "height": 26,
-                              "fill": "$ds-brand",
-                              "cornerRadius": "$ds-radius-pill",
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "id": "SwdZU",
-                                  "fill": "#FFFFFF",
-                                  "content": "MC",
-                                  "fontFamily": "$ds-font-mono",
-                                  "fontSize": 9,
-                                  "fontWeight": "700"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "text",
-                              "id": "Mrcat",
-                              "fill": "$ds-text-muted",
-                              "content": "maya@acme.io",
-                              "fontFamily": "$ds-font-ui",
-                              "fontSize": 11,
-                              "fontWeight": "normal"
-                            },
-                            {
-                              "type": "frame",
-                              "id": "D2PcU",
-                              "name": "Chip Divider",
-                              "width": 1,
-                              "height": 16,
-                              "fill": "$ds-border"
-                            },
-                            {
-                              "type": "frame",
-                              "id": "jF4Ba",
-                              "name": "Sign Out Action",
-                              "gap": 6,
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon",
-                                  "id": "BRagq",
-                                  "width": 13,
-                                  "height": 13,
-                                  "icon": "log-out",
-                                  "library": "lucide",
-                                  "fill": "$ds-text-muted"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "hDdLk",
-                                  "fill": "$ds-text-muted",
-                                  "content": "Sign out",
-                                  "fontFamily": "$ds-font-ui",
-                                  "fontSize": 11,
-                                  "fontWeight": "600"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
                     {
                       "type": "frame",
                       "id": "o181r",
@@ -11377,65 +10983,6 @@
                                       ]
                                     }
                                   ]
-                                },
-                                {
-                                  "type": "frame",
-                                  "id": "kDQE4",
-                                  "name": "Panel Footer",
-                                  "width": "fill_container",
-                                  "gap": 10,
-                                  "justifyContent": "space_between",
-                                  "alignItems": "center",
-                                  "children": [
-                                    {
-                                      "type": "text",
-                                      "id": "AOvX2",
-                                      "name": "Icons Meta",
-                                      "fill": "$ds-text-muted",
-                                      "content": "24 ICONS · 8 PER ROW",
-                                      "fontFamily": "$ds-font-mono",
-                                      "fontSize": 10,
-                                      "fontWeight": "600",
-                                      "letterSpacing": 1.2
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "Qg44G",
-                                      "name": "Footer Actions",
-                                      "gap": 10,
-                                      "alignItems": "center",
-                                      "children": [
-                                        {
-                                          "id": "X84e8",
-                                          "type": "ref",
-                                          "ref": "Poa4g",
-                                          "name": "Button Cancel Dropdown",
-                                          "descendants": {
-                                            "FkMhJ": {
-                                              "icon": "x"
-                                            },
-                                            "Tn0Xr": {
-                                              "content": "Cancel"
-                                            }
-                                          }
-                                        },
-                                        {
-                                          "id": "bZop0",
-                                          "type": "ref",
-                                          "ref": "M1Im2",
-                                          "name": "Button Apply Icon",
-                                          "descendants": {
-                                            "ZNFT2": {
-                                              "icon": "check"
-                                            },
-                                            "oLhjB": {
-                                              "content": "Done"
-                                            }
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  ]
                                 }
                               ]
                             }
@@ -11566,7 +11113,19 @@
                                           "name": "Dialog Name Input",
                                           "width": "fill_container",
                                           "height": 44,
+                                          "gap": 0,
                                           "descendants": {
+                                            "Goufo": {
+                                              "enabled": false
+                                            },
+                                            "l3WWN": {
+                                              "height": 44,
+                                              "padding": [
+                                                0,
+                                                12
+                                              ],
+                                              "gap": 10
+                                            },
                                             "D9PFmY": {
                                               "icon": "container"
                                             },
@@ -11940,7 +11499,7 @@
                                   "stroke": "#F1C9C2",
                                   "strokeWidth": 1.5,
                                   "layout": "vertical",
-                                  "gap": 18,
+                                  "gap": 24,
                                   "padding": 26,
                                   "children": [
                                     {
@@ -12011,94 +11570,17 @@
                                       ]
                                     },
                                     {
-                                      "type": "frame",
-                                      "id": "MGEuz",
-                                      "name": "Delete Fact Row",
+                                      "type": "text",
+                                      "id": "yq7xQ",
+                                      "name": "Delete Summary Paragraph",
+                                      "fill": "$ds-text-muted",
+                                      "textGrowth": "fixed-width",
                                       "width": "fill_container",
-                                      "gap": 9,
-                                      "alignItems": "center",
-                                      "children": [
-                                        {
-                                          "type": "icon",
-                                          "id": "h1KDe",
-                                          "name": "Fact Icon",
-                                          "width": 13,
-                                          "height": 13,
-                                          "icon": "x",
-                                          "library": "lucide",
-                                          "fill": "$ds-text-muted"
-                                        },
-                                        {
-                                          "type": "text",
-                                          "id": "LthjH",
-                                          "name": "Fact Text",
-                                          "fill": "$ds-text-muted",
-                                          "content": "Removes all projects, issues and cycles",
-                                          "fontFamily": "$ds-font-ui",
-                                          "fontSize": 12,
-                                          "fontWeight": "normal"
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "aZFmm",
-                                      "name": "Delete Fact Row",
-                                      "width": "fill_container",
-                                      "gap": 9,
-                                      "alignItems": "center",
-                                      "children": [
-                                        {
-                                          "type": "icon",
-                                          "id": "n286h",
-                                          "name": "Fact Icon",
-                                          "width": 13,
-                                          "height": 13,
-                                          "icon": "x",
-                                          "library": "lucide",
-                                          "fill": "$ds-text-muted"
-                                        },
-                                        {
-                                          "type": "text",
-                                          "id": "XZYwB",
-                                          "name": "Fact Text",
-                                          "fill": "$ds-text-muted",
-                                          "content": "Removes every membership and invitation",
-                                          "fontFamily": "$ds-font-ui",
-                                          "fontSize": 12,
-                                          "fontWeight": "normal"
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "frame",
-                                      "id": "gbInp",
-                                      "name": "Delete Fact Row",
-                                      "width": "fill_container",
-                                      "gap": 9,
-                                      "alignItems": "center",
-                                      "children": [
-                                        {
-                                          "type": "icon",
-                                          "id": "C0NEL",
-                                          "name": "Fact Icon",
-                                          "width": 13,
-                                          "height": 13,
-                                          "icon": "x",
-                                          "library": "lucide",
-                                          "fill": "$ds-text-muted"
-                                        },
-                                        {
-                                          "type": "text",
-                                          "id": "KCX3N",
-                                          "name": "Fact Text",
-                                          "fill": "$ds-text-muted",
-                                          "content": "Your Shipyard account stays untouched",
-                                          "fontFamily": "$ds-font-ui",
-                                          "fontSize": 12,
-                                          "fontWeight": "normal"
-                                        }
-                                      ]
+                                      "content": "This will permanently remove all projects, issues, cycles, memberships and invitations. Your Shipyard account stays untouched and this cannot be undone.",
+                                      "lineHeight": 1.6,
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
                                     },
                                     {
                                       "type": "frame",
@@ -12109,14 +11591,71 @@
                                       "gap": 8,
                                       "children": [
                                         {
-                                          "type": "text",
-                                          "id": "GFZ4d",
-                                          "name": "Exact Name Label",
-                                          "fill": "$ds-text",
-                                          "content": "Type “Northwind Vault” to confirm",
-                                          "fontFamily": "$ds-font-ui",
-                                          "fontSize": 12,
-                                          "fontWeight": "600"
+                                          "type": "frame",
+                                          "id": "HtljU",
+                                          "name": "Confirm Label Row",
+                                          "width": "fill_container",
+                                          "gap": 6,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "ZlqrE",
+                                              "name": "Confirm Prefix",
+                                              "fill": "$ds-text",
+                                              "content": "Type",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "600"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "T3xnob",
+                                              "name": "Inline Code Block",
+                                              "fill": "#F0EFEB",
+                                              "cornerRadius": 6,
+                                              "stroke": "$ds-border",
+                                              "strokeWidth": 1,
+                                              "gap": 8,
+                                              "padding": [
+                                                4,
+                                                8
+                                              ],
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "fTRSI",
+                                                  "name": "Inline Code Text",
+                                                  "fill": "$ds-text",
+                                                  "content": "Northwind Vault",
+                                                  "fontFamily": "$ds-font-mono",
+                                                  "fontSize": 11,
+                                                  "fontWeight": "600"
+                                                },
+                                                {
+                                                  "type": "icon",
+                                                  "id": "D7qVl",
+                                                  "name": "Copy Icon",
+                                                  "width": 13,
+                                                  "height": 13,
+                                                  "icon": "copy",
+                                                  "library": "lucide",
+                                                  "fill": "$ds-text-muted"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "m4rWmA",
+                                              "name": "Confirm Suffix",
+                                              "fill": "$ds-text",
+                                              "content": "to confirm",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "600"
+                                            }
+                                          ]
                                         },
                                         {
                                           "id": "qqTPa",
