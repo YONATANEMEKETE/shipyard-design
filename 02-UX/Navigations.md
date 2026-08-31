@@ -99,7 +99,6 @@ Some sections provide local navigation for related views.
 ### Workspace Settings
 
 - Workspace Details
-- Members
 - Danger Zone
 
 ---

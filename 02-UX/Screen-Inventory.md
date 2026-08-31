@@ -47,8 +47,8 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Member Details | Drawer | Members Directory, Global Search | Display member information and role-appropriate management actions contextually without a standalone URL. |
 | Change Role Confirmation | Dialog | Member Details | Allow an Owner to confirm a Member or Admin role change. |
 | Remove Member Confirmation | Dialog | Member Details | Confirm removal when an Owner removes a Member or Admin, or an Admin removes a Member; show any owned Projects that will transfer automatically to the Workspace Owner. |
-| Transfer Workspace Ownership Confirmation | Dialog | Member Details, Workspace Settings | Confirm transferring Workspace ownership to an existing Member or Admin and changing the current Owner to Admin. |
-| Leave Workspace Confirmation | Dialog | User Menu, Workspace Settings | Confirm that a Member or Admin wants to leave, show any owned Projects that will transfer automatically to the Workspace Owner, and require the current Owner to transfer Workspace ownership first. |
+| Transfer Workspace Ownership Confirmation | Dialog | Member Details | Confirm transferring Workspace ownership to an existing Member or Admin and changing the current Owner to Admin. |
+| Leave Workspace Confirmation | Dialog | User Menu, Member Details (own row) | Confirm that a Member or Admin wants to leave, show any owned Projects that will transfer automatically to the Workspace Owner, and require the current Owner to transfer Workspace ownership first. |
 
 ---
 ## 5.5 Projects
@@ -149,5 +149,5 @@ This section identifies every screen, modal, drawer, dialog, and overlay require
 | Security Settings | Page | Account Settings | Allow users to change their password. |
 | Appearance Settings | Page | Account Settings | Allow users to select the Light, Dark, or System theme. |
 | Change Email | Modal | Profile Settings | Allow users to request an account email change after password or OAuth re-authentication and explain that the new address must be verified before it replaces the current email. |
-| Workspace Settings | Page | Sidebar → Workspace Settings | Allow authorized users to manage workspace configuration. |
+| Workspace Settings | Page | Sidebar → Workspace Settings | Manage workspace lifecycle — General (name/icon) + Danger Zone (archive/delete). People live under Members, not here. |
 | Change Password | Modal | Security Settings | Allow users to securely update their account password. |

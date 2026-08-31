@@ -158,12 +158,11 @@ Contains:
 
 ## Workspace Settings
 
-Allows the Workspace Owner and other members with specific permissions to view or manage settings for the active workspace.
+Allows the Workspace Owner to manage workspace lifecycle for the active workspace.
 
 Contains:
 
 - Workspace Details
-- Member Management
 - Danger Zone
 
 The active Workspace Danger Zone provides Archive. Permanent deletion is available only from the Archived Workspace Summary after archival.
