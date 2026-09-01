@@ -82,62 +82,6 @@
           },
           "width": 1406,
           "height": 2329
-        },
-        {
-          "type": "rectangle",
-          "id": "LAIg9",
-          "x": 147,
-          "y": 5302,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "clipboard",
-            "mode": "fill"
-          },
-          "width": 1024,
-          "height": 768
-        },
-        {
-          "type": "rectangle",
-          "id": "jW5aZ",
-          "x": 1341,
-          "y": 5302,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "clipboard-1",
-            "mode": "fill"
-          },
-          "width": 1024,
-          "height": 768
-        },
-        {
-          "type": "rectangle",
-          "id": "M1HT5",
-          "x": 147,
-          "y": 6166,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "clipboard-2",
-            "mode": "fill"
-          },
-          "width": 1024,
-          "height": 768
-        },
-        {
-          "type": "rectangle",
-          "id": "R5w6ot",
-          "x": 1341,
-          "y": 6166,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "clipboard-3",
-            "mode": "fill"
-          },
-          "width": 1024,
-          "height": 768
         }
       ]
     },
