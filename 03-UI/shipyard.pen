@@ -30637,6 +30637,1508 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "Hprkb",
+      "x": 11834,
+      "y": 7620,
+      "name": "Element / Create Project Modal",
+      "clip": true,
+      "width": 700,
+      "height": 520,
+      "fill": "#17171714",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "oSCPQ",
+          "x": 100,
+          "y": 52,
+          "name": "Create Project Dialog",
+          "width": 500,
+          "fill": "$ds-surface",
+          "cornerRadius": 16,
+          "stroke": "$ds-border",
+          "strokeWidth": 1,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#17171718",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 28
+          },
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Ccx3X",
+              "name": "Modal Header",
+              "width": "fill_container",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "e3HC4U",
+                  "name": "Modal Heading Texts",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "TB4hu",
+                      "name": "Modal Title",
+                      "fill": "$ds-text",
+                      "content": "Create new project",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "OzvJ1",
+                      "name": "Modal Subcopy",
+                      "fill": "$ds-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Name it and set an optional target. You'll be the project owner. Create or create + set labels by pressing ⌘ ↵",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "i14jP",
+                  "name": "Close Button",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "$ds-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "j7i70",
+                      "name": "Close Icon",
+                      "width": 14,
+                      "height": 14,
+                      "icon": "x",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "w83tb",
+              "type": "ref",
+              "ref": "eqdKn",
+              "name": "Name Field",
+              "descendants": {
+                "Goufo": {
+                  "content": "Project name"
+                },
+                "D9PFmY": {
+                  "icon": "folder",
+                  "name": "Name Icon"
+                },
+                "GhdjP": {
+                  "content": "Ship Payroll"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "Ug5c1",
+              "name": "Description Field",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "hTd7s",
+                  "name": "Description Label",
+                  "fill": "$ds-text",
+                  "content": "Description",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "gBY50",
+                  "name": "Description Textarea",
+                  "width": "fill_container",
+                  "height": 76,
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-md",
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": [
+                    10,
+                    11
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n8wzyE",
+                      "name": "Description Placeholder",
+                      "fill": "$ds-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A short summary of what this project is working toward…",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MOs5w",
+              "name": "Date Row",
+              "width": "fill_container",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zjJeL",
+                  "name": "Start Date",
+                  "width": 220,
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nmqx7",
+                      "name": "Start Date Label",
+                      "fill": "$ds-text",
+                      "content": "Start date",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "E5LKkP",
+                      "name": "Start Date Input",
+                      "width": "fill_container",
+                      "height": 36,
+                      "fill": "$ds-surface",
+                      "cornerRadius": "$ds-radius-md",
+                      "stroke": "$ds-border",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        11
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Oy0IC",
+                          "name": "Start Date Icon",
+                          "width": 15,
+                          "height": 15,
+                          "icon": "calendar",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "cb3f2",
+                          "name": "Start Date Value",
+                          "fill": "$ds-text",
+                          "content": "2026-01-12",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "N809A",
+                  "name": "Target Date",
+                  "width": 220,
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "i6LaF",
+                      "name": "Target Date Label",
+                      "fill": "$ds-text",
+                      "content": "Target date",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "RLCUo",
+                      "name": "Target Date Input",
+                      "width": "fill_container",
+                      "height": 36,
+                      "fill": "$ds-surface",
+                      "cornerRadius": "$ds-radius-md",
+                      "stroke": "$ds-border",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        11
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "wXCSF",
+                          "name": "Target Date Icon",
+                          "width": 15,
+                          "height": 15,
+                          "icon": "calendar",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "y9DHw",
+                          "name": "Target Date Value",
+                          "fill": "$ds-text",
+                          "content": "2026-12-01",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "J9OKTa",
+              "name": "Modal Footer",
+              "width": "fill_container",
+              "gap": 10,
+              "justifyContent": "end",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "ORTYb",
+                  "type": "ref",
+                  "ref": "Poa4g",
+                  "name": "Button Cancel",
+                  "descendants": {
+                    "FkMhJ": {
+                      "icon": "x"
+                    },
+                    "Tn0Xr": {
+                      "content": "Cancel"
+                    }
+                  }
+                },
+                {
+                  "id": "x8FSF",
+                  "type": "ref",
+                  "ref": "M1Im2",
+                  "name": "Button Create",
+                  "descendants": {
+                    "ZNFT2": {
+                      "icon": "plus"
+                    },
+                    "oLhjB": {
+                      "content": "Create project"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Sgz99",
+      "x": 12634,
+      "y": 7620,
+      "name": "Element / Edit Project Modal",
+      "clip": true,
+      "width": 700,
+      "height": 540,
+      "fill": "#17171714",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ArAB8",
+          "x": 100,
+          "y": 44,
+          "name": "Edit Project Dialog",
+          "width": 500,
+          "fill": "$ds-surface",
+          "cornerRadius": 16,
+          "stroke": "$ds-border",
+          "strokeWidth": 1,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#17171718",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 28
+          },
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "SzGMn",
+              "name": "Modal Header",
+              "width": "fill_container",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "IVKNz",
+                  "name": "Modal Heading Texts",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RDJfW",
+                      "name": "Modal Title",
+                      "fill": "$ds-text",
+                      "content": "Edit project",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "SsVG9",
+                      "name": "Modal Subcopy",
+                      "fill": "$ds-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Update the project's details or change its operational status.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cpmqO",
+                  "name": "Close Button",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "$ds-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "J5gw49",
+                      "name": "Close Icon",
+                      "width": 14,
+                      "height": 14,
+                      "icon": "x",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "x1PQBX",
+              "type": "ref",
+              "ref": "eqdKn",
+              "name": "Name Field",
+              "descendants": {
+                "Goufo": {
+                  "content": "Project name"
+                },
+                "D9PFmY": {
+                  "icon": "folder",
+                  "name": "Name Icon"
+                },
+                "GhdjP": {
+                  "content": "Ship Payroll"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "A6OcI",
+              "name": "Description Field",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "kfjbL",
+                  "name": "Description Label",
+                  "fill": "$ds-text",
+                  "content": "Description",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "Y1RhGk",
+                  "name": "Description Textarea",
+                  "width": "fill_container",
+                  "height": 64,
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-md",
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": [
+                    10,
+                    11
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bjCla",
+                      "name": "Description Value",
+                      "fill": "$ds-text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Deliver a fully featured payroll system ahead of the tax season deadline.",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "J6R38",
+              "name": "Status Field",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yaPwF",
+                  "name": "Status Label",
+                  "fill": "$ds-text",
+                  "content": "Status",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "Lkuyy",
+                  "name": "Status Select",
+                  "width": "fill_container",
+                  "height": 36,
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-md",
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    11
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wZfQV",
+                      "name": "Status Select Left",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "W4bqAR",
+                          "name": "Status Dot",
+                          "fill": "$ds-brand",
+                          "width": 7,
+                          "height": 7
+                        },
+                        {
+                          "type": "text",
+                          "id": "GeFAb",
+                          "name": "Status Value",
+                          "fill": "$ds-text",
+                          "content": "Active",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HjV3G",
+                      "name": "Status Select Spacer",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "icon",
+                      "id": "WCNZI",
+                      "name": "Status Chevron",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "chevron-down",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bS8XX",
+              "name": "Date Row",
+              "width": "fill_container",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zJ1eE",
+                  "name": "Start Date",
+                  "width": 220,
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "YsDZj",
+                      "name": "Start Date Label",
+                      "fill": "$ds-text",
+                      "content": "Start date",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EqWSR",
+                      "name": "Start Date Input",
+                      "width": 220,
+                      "height": 36,
+                      "fill": "$ds-surface",
+                      "cornerRadius": "$ds-radius-md",
+                      "stroke": "$ds-border",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        11
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Lqsv1",
+                          "name": "Start Date Icon",
+                          "width": 15,
+                          "height": 15,
+                          "icon": "calendar",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Tz9ik",
+                          "name": "Start Date Value",
+                          "fill": "$ds-text",
+                          "content": "2026-01-12",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GcHtQ",
+                  "name": "Target Date",
+                  "width": 220,
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "K1cpps",
+                      "name": "Target Date Label",
+                      "fill": "$ds-text",
+                      "content": "Target date",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NDDbM",
+                      "name": "Target Date Input",
+                      "width": 220,
+                      "height": 36,
+                      "fill": "$ds-surface",
+                      "cornerRadius": "$ds-radius-md",
+                      "stroke": "$ds-border",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        11
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "fIACi",
+                          "name": "Target Date Icon",
+                          "width": 15,
+                          "height": 15,
+                          "icon": "calendar",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "UW7vY",
+                          "name": "Target Date Value",
+                          "fill": "$ds-text",
+                          "content": "2026-12-01",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "r5A1K",
+              "name": "Modal Footer",
+              "width": "fill_container",
+              "gap": 10,
+              "justifyContent": "end",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "p0iR6",
+                  "type": "ref",
+                  "ref": "Poa4g",
+                  "name": "Button Cancel",
+                  "descendants": {
+                    "FkMhJ": {
+                      "icon": "x"
+                    },
+                    "Tn0Xr": {
+                      "content": "Cancel"
+                    }
+                  }
+                },
+                {
+                  "id": "aTzm2",
+                  "type": "ref",
+                  "ref": "M1Im2",
+                  "name": "Button Save",
+                  "descendants": {
+                    "ZNFT2": {
+                      "icon": "check"
+                    },
+                    "oLhjB": {
+                      "content": "Save changes"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "DWojQ",
+      "x": 13434,
+      "y": 7620,
+      "name": "Element / Change Ownership Modal",
+      "clip": true,
+      "width": 700,
+      "height": 440,
+      "fill": "#17171714",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "gcICM",
+          "x": 100,
+          "y": 44,
+          "name": "Change Ownership Dialog",
+          "width": 500,
+          "fill": "$ds-surface",
+          "cornerRadius": 16,
+          "stroke": "$ds-border",
+          "strokeWidth": 1,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#17171718",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 28
+          },
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Qnc33",
+              "name": "Modal Header",
+              "width": "fill_container",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Al4Rb",
+                  "name": "Modal Heading Texts",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "R1yA50",
+                      "name": "Modal Title",
+                      "fill": "$ds-text",
+                      "content": "Change project owner",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "fYT09",
+                      "name": "Modal Subcopy",
+                      "fill": "$ds-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Transfer ownership to a current workspace member. Their workspace role stays the same.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YVXNw",
+                  "name": "Close Button",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "$ds-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "Ry21j",
+                      "name": "Close Icon",
+                      "width": 14,
+                      "height": 14,
+                      "icon": "x",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "iutNq",
+              "name": "Current Owner Label",
+              "fill": "$ds-text-muted",
+              "content": "CURRENT OWNER",
+              "fontFamily": "$ds-font-mono",
+              "fontSize": 9,
+              "fontWeight": "600",
+              "letterSpacing": 1
+            },
+            {
+              "type": "frame",
+              "id": "E9bgS",
+              "name": "Current Owner Row",
+              "width": "fill_container",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "y0VV5",
+                  "name": "Current Owner Avatar",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "$ds-brand",
+                  "cornerRadius": 999,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Z0Py3",
+                      "name": "Current Owner Initials",
+                      "fill": "#FFFFFF",
+                      "content": "YM",
+                      "fontFamily": "$ds-font-mono",
+                      "fontSize": 10,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "F2UyM",
+                  "name": "Current Owner Copy",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uH0Ak",
+                      "name": "Current Owner Name",
+                      "fill": "$ds-text",
+                      "content": "Yonatane Mekete",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "T19Sk",
+                      "name": "Current Owner Role",
+                      "fill": "$ds-text-muted",
+                      "content": "Yonatane@harbor.test",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Tl0h7",
+              "name": "Modal Divider",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "$ds-border"
+            },
+            {
+              "type": "text",
+              "id": "n6Tz5j",
+              "name": "New Owner Label",
+              "fill": "$ds-text-muted",
+              "content": "SELECT A NEW OWNER",
+              "fontFamily": "$ds-font-mono",
+              "fontSize": 9,
+              "fontWeight": "600",
+              "letterSpacing": 1
+            },
+            {
+              "type": "frame",
+              "id": "t3jQZT",
+              "name": "New Owner Select Field",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "DpOQl",
+                  "name": "New Owner Select Label",
+                  "fill": "$ds-text",
+                  "content": "New owner",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "VzvU5",
+                  "name": "New Owner Select Box",
+                  "width": "fill_container",
+                  "height": 36,
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-md",
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    11
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "vK1yd",
+                      "name": "Select Left",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "wZKlo",
+                          "name": "Select Avatar",
+                          "width": 24,
+                          "height": 24,
+                          "fill": "#2563EB",
+                          "cornerRadius": 999,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "d4ShtL",
+                              "name": "Select Avatar Initials",
+                              "fill": "#FFFFFF",
+                              "content": "AR",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 8,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "MCg16",
+                          "name": "Select Value",
+                          "fill": "$ds-text",
+                          "content": "Alex Rivera",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YZLPC",
+                      "name": "Select Spacer",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "icon",
+                      "id": "o8bp9",
+                      "name": "Select Chevron",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "chevron-down",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "w82FIN",
+              "name": "Modal Footer",
+              "width": "fill_container",
+              "gap": 10,
+              "justifyContent": "end",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "b9hJzq",
+                  "type": "ref",
+                  "ref": "Poa4g",
+                  "name": "Button Cancel",
+                  "descendants": {
+                    "FkMhJ": {
+                      "icon": "x"
+                    },
+                    "Tn0Xr": {
+                      "content": "Cancel"
+                    }
+                  }
+                },
+                {
+                  "id": "E7Ndoh",
+                  "type": "ref",
+                  "ref": "M1Im2",
+                  "name": "Button Transfer",
+                  "descendants": {
+                    "ZNFT2": {
+                      "icon": "user-check"
+                    },
+                    "oLhjB": {
+                      "content": "Change owner"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "tcXhg",
+      "x": 14234,
+      "y": 7620,
+      "name": "Element / Archive Project Confirm",
+      "clip": true,
+      "width": 700,
+      "height": 360,
+      "fill": "#17171714",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ZMIgP",
+          "x": 100,
+          "y": 48,
+          "name": "Archive Dialog",
+          "width": 500,
+          "fill": "$ds-surface",
+          "cornerRadius": 16,
+          "stroke": "$ds-border",
+          "strokeWidth": 1,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#17171718",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 28
+          },
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "tjCRF",
+              "name": "Modal Header",
+              "width": "fill_container",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "x5Wk8",
+                  "name": "Modal Heading Texts",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "mlp8n",
+                      "name": "Modal Title",
+                      "fill": "$ds-text",
+                      "content": "Archive project?",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "iEw43",
+                      "name": "Modal Subcopy",
+                      "fill": "$ds-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Archiving hides it from boards and lists. You can restore it anytime; its status is kept.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "OEiBT",
+                  "name": "Close Button",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "$ds-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "AaKmG",
+                      "name": "Close Icon",
+                      "width": 14,
+                      "height": 14,
+                      "icon": "x",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Fqln3",
+              "name": "Modal Footer",
+              "width": "fill_container",
+              "gap": 10,
+              "justifyContent": "end",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "NsWqb",
+                  "type": "ref",
+                  "ref": "Poa4g",
+                  "name": "Button Cancel",
+                  "descendants": {
+                    "FkMhJ": {
+                      "icon": "x"
+                    },
+                    "Tn0Xr": {
+                      "content": "Cancel"
+                    }
+                  }
+                },
+                {
+                  "id": "kajKZ",
+                  "type": "ref",
+                  "ref": "I2ztB",
+                  "name": "Button Archive",
+                  "descendants": {
+                    "qYyql": {
+                      "icon": "archive"
+                    },
+                    "osBYd": {
+                      "content": "Archive"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "IccaE",
+      "x": 15034,
+      "y": 7620,
+      "name": "Element / Delete Project Confirm",
+      "clip": true,
+      "width": 700,
+      "height": 440,
+      "fill": "#17171714",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "O8a6L",
+          "x": 100,
+          "y": 44,
+          "name": "Delete Dialog",
+          "width": 500,
+          "fill": "$ds-surface",
+          "cornerRadius": 16,
+          "stroke": "$ds-border",
+          "strokeWidth": 1,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#17171718",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 28
+          },
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "HrJ80",
+              "name": "Modal Header",
+              "width": "fill_container",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "tj3FF",
+                  "name": "Modal Heading Texts",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BVQaJ",
+                      "name": "Modal Title",
+                      "fill": "$ds-text",
+                      "content": "Delete project?",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 17,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "yIwad",
+                      "name": "Modal Subcopy",
+                      "fill": "$ds-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "This permanently deletes the project. Its issues stay in the workspace but are unassigned. This can't be undone.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "N6A2L",
+                  "name": "Close Button",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "$ds-bg",
+                  "cornerRadius": 8,
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "o6jPgl",
+                      "name": "Close Icon",
+                      "width": 14,
+                      "height": 14,
+                      "icon": "x",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eykd1",
+              "name": "Delete Warning",
+              "width": "fill_container",
+              "fill": "$ds-danger-soft",
+              "cornerRadius": "$ds-radius-md",
+              "stroke": "$ds-danger",
+              "strokeWidth": 1,
+              "gap": 10,
+              "padding": [
+                12,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "ZtXlu",
+                  "name": "Warning Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "triangle-alert",
+                  "library": "lucide",
+                  "fill": "$ds-danger"
+                },
+                {
+                  "type": "text",
+                  "id": "y7u7Uc",
+                  "name": "Warning Copy",
+                  "fill": "$ds-danger",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "12 issues will be unassigned but not deleted.",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "mWR9e",
+              "name": "Confirm Label",
+              "fill": "$ds-text",
+              "content": "Type the project name to confirm",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 11,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "SbYJX",
+              "name": "Confirm Input",
+              "width": "fill_container",
+              "height": 36,
+              "fill": "$ds-surface",
+              "cornerRadius": "$ds-radius-md",
+              "stroke": "$ds-border",
+              "strokeWidth": 1,
+              "gap": 8,
+              "padding": [
+                0,
+                11
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "rVW25",
+                  "name": "Confirm Icon",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "text-cursor-input",
+                  "library": "lucide",
+                  "fill": "$ds-text-muted"
+                },
+                {
+                  "type": "text",
+                  "id": "Km8k4",
+                  "name": "Confirm Placeholder",
+                  "fill": "$ds-text-muted",
+                  "content": "Ship Payroll",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "kNAev",
+              "name": "Modal Footer",
+              "width": "fill_container",
+              "gap": 10,
+              "justifyContent": "end",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "k0vb9",
+                  "type": "ref",
+                  "ref": "Poa4g",
+                  "name": "Button Cancel",
+                  "descendants": {
+                    "FkMhJ": {
+                      "icon": "x"
+                    },
+                    "Tn0Xr": {
+                      "content": "Cancel"
+                    }
+                  }
+                },
+                {
+                  "id": "KsfKR",
+                  "type": "ref",
+                  "ref": "I2ztB",
+                  "name": "Button Delete",
+                  "descendants": {
+                    "qYyql": {
+                      "icon": "trash-2"
+                    },
+                    "osBYd": {
+                      "content": "Delete project"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
