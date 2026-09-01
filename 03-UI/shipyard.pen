@@ -23519,6 +23519,7 @@
                               "type": "frame",
                               "id": "GvqOb",
                               "name": "View / Active / List",
+                              "width": 28,
                               "height": 28,
                               "fill": "$ds-surface",
                               "cornerRadius": 6,
@@ -23532,11 +23533,6 @@
                                 },
                                 "blur": 3
                               },
-                              "gap": 6,
-                              "padding": [
-                                0,
-                                12
-                              ],
                               "justifyContent": "center",
                               "alignItems": "center",
                               "children": [
@@ -23549,16 +23545,6 @@
                                   "icon": "list",
                                   "library": "lucide",
                                   "fill": "$ds-text"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "D6SZ65",
-                                  "name": "List View Label",
-                                  "fill": "$ds-text",
-                                  "content": "List",
-                                  "fontFamily": "$ds-font-ui",
-                                  "fontSize": 11,
-                                  "fontWeight": "600"
                                 }
                               ]
                             },
@@ -23566,14 +23552,10 @@
                               "type": "frame",
                               "id": "CIREB",
                               "name": "View / Default / Kanban",
+                              "width": 28,
                               "height": 28,
                               "fill": "#00000000",
                               "cornerRadius": 6,
-                              "gap": 6,
-                              "padding": [
-                                0,
-                                12
-                              ],
                               "justifyContent": "center",
                               "alignItems": "center",
                               "children": [
@@ -23586,16 +23568,6 @@
                                   "icon": "columns-3",
                                   "library": "lucide",
                                   "fill": "$ds-text-muted"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "doP47",
-                                  "name": "Kanban View Label",
-                                  "fill": "$ds-text-muted",
-                                  "content": "Kanban",
-                                  "fontFamily": "$ds-font-ui",
-                                  "fontSize": 11,
-                                  "fontWeight": "500"
                                 }
                               ]
                             }
@@ -26689,6 +26661,7 @@
                               "type": "frame",
                               "id": "cIgDc",
                               "name": "View / Active / List",
+                              "width": 28,
                               "height": 28,
                               "fill": "#00000000",
                               "cornerRadius": 6,
@@ -26703,11 +26676,6 @@
                                 },
                                 "blur": 3
                               },
-                              "gap": 6,
-                              "padding": [
-                                0,
-                                12
-                              ],
                               "justifyContent": "center",
                               "alignItems": "center",
                               "children": [
@@ -26720,16 +26688,6 @@
                                   "icon": "list",
                                   "library": "lucide",
                                   "fill": "$ds-text-muted"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "wV622",
-                                  "name": "List View Label",
-                                  "fill": "$ds-text-muted",
-                                  "content": "List",
-                                  "fontFamily": "$ds-font-ui",
-                                  "fontSize": 11,
-                                  "fontWeight": "500"
                                 }
                               ]
                             },
@@ -26737,6 +26695,7 @@
                               "type": "frame",
                               "id": "SoJzh",
                               "name": "View / Default / Kanban",
+                              "width": 28,
                               "height": 28,
                               "fill": "$ds-surface",
                               "cornerRadius": 6,
@@ -26750,11 +26709,6 @@
                                 },
                                 "blur": 3
                               },
-                              "gap": 6,
-                              "padding": [
-                                0,
-                                12
-                              ],
                               "justifyContent": "center",
                               "alignItems": "center",
                               "children": [
@@ -26767,16 +26721,6 @@
                                   "icon": "columns-3",
                                   "library": "lucide",
                                   "fill": "$ds-text"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "AWE8n",
-                                  "name": "Kanban View Label",
-                                  "fill": "$ds-text",
-                                  "content": "Kanban",
-                                  "fontFamily": "$ds-font-ui",
-                                  "fontSize": 11,
-                                  "fontWeight": "600"
                                 }
                               ]
                             }
@@ -27695,8 +27639,8 @@
     {
       "type": "frame",
       "id": "LRZOW",
-      "x": 11577,
-      "y": 7341,
+      "x": 10637,
+      "y": 7713,
       "name": "Kanban Column",
       "reusable": true,
       "width": 300,
@@ -27883,8 +27827,8 @@
     {
       "type": "frame",
       "id": "Y1kmYY",
-      "x": 11905,
-      "y": 7341,
+      "x": 10965,
+      "y": 7713,
       "name": "Kanban Column Variants",
       "gap": 24,
       "children": [
@@ -28052,6 +27996,2645 @@
               "content": "Jan 22, 2026"
             }
           }
+        }
+      ]
+    },
+    {
+      "type": "rectangle",
+      "id": "Ib4yM",
+      "x": 8897,
+      "y": 7569,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "clipboard-1",
+        "mode": "fill"
+      },
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "type": "frame",
+      "id": "ukveo",
+      "x": 13797,
+      "y": 6321,
+      "name": "Screen / Projects - Detail (Open)",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "$ds-bg",
+      "cornerRadius": 16,
+      "stroke": "$ds-border-strong",
+      "strokeWidth": 1.5,
+      "layout": "none",
+      "children": [
+        {
+          "id": "knyz4",
+          "type": "ref",
+          "ref": "ePp64",
+          "name": "Projects App Shell",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "descendants": {
+            "sEAKC/zzLMZ": {
+              "fill": "$ds-sidebar",
+              "stroke": "#00000000",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "enabled": false,
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              }
+            },
+            "sEAKC/T8mgxW": {
+              "fill": "$ds-text"
+            },
+            "sEAKC/RNGZM": {
+              "content": "Dashboard",
+              "fill": "$ds-text",
+              "fontWeight": "500"
+            },
+            "sEAKC/iO4LY": {
+              "fill": "$ds-surface",
+              "stroke": "$ds-border",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              }
+            },
+            "sEAKC/eQYhL": {
+              "fill": "$ds-text"
+            },
+            "sEAKC/O0jBo": {
+              "fill": "$ds-text",
+              "fontWeight": "600"
+            },
+            "ZND29/F9fxa": {
+              "icon": "folder"
+            },
+            "ZND29/kLH9d": {
+              "content": "Projects"
+            },
+            "RJq6z": {
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "H9Wm8D",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Projects Page Column",
+                  "width": 1176,
+                  "height": 824,
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wGDRz",
+                      "name": "Projects Header Row",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "IP7rr",
+                          "name": "Heading Texts",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "W8d3To",
+                              "name": "Projects Page Title",
+                              "fill": "$ds-text",
+                              "content": "Projects",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 24,
+                              "fontWeight": "700",
+                              "letterSpacing": -0.5
+                            },
+                            {
+                              "type": "text",
+                              "id": "z4KsVl",
+                              "name": "Projects Page Subtitle",
+                              "fill": "$ds-text-muted",
+                              "content": "Track initiatives across your workspace.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "T3Y64",
+                          "name": "Header Actions",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "e5DNo",
+                              "type": "ref",
+                              "ref": "M1Im2",
+                              "name": "New Project Button",
+                              "descendants": {
+                                "oLhjB": {
+                                  "content": "New project",
+                                  "name": "New Project Button Label"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "S9mPVn",
+                      "name": "Projects Toolbar Row",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "b5VE1",
+                          "name": "Projects View Switch",
+                          "height": 34,
+                          "fill": "$ds-surface-subtle",
+                          "cornerRadius": "$ds-radius-md",
+                          "stroke": "$ds-border",
+                          "strokeWidth": 1,
+                          "gap": 2,
+                          "padding": 3,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "NKfy2",
+                              "name": "View / Active / List",
+                              "width": 28,
+                              "height": 28,
+                              "fill": "#00000000",
+                              "cornerRadius": 6,
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "enabled": false,
+                                "color": "#00000012",
+                                "offset": {
+                                  "x": 0,
+                                  "y": 1
+                                },
+                                "blur": 3
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "NU38D",
+                                  "name": "List View Icon",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "list",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "G2Fm2A",
+                              "name": "View / Default / Kanban",
+                              "width": 28,
+                              "height": 28,
+                              "fill": "$ds-surface",
+                              "cornerRadius": 6,
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "color": "#00000012",
+                                "offset": {
+                                  "x": 0,
+                                  "y": 1
+                                },
+                                "blur": 3
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "HIobN",
+                                  "name": "Kanban View Icon",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "columns-3",
+                                  "library": "lucide",
+                                  "fill": "$ds-text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WogPy",
+                          "name": "Projects Toolbar Controls",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "d6iSw",
+                              "name": "Status Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "JS8U9",
+                                  "name": "Status Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "OFj9Y",
+                                      "name": "Status Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "circle-dot",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "osW4T",
+                                      "name": "Status Value",
+                                      "fill": "$ds-text",
+                                      "content": "All statuses",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "ZCifq",
+                                  "name": "Status Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "chevron-down",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "hRa4D",
+                              "name": "Owner Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "xkIBA",
+                                  "name": "Owner Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "dNcO4",
+                                      "name": "Owner Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "user",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "UlBx4",
+                                      "name": "Owner Value",
+                                      "fill": "$ds-text",
+                                      "content": "All owners",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "TcuIZ",
+                                  "name": "Owner Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "chevron-down",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "LkC9x",
+                              "name": "Start Date Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "ECTv2",
+                                  "name": "Start Date Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "zlm6h",
+                                      "name": "Start Date Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "calendar",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "dTLuU",
+                                      "name": "Start Date Value",
+                                      "fill": "$ds-text",
+                                      "content": "Any start",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "pr46m",
+                                  "name": "Start Date Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "calendar-days",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "SSeAU",
+                              "name": "Target Date Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "MLwIH",
+                                  "name": "Target Date Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "N4Ah7C",
+                                      "name": "Target Date Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "flag",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "QK5l1",
+                                      "name": "Target Date Value",
+                                      "fill": "$ds-text",
+                                      "content": "Any target",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "L07AEO",
+                                  "name": "Target Date Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "calendar-days",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "dkDV1",
+                              "name": "Sort Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "AB6mB",
+                                  "name": "Sort Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "O5fuV",
+                                      "name": "Sort Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "arrow-up-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "MNGqA",
+                                      "name": "Sort Value",
+                                      "fill": "$ds-text",
+                                      "content": "Newest",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "MvKeg",
+                                  "name": "Sort Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "chevron-down",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MdIgD",
+                      "name": "Content Row",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "gap": 20,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "DsPR1",
+                          "name": "Kanban Board",
+                          "clip": true,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "gap": 20,
+                          "children": [
+                            {
+                              "id": "zTW6m",
+                              "type": "ref",
+                              "ref": "LRZOW",
+                              "name": "Column / Planned",
+                              "width": "fill_container",
+                              "height": "fill_container",
+                              "descendants": {
+                                "v2T3uB": {
+                                  "fill": "$ds-text-muted"
+                                },
+                                "YVfOJ": {
+                                  "content": "Planned"
+                                },
+                                "l5IB3": {
+                                  "content": "3"
+                                },
+                                "t3fStv": {
+                                  "effect": []
+                                },
+                                "t3fStv/B4vZz": {
+                                  "content": "Customer Onboarding"
+                                },
+                                "t3fStv/u8Ixi9": {
+                                  "content": "Guided setup flow to bring new customers on board with minimal friction."
+                                },
+                                "t3fStv/x4gkt": {
+                                  "content": "CK"
+                                },
+                                "t3fStv/IaMtD": {
+                                  "content": "SP"
+                                },
+                                "t3fStv/hVk9u": {
+                                  "content": "ET"
+                                },
+                                "t3fStv/ZGWRu": {
+                                  "content": "+3"
+                                },
+                                "t3fStv/rKfIj": {
+                                  "content": "Oct 20, 2026"
+                                },
+                                "k8Y8pV/B4vZz": {
+                                  "content": "Search Overhaul"
+                                },
+                                "k8Y8pV/u8Ixi9": {
+                                  "content": "Rebuild search with faster indexing and relevant ranking."
+                                },
+                                "k8Y8pV/x4gkt": {
+                                  "content": "ET"
+                                },
+                                "k8Y8pV/IaMtD": {
+                                  "content": "DW"
+                                },
+                                "k8Y8pV/hVk9u": {
+                                  "content": "RS"
+                                },
+                                "k8Y8pV/ZGWRu": {
+                                  "content": "+1"
+                                },
+                                "k8Y8pV/rKfIj": {
+                                  "content": "Dec 04, 2026"
+                                },
+                                "DsxVt/B4vZz": {
+                                  "content": "Data Privacy Audit"
+                                },
+                                "DsxVt/u8Ixi9": {
+                                  "content": "Audit data handling to meet new compliance requirements."
+                                },
+                                "DsxVt/x4gkt": {
+                                  "content": "DW"
+                                },
+                                "DsxVt/IaMtD": {
+                                  "content": "CK"
+                                },
+                                "DsxVt/hVk9u": {
+                                  "content": "SP"
+                                },
+                                "DsxVt/ZGWRu": {
+                                  "content": "+2"
+                                },
+                                "DsxVt/rKfIj": {
+                                  "content": "Nov 14, 2026"
+                                }
+                              }
+                            },
+                            {
+                              "id": "dVViA",
+                              "type": "ref",
+                              "ref": "LRZOW",
+                              "name": "Column / Active",
+                              "width": "fill_container",
+                              "height": "fill_container",
+                              "descendants": {
+                                "l5IB3": {
+                                  "content": "2"
+                                },
+                                "DsxVt": {
+                                  "enabled": false
+                                }
+                              }
+                            },
+                            {
+                              "id": "Jo96K",
+                              "type": "ref",
+                              "ref": "LRZOW",
+                              "name": "Column / Completed",
+                              "width": "fill_container",
+                              "height": "fill_container",
+                              "descendants": {
+                                "v2T3uB": {
+                                  "fill": "$ds-success"
+                                },
+                                "YVfOJ": {
+                                  "content": "Completed"
+                                },
+                                "l5IB3": {
+                                  "content": "5"
+                                },
+                                "FLLHS": {
+                                  "type": "frame",
+                                  "id": "i9wWN1",
+                                  "name": "Column Body",
+                                  "clip": true,
+                                  "width": "fill_container",
+                                  "height": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 10,
+                                  "children": [
+                                    {
+                                      "id": "yrjGf",
+                                      "type": "ref",
+                                      "ref": "lDauH",
+                                      "name": "Card / Design System V2",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "B4vZz": {
+                                          "content": "Design System V2"
+                                        },
+                                        "u8Ixi9": {
+                                          "content": "Unify tokens, components and docs across all product surfaces."
+                                        },
+                                        "x4gkt": {
+                                          "content": "SP"
+                                        },
+                                        "IaMtD": {
+                                          "content": "PN"
+                                        },
+                                        "hVk9u": {
+                                          "content": "MC"
+                                        },
+                                        "ZGWRu": {
+                                          "content": "+1"
+                                        },
+                                        "rKfIj": {
+                                          "content": "Feb 28, 2026"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "PrRh0",
+                                      "type": "ref",
+                                      "ref": "lDauH",
+                                      "name": "Card / Billing Overhaul",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "B4vZz": {
+                                          "content": "Billing Overhaul"
+                                        },
+                                        "u8Ixi9": {
+                                          "content": "Modernize invoicing and payment reconciliation flows."
+                                        },
+                                        "x4gkt": {
+                                          "content": "PN"
+                                        },
+                                        "IaMtD": {
+                                          "content": "MC"
+                                        },
+                                        "hVk9u": {
+                                          "content": "YM"
+                                        },
+                                        "ZGWRu": {
+                                          "content": "+2"
+                                        },
+                                        "rKfIj": {
+                                          "content": "Jan 10, 2026"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "WeFHg",
+                                      "type": "ref",
+                                      "ref": "lDauH",
+                                      "name": "Card / Payments API",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "B4vZz": {
+                                          "content": "Payments API"
+                                        },
+                                        "u8Ixi9": {
+                                          "content": "Stable payment gateway integration with retry handling."
+                                        },
+                                        "x4gkt": {
+                                          "content": "MC"
+                                        },
+                                        "IaMtD": {
+                                          "content": "YM"
+                                        },
+                                        "hVk9u": {
+                                          "content": "AR"
+                                        },
+                                        "ZGWRu": {
+                                          "content": "+4"
+                                        },
+                                        "rKfIj": {
+                                          "content": "Jan 22, 2026"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "USy6K",
+                                      "type": "ref",
+                                      "ref": "lDauH",
+                                      "name": "Card / Customer Portal",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "B4vZz": {
+                                          "content": "Customer Portal"
+                                        },
+                                        "u8Ixi9": {
+                                          "content": "Self-service portal for account and billing management."
+                                        },
+                                        "x4gkt": {
+                                          "content": "SP"
+                                        },
+                                        "IaMtD": {
+                                          "content": "ET"
+                                        },
+                                        "hVk9u": {
+                                          "content": "CK"
+                                        },
+                                        "ZGWRu": {
+                                          "content": "+2"
+                                        },
+                                        "rKfIj": {
+                                          "content": "Mar 05, 2026"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "B9IVeO",
+                                      "type": "ref",
+                                      "ref": "lDauH",
+                                      "name": "Card / Docs Platform",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "B4vZz": {
+                                          "content": "Docs Platform"
+                                        },
+                                        "u8Ixi9": {
+                                          "content": "Searchable docs site covering guides, API and references."
+                                        },
+                                        "x4gkt": {
+                                          "content": "AR"
+                                        },
+                                        "IaMtD": {
+                                          "content": "RS"
+                                        },
+                                        "hVk9u": {
+                                          "content": "DW"
+                                        },
+                                        "ZGWRu": {
+                                          "content": "+3"
+                                        },
+                                        "rKfIj": {
+                                          "content": "Jan 30, 2026"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Ifql7",
+                          "name": "Project Details Panel",
+                          "width": 360,
+                          "height": 651,
+                          "fill": "$ds-surface",
+                          "cornerRadius": "$ds-radius-lg",
+                          "stroke": "$ds-border",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 16,
+                          "padding": 20,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "uuED8",
+                              "name": "Detail Header",
+                              "width": "fill_container",
+                              "gap": 10,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "dhYrq",
+                                  "name": "Detail Title Cluster",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 4,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "oy58S",
+                                      "name": "Detail Title",
+                                      "fill": "$ds-text",
+                                      "content": "Ship Payroll",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 18,
+                                      "fontWeight": "700",
+                                      "letterSpacing": -0.4
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "l7vAT8",
+                                      "name": "Detail Sub",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Payroll project",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "XNLKl",
+                                  "name": "Detail Close",
+                                  "width": 28,
+                                  "height": 28,
+                                  "cornerRadius": "$ds-radius-md",
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "rwvqZ",
+                                      "name": "Detail Close Icon",
+                                      "width": 16,
+                                      "height": 16,
+                                      "icon": "x",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Y7203V",
+                              "name": "Detail Status Row",
+                              "gap": 8,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "xLyhr",
+                                  "name": "Status Pill",
+                                  "height": 22,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": 999,
+                                  "gap": 6,
+                                  "padding": [
+                                    0,
+                                    10
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "ellipse",
+                                      "id": "IwtOR",
+                                      "name": "Status Dot",
+                                      "fill": "$ds-brand",
+                                      "width": 7,
+                                      "height": 7
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "KZTa1",
+                                      "name": "Status Label",
+                                      "fill": "$ds-brand",
+                                      "content": "Active",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "BXTks",
+                              "name": "Detail Owner",
+                              "width": "fill_container",
+                              "gap": 10,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "J5tWO",
+                                  "name": "Detail Owner Avatar",
+                                  "width": 32,
+                                  "height": 32,
+                                  "fill": "$ds-brand",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "BggN1",
+                                      "name": "Detail Owner Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "YM",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "y8fsEr",
+                                  "name": "Detail Owner Copy",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 2,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "Y8WzI",
+                                      "name": "Detail Owner Name",
+                                      "fill": "$ds-text",
+                                      "content": "Yonatane Mekete",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 13,
+                                      "fontWeight": "600"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "iIcCw",
+                                      "name": "Detail Owner Role",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Project owner",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "NLBWr",
+                              "name": "Detail Description",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Deliver a fully featured payroll system ahead of the tax season deadline.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Mq5pi",
+                              "name": "Detail Divider",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Qv8Yf",
+                              "name": "Section Label Details",
+                              "fill": "$ds-text-muted",
+                              "content": "DETAILS",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 9,
+                              "fontWeight": "600",
+                              "letterSpacing": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "VLrTp",
+                              "name": "Detail Row",
+                              "width": "fill_container",
+                              "gap": 10,
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "qZmWT",
+                                  "name": "Detail Label",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Status",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "fpxss",
+                                  "name": "Detail Value",
+                                  "fill": "$ds-text",
+                                  "content": "Active",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "oNqBS",
+                              "name": "Detail Row",
+                              "width": "fill_container",
+                              "gap": 10,
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "MaElH",
+                                  "name": "Detail Label",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Start date",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "FdY2d",
+                                  "name": "Detail Value",
+                                  "fill": "$ds-text",
+                                  "content": "Jan 12, 2026",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "mrIAz",
+                              "name": "Detail Row",
+                              "width": "fill_container",
+                              "gap": 10,
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "d7A69B",
+                                  "name": "Detail Label",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Target date",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "me14L",
+                                  "name": "Detail Value",
+                                  "fill": "$ds-text",
+                                  "content": "Dec 01, 2026",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "sjqM1",
+                              "name": "Detail Divider 2",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "text",
+                              "id": "lTUns",
+                              "name": "Section Label Progress",
+                              "fill": "$ds-text-muted",
+                              "content": "PROGRESS",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 9,
+                              "fontWeight": "600",
+                              "letterSpacing": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "xQStd",
+                              "name": "Progress Row",
+                              "width": "fill_container",
+                              "gap": 10,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "eAuit",
+                                  "name": "Progress Track",
+                                  "width": "fill_container",
+                                  "height": 6,
+                                  "fill": "$ds-border",
+                                  "cornerRadius": 999,
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "X1lW8",
+                                      "x": 0,
+                                      "y": 0,
+                                      "name": "Progress Fill",
+                                      "width": 144,
+                                      "height": 6,
+                                      "fill": "$ds-brand",
+                                      "cornerRadius": 999
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Byf9l",
+                                  "name": "Progress Value",
+                                  "fill": "$ds-text",
+                                  "content": "45%",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 11,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "kQSA1",
+                              "name": "Detail Spacer",
+                              "width": "fill_container",
+                              "height": "fill_container"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "ZJFMW",
+                              "name": "Detail Divider 3",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "wOMgV",
+                              "name": "Detail Actions",
+                              "width": "fill_container",
+                              "gap": 8,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "id": "x21Mhj",
+                                  "type": "ref",
+                                  "ref": "M1Im2",
+                                  "name": "Edit Button",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "ZNFT2": {
+                                      "icon": "pencil",
+                                      "name": "Edit Icon"
+                                    },
+                                    "oLhjB": {
+                                      "content": "Edit"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "y2oiRj",
+                                  "type": "ref",
+                                  "ref": "c1CmN",
+                                  "name": "Transfer Button",
+                                  "descendants": {
+                                    "Y8JHAG": {
+                                      "icon": "user-round-plus",
+                                      "name": "Transfer Icon"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "H8slzC",
+                                  "type": "ref",
+                                  "ref": "c1CmN",
+                                  "name": "Archive Button",
+                                  "descendants": {
+                                    "Y8JHAG": {
+                                      "icon": "archive",
+                                      "name": "Archive Icon"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "K6cbtP",
+                                  "type": "ref",
+                                  "ref": "c1CmN",
+                                  "name": "Delete Button",
+                                  "descendants": {
+                                    "Y8JHAG": {
+                                      "icon": "trash-2",
+                                      "name": "Delete Icon",
+                                      "fill": "$ds-danger"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "k3jLYd",
+      "x": 15377,
+      "y": 6321,
+      "name": "Screen / Projects - Detail (Sidebar)",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "$ds-bg",
+      "cornerRadius": 16,
+      "stroke": "$ds-border-strong",
+      "strokeWidth": 1.5,
+      "layout": "none",
+      "children": [
+        {
+          "id": "X3YlI",
+          "type": "ref",
+          "ref": "ePp64",
+          "name": "Projects App Shell",
+          "x": 0,
+          "y": 0,
+          "width": 1092,
+          "height": 900,
+          "descendants": {
+            "sEAKC/zzLMZ": {
+              "fill": "$ds-sidebar",
+              "stroke": "#00000000",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "enabled": false,
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              }
+            },
+            "sEAKC/T8mgxW": {
+              "fill": "$ds-text"
+            },
+            "sEAKC/RNGZM": {
+              "content": "Dashboard",
+              "fill": "$ds-text",
+              "fontWeight": "500"
+            },
+            "sEAKC/iO4LY": {
+              "fill": "$ds-surface",
+              "stroke": "$ds-border",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              }
+            },
+            "sEAKC/eQYhL": {
+              "fill": "$ds-text"
+            },
+            "sEAKC/O0jBo": {
+              "fill": "$ds-text",
+              "fontWeight": "600"
+            },
+            "L3b9XK": {
+              "width": 840
+            },
+            "ZND29": {
+              "width": 840,
+              "padding": [
+                0,
+                0,
+                0,
+                12
+              ]
+            },
+            "ZND29/F9fxa": {
+              "icon": "folder"
+            },
+            "ZND29/kLH9d": {
+              "content": "Projects"
+            },
+            "RJq6z": {
+              "width": 840,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BEDPQ",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Projects Page Column",
+                  "width": 840,
+                  "height": 824,
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "irPj1",
+                      "name": "Projects Header Row",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Idn7Q",
+                          "name": "Heading Texts",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ysNXv",
+                              "name": "Projects Page Title",
+                              "fill": "$ds-text",
+                              "content": "Projects",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 24,
+                              "fontWeight": "700",
+                              "letterSpacing": -0.5
+                            },
+                            {
+                              "type": "text",
+                              "id": "hYx1t",
+                              "name": "Projects Page Subtitle",
+                              "fill": "$ds-text-muted",
+                              "content": "Track initiatives across your workspace.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "wYdPo",
+                          "name": "Header Actions",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "vegP1",
+                              "type": "ref",
+                              "ref": "M1Im2",
+                              "name": "New Project Button",
+                              "descendants": {
+                                "oLhjB": {
+                                  "content": "New project",
+                                  "name": "New Project Button Label"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sQZS6",
+                      "name": "Projects Toolbar Row",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "K5xTPb",
+                          "name": "Projects View Switch",
+                          "height": 34,
+                          "fill": "$ds-surface-subtle",
+                          "cornerRadius": "$ds-radius-md",
+                          "stroke": "$ds-border",
+                          "strokeWidth": 1,
+                          "gap": 2,
+                          "padding": 3,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Ioyzr",
+                              "name": "View / Active / List",
+                              "width": 28,
+                              "height": 28,
+                              "fill": "#00000000",
+                              "cornerRadius": 6,
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "enabled": false,
+                                "color": "#00000012",
+                                "offset": {
+                                  "x": 0,
+                                  "y": 1
+                                },
+                                "blur": 3
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "X02N8B",
+                                  "name": "List View Icon",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "list",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "ef7oa",
+                              "name": "View / Default / Kanban",
+                              "width": 28,
+                              "height": 28,
+                              "fill": "$ds-surface",
+                              "cornerRadius": 6,
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "color": "#00000012",
+                                "offset": {
+                                  "x": 0,
+                                  "y": 1
+                                },
+                                "blur": 3
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "WiEUn",
+                                  "name": "Kanban View Icon",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "columns-3",
+                                  "library": "lucide",
+                                  "fill": "$ds-text"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "i5myzF",
+                          "name": "Projects Toolbar Controls",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "eqDZq",
+                              "name": "Status Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "KDZlZ",
+                                  "name": "Status Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "T9g45",
+                                      "name": "Status Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "circle-dot",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "mDs64",
+                                      "name": "Status Value",
+                                      "fill": "$ds-text",
+                                      "content": "All statuses",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "dPw0S",
+                                  "name": "Status Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "chevron-down",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "uBOd2",
+                              "name": "Owner Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "g6z1k",
+                                  "name": "Owner Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "ujq90",
+                                      "name": "Owner Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "user",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "yVQHj",
+                                      "name": "Owner Value",
+                                      "fill": "$ds-text",
+                                      "content": "All owners",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "Y5Phi",
+                                  "name": "Owner Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "chevron-down",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Zf80w",
+                              "name": "Start Date Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "embMc",
+                                  "name": "Start Date Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "W46yP",
+                                      "name": "Start Date Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "calendar",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "pi9Sa",
+                                      "name": "Start Date Value",
+                                      "fill": "$ds-text",
+                                      "content": "Any start",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "U0nYt",
+                                  "name": "Start Date Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "calendar-days",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "pMxzH",
+                              "name": "Target Date Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "Yyq9b",
+                                  "name": "Target Date Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "EsPyX",
+                                      "name": "Target Date Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "flag",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "k9w1jg",
+                                      "name": "Target Date Value",
+                                      "fill": "$ds-text",
+                                      "content": "Any target",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "YWWwl",
+                                  "name": "Target Date Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "calendar-days",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "SjRmP",
+                              "name": "Sort Filter",
+                              "height": 34,
+                              "fill": "$ds-surface",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "xxqP8",
+                                  "name": "Sort Label Cluster",
+                                  "gap": 6,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "plqOP",
+                                      "name": "Sort Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "arrow-up-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "D8vkg4",
+                                      "name": "Sort Value",
+                                      "fill": "$ds-text",
+                                      "content": "Newest",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "Bofhi",
+                                  "name": "Sort Chevron",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "chevron-down",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LliDu",
+                      "name": "Kanban Board",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "gap": 20,
+                      "children": [
+                        {
+                          "id": "En6m6",
+                          "type": "ref",
+                          "ref": "LRZOW",
+                          "name": "Column / Planned",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "descendants": {
+                            "v2T3uB": {
+                              "fill": "$ds-text-muted"
+                            },
+                            "YVfOJ": {
+                              "content": "Planned"
+                            },
+                            "l5IB3": {
+                              "content": "3"
+                            },
+                            "t3fStv": {
+                              "effect": []
+                            },
+                            "t3fStv/B4vZz": {
+                              "content": "Customer Onboarding"
+                            },
+                            "t3fStv/u8Ixi9": {
+                              "content": "Guided setup flow to bring new customers on board with minimal friction."
+                            },
+                            "t3fStv/x4gkt": {
+                              "content": "CK"
+                            },
+                            "t3fStv/IaMtD": {
+                              "content": "SP"
+                            },
+                            "t3fStv/hVk9u": {
+                              "content": "ET"
+                            },
+                            "t3fStv/ZGWRu": {
+                              "content": "+3"
+                            },
+                            "t3fStv/rKfIj": {
+                              "content": "Oct 20, 2026"
+                            },
+                            "k8Y8pV/B4vZz": {
+                              "content": "Search Overhaul"
+                            },
+                            "k8Y8pV/u8Ixi9": {
+                              "content": "Rebuild search with faster indexing and relevant ranking."
+                            },
+                            "k8Y8pV/x4gkt": {
+                              "content": "ET"
+                            },
+                            "k8Y8pV/IaMtD": {
+                              "content": "DW"
+                            },
+                            "k8Y8pV/hVk9u": {
+                              "content": "RS"
+                            },
+                            "k8Y8pV/ZGWRu": {
+                              "content": "+1"
+                            },
+                            "k8Y8pV/rKfIj": {
+                              "content": "Dec 04, 2026"
+                            },
+                            "DsxVt/B4vZz": {
+                              "content": "Data Privacy Audit"
+                            },
+                            "DsxVt/u8Ixi9": {
+                              "content": "Audit data handling to meet new compliance requirements."
+                            },
+                            "DsxVt/x4gkt": {
+                              "content": "DW"
+                            },
+                            "DsxVt/IaMtD": {
+                              "content": "CK"
+                            },
+                            "DsxVt/hVk9u": {
+                              "content": "SP"
+                            },
+                            "DsxVt/ZGWRu": {
+                              "content": "+2"
+                            },
+                            "DsxVt/rKfIj": {
+                              "content": "Nov 14, 2026"
+                            }
+                          }
+                        },
+                        {
+                          "id": "SWdRt",
+                          "type": "ref",
+                          "ref": "LRZOW",
+                          "name": "Column / Active",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "descendants": {
+                            "l5IB3": {
+                              "content": "2"
+                            },
+                            "DsxVt": {
+                              "enabled": false
+                            }
+                          }
+                        },
+                        {
+                          "id": "A3MZN",
+                          "type": "ref",
+                          "ref": "LRZOW",
+                          "name": "Column / Completed",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "descendants": {
+                            "v2T3uB": {
+                              "fill": "$ds-success"
+                            },
+                            "YVfOJ": {
+                              "content": "Completed"
+                            },
+                            "l5IB3": {
+                              "content": "5"
+                            },
+                            "FLLHS": {
+                              "type": "frame",
+                              "id": "BpUBq",
+                              "name": "Column Body",
+                              "clip": true,
+                              "width": "fill_container",
+                              "height": "fill_container",
+                              "layout": "vertical",
+                              "gap": 10,
+                              "children": [
+                                {
+                                  "id": "wpLms",
+                                  "type": "ref",
+                                  "ref": "lDauH",
+                                  "name": "Card / Design System V2",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "B4vZz": {
+                                      "content": "Design System V2"
+                                    },
+                                    "u8Ixi9": {
+                                      "content": "Unify tokens, components and docs across all product surfaces."
+                                    },
+                                    "x4gkt": {
+                                      "content": "SP"
+                                    },
+                                    "IaMtD": {
+                                      "content": "PN"
+                                    },
+                                    "hVk9u": {
+                                      "content": "MC"
+                                    },
+                                    "ZGWRu": {
+                                      "content": "+1"
+                                    },
+                                    "rKfIj": {
+                                      "content": "Feb 28, 2026"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "CSd44",
+                                  "type": "ref",
+                                  "ref": "lDauH",
+                                  "name": "Card / Billing Overhaul",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "B4vZz": {
+                                      "content": "Billing Overhaul"
+                                    },
+                                    "u8Ixi9": {
+                                      "content": "Modernize invoicing and payment reconciliation flows."
+                                    },
+                                    "x4gkt": {
+                                      "content": "PN"
+                                    },
+                                    "IaMtD": {
+                                      "content": "MC"
+                                    },
+                                    "hVk9u": {
+                                      "content": "YM"
+                                    },
+                                    "ZGWRu": {
+                                      "content": "+2"
+                                    },
+                                    "rKfIj": {
+                                      "content": "Jan 10, 2026"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "bQkLW",
+                                  "type": "ref",
+                                  "ref": "lDauH",
+                                  "name": "Card / Payments API",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "B4vZz": {
+                                      "content": "Payments API"
+                                    },
+                                    "u8Ixi9": {
+                                      "content": "Stable payment gateway integration with retry handling."
+                                    },
+                                    "x4gkt": {
+                                      "content": "MC"
+                                    },
+                                    "IaMtD": {
+                                      "content": "YM"
+                                    },
+                                    "hVk9u": {
+                                      "content": "AR"
+                                    },
+                                    "ZGWRu": {
+                                      "content": "+4"
+                                    },
+                                    "rKfIj": {
+                                      "content": "Jan 22, 2026"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "G8HMz6",
+                                  "type": "ref",
+                                  "ref": "lDauH",
+                                  "name": "Card / Customer Portal",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "B4vZz": {
+                                      "content": "Customer Portal"
+                                    },
+                                    "u8Ixi9": {
+                                      "content": "Self-service portal for account and billing management."
+                                    },
+                                    "x4gkt": {
+                                      "content": "SP"
+                                    },
+                                    "IaMtD": {
+                                      "content": "ET"
+                                    },
+                                    "hVk9u": {
+                                      "content": "CK"
+                                    },
+                                    "ZGWRu": {
+                                      "content": "+2"
+                                    },
+                                    "rKfIj": {
+                                      "content": "Mar 05, 2026"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "ZL82w",
+                                  "type": "ref",
+                                  "ref": "lDauH",
+                                  "name": "Card / Docs Platform",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "B4vZz": {
+                                      "content": "Docs Platform"
+                                    },
+                                    "u8Ixi9": {
+                                      "content": "Searchable docs site covering guides, API and references."
+                                    },
+                                    "x4gkt": {
+                                      "content": "AR"
+                                    },
+                                    "IaMtD": {
+                                      "content": "RS"
+                                    },
+                                    "hVk9u": {
+                                      "content": "DW"
+                                    },
+                                    "ZGWRu": {
+                                      "content": "+3"
+                                    },
+                                    "rKfIj": {
+                                      "content": "Jan 30, 2026"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "Rslfy",
+          "x": 1104,
+          "y": 12,
+          "name": "Right Detail Sidebar",
+          "width": 324,
+          "height": 876,
+          "fill": "$ds-surface",
+          "cornerRadius": "$ds-radius-lg",
+          "stroke": "$ds-border",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "eEL0M",
+              "name": "Detail Header",
+              "width": "fill_container",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DUpiK",
+                  "name": "Detail Title Cluster",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "S0rFlf",
+                      "name": "Detail Title",
+                      "fill": "$ds-text",
+                      "content": "Ship Payroll",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 18,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "tCYKD",
+                      "name": "Detail Sub",
+                      "fill": "$ds-text-muted",
+                      "content": "Payroll project",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jSnvY",
+                  "name": "Detail Close",
+                  "width": 28,
+                  "height": 28,
+                  "cornerRadius": "$ds-radius-md",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "YMliH",
+                      "name": "Detail Close Icon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "x",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "npYS7",
+              "name": "Detail Status Row",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BK9Ar",
+                  "name": "Status Pill",
+                  "height": 22,
+                  "fill": "$ds-brand-soft",
+                  "cornerRadius": 999,
+                  "gap": 6,
+                  "padding": [
+                    0,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "buEg6",
+                      "name": "Status Dot",
+                      "fill": "$ds-brand",
+                      "width": 7,
+                      "height": 7
+                    },
+                    {
+                      "type": "text",
+                      "id": "joeca",
+                      "name": "Status Label",
+                      "fill": "$ds-brand",
+                      "content": "Active",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Byfsd",
+              "name": "Detail Owner",
+              "width": "fill_container",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "RdPyS",
+                  "name": "Detail Owner Avatar",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "$ds-brand",
+                  "cornerRadius": 999,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "WAv6r",
+                      "name": "Detail Owner Initials",
+                      "fill": "#FFFFFF",
+                      "content": "YM",
+                      "fontFamily": "$ds-font-mono",
+                      "fontSize": 10,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "OTdPC",
+                  "name": "Detail Owner Copy",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "E3Suf",
+                      "name": "Detail Owner Name",
+                      "fill": "$ds-text",
+                      "content": "Yonatane Mekete",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UnN9k",
+                      "name": "Detail Owner Role",
+                      "fill": "$ds-text-muted",
+                      "content": "Project owner",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "Ru8om",
+              "name": "Detail Description",
+              "fill": "$ds-text",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Deliver a fully featured payroll system ahead of the tax season deadline.",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 12.5,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "LUFqw",
+              "name": "Detail Divider",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "$ds-border"
+            },
+            {
+              "type": "text",
+              "id": "L1Xvp",
+              "name": "Section Label Details",
+              "fill": "$ds-text-muted",
+              "content": "DETAILS",
+              "fontFamily": "$ds-font-mono",
+              "fontSize": 9,
+              "fontWeight": "600",
+              "letterSpacing": 1
+            },
+            {
+              "type": "frame",
+              "id": "R0KOQP",
+              "name": "Detail Row",
+              "width": "fill_container",
+              "gap": 10,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vOcDf",
+                  "name": "Detail Label",
+                  "fill": "$ds-text-muted",
+                  "content": "Status",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "VWYEk",
+                  "name": "Detail Value",
+                  "fill": "$ds-text",
+                  "content": "Active",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tgUio",
+              "name": "Detail Row",
+              "width": "fill_container",
+              "gap": 10,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IGJMj",
+                  "name": "Detail Label",
+                  "fill": "$ds-text-muted",
+                  "content": "Start date",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "JDkWp",
+                  "name": "Detail Value",
+                  "fill": "$ds-text",
+                  "content": "Jan 12, 2026",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Fm9iv",
+              "name": "Detail Row",
+              "width": "fill_container",
+              "gap": 10,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "q4Tb5m",
+                  "name": "Detail Label",
+                  "fill": "$ds-text-muted",
+                  "content": "Target date",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "m6QHsK",
+                  "name": "Detail Value",
+                  "fill": "$ds-text",
+                  "content": "Dec 01, 2026",
+                  "fontFamily": "$ds-font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Jos5r",
+              "name": "Detail Divider 2",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "$ds-border"
+            },
+            {
+              "type": "text",
+              "id": "VQmy6",
+              "name": "Section Label Progress",
+              "fill": "$ds-text-muted",
+              "content": "PROGRESS",
+              "fontFamily": "$ds-font-mono",
+              "fontSize": 9,
+              "fontWeight": "600",
+              "letterSpacing": 1
+            },
+            {
+              "type": "frame",
+              "id": "cLHl1",
+              "name": "Progress Row",
+              "width": "fill_container",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DQ79B",
+                  "name": "Progress Track",
+                  "width": "fill_container",
+                  "height": 6,
+                  "fill": "$ds-border",
+                  "cornerRadius": 999,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "qCpWf",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Progress Fill",
+                      "width": 144,
+                      "height": 6,
+                      "fill": "$ds-brand",
+                      "cornerRadius": 999
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "ZE2G6",
+                  "name": "Progress Value",
+                  "fill": "$ds-text",
+                  "content": "45%",
+                  "fontFamily": "$ds-font-mono",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EpDzE",
+              "name": "Detail Spacer",
+              "width": "fill_container",
+              "height": "fill_container"
+            },
+            {
+              "type": "frame",
+              "id": "EoQQ5",
+              "name": "Detail Divider 3",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "$ds-border"
+            },
+            {
+              "type": "frame",
+              "id": "LqnhU",
+              "name": "Detail Actions",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "B0W3n",
+                  "type": "ref",
+                  "ref": "M1Im2",
+                  "name": "Edit Button",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZNFT2": {
+                      "icon": "pencil",
+                      "name": "Edit Icon"
+                    },
+                    "oLhjB": {
+                      "content": "Edit"
+                    }
+                  }
+                },
+                {
+                  "id": "nDB5K",
+                  "type": "ref",
+                  "ref": "c1CmN",
+                  "name": "Transfer Button",
+                  "descendants": {
+                    "Y8JHAG": {
+                      "icon": "user-round-plus",
+                      "name": "Transfer Icon"
+                    }
+                  }
+                },
+                {
+                  "id": "E5BgU",
+                  "type": "ref",
+                  "ref": "c1CmN",
+                  "name": "Archive Button",
+                  "descendants": {
+                    "Y8JHAG": {
+                      "icon": "archive",
+                      "name": "Archive Icon"
+                    }
+                  }
+                },
+                {
+                  "id": "cdcaS",
+                  "type": "ref",
+                  "ref": "c1CmN",
+                  "name": "Delete Button",
+                  "descendants": {
+                    "Y8JHAG": {
+                      "icon": "trash-2",
+                      "name": "Delete Icon",
+                      "fill": "$ds-danger"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
