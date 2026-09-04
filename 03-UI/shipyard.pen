@@ -23504,70 +23504,48 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "Vq8uQ",
-                          "name": "Projects View Switch",
+                          "id": "gTQYU",
+                          "name": "Projects Toolbar Left",
                           "height": 34,
-                          "fill": "$ds-surface-subtle",
-                          "cornerRadius": "$ds-radius-md",
-                          "stroke": "$ds-border",
-                          "strokeWidth": 1,
-                          "gap": 2,
-                          "padding": 3,
+                          "gap": 12,
                           "alignItems": "center",
                           "children": [
                             {
                               "type": "frame",
-                              "id": "GvqOb",
-                              "name": "View / Active / List",
-                              "width": 28,
-                              "height": 28,
+                              "id": "EdwQP",
+                              "name": "Project Search",
+                              "width": 220,
+                              "height": 34,
                               "fill": "$ds-surface",
-                              "cornerRadius": 6,
-                              "effect": {
-                                "type": "shadow",
-                                "shadowType": "outer",
-                                "color": "#00000012",
-                                "offset": {
-                                  "x": 0,
-                                  "y": 1
-                                },
-                                "blur": 3
-                              },
-                              "justifyContent": "center",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                11
+                              ],
                               "alignItems": "center",
                               "children": [
                                 {
                                   "type": "icon",
-                                  "id": "m3XLQ9",
-                                  "name": "List View Icon",
-                                  "width": 14,
-                                  "height": 14,
-                                  "icon": "list",
-                                  "library": "lucide",
-                                  "fill": "$ds-text"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
-                              "id": "CIREB",
-                              "name": "View / Default / Kanban",
-                              "width": 28,
-                              "height": 28,
-                              "fill": "#00000000",
-                              "cornerRadius": 6,
-                              "justifyContent": "center",
-                              "alignItems": "center",
-                              "children": [
-                                {
-                                  "type": "icon",
-                                  "id": "oSEtA",
-                                  "name": "Kanban View Icon",
-                                  "width": 14,
-                                  "height": 14,
-                                  "icon": "columns-3",
+                                  "id": "t3zxb",
+                                  "name": "Project Search Icon",
+                                  "width": 15,
+                                  "height": 15,
+                                  "icon": "search",
                                   "library": "lucide",
                                   "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "P1dYfb",
+                                  "name": "Project Search Value",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Find projects…",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
                                 }
                               ]
                             }
@@ -23575,298 +23553,379 @@
                         },
                         {
                           "type": "frame",
-                          "id": "VpzLC",
-                          "name": "Projects Toolbar Controls",
-                          "gap": 8,
+                          "id": "iPm7q",
+                          "name": "Projects Toolbar Right",
+                          "height": 34,
+                          "gap": 12,
                           "alignItems": "center",
                           "children": [
                             {
                               "type": "frame",
-                              "id": "we7CV",
-                              "name": "Status Filter",
+                              "id": "Vq8uQ",
+                              "name": "Projects View Switch",
                               "height": 34,
-                              "fill": "$ds-surface",
+                              "fill": "$ds-surface-subtle",
                               "cornerRadius": "$ds-radius-md",
                               "stroke": "$ds-border",
                               "strokeWidth": 1,
-                              "gap": 8,
-                              "padding": [
-                                0,
-                                11
-                              ],
-                              "justifyContent": "space_between",
+                              "gap": 2,
+                              "padding": 3,
                               "alignItems": "center",
                               "children": [
                                 {
                                   "type": "frame",
-                                  "id": "jCqL1",
-                                  "name": "Status Label Cluster",
-                                  "gap": 6,
+                                  "id": "GvqOb",
+                                  "name": "View / Active / List",
+                                  "width": 28,
+                                  "height": 28,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": 6,
+                                  "effect": {
+                                    "type": "shadow",
+                                    "shadowType": "outer",
+                                    "color": "#00000012",
+                                    "offset": {
+                                      "x": 0,
+                                      "y": 1
+                                    },
+                                    "blur": 3
+                                  },
+                                  "justifyContent": "center",
                                   "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "icon",
-                                      "id": "xzlBs",
-                                      "name": "Status Icon",
+                                      "id": "m3XLQ9",
+                                      "name": "List View Icon",
                                       "width": 14,
                                       "height": 14,
-                                      "icon": "circle-dot",
+                                      "icon": "list",
                                       "library": "lucide",
-                                      "fill": "$ds-text-muted"
-                                    },
-                                    {
-                                      "type": "text",
-                                      "id": "N8YKby",
-                                      "name": "Status Value",
-                                      "fill": "$ds-text",
-                                      "content": "All statuses",
-                                      "fontFamily": "$ds-font-ui",
-                                      "fontSize": 12,
-                                      "fontWeight": "normal"
+                                      "fill": "$ds-text"
                                     }
                                   ]
                                 },
                                 {
-                                  "type": "icon",
-                                  "id": "Ypnhr",
-                                  "name": "Status Chevron",
-                                  "width": 15,
-                                  "height": 15,
-                                  "icon": "chevron-down",
-                                  "library": "lucide",
-                                  "fill": "$ds-text-muted"
+                                  "type": "frame",
+                                  "id": "CIREB",
+                                  "name": "View / Default / Kanban",
+                                  "width": 28,
+                                  "height": 28,
+                                  "fill": "#00000000",
+                                  "cornerRadius": 6,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "oSEtA",
+                                      "name": "Kanban View Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "columns-3",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
                                 }
                               ]
                             },
                             {
                               "type": "frame",
-                              "id": "Z90N7",
-                              "name": "Owner Filter",
-                              "height": 34,
-                              "fill": "$ds-surface",
-                              "cornerRadius": "$ds-radius-md",
-                              "stroke": "$ds-border",
-                              "strokeWidth": 1,
+                              "id": "VpzLC",
+                              "name": "Projects Toolbar Controls",
                               "gap": 8,
-                              "padding": [
-                                0,
-                                11
-                              ],
-                              "justifyContent": "space_between",
                               "alignItems": "center",
                               "children": [
                                 {
                                   "type": "frame",
-                                  "id": "D5pNJW",
-                                  "name": "Owner Label Cluster",
-                                  "gap": 6,
+                                  "id": "we7CV",
+                                  "name": "Status Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
                                   "alignItems": "center",
                                   "children": [
                                     {
-                                      "type": "icon",
-                                      "id": "witYg",
-                                      "name": "Owner Icon",
-                                      "width": 14,
-                                      "height": 14,
-                                      "icon": "user",
-                                      "library": "lucide",
-                                      "fill": "$ds-text-muted"
+                                      "type": "frame",
+                                      "id": "jCqL1",
+                                      "name": "Status Label Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "xzlBs",
+                                          "name": "Status Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "circle-dot",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "N8YKby",
+                                          "name": "Status Value",
+                                          "fill": "$ds-text",
+                                          "content": "All statuses",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
                                     },
                                     {
-                                      "type": "text",
-                                      "id": "FU96d",
-                                      "name": "Owner Value",
-                                      "fill": "$ds-text",
-                                      "content": "All owners",
-                                      "fontFamily": "$ds-font-ui",
-                                      "fontSize": 12,
-                                      "fontWeight": "normal"
+                                      "type": "icon",
+                                      "id": "Ypnhr",
+                                      "name": "Status Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
                                     }
                                   ]
                                 },
-                                {
-                                  "type": "icon",
-                                  "id": "MOHf2",
-                                  "name": "Owner Chevron",
-                                  "width": 15,
-                                  "height": 15,
-                                  "icon": "chevron-down",
-                                  "library": "lucide",
-                                  "fill": "$ds-text-muted"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
-                              "id": "qRoaJ",
-                              "name": "Start Date Filter",
-                              "height": 34,
-                              "fill": "$ds-surface",
-                              "cornerRadius": "$ds-radius-md",
-                              "stroke": "$ds-border",
-                              "strokeWidth": 1,
-                              "gap": 8,
-                              "padding": [
-                                0,
-                                11
-                              ],
-                              "justifyContent": "space_between",
-                              "alignItems": "center",
-                              "children": [
                                 {
                                   "type": "frame",
-                                  "id": "m6g0C",
-                                  "name": "Start Date Label Cluster",
-                                  "gap": 6,
+                                  "id": "Z90N7",
+                                  "name": "Owner Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
                                   "alignItems": "center",
                                   "children": [
                                     {
-                                      "type": "icon",
-                                      "id": "r0SbL",
-                                      "name": "Start Date Icon",
-                                      "width": 14,
-                                      "height": 14,
-                                      "icon": "calendar",
-                                      "library": "lucide",
-                                      "fill": "$ds-text-muted"
+                                      "type": "frame",
+                                      "id": "D5pNJW",
+                                      "name": "Owner Label Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "witYg",
+                                          "name": "Owner Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "user",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "FU96d",
+                                          "name": "Owner Value",
+                                          "fill": "$ds-text",
+                                          "content": "All owners",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
                                     },
                                     {
-                                      "type": "text",
-                                      "id": "ojqr8",
-                                      "name": "Start Date Value",
-                                      "fill": "$ds-text",
-                                      "content": "Any start",
-                                      "fontFamily": "$ds-font-ui",
-                                      "fontSize": 12,
-                                      "fontWeight": "normal"
+                                      "type": "icon",
+                                      "id": "MOHf2",
+                                      "name": "Owner Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
                                     }
                                   ]
                                 },
-                                {
-                                  "type": "icon",
-                                  "id": "FXNv4",
-                                  "name": "Start Date Chevron",
-                                  "width": 15,
-                                  "height": 15,
-                                  "icon": "calendar-days",
-                                  "library": "lucide",
-                                  "fill": "$ds-text-muted"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
-                              "id": "P77K3x",
-                              "name": "Target Date Filter",
-                              "height": 34,
-                              "fill": "$ds-surface",
-                              "cornerRadius": "$ds-radius-md",
-                              "stroke": "$ds-border",
-                              "strokeWidth": 1,
-                              "gap": 8,
-                              "padding": [
-                                0,
-                                11
-                              ],
-                              "justifyContent": "space_between",
-                              "alignItems": "center",
-                              "children": [
                                 {
                                   "type": "frame",
-                                  "id": "vPNxI",
-                                  "name": "Target Date Label Cluster",
-                                  "gap": 6,
+                                  "id": "qRoaJ",
+                                  "name": "Start Date Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
                                   "alignItems": "center",
                                   "children": [
                                     {
-                                      "type": "icon",
-                                      "id": "Fwhqn",
-                                      "name": "Target Date Icon",
-                                      "width": 14,
-                                      "height": 14,
-                                      "icon": "flag",
-                                      "library": "lucide",
-                                      "fill": "$ds-text-muted"
+                                      "type": "frame",
+                                      "id": "m6g0C",
+                                      "name": "Start Date Label Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "r0SbL",
+                                          "name": "Start Date Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "calendar",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "ojqr8",
+                                          "name": "Start Date Value",
+                                          "fill": "$ds-text",
+                                          "content": "Any start",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
                                     },
                                     {
-                                      "type": "text",
-                                      "id": "k7mmZB",
-                                      "name": "Target Date Value",
-                                      "fill": "$ds-text",
-                                      "content": "Any target",
-                                      "fontFamily": "$ds-font-ui",
-                                      "fontSize": 12,
-                                      "fontWeight": "normal"
+                                      "type": "icon",
+                                      "id": "FXNv4",
+                                      "name": "Start Date Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "calendar-days",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
                                     }
                                   ]
                                 },
-                                {
-                                  "type": "icon",
-                                  "id": "LrcZM",
-                                  "name": "Target Date Chevron",
-                                  "width": 15,
-                                  "height": 15,
-                                  "icon": "calendar-days",
-                                  "library": "lucide",
-                                  "fill": "$ds-text-muted"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "frame",
-                              "id": "u8LykO",
-                              "name": "Sort Filter",
-                              "height": 34,
-                              "fill": "$ds-surface",
-                              "cornerRadius": "$ds-radius-md",
-                              "stroke": "$ds-border",
-                              "strokeWidth": 1,
-                              "gap": 8,
-                              "padding": [
-                                0,
-                                11
-                              ],
-                              "justifyContent": "space_between",
-                              "alignItems": "center",
-                              "children": [
                                 {
                                   "type": "frame",
-                                  "id": "akvDP",
-                                  "name": "Sort Label Cluster",
-                                  "gap": 6,
+                                  "id": "P77K3x",
+                                  "name": "Target Date Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
                                   "alignItems": "center",
                                   "children": [
                                     {
-                                      "type": "icon",
-                                      "id": "loFO4",
-                                      "name": "Sort Icon",
-                                      "width": 14,
-                                      "height": 14,
-                                      "icon": "arrow-up-down",
-                                      "library": "lucide",
-                                      "fill": "$ds-text-muted"
+                                      "type": "frame",
+                                      "id": "vPNxI",
+                                      "name": "Target Date Label Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "Fwhqn",
+                                          "name": "Target Date Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "flag",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "k7mmZB",
+                                          "name": "Target Date Value",
+                                          "fill": "$ds-text",
+                                          "content": "Any target",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
                                     },
                                     {
-                                      "type": "text",
-                                      "id": "e89Ss0",
-                                      "name": "Sort Value",
-                                      "fill": "$ds-text",
-                                      "content": "Newest",
-                                      "fontFamily": "$ds-font-ui",
-                                      "fontSize": 12,
-                                      "fontWeight": "normal"
+                                      "type": "icon",
+                                      "id": "LrcZM",
+                                      "name": "Target Date Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "calendar-days",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
                                     }
                                   ]
                                 },
                                 {
-                                  "type": "icon",
-                                  "id": "f8f0Od",
-                                  "name": "Sort Chevron",
-                                  "width": 15,
-                                  "height": 15,
-                                  "icon": "chevron-down",
-                                  "library": "lucide",
-                                  "fill": "$ds-text-muted"
+                                  "type": "frame",
+                                  "id": "u8LykO",
+                                  "name": "Sort Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "akvDP",
+                                      "name": "Sort Label Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "loFO4",
+                                          "name": "Sort Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "arrow-up-down",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "e89Ss0",
+                                          "name": "Sort Value",
+                                          "fill": "$ds-text",
+                                          "content": "Newest",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "f8f0Od",
+                                      "name": "Sort Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
                                 }
                               ]
                             }
