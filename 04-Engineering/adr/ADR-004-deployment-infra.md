@@ -38,3 +38,11 @@ Oracle's free tier is the only genuinely comfortable always-free option (4 cores
 
 - **Positive:** ~$0/month infra; production-real architecture; every component is a build-in-public story; self-hosters get a one-command deploy.
 - **Negative:** Neon free cold starts (~1–2s after idle; acceptable, optional keep-alive); free-tier limits (0.5GB DB, 10GB R2, 100 emails/day) — ample for MVP traffic; Oracle signup friction / Ampere capacity quirks; single box = single point of failure (acceptable for the MVP, noted in `deployment.md`).
+
+## Pre-production checklist — R2 public assets (F11, added 2026-09-05)
+
+Avatars (and future public assets) live in the public-read bucket `shipyard-bucket`. During development the bucket is served via Cloudflare's **public development URL** (`https://pub-<id>.r2.dev`, env `R2_PUBLIC_BASE_URL`). Per Cloudflare, r2.dev URLs are **rate-limited and intended for development only**. Before first production deploy:
+
+- [ ] Attach the custom domain (e.g. `assets.yonatanem.com`) to `shipyard-bucket` in the Cloudflare dashboard.
+- [ ] Update `R2_PUBLIC_BASE_URL` to the custom domain.
+- [ ] **No data migration needed** — the DB stores object keys, not URLs (settings data-model D8); the swap is env-only and takes effect on restart.

@@ -1,7 +1,7 @@
 # Settings — Data Model
 
 **Status:** Draft for review
-**Last updated:** 2026-09-04
+**Last updated:** 2026-09-05
 **Sources:** `features/settings/spec.md` · `features/auth/data-model.md` (F1 precedent — Better Auth `user` table: `name`, `image`, email-owned-by-Auth, R2-URL-for-MVP note §9) · `features/projects/data-model.md` (F4 precedent — `view_preference` table + scopes, absent ⇒ `LIST`) · `features/issues/data-model.md` (F5 precedent — `ViewScope += ISSUE` reuse) · `00-architecture.md` §5, §8 (uploads through API → R2; config validated at boot) · `ADR-001` (Prisma + Postgres) · `ADR-002` (shared contracts) · `ADR-004` (R2 object storage) · `Implementation Plan.md` F11
 **Owner:** `apps/api` — Prisma-owned (hand-modeled; one new table, zero edits to Better Auth tables).
 
@@ -16,7 +16,7 @@ Settings owns the **account surface**: display name, avatar, and theme — plus 
 | Table / Change | Purpose | Formalized by |
 |---|---|---|
 | `user_preference` | Account-wide prefs: theme today (`LIGHT\|DARK\|SYSTEM`, default `SYSTEM`); home for future prefs | **F11 (this milestone)** |
-| `user.image` | Avatar URL — **written, never migrated** (column exists since F1) | F1 owns; F11 writes via R2 flow (§6.3) |
+| `user.image` | Avatar object key (D8) — **written, never migrated** (column exists since F1) | F1 owns; F11 writes via R2 flow (§6.3) |
 | `user.name` | Display name — **written, never migrated** | F1 owns; F11 writes bounded (§6.1) |
 | `view_preference` | View toggles — **reused, untouched** (F4 table, F4/F5 endpoints) | F4 owns; F11 only links |
 
@@ -58,16 +58,16 @@ model UserPreference {
 
 ### 2.2 Avatar storage — R2 convention (no migration)
 
-Avatars live in Cloudflare R2 under a public bucket with unguessable keys; the only persisted pointer is the existing `user.image` URL (auth data-model §9: "store URL string for MVP").
+Avatars live in Cloudflare R2 under a public bucket with unguessable keys; the only persisted pointer is the existing `user.image` column — holding the **object key** (D8, superseding auth data-model §9's "store URL string for MVP" note), resolved to a public URL at read time.
 
 | Concern | Convention |
 |---|---|
-| Bucket | Public-read R2 bucket (env `R2_AVATAR_BUCKET`); random keys are the access control — no signed-URL minting per render (every card contract since F5 carries plain `image` URLs; per-render minting would touch all read paths for no MVP threat model) |
+| Bucket | Public-read R2 bucket (`shipyard-bucket`, env `R2_PUBLIC_BUCKET`) shared by all **public-by-design** assets under feature prefixes (`avatars/`, ...); random keys are the access control — no signed-URL minting per render (every card contract since F5 carries plain `image` URLs; per-render minting would touch all read paths for no MVP threat model). Private/confidential objects must never enter this bucket — they get their own private bucket |
 | Key scheme | `avatars/:userId/:uuid.:ext` — `uuid` is 128-bit random (`crypto.randomUUID()`), `ext` derived from the validated MIME (`jpg`/`png`/`webp`) |
-| Upload | Through the API only (arch §8): validate type/size → `PutObject` with `ContentType` + `Cache-Control: public, max-age=31536000, immutable` (new key per upload ⇒ immutable caching is safe) → persist URL in `user.image` |
-| Replace | Upload new key → persist new URL → best-effort delete old object (R2 failure never fails the request — the DB URL is source of truth; orphaned objects are inert and listed for periodic cleanup post-MVP) |
-| Remove | Set `user.image = NULL` + best-effort object delete (spec Q1: delete = clear) |
-| Config | Endpoint/keys/bucket from server env, validated at boot (fail fast per arch §8); tests inject an in-memory fake adapter (§8) |
+| Upload | Through the API only (arch §8): validate type/size → `PutObject` with `ContentType` + `Cache-Control: public, max-age=31536000, immutable` (new key per upload ⇒ immutable caching is safe) → persist **object key** in `user.image` (D8) |
+| Replace | Upload new key → persist new key → best-effort delete old object by stored key (R2 failure never fails the request — the DB key is source of truth; orphaned objects are inert and listed for periodic cleanup post-MVP) |
+| Remove | Set `user.image = NULL` + best-effort object delete by stored key (spec Q1: delete = clear) |
+| Config | Endpoint/keys/bucket/public-base-URL from server env, validated at boot (fail fast per arch §8); tests inject an in-memory fake adapter (§8) |
 
 ### 2.3 Reused, untouched: `view_preference`, `user.name`, `user.image`, Auth identity
 
@@ -105,6 +105,10 @@ Avatars live in Cloudflare R2 under a public bucket with unguessable keys; the o
 ### D7 — Display name trim 1–100 (locked)
 
 **Decision:** `z.string().trim().min(1).max(100)` — first bound ever set on `user.name` (F1 left it to Better Auth). 100 chars covers long names without breaking card layouts; empty-after-trim rejected (nameless accounts break mention rendering, which keys off `user.name` words).
+
+### D8 — Store the object key, resolve the URL at read time (locked 2026-09-05)
+
+**Decision:** `user.image` holds the **full object key** (`avatars/:userId/:uuid.:ext`) for uploaded avatars — never a bare filename, never a URL. A read-time resolver (`resolveImageUrl`) joins `R2_PUBLIC_BASE_URL`: keys → public URL; values already starting with `http(s)://` (OAuth provider avatars) pass through untouched. The resolver is applied at every card-mapping site (settings profile, members, comments, issues, notifications, projects, dashboard), so browser contracts keep shipping absolute URLs — web code unchanged. *Rejected:* persisting the full URL (F1's "URL string for MVP" note) — a custom-domain swap (r2.dev dev URLs are rate-limited and dev-only per Cloudflare) would then require a DB-wide URL rewrite; with keys, the swap is an env change, and old-key cleanup needs no URL parsing.
 
 ---
 
@@ -144,7 +148,7 @@ export const appearanceSchema = z.object({
 });
 
 export const avatarCardSchema = z.object({
-  image: z.string(), // public R2 URL just persisted
+  image: z.string(), // resolved public URL (base + stored key) at read time
 });
 ```
 
@@ -202,7 +206,7 @@ Upsert is the only write (lazy row creation — no backfill, no seed). Invalid e
 POST multipart [avatar] →
   assert MIME ∈ allowlist + ext matches + bytes ≤ 2MB (else 400, nothing stored)
   key = avatars/:userId/:uuid.:ext → R2 PutObject (public, immutable cache headers)
-  UPDATE "user" SET image = url WHERE id → 200 { image: url }
+  UPDATE "user" SET image = key WHERE id → 200 { image: resolvedUrl }
   best-effort: R2 delete OLD key (failure logged, never surfaced — D4)
 
 DELETE { confirm: true } →
