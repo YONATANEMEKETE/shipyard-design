@@ -25023,8 +25023,9 @@
       "x": 10637,
       "y": 7341,
       "name": "Card / Project (Kanban)",
+      "context": "Kanban project card v3 — owner row, title, description, progress bar + counts, divider, footer contributors + target date.",
       "reusable": true,
-      "width": 260,
+      "width": 272,
       "fill": "$ds-surface",
       "cornerRadius": "$ds-radius-lg",
       "stroke": "$ds-border",
@@ -25044,6 +25045,49 @@
       "padding": 12,
       "children": [
         {
+          "type": "frame",
+          "id": "sMhx7",
+          "name": "Owner Row",
+          "width": "fill_container",
+          "gap": 6,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Z38vCb",
+              "name": "Owner Avatar",
+              "width": 18,
+              "height": 18,
+              "fill": "$ds-brand",
+              "cornerRadius": 999,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Gw8EN",
+                  "name": "Owner Initials",
+                  "fill": "#FFFFFF",
+                  "content": "YM",
+                  "fontFamily": "$ds-font-mono",
+                  "fontSize": 7,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "D74KG",
+              "name": "Owner Name",
+              "fill": "$ds-text-muted",
+              "content": "Yonatane M.",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 11,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
           "type": "text",
           "id": "B4vZz",
           "name": "Card Title",
@@ -25051,8 +25095,9 @@
           "textGrowth": "fixed-width",
           "width": "fill_container",
           "content": "Ship Payroll",
+          "lineHeight": 1.35,
           "fontFamily": "$ds-font-ui",
-          "fontSize": 13.5,
+          "fontSize": 14,
           "fontWeight": "600"
         },
         {
@@ -25067,6 +25112,74 @@
           "fontFamily": "$ds-font-ui",
           "fontSize": 11,
           "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "f9Jt85",
+          "name": "Progress Wrap",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 6,
+          "children": [
+            {
+              "type": "frame",
+              "id": "W41TlB",
+              "name": "Progress Row",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "XtSFe",
+                  "name": "Progress Track",
+                  "width": "fill_container",
+                  "height": 6,
+                  "fill": "$ds-border",
+                  "cornerRadius": 999,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Fz46j",
+                      "name": "Progress Fill",
+                      "width": 110,
+                      "height": 6,
+                      "fill": "$ds-brand",
+                      "cornerRadius": 999
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "BBdjY",
+                  "name": "Progress Pct",
+                  "fill": "$ds-text",
+                  "content": "45%",
+                  "fontFamily": "$ds-font-mono",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "X6c4Qx",
+              "name": "Progress Meta",
+              "fill": "$ds-text-muted",
+              "content": "8 of 12 issues done",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "R3AHZ",
+          "name": "Card Divider",
+          "width": "fill_container",
+          "height": 1,
+          "fill": "$ds-border"
         },
         {
           "type": "frame",
@@ -25199,7 +25312,14 @@
               "type": "frame",
               "id": "wZ9Tc",
               "name": "Footer Date",
+              "height": 22,
+              "fill": "$ds-surface-subtle",
+              "cornerRadius": "$ds-radius-pill",
               "gap": 6,
+              "padding": [
+                0,
+                8
+              ],
               "alignItems": "center",
               "children": [
                 {
@@ -25219,7 +25339,7 @@
                   "fill": "$ds-text-muted",
                   "content": "Dec 01, 2026",
                   "fontFamily": "$ds-font-ui",
-                  "fontSize": 10.5,
+                  "fontSize": 11,
                   "fontWeight": "normal"
                 }
               ]
@@ -25526,165 +25646,14 @@
           "type": "ref",
           "ref": "LRZOW",
           "name": "Column / Planned",
-          "width": 300,
-          "descendants": {
-            "v2T3uB": {
-              "fill": "$ds-text-muted"
-            },
-            "YVfOJ": {
-              "content": "Planned"
-            },
-            "l5IB3": {
-              "content": "3"
-            },
-            "t3fStv/B4vZz": {
-              "content": "Customer Onboarding"
-            },
-            "t3fStv/u8Ixi9": {
-              "content": "Guided setup flow to bring new customers on board with minimal friction."
-            },
-            "t3fStv/x4gkt": {
-              "content": "CK"
-            },
-            "t3fStv/IaMtD": {
-              "content": "SP"
-            },
-            "t3fStv/hVk9u": {
-              "content": "ET"
-            },
-            "t3fStv/ZGWRu": {
-              "content": "+3"
-            },
-            "t3fStv/rKfIj": {
-              "content": "Oct 20, 2026"
-            },
-            "k8Y8pV/B4vZz": {
-              "content": "Search Overhaul"
-            },
-            "k8Y8pV/u8Ixi9": {
-              "content": "Rebuild search with faster indexing and relevant ranking."
-            },
-            "k8Y8pV/x4gkt": {
-              "content": "ET"
-            },
-            "k8Y8pV/IaMtD": {
-              "content": "DW"
-            },
-            "k8Y8pV/hVk9u": {
-              "content": "RS"
-            },
-            "k8Y8pV/ZGWRu": {
-              "content": "+1"
-            },
-            "k8Y8pV/rKfIj": {
-              "content": "Dec 04, 2026"
-            },
-            "DsxVt": {
-              "enabled": false
-            },
-            "DsxVt/B4vZz": {
-              "content": "Data Privacy Audit"
-            },
-            "DsxVt/u8Ixi9": {
-              "content": "Audit data handling to meet new compliance requirements."
-            },
-            "DsxVt/x4gkt": {
-              "content": "DW"
-            },
-            "DsxVt/IaMtD": {
-              "content": "CK"
-            },
-            "DsxVt/hVk9u": {
-              "content": "SP"
-            },
-            "DsxVt/ZGWRu": {
-              "content": "+2"
-            },
-            "DsxVt/rKfIj": {
-              "content": "Nov 14, 2026"
-            }
-          }
+          "width": 300
         },
         {
           "id": "NjNNF",
           "type": "ref",
           "ref": "LRZOW",
           "name": "Column / Completed",
-          "width": 300,
-          "descendants": {
-            "v2T3uB": {
-              "fill": "$ds-success"
-            },
-            "YVfOJ": {
-              "content": "Completed"
-            },
-            "l5IB3": {
-              "content": "3"
-            },
-            "t3fStv/B4vZz": {
-              "content": "Design System V2"
-            },
-            "t3fStv/u8Ixi9": {
-              "content": "Unify tokens, components and docs across all product surfaces."
-            },
-            "t3fStv/x4gkt": {
-              "content": "SP"
-            },
-            "t3fStv/IaMtD": {
-              "content": "PN"
-            },
-            "t3fStv/hVk9u": {
-              "content": "MC"
-            },
-            "t3fStv/ZGWRu": {
-              "content": "+1"
-            },
-            "t3fStv/rKfIj": {
-              "content": "Feb 28, 2026"
-            },
-            "k8Y8pV/B4vZz": {
-              "content": "Billing Overhaul"
-            },
-            "k8Y8pV/u8Ixi9": {
-              "content": "Modernize invoicing and payment reconciliation flows."
-            },
-            "k8Y8pV/x4gkt": {
-              "content": "PN"
-            },
-            "k8Y8pV/IaMtD": {
-              "content": "MC"
-            },
-            "k8Y8pV/hVk9u": {
-              "content": "YM"
-            },
-            "k8Y8pV/ZGWRu": {
-              "content": "+2"
-            },
-            "k8Y8pV/rKfIj": {
-              "content": "Jan 10, 2026"
-            },
-            "DsxVt/B4vZz": {
-              "content": "Payments API"
-            },
-            "DsxVt/u8Ixi9": {
-              "content": "Stable payment gateway integration with retry handling."
-            },
-            "DsxVt/x4gkt": {
-              "content": "MC"
-            },
-            "DsxVt/IaMtD": {
-              "content": "YM"
-            },
-            "DsxVt/hVk9u": {
-              "content": "AR"
-            },
-            "DsxVt/ZGWRu": {
-              "content": "+4"
-            },
-            "DsxVt/rKfIj": {
-              "content": "Jan 22, 2026"
-            }
-          }
+          "width": 300
         }
       ]
     },
@@ -26372,84 +26341,7 @@
                               "ref": "LRZOW",
                               "name": "Column / Planned",
                               "width": "fill_container",
-                              "height": "fill_container",
-                              "descendants": {
-                                "v2T3uB": {
-                                  "fill": "$ds-text-muted"
-                                },
-                                "YVfOJ": {
-                                  "content": "Planned"
-                                },
-                                "l5IB3": {
-                                  "content": "3"
-                                },
-                                "t3fStv": {
-                                  "effect": []
-                                },
-                                "t3fStv/B4vZz": {
-                                  "content": "Customer Onboarding"
-                                },
-                                "t3fStv/u8Ixi9": {
-                                  "content": "Guided setup flow to bring new customers on board with minimal friction."
-                                },
-                                "t3fStv/x4gkt": {
-                                  "content": "CK"
-                                },
-                                "t3fStv/IaMtD": {
-                                  "content": "SP"
-                                },
-                                "t3fStv/hVk9u": {
-                                  "content": "ET"
-                                },
-                                "t3fStv/ZGWRu": {
-                                  "content": "+3"
-                                },
-                                "t3fStv/rKfIj": {
-                                  "content": "Oct 20, 2026"
-                                },
-                                "k8Y8pV/B4vZz": {
-                                  "content": "Search Overhaul"
-                                },
-                                "k8Y8pV/u8Ixi9": {
-                                  "content": "Rebuild search with faster indexing and relevant ranking."
-                                },
-                                "k8Y8pV/x4gkt": {
-                                  "content": "ET"
-                                },
-                                "k8Y8pV/IaMtD": {
-                                  "content": "DW"
-                                },
-                                "k8Y8pV/hVk9u": {
-                                  "content": "RS"
-                                },
-                                "k8Y8pV/ZGWRu": {
-                                  "content": "+1"
-                                },
-                                "k8Y8pV/rKfIj": {
-                                  "content": "Dec 04, 2026"
-                                },
-                                "DsxVt/B4vZz": {
-                                  "content": "Data Privacy Audit"
-                                },
-                                "DsxVt/u8Ixi9": {
-                                  "content": "Audit data handling to meet new compliance requirements."
-                                },
-                                "DsxVt/x4gkt": {
-                                  "content": "DW"
-                                },
-                                "DsxVt/IaMtD": {
-                                  "content": "CK"
-                                },
-                                "DsxVt/hVk9u": {
-                                  "content": "SP"
-                                },
-                                "DsxVt/ZGWRu": {
-                                  "content": "+2"
-                                },
-                                "DsxVt/rKfIj": {
-                                  "content": "Nov 14, 2026"
-                                }
-                              }
+                              "height": "fill_container"
                             },
                             {
                               "id": "dVViA",
@@ -26457,15 +26349,7 @@
                               "ref": "LRZOW",
                               "name": "Column / Active",
                               "width": "fill_container",
-                              "height": "fill_container",
-                              "descendants": {
-                                "l5IB3": {
-                                  "content": "2"
-                                },
-                                "DsxVt": {
-                                  "enabled": false
-                                }
-                              }
+                              "height": "fill_container"
                             },
                             {
                               "id": "Jo96K",
@@ -26473,180 +26357,7 @@
                               "ref": "LRZOW",
                               "name": "Column / Completed",
                               "width": "fill_container",
-                              "height": "fill_container",
-                              "descendants": {
-                                "v2T3uB": {
-                                  "fill": "$ds-success"
-                                },
-                                "YVfOJ": {
-                                  "content": "Completed"
-                                },
-                                "l5IB3": {
-                                  "content": "5"
-                                },
-                                "FLLHS": {
-                                  "type": "frame",
-                                  "id": "i9wWN1",
-                                  "name": "Column Body",
-                                  "clip": true,
-                                  "width": "fill_container",
-                                  "height": "fill_container",
-                                  "layout": "vertical",
-                                  "gap": 10,
-                                  "children": [
-                                    {
-                                      "id": "yrjGf",
-                                      "type": "ref",
-                                      "ref": "lDauH",
-                                      "name": "Card / Design System V2",
-                                      "width": "fill_container",
-                                      "descendants": {
-                                        "B4vZz": {
-                                          "content": "Design System V2"
-                                        },
-                                        "u8Ixi9": {
-                                          "content": "Unify tokens, components and docs across all product surfaces."
-                                        },
-                                        "x4gkt": {
-                                          "content": "SP"
-                                        },
-                                        "IaMtD": {
-                                          "content": "PN"
-                                        },
-                                        "hVk9u": {
-                                          "content": "MC"
-                                        },
-                                        "ZGWRu": {
-                                          "content": "+1"
-                                        },
-                                        "rKfIj": {
-                                          "content": "Feb 28, 2026"
-                                        }
-                                      }
-                                    },
-                                    {
-                                      "id": "PrRh0",
-                                      "type": "ref",
-                                      "ref": "lDauH",
-                                      "name": "Card / Billing Overhaul",
-                                      "width": "fill_container",
-                                      "descendants": {
-                                        "B4vZz": {
-                                          "content": "Billing Overhaul"
-                                        },
-                                        "u8Ixi9": {
-                                          "content": "Modernize invoicing and payment reconciliation flows."
-                                        },
-                                        "x4gkt": {
-                                          "content": "PN"
-                                        },
-                                        "IaMtD": {
-                                          "content": "MC"
-                                        },
-                                        "hVk9u": {
-                                          "content": "YM"
-                                        },
-                                        "ZGWRu": {
-                                          "content": "+2"
-                                        },
-                                        "rKfIj": {
-                                          "content": "Jan 10, 2026"
-                                        }
-                                      }
-                                    },
-                                    {
-                                      "id": "WeFHg",
-                                      "type": "ref",
-                                      "ref": "lDauH",
-                                      "name": "Card / Payments API",
-                                      "width": "fill_container",
-                                      "descendants": {
-                                        "B4vZz": {
-                                          "content": "Payments API"
-                                        },
-                                        "u8Ixi9": {
-                                          "content": "Stable payment gateway integration with retry handling."
-                                        },
-                                        "x4gkt": {
-                                          "content": "MC"
-                                        },
-                                        "IaMtD": {
-                                          "content": "YM"
-                                        },
-                                        "hVk9u": {
-                                          "content": "AR"
-                                        },
-                                        "ZGWRu": {
-                                          "content": "+4"
-                                        },
-                                        "rKfIj": {
-                                          "content": "Jan 22, 2026"
-                                        }
-                                      }
-                                    },
-                                    {
-                                      "id": "USy6K",
-                                      "type": "ref",
-                                      "ref": "lDauH",
-                                      "name": "Card / Customer Portal",
-                                      "width": "fill_container",
-                                      "descendants": {
-                                        "B4vZz": {
-                                          "content": "Customer Portal"
-                                        },
-                                        "u8Ixi9": {
-                                          "content": "Self-service portal for account and billing management."
-                                        },
-                                        "x4gkt": {
-                                          "content": "SP"
-                                        },
-                                        "IaMtD": {
-                                          "content": "ET"
-                                        },
-                                        "hVk9u": {
-                                          "content": "CK"
-                                        },
-                                        "ZGWRu": {
-                                          "content": "+2"
-                                        },
-                                        "rKfIj": {
-                                          "content": "Mar 05, 2026"
-                                        }
-                                      }
-                                    },
-                                    {
-                                      "id": "B9IVeO",
-                                      "type": "ref",
-                                      "ref": "lDauH",
-                                      "name": "Card / Docs Platform",
-                                      "width": "fill_container",
-                                      "descendants": {
-                                        "B4vZz": {
-                                          "content": "Docs Platform"
-                                        },
-                                        "u8Ixi9": {
-                                          "content": "Searchable docs site covering guides, API and references."
-                                        },
-                                        "x4gkt": {
-                                          "content": "AR"
-                                        },
-                                        "IaMtD": {
-                                          "content": "RS"
-                                        },
-                                        "hVk9u": {
-                                          "content": "DW"
-                                        },
-                                        "ZGWRu": {
-                                          "content": "+3"
-                                        },
-                                        "rKfIj": {
-                                          "content": "Jan 30, 2026"
-                                        }
-                                      }
-                                    }
-                                  ]
-                                }
-                              }
+                              "height": "fill_container"
                             }
                           ]
                         },
@@ -30258,7 +29969,7 @@
     {
       "type": "frame",
       "id": "hrzFI",
-      "x": 12157,
+      "x": 12144,
       "y": 8999,
       "name": "Screen / Issues - Kanban",
       "context": "Issues list page — app shell with Issues nav active; header-only for now (toolbar/list/board land next).",
@@ -31096,114 +30807,7 @@
                           "ref": "LRZOW",
                           "name": "Column Backlog",
                           "width": "fill_container",
-                          "height": "fill_container",
-                          "descendants": {
-                            "v2T3uB": {
-                              "fill": "$ds-text-muted"
-                            },
-                            "YVfOJ": {
-                              "content": "Backlog"
-                            },
-                            "l5IB3": {
-                              "content": "2"
-                            },
-                            "FLLHS": {
-                              "children": [
-                                {
-                                  "id": "ZOHFw",
-                                  "type": "ref",
-                                  "ref": "aa4L9",
-                                  "name": "Card SHIP-122",
-                                  "width": "fill_container",
-                                  "descendants": {
-                                    "WnGxp": {
-                                      "content": "SHIP-122"
-                                    },
-                                    "t89hX3": {
-                                      "fill": "$ds-brand-soft"
-                                    },
-                                    "r7qlv": {
-                                      "fill": "$ds-brand"
-                                    },
-                                    "pY8l8": {
-                                      "content": "Medium",
-                                      "fill": "$ds-brand"
-                                    },
-                                    "WRV17": {
-                                      "content": "Archived empty-state copy"
-                                    },
-                                    "nCar5": {
-                                      "fill": "$ds-warning-soft"
-                                    },
-                                    "OFZsD": {
-                                      "content": "copy",
-                                      "fill": "$ds-warning"
-                                    },
-                                    "W18Ej7": {
-                                      "enabled": false
-                                    },
-                                    "d26Rp": {
-                                      "content": "—"
-                                    },
-                                    "E1My3m": {
-                                      "content": "Unassigned",
-                                      "fill": "$ds-text-muted",
-                                      "fontWeight": "normal"
-                                    },
-                                    "vm44J": {
-                                      "content": "—"
-                                    }
-                                  }
-                                },
-                                {
-                                  "id": "Wn8A1",
-                                  "type": "ref",
-                                  "ref": "aa4L9",
-                                  "name": "Card SHIP-119",
-                                  "width": "fill_container",
-                                  "descendants": {
-                                    "WnGxp": {
-                                      "content": "SHIP-119"
-                                    },
-                                    "t89hX3": {
-                                      "fill": "$ds-sidebar"
-                                    },
-                                    "r7qlv": {
-                                      "fill": "$ds-text-muted"
-                                    },
-                                    "pY8l8": {
-                                      "content": "No Priority",
-                                      "fill": "$ds-text-muted"
-                                    },
-                                    "WRV17": {
-                                      "content": "Archive restore trip"
-                                    },
-                                    "nCar5": {
-                                      "fill": "$ds-brand-soft"
-                                    },
-                                    "OFZsD": {
-                                      "content": "backend",
-                                      "fill": "$ds-brand"
-                                    },
-                                    "W18Ej7": {
-                                      "enabled": false
-                                    },
-                                    "d26Rp": {
-                                      "content": "—"
-                                    },
-                                    "E1My3m": {
-                                      "content": "Unassigned",
-                                      "fill": "$ds-text-muted",
-                                      "fontWeight": "normal"
-                                    },
-                                    "vm44J": {
-                                      "content": "Jan 05"
-                                    }
-                                  }
-                                }
-                              ]
-                            }
-                          }
+                          "height": "fill_container"
                         },
                         {
                           "id": "aBVJu",
@@ -31211,74 +30815,7 @@
                           "ref": "LRZOW",
                           "name": "Column Todo",
                           "width": "fill_container",
-                          "height": "fill_container",
-                          "descendants": {
-                            "v2T3uB": {
-                              "fill": "$ds-info"
-                            },
-                            "YVfOJ": {
-                              "content": "Todo"
-                            },
-                            "l5IB3": {
-                              "content": "1"
-                            },
-                            "FLLHS": {
-                              "children": [
-                                {
-                                  "id": "s3LS2",
-                                  "type": "ref",
-                                  "ref": "aa4L9",
-                                  "name": "Card SHIP-123",
-                                  "width": "fill_container",
-                                  "descendants": {
-                                    "WnGxp": {
-                                      "content": "SHIP-123"
-                                    },
-                                    "t89hX3": {
-                                      "fill": "$ds-danger-soft"
-                                    },
-                                    "r7qlv": {
-                                      "fill": "$ds-danger"
-                                    },
-                                    "pY8l8": {
-                                      "content": "Urgent",
-                                      "fill": "$ds-danger"
-                                    },
-                                    "WRV17": {
-                                      "content": "OAuth callback errors"
-                                    },
-                                    "nCar5": {
-                                      "fill": "$ds-info-soft"
-                                    },
-                                    "OFZsD": {
-                                      "content": "frontend",
-                                      "fill": "$ds-info"
-                                    },
-                                    "W18Ej7": {
-                                      "enabled": false
-                                    },
-                                    "tWMpU": {
-                                      "enabled": true
-                                    },
-                                    "d26Rp": {
-                                      "content": "AR"
-                                    },
-                                    "E1My3m": {
-                                      "content": "Ana Ruiz"
-                                    },
-                                    "hBDbm": {
-                                      "fill": "$ds-danger-soft"
-                                    },
-                                    "vm44J": {
-                                      "content": "Dec 10",
-                                      "fill": "$ds-danger",
-                                      "fontWeight": "600"
-                                    }
-                                  }
-                                }
-                              ]
-                            }
-                          }
+                          "height": "fill_container"
                         },
                         {
                           "id": "j38qcY",
@@ -31286,63 +30823,7 @@
                           "ref": "LRZOW",
                           "name": "Column In Progress",
                           "width": "fill_container",
-                          "height": "fill_container",
-                          "descendants": {
-                            "v2T3uB": {
-                              "fill": "$ds-brand"
-                            },
-                            "YVfOJ": {
-                              "content": "In Progress"
-                            },
-                            "l5IB3": {
-                              "content": "2"
-                            },
-                            "FLLHS": {
-                              "children": [
-                                {
-                                  "id": "cq5Io",
-                                  "type": "ref",
-                                  "ref": "aa4L9",
-                                  "name": "Card SHIP-124",
-                                  "width": "fill_container"
-                                },
-                                {
-                                  "id": "AppOR",
-                                  "type": "ref",
-                                  "ref": "aa4L9",
-                                  "name": "Card SHIP-120",
-                                  "width": "fill_container",
-                                  "descendants": {
-                                    "WnGxp": {
-                                      "content": "SHIP-120"
-                                    },
-                                    "WRV17": {
-                                      "content": "Mention suggestions"
-                                    },
-                                    "OFZsD": {
-                                      "content": "frontend"
-                                    },
-                                    "W18Ej7": {
-                                      "fill": "$ds-success-soft"
-                                    },
-                                    "EfaUo": {
-                                      "content": "a11y",
-                                      "fill": "$ds-success"
-                                    },
-                                    "d26Rp": {
-                                      "content": "CK"
-                                    },
-                                    "E1My3m": {
-                                      "content": "Chen Kim"
-                                    },
-                                    "vm44J": {
-                                      "content": "Dec 15"
-                                    }
-                                  }
-                                }
-                              ]
-                            }
-                          }
+                          "height": "fill_container"
                         },
                         {
                           "id": "DeUb4",
@@ -31350,62 +30831,7 @@
                           "ref": "LRZOW",
                           "name": "Column Done",
                           "width": "fill_container",
-                          "height": "fill_container",
-                          "descendants": {
-                            "v2T3uB": {
-                              "fill": "$ds-success"
-                            },
-                            "YVfOJ": {
-                              "content": "Done"
-                            },
-                            "l5IB3": {
-                              "content": "1"
-                            },
-                            "FLLHS": {
-                              "children": [
-                                {
-                                  "id": "KDo9x",
-                                  "type": "ref",
-                                  "ref": "aa4L9",
-                                  "name": "Card SHIP-121",
-                                  "width": "fill_container",
-                                  "descendants": {
-                                    "WnGxp": {
-                                      "content": "SHIP-121"
-                                    },
-                                    "t89hX3": {
-                                      "fill": "$ds-info-soft"
-                                    },
-                                    "r7qlv": {
-                                      "fill": "$ds-info"
-                                    },
-                                    "pY8l8": {
-                                      "content": "Low",
-                                      "fill": "$ds-info"
-                                    },
-                                    "WRV17": {
-                                      "content": "Cycle progress derivation"
-                                    },
-                                    "nCar5": {
-                                      "enabled": false
-                                    },
-                                    "W18Ej7": {
-                                      "enabled": false
-                                    },
-                                    "d26Rp": {
-                                      "content": "SP"
-                                    },
-                                    "E1My3m": {
-                                      "content": "Sam Park"
-                                    },
-                                    "vm44J": {
-                                      "content": "Nov 28"
-                                    }
-                                  }
-                                }
-                              ]
-                            }
-                          }
+                          "height": "fill_container"
                         }
                       ]
                     }
@@ -31423,9 +30849,9 @@
       "x": 12157,
       "y": 8753,
       "name": "Card / Issue (Kanban)",
-      "context": "Kanban issue card v2 — id chip + priority pill, title, label pills, divider, footer assignee + due chip. Blocked pill disabled by default; enable per instance.",
+      "context": "Kanban issue card v3 — ID + priority flag, title, project/cycle row, labels, divider, footer assignee + due + comments. Blocked pill disabled by default.",
       "reusable": true,
-      "width": 260,
+      "width": 272,
       "fill": "$ds-surface",
       "cornerRadius": "$ds-radius-lg",
       "stroke": "$ds-border",
@@ -31494,12 +30920,14 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "ellipse",
-                  "id": "r7qlv",
-                  "name": "Priority Dot",
-                  "fill": "$ds-warning",
-                  "width": 6,
-                  "height": 6
+                  "type": "icon",
+                  "id": "zpSEq",
+                  "name": "Priority Flag",
+                  "width": 11,
+                  "height": 11,
+                  "icon": "flag",
+                  "library": "lucide",
+                  "fill": "$ds-warning"
                 },
                 {
                   "type": "text",
@@ -31523,9 +30951,60 @@
           "textGrowth": "fixed-width",
           "width": "fill_container",
           "content": "Fix login redirect",
+          "lineHeight": 1.35,
           "fontFamily": "$ds-font-ui",
-          "fontSize": 13.5,
+          "fontSize": 14,
           "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "Wg00S",
+          "name": "Project Row",
+          "width": "fill_container",
+          "gap": 4,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "rv3tm",
+              "name": "Project Icon",
+              "width": 12,
+              "height": 12,
+              "icon": "corner-down-right",
+              "library": "lucide",
+              "fill": "$ds-text-muted"
+            },
+            {
+              "type": "text",
+              "id": "P8Hd2",
+              "name": "Project Text",
+              "fill": "$ds-text-muted",
+              "content": "Mobile App",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 11,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "anPRr",
+              "name": "Project Cycle Dot",
+              "fill": "$ds-border-strong",
+              "content": "•",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "AQEA3",
+              "name": "Cycle Text",
+              "fill": "$ds-text-muted",
+              "content": "Sprint 12",
+              "fontFamily": "$ds-font-ui",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
         },
         {
           "type": "frame",
@@ -31687,37 +31166,75 @@
             },
             {
               "type": "frame",
-              "id": "hBDbm",
-              "name": "Due Chip",
-              "height": 22,
-              "fill": "$ds-surface-subtle",
-              "cornerRadius": "$ds-radius-pill",
-              "gap": 4,
-              "padding": [
-                0,
-                8
-              ],
+              "id": "pqJfH",
+              "name": "Footer Meta",
+              "gap": 8,
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon",
-                  "id": "rwaA8",
-                  "name": "Due Icon",
-                  "width": 12,
-                  "height": 12,
-                  "icon": "calendar",
-                  "library": "lucide",
-                  "fill": "$ds-text-muted"
+                  "type": "frame",
+                  "id": "hBDbm",
+                  "name": "Due Chip",
+                  "height": 22,
+                  "fill": "$ds-surface-subtle",
+                  "cornerRadius": "$ds-radius-pill",
+                  "gap": 4,
+                  "padding": [
+                    0,
+                    8
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "rwaA8",
+                      "name": "Due Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "calendar",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "vm44J",
+                      "name": "Due Text",
+                      "fill": "$ds-text-muted",
+                      "content": "Dec 12",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
                 },
                 {
-                  "type": "text",
-                  "id": "vm44J",
-                  "name": "Due Text",
-                  "fill": "$ds-text-muted",
-                  "content": "Dec 12",
-                  "fontFamily": "$ds-font-ui",
-                  "fontSize": 11,
-                  "fontWeight": "normal"
+                  "type": "frame",
+                  "id": "YmOvI",
+                  "name": "Comment Count",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "aTxq9",
+                      "name": "Comment Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "message-square",
+                      "library": "lucide",
+                      "fill": "$ds-text-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dTiLg",
+                      "name": "Comment Text",
+                      "fill": "$ds-text-muted",
+                      "content": "5",
+                      "fontFamily": "$ds-font-ui",
+                      "fontSize": 11,
+                      "fontWeight": "500"
+                    }
+                  ]
                 }
               ]
             }
@@ -31886,30 +31403,65 @@
                             },
                             {
                               "type": "frame",
-                              "id": "HpppK",
-                              "name": "Issue Id Chip",
-                              "context": "Workspace-unique issue identifier, rendered verbatim from the API. Mono font; never reused after deletion.",
-                              "height": 22,
-                              "fill": "$ds-surface-subtle",
-                              "cornerRadius": "$ds-radius-sm",
-                              "stroke": "$ds-border",
-                              "strokeWidth": 1,
-                              "padding": [
-                                0,
-                                8
-                              ],
-                              "justifyContent": "center",
+                              "id": "SLDxZ",
+                              "name": "Breadcrumb Right",
+                              "gap": 8,
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "text",
-                                  "id": "KGdHg",
-                                  "name": "Issue Id Text",
-                                  "fill": "$ds-text-muted",
-                                  "content": "SHIP-124",
-                                  "fontFamily": "$ds-font-mono",
-                                  "fontSize": 10,
-                                  "fontWeight": "600"
+                                  "type": "frame",
+                                  "id": "HpppK",
+                                  "name": "Issue Id Chip",
+                                  "context": "Workspace-unique issue identifier, rendered verbatim from the API. Mono font; never reused after deletion.",
+                                  "height": 22,
+                                  "fill": "$ds-surface-subtle",
+                                  "cornerRadius": "$ds-radius-sm",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "padding": [
+                                    0,
+                                    8
+                                  ],
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "KGdHg",
+                                      "name": "Issue Id Text",
+                                      "fill": "$ds-text-muted",
+                                      "content": "SHIP-124",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "EHvTZ",
+                                  "name": "Copy Link Button",
+                                  "context": "Copy issue link to clipboard.",
+                                  "width": 26,
+                                  "height": 26,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": 6,
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "o46DGR",
+                                      "name": "Copy Link Icon",
+                                      "width": 13,
+                                      "height": 13,
+                                      "icon": "link",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -32029,20 +31581,9 @@
                                   "name": "Description Section Header",
                                   "width": "fill_container",
                                   "gap": 8,
-                                  "justifyContent": "space_between",
+                                  "justifyContent": "end",
                                   "alignItems": "center",
                                   "children": [
-                                    {
-                                      "type": "text",
-                                      "id": "AUAaF",
-                                      "name": "Description Label",
-                                      "fill": "$ds-text-muted",
-                                      "content": "DESCRIPTION",
-                                      "fontFamily": "$ds-font-mono",
-                                      "fontSize": 9,
-                                      "fontWeight": "600",
-                                      "letterSpacing": 1
-                                    },
                                     {
                                       "type": "frame",
                                       "id": "TPam8",
@@ -32653,13 +32194,17 @@
                               "type": "frame",
                               "id": "kmqyJ",
                               "name": "Properties Card",
-                              "context": "Issue properties. Every value row is an inline editor: clicking opens the same control as Edit modal (assignee opens Assign Issue modal). Workspace-scoped values only. Cycle lands with F7 — shown as 'No cycle' until then.",
+                              "context": "Issue properties as borderless rows (label muted left, value right). Every value is an inline editor; hover reveals affordance.",
                               "width": "fill_container",
-                              "fill": "$ds-surface-subtle",
-                              "cornerRadius": "$ds-radius-lg",
+                              "fill": "#00000000",
                               "layout": "vertical",
-                              "gap": 12,
-                              "padding": 16,
+                              "gap": 10,
+                              "padding": [
+                                4,
+                                0,
+                                0,
+                                0
+                              ],
                               "children": [
                                 {
                                   "type": "text",
@@ -33373,30 +32918,64 @@
                             },
                             {
                               "type": "frame",
-                              "id": "Zwjgt",
-                              "name": "Issue Id Chip",
-                              "context": "Workspace-unique issue identifier, rendered verbatim from the API. Mono font; never reused after deletion.",
-                              "height": 22,
-                              "fill": "$ds-surface-subtle",
-                              "cornerRadius": "$ds-radius-sm",
-                              "stroke": "$ds-border",
-                              "strokeWidth": 1,
-                              "padding": [
-                                0,
-                                8
-                              ],
-                              "justifyContent": "center",
+                              "id": "cU6WK",
+                              "name": "Breadcrumb Right",
+                              "gap": 8,
                               "alignItems": "center",
                               "children": [
                                 {
-                                  "type": "text",
-                                  "id": "dQ1w2",
-                                  "name": "Issue Id Text",
-                                  "fill": "$ds-text-muted",
-                                  "content": "SHIP-124",
-                                  "fontFamily": "$ds-font-mono",
-                                  "fontSize": 10,
-                                  "fontWeight": "600"
+                                  "type": "frame",
+                                  "id": "Zwjgt",
+                                  "name": "Issue Id Chip",
+                                  "context": "Workspace-unique issue identifier, rendered verbatim from the API. Mono font; never reused after deletion.",
+                                  "height": 22,
+                                  "fill": "$ds-surface-subtle",
+                                  "cornerRadius": "$ds-radius-sm",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "padding": [
+                                    0,
+                                    8
+                                  ],
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "dQ1w2",
+                                      "name": "Issue Id Text",
+                                      "fill": "$ds-text-muted",
+                                      "content": "SHIP-124",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "p3KMvK",
+                                  "name": "Copy Link Button",
+                                  "width": 26,
+                                  "height": 26,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": 6,
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "uuHPJ",
+                                      "name": "Copy Link Icon",
+                                      "width": 13,
+                                      "height": 13,
+                                      "icon": "link",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -33516,20 +33095,9 @@
                                   "name": "Description Section Header",
                                   "width": "fill_container",
                                   "gap": 8,
-                                  "justifyContent": "space_between",
+                                  "justifyContent": "end",
                                   "alignItems": "center",
                                   "children": [
-                                    {
-                                      "type": "text",
-                                      "id": "kiWwJ",
-                                      "name": "Description Label",
-                                      "fill": "$ds-text-muted",
-                                      "content": "DESCRIPTION",
-                                      "fontFamily": "$ds-font-mono",
-                                      "fontSize": 9,
-                                      "fontWeight": "600",
-                                      "letterSpacing": 1
-                                    },
                                     {
                                       "type": "frame",
                                       "id": "kZRrh",
@@ -33736,24 +33304,24 @@
                                       "children": [
                                         {
                                           "type": "frame",
-                                          "id": "tC7hA",
-                                          "name": "Event Icon Created",
+                                          "id": "q7jfs",
+                                          "name": "Actor Avatar Created",
                                           "width": 26,
                                           "height": 26,
-                                          "fill": "#F0EFEB",
-                                          "cornerRadius": "$ds-radius-md",
+                                          "fill": "$ds-brand",
+                                          "cornerRadius": 999,
                                           "justifyContent": "center",
                                           "alignItems": "center",
                                           "children": [
                                             {
-                                              "type": "icon",
-                                              "id": "qCqnv",
-                                              "name": "Created Icon",
-                                              "width": 14,
-                                              "height": 14,
-                                              "icon": "plus",
-                                              "library": "lucide",
-                                              "fill": "$ds-text-muted"
+                                              "type": "text",
+                                              "id": "M3Xzcb",
+                                              "name": "Actor Initials",
+                                              "fill": "#FFFFFF",
+                                              "content": "YM",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 9,
+                                              "fontWeight": "700"
                                             }
                                           ]
                                         },
@@ -33767,7 +33335,7 @@
                                           "padding": [
                                             0,
                                             0,
-                                            16,
+                                            20,
                                             0
                                           ],
                                           "children": [
@@ -33865,24 +33433,24 @@
                                       "children": [
                                         {
                                           "type": "frame",
-                                          "id": "Bed7F",
-                                          "name": "Event Icon Assigned",
+                                          "id": "oauL2",
+                                          "name": "Actor Avatar Assigned",
                                           "width": 26,
                                           "height": 26,
-                                          "fill": "$ds-info-soft",
-                                          "cornerRadius": "$ds-radius-md",
+                                          "fill": "$ds-brand",
+                                          "cornerRadius": 999,
                                           "justifyContent": "center",
                                           "alignItems": "center",
                                           "children": [
                                             {
-                                              "type": "icon",
-                                              "id": "tTsWb",
-                                              "name": "Assigned Icon",
-                                              "width": 14,
-                                              "height": 14,
-                                              "icon": "user-plus",
-                                              "library": "lucide",
-                                              "fill": "$ds-info"
+                                              "type": "text",
+                                              "id": "PWyYQ",
+                                              "name": "Actor Initials",
+                                              "fill": "#FFFFFF",
+                                              "content": "YM",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 9,
+                                              "fontWeight": "700"
                                             }
                                           ]
                                         },
@@ -33896,7 +33464,7 @@
                                           "padding": [
                                             0,
                                             0,
-                                            16,
+                                            20,
                                             0
                                           ],
                                           "children": [
@@ -34019,24 +33587,24 @@
                                       "children": [
                                         {
                                           "type": "frame",
-                                          "id": "vpAMC",
-                                          "name": "Event Icon Status",
+                                          "id": "pF8o8",
+                                          "name": "Actor Avatar Status",
                                           "width": 26,
                                           "height": 26,
-                                          "fill": "$ds-info-soft",
-                                          "cornerRadius": "$ds-radius-md",
+                                          "fill": "$ds-brand",
+                                          "cornerRadius": 999,
                                           "justifyContent": "center",
                                           "alignItems": "center",
                                           "children": [
                                             {
-                                              "type": "icon",
-                                              "id": "Ze7HM",
-                                              "name": "Status Icon",
-                                              "width": 14,
-                                              "height": 14,
-                                              "icon": "arrow-right",
-                                              "library": "lucide",
-                                              "fill": "$ds-info"
+                                              "type": "text",
+                                              "id": "ZvBoU",
+                                              "name": "Actor Initials",
+                                              "fill": "#FFFFFF",
+                                              "content": "YM",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 9,
+                                              "fontWeight": "700"
                                             }
                                           ]
                                         },
@@ -34050,7 +33618,7 @@
                                           "padding": [
                                             0,
                                             0,
-                                            16,
+                                            20,
                                             0
                                           ],
                                           "children": [
@@ -34217,24 +33785,24 @@
                                       "children": [
                                         {
                                           "type": "frame",
-                                          "id": "AYg4o",
-                                          "name": "Event Icon Priority",
+                                          "id": "w9yjA",
+                                          "name": "Actor Avatar Priority",
                                           "width": 26,
                                           "height": 26,
-                                          "fill": "$ds-warning-soft",
-                                          "cornerRadius": "$ds-radius-md",
+                                          "fill": "$ds-info",
+                                          "cornerRadius": 999,
                                           "justifyContent": "center",
                                           "alignItems": "center",
                                           "children": [
                                             {
-                                              "type": "icon",
-                                              "id": "NemuM",
-                                              "name": "Priority Icon",
-                                              "width": 14,
-                                              "height": 14,
-                                              "icon": "flag",
-                                              "library": "lucide",
-                                              "fill": "$ds-warning"
+                                              "type": "text",
+                                              "id": "kqJjp",
+                                              "name": "Actor Initials",
+                                              "fill": "#FFFFFF",
+                                              "content": "AR",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 9,
+                                              "fontWeight": "700"
                                             }
                                           ]
                                         },
@@ -34248,7 +33816,7 @@
                                           "padding": [
                                             0,
                                             0,
-                                            16,
+                                            20,
                                             0
                                           ],
                                           "children": [
@@ -34415,24 +33983,24 @@
                                       "children": [
                                         {
                                           "type": "frame",
-                                          "id": "yuUBt",
-                                          "name": "Event Icon Progress",
+                                          "id": "Pt7nq",
+                                          "name": "Actor Avatar Progress",
                                           "width": 26,
                                           "height": 26,
-                                          "fill": "$ds-brand-soft",
-                                          "cornerRadius": "$ds-radius-md",
+                                          "fill": "$ds-brand",
+                                          "cornerRadius": 999,
                                           "justifyContent": "center",
                                           "alignItems": "center",
                                           "children": [
                                             {
-                                              "type": "icon",
-                                              "id": "Pna5k",
-                                              "name": "Progress Icon",
-                                              "width": 14,
-                                              "height": 14,
-                                              "icon": "play",
-                                              "library": "lucide",
-                                              "fill": "$ds-brand"
+                                              "type": "text",
+                                              "id": "GTIg5",
+                                              "name": "Actor Initials",
+                                              "fill": "#FFFFFF",
+                                              "content": "YM",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 9,
+                                              "fontWeight": "700"
                                             }
                                           ]
                                         },
@@ -34446,7 +34014,7 @@
                                           "padding": [
                                             0,
                                             0,
-                                            16,
+                                            20,
                                             0
                                           ],
                                           "children": [
@@ -34613,24 +34181,24 @@
                                       "children": [
                                         {
                                           "type": "frame",
-                                          "id": "ezJsK",
-                                          "name": "Event Icon Label",
+                                          "id": "GlWPD",
+                                          "name": "Actor Avatar Label",
                                           "width": 26,
                                           "height": 26,
-                                          "fill": "$ds-danger-soft",
-                                          "cornerRadius": "$ds-radius-md",
+                                          "fill": "$ds-info",
+                                          "cornerRadius": 999,
                                           "justifyContent": "center",
                                           "alignItems": "center",
                                           "children": [
                                             {
-                                              "type": "icon",
-                                              "id": "bzO9e",
-                                              "name": "Label Icon",
-                                              "width": 14,
-                                              "height": 14,
-                                              "icon": "tag",
-                                              "library": "lucide",
-                                              "fill": "$ds-danger"
+                                              "type": "text",
+                                              "id": "n4DfoP",
+                                              "name": "Actor Initials",
+                                              "fill": "#FFFFFF",
+                                              "content": "AR",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 9,
+                                              "fontWeight": "700"
                                             }
                                           ]
                                         },
@@ -34644,7 +34212,7 @@
                                           "padding": [
                                             0,
                                             0,
-                                            4,
+                                            20,
                                             0
                                           ],
                                           "children": [
@@ -34760,6 +34328,13 @@
                                     },
                                     {
                                       "type": "frame",
+                                      "id": "iBLqm",
+                                      "name": "History Spacer",
+                                      "width": "fill_container",
+                                      "height": "fill_container"
+                                    },
+                                    {
+                                      "type": "frame",
                                       "id": "qc453",
                                       "name": "History Footer",
                                       "width": "fill_container",
@@ -34805,11 +34380,15 @@
                               "name": "Properties Card",
                               "context": "Issue properties. Every value row is an inline editor: clicking opens the same control as Edit modal (assignee opens Assign Issue modal). Workspace-scoped values only. Cycle lands with F7 — shown as 'No cycle' until then.",
                               "width": "fill_container",
-                              "fill": "$ds-surface-subtle",
-                              "cornerRadius": "$ds-radius-lg",
+                              "fill": "#00000000",
                               "layout": "vertical",
-                              "gap": 12,
-                              "padding": 16,
+                              "gap": 10,
+                              "padding": [
+                                4,
+                                0,
+                                0,
+                                0
+                              ],
                               "children": [
                                 {
                                   "type": "text",
@@ -36324,10 +35903,11 @@
               "name": "Dropdown Search",
               "width": "fill_container",
               "height": 32,
-              "fill": "$ds-surface-subtle",
-              "cornerRadius": "$ds-radius-md",
+              "fill": "#00000000",
               "stroke": "$ds-border",
-              "strokeWidth": 1,
+              "strokeWidth": {
+                "bottom": 1
+              },
               "gap": 8,
               "padding": [
                 0,
@@ -36376,11 +35956,11 @@
               "id": "byt2q",
               "name": "Member Row Yonatane M.",
               "width": "fill_container",
-              "fill": "$ds-brand-soft",
+              "fill": "#00000000",
               "cornerRadius": 8,
               "gap": 8,
               "padding": [
-                7,
+                6,
                 8
               ],
               "alignItems": "center",
@@ -36414,8 +35994,8 @@
                   "type": "frame",
                   "id": "wAKZz",
                   "name": "Member Avatar",
-                  "width": 22,
-                  "height": 22,
+                  "width": 18,
+                  "height": 18,
                   "fill": "$ds-info",
                   "cornerRadius": 999,
                   "justifyContent": "center",
@@ -36450,11 +36030,11 @@
               "id": "p2rKGE",
               "name": "Member Row Ana Ruiz",
               "width": "fill_container",
-              "fill": "$ds-brand-soft",
+              "fill": "#00000000",
               "cornerRadius": 8,
               "gap": 8,
               "padding": [
-                7,
+                6,
                 8
               ],
               "alignItems": "center",
@@ -36488,8 +36068,8 @@
                   "type": "frame",
                   "id": "a0eGj",
                   "name": "Member Avatar",
-                  "width": 22,
-                  "height": 22,
+                  "width": 18,
+                  "height": 18,
                   "fill": "$ds-info",
                   "cornerRadius": 999,
                   "justifyContent": "center",
@@ -36528,7 +36108,7 @@
               "cornerRadius": 8,
               "gap": 8,
               "padding": [
-                7,
+                6,
                 8
               ],
               "alignItems": "center",
@@ -36541,7 +36121,7 @@
                   "height": 16,
                   "fill": "$ds-surface",
                   "cornerRadius": 4,
-                  "stroke": "$ds-border-strong",
+                  "stroke": "$ds-border",
                   "strokeWidth": 1,
                   "justifyContent": "center",
                   "alignItems": "center"
@@ -36550,8 +36130,8 @@
                   "type": "frame",
                   "id": "hXRgH",
                   "name": "Member Avatar",
-                  "width": 22,
-                  "height": 22,
+                  "width": 18,
+                  "height": 18,
                   "fill": "$ds-info",
                   "cornerRadius": 999,
                   "justifyContent": "center",
@@ -36590,7 +36170,7 @@
               "cornerRadius": 8,
               "gap": 8,
               "padding": [
-                7,
+                6,
                 8
               ],
               "alignItems": "center",
@@ -36603,7 +36183,7 @@
                   "height": 16,
                   "fill": "$ds-surface",
                   "cornerRadius": 4,
-                  "stroke": "$ds-border-strong",
+                  "stroke": "$ds-border",
                   "strokeWidth": 1,
                   "justifyContent": "center",
                   "alignItems": "center"
@@ -36612,8 +36192,8 @@
                   "type": "frame",
                   "id": "B8tk8x",
                   "name": "Member Avatar",
-                  "width": 22,
-                  "height": 22,
+                  "width": 18,
+                  "height": 18,
                   "fill": "$ds-info",
                   "cornerRadius": 999,
                   "justifyContent": "center",
@@ -36669,35 +36249,6 @@
             },
             {
               "type": "frame",
-              "id": "TfBqU",
-              "name": "Mode Show Only",
-              "gap": 8,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "ellipse",
-                  "id": "A2dlk",
-                  "name": "Radio Selected",
-                  "fill": "$ds-brand",
-                  "width": 14,
-                  "height": 14,
-                  "stroke": "#FFFFFF",
-                  "strokeWidth": 3
-                },
-                {
-                  "type": "text",
-                  "id": "pRXhj",
-                  "name": "Mode Label",
-                  "fill": "$ds-text",
-                  "content": "Show only tasks assigned to selected users",
-                  "fontFamily": "$ds-font-ui",
-                  "fontSize": 11.5,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
               "id": "to6mf",
               "name": "Footer Actions",
               "width": "fill_container",
@@ -36718,6 +36269,2417 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "LHNUN",
+      "x": 12144,
+      "y": 9974,
+      "name": "Screen / Issues - Archived",
+      "context": "Issues Archived view — list-only, read-only. Restore returns stored status + blocked; delete allowed. Kanban toggle hidden.",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "$ds-bg",
+      "cornerRadius": 16,
+      "stroke": "$ds-border-strong",
+      "strokeWidth": 1.5,
+      "layout": "none",
+      "children": [
+        {
+          "id": "OP8aj",
+          "type": "ref",
+          "ref": "ePp64",
+          "name": "Issues App Shell",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "descendants": {
+            "sEAKC/zzLMZ": {
+              "fill": "$ds-sidebar",
+              "stroke": "#00000000",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "enabled": false,
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              }
+            },
+            "sEAKC/T8mgxW": {
+              "fill": "$ds-text"
+            },
+            "sEAKC/RNGZM": {
+              "content": "Dashboard",
+              "fill": "$ds-text",
+              "fontWeight": "500"
+            },
+            "sEAKC/ggFoz": {
+              "fill": "$ds-surface",
+              "stroke": "$ds-border",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              }
+            },
+            "sEAKC/GAD7w": {
+              "fill": "$ds-text"
+            },
+            "sEAKC/mIjuf": {
+              "fill": "$ds-text",
+              "fontWeight": "600"
+            },
+            "sEAKC/iO4LY": {
+              "fill": "$ds-sidebar",
+              "stroke": "#00000000",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "enabled": false,
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              }
+            },
+            "sEAKC/eQYhL": {
+              "fill": "$ds-text"
+            },
+            "sEAKC/O0jBo": {
+              "fill": "$ds-text",
+              "fontWeight": "500"
+            },
+            "ZND29/F9fxa": {
+              "icon": "circle-check"
+            },
+            "ZND29/kLH9d": {
+              "content": "Issues"
+            },
+            "RJq6z": {
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "iTrRT",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Issues Page Column",
+                  "width": 1176,
+                  "height": 824,
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "MlCiQ",
+                      "name": "Issues Header Row",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "CbRJn",
+                          "name": "Issues Heading Texts",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rIIfQ",
+                              "name": "Issues Page Title",
+                              "fill": "$ds-text",
+                              "content": "Issues",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 24,
+                              "fontWeight": "700",
+                              "letterSpacing": -0.5
+                            },
+                            {
+                              "type": "text",
+                              "id": "HGjiR",
+                              "name": "Issues Page Subtitle",
+                              "fill": "$ds-text-muted",
+                              "content": "Track and resolve work across your workspace.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "B5Rmhl",
+                          "name": "Issues Header Actions",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "YKvuT",
+                              "type": "ref",
+                              "ref": "M1Im2",
+                              "name": "New Issue Button",
+                              "descendants": {
+                                "oLhjB": {
+                                  "content": "New issue"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "W3u0j",
+                      "name": "Issues Toolbar Row",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "qibwS",
+                          "name": "Toolbar Top Row",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "I98XYc",
+                              "name": "Top Left Tabs",
+                              "gap": 12,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "JaTdy",
+                                  "name": "Issues Tabs",
+                                  "gap": 20,
+                                  "alignItems": "end",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "Q4Uqo",
+                                      "name": "Tab Default All",
+                                      "context": "Inactive tab — shows active issues.",
+                                      "layout": "vertical",
+                                      "gap": 6,
+                                      "padding": [
+                                        2,
+                                        2,
+                                        0,
+                                        2
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "iq0mZ",
+                                          "name": "All Tab Label",
+                                          "gap": 6,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "r40iuO",
+                                              "name": "All Label",
+                                              "fill": "$ds-text-muted",
+                                              "content": "All",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12.5,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "bwPUM",
+                                              "name": "All Count",
+                                              "fill": "$ds-text-muted",
+                                              "content": "12",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 10,
+                                              "fontWeight": "600"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "TGABN",
+                                          "name": "Inactive Tab Underline",
+                                          "width": 38,
+                                          "height": 2,
+                                          "fill": "#00000000",
+                                          "cornerRadius": 1
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "i7RBO",
+                                      "name": "Tab Default My",
+                                      "layout": "vertical",
+                                      "gap": 6,
+                                      "padding": [
+                                        2,
+                                        2,
+                                        0,
+                                        2
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "eaI6i",
+                                          "name": "My Tab Label",
+                                          "gap": 6,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "sqheo",
+                                              "name": "My Label",
+                                              "fill": "$ds-text-muted",
+                                              "content": "My",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12.5,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "FpD4J",
+                                              "name": "My Count",
+                                              "fill": "$ds-text-muted",
+                                              "content": "3",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 10,
+                                              "fontWeight": "600"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "Gj1HQ",
+                                          "name": "Inactive Underline",
+                                          "width": 40,
+                                          "height": 2,
+                                          "fill": "#00000000"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "kZiyU",
+                                      "name": "Tab Active Archived",
+                                      "context": "Active tab — archived read-only list. Restore returns stored status + blocked.",
+                                      "layout": "vertical",
+                                      "gap": 6,
+                                      "padding": [
+                                        2,
+                                        2,
+                                        0,
+                                        2
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "SkvIN",
+                                          "name": "Archived Tab Label",
+                                          "gap": 6,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "WtB2V",
+                                              "name": "Archived Label",
+                                              "fill": "$ds-brand",
+                                              "content": "Archived",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12.5,
+                                              "fontWeight": "600"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "Qgygl",
+                                          "name": "Active Tab Underline",
+                                          "width": 40,
+                                          "height": 2,
+                                          "fill": "$ds-brand",
+                                          "cornerRadius": 1
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "EZ2Om",
+                              "name": "Top Right Controls",
+                              "width": "fit_content(64)",
+                              "height": "fit_content(34)",
+                              "gap": 10,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "MFZ6e",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Issues View Switch",
+                                  "context": "Hidden on Archived — list-only view. Kanban toggle returns on All/My.",
+                                  "enabled": false,
+                                  "height": 34,
+                                  "fill": "$ds-surface-subtle",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 2,
+                                  "padding": 3,
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "Zepth",
+                                      "name": "View / Active / List",
+                                      "width": 28,
+                                      "height": 28,
+                                      "fill": "$ds-surface",
+                                      "cornerRadius": 6,
+                                      "effect": {
+                                        "type": "shadow",
+                                        "shadowType": "outer",
+                                        "color": "#00000012",
+                                        "offset": {
+                                          "x": 0,
+                                          "y": 1
+                                        },
+                                        "blur": 3
+                                      },
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "hjkxf",
+                                          "name": "List View Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "list",
+                                          "library": "lucide",
+                                          "fill": "$ds-text"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "qhlzj",
+                                      "name": "View / Default / Kanban",
+                                      "width": 28,
+                                      "height": 28,
+                                      "fill": "#00000000",
+                                      "cornerRadius": 6,
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "smWKt",
+                                          "name": "Kanban View Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "columns-3",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ejFYZ",
+                          "name": "Toolbar Bottom Row",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "cqYz1",
+                              "name": "Issues Toolbar Controls",
+                              "gap": 8,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "z0dlbQ",
+                                  "name": "Issue Search",
+                                  "width": 160,
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "EKi8r",
+                                      "name": "Issue Search Icon",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "search",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "MAOaF",
+                                      "name": "Issue Search Value",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Find issues…",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Epe6v",
+                                  "name": "Priority Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "cKfLS",
+                                      "name": "Priority Filter Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "qC84m",
+                                          "name": "Priority Filter Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "flag",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "EECyS",
+                                          "name": "Priority Filter Value",
+                                          "fill": "$ds-text",
+                                          "content": "Priority",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "KqNTa",
+                                      "name": "Priority Filter Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "kXDcK",
+                                  "name": "Assignee Filter",
+                                  "height": 34,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-brand",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "j0YUv3",
+                                      "name": "Assignee Filter Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "Rau0m",
+                                          "name": "Assignee Filter Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "user",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "B1a6TS",
+                                          "name": "Assignee Filter Value",
+                                          "fill": "$ds-text",
+                                          "content": "Assignee • 2",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "500"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "dujal",
+                                      "name": "Assignee Filter Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "IcCaG",
+                                  "name": "Project Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "t7TKMu",
+                                      "name": "Project Filter Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "FJPfT",
+                                          "name": "Project Filter Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "folder",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "j6g2gQ",
+                                          "name": "Project Filter Value",
+                                          "fill": "$ds-text",
+                                          "content": "Project",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "z5khM4",
+                                      "name": "Project Filter Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "lNiqn",
+                                  "name": "Labels Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "Uifdp",
+                                      "name": "Labels Filter Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "YyAWM",
+                                          "name": "Labels Filter Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "tag",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "xRnGd",
+                                          "name": "Labels Filter Value",
+                                          "fill": "$ds-text",
+                                          "content": "Labels",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "YHumk",
+                                      "name": "Labels Filter Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "xRPJo",
+                                  "name": "Due Date Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "VUTt3",
+                                      "name": "Due Filter Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "Mg1g3",
+                                          "name": "Due Filter Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "calendar",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "mQgRh",
+                                          "name": "Due Filter Value",
+                                          "fill": "$ds-text",
+                                          "content": "Due",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "tFliB",
+                                      "name": "Due Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "wJXan",
+                                  "name": "Sort Direction Toggle",
+                                  "context": "Sort direction toggle asc/desc. Default Newest desc. Click flips order; field stays Newest unless changed elsewhere.",
+                                  "width": 34,
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "ICoxX",
+                                      "name": "Sort Toggle Icon",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "arrow-down-a-z",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "jIjPj",
+                              "name": "Clear Filters",
+                              "gap": 4,
+                              "padding": [
+                                0,
+                                4
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "M0oyZ",
+                                  "name": "Clear Text",
+                                  "fill": "$ds-brand",
+                                  "content": "Clear",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XIKUZ",
+                      "name": "Issues Grouped List",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "$ds-surface",
+                      "stroke": "#00000000",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "jgLNz",
+                          "name": "Group Header Archived",
+                          "width": "fill_container",
+                          "height": 36,
+                          "fill": "$ds-surface-subtle",
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "xHran",
+                              "name": "Archive Icon",
+                              "width": 13,
+                              "height": 13,
+                              "icon": "archive",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "IDkPU",
+                              "name": "Group Label",
+                              "fill": "$ds-text",
+                              "content": "Archived",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "iMSfv",
+                              "name": "Group Count",
+                              "fill": "$ds-text-muted",
+                              "content": "5",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "x9ero",
+                              "name": "Header Spacer",
+                              "width": "fill_container",
+                              "height": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "onmku",
+                          "name": "Archived Row SHIP-118",
+                          "context": "Read-only archived issue. Restore returns stored Todo status.",
+                          "width": "fill_container",
+                          "height": 44,
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "DZHDF",
+                              "name": "Issue Id",
+                              "fill": "$ds-text-muted",
+                              "content": "SHIP-118",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "icon",
+                              "id": "sVkJ0",
+                              "name": "Status Circle",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "OViEk",
+                              "name": "Issue Title",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Legacy export format cleanup",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "L45HfX",
+                              "name": "Archived Badge",
+                              "height": 18,
+                              "fill": "#F0EFEB",
+                              "cornerRadius": "$ds-radius-pill",
+                              "padding": [
+                                0,
+                                7
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ljBFZ",
+                                  "name": "Badge Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ARCHIVED",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "E4XEg",
+                              "name": "Stored Status",
+                              "fill": "$ds-text-muted",
+                              "content": "was Todo",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "v3aGY",
+                              "name": "Restore Action",
+                              "fill": "$ds-brand",
+                              "content": "Restore",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "HHZ73",
+                          "name": "Archived Row SHIP-117",
+                          "context": "Read-only archived issue. Restore returns stored Done status.",
+                          "width": "fill_container",
+                          "height": 44,
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "nGxCo",
+                              "name": "Issue Id",
+                              "fill": "$ds-text-muted",
+                              "content": "SHIP-117",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "icon",
+                              "id": "wpRwW",
+                              "name": "Status Circle",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle-check",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "cBWLd",
+                              "name": "Issue Title",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Old OAuth scope migration",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "m7QNKh",
+                              "name": "Archived Badge",
+                              "height": 18,
+                              "fill": "#F0EFEB",
+                              "cornerRadius": "$ds-radius-pill",
+                              "padding": [
+                                0,
+                                7
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "UVHwa",
+                                  "name": "Badge Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ARCHIVED",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "q7GFe6",
+                              "name": "Stored Status",
+                              "fill": "$ds-text-muted",
+                              "content": "was Done",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "qqmmR",
+                              "name": "Restore Action",
+                              "fill": "$ds-brand",
+                              "content": "Restore",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "X34s2D",
+                          "name": "Archived Row SHIP-116",
+                          "width": "fill_container",
+                          "height": 44,
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Df4fN",
+                              "name": "Issue Id",
+                              "fill": "$ds-text-muted",
+                              "content": "SHIP-116",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "icon",
+                              "id": "pJOhS",
+                              "name": "Status Circle",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "CY9Jh",
+                              "name": "Issue Title",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Deprecated webhook payload fields",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "yQOZu",
+                              "name": "Archived Badge",
+                              "height": 18,
+                              "fill": "#F0EFEB",
+                              "cornerRadius": "$ds-radius-pill",
+                              "padding": [
+                                0,
+                                7
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xrAHW",
+                                  "name": "Badge Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ARCHIVED",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "D6bLW",
+                              "name": "Stored Status",
+                              "fill": "$ds-text-muted",
+                              "content": "was In Progress",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "V6qx4",
+                              "name": "Restore Action",
+                              "fill": "$ds-brand",
+                              "content": "Restore",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "DFhvZ",
+                          "name": "Archived Row SHIP-115",
+                          "width": "fill_container",
+                          "height": 44,
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fUzrp",
+                              "name": "Issue Id",
+                              "fill": "$ds-text-muted",
+                              "content": "SHIP-115",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "icon",
+                              "id": "JS9K5",
+                              "name": "Status Circle",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle-dashed",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "q0j5Wx",
+                              "name": "Issue Title",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Stale invite email copy",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "lUjk9",
+                              "name": "Archived Badge",
+                              "height": 18,
+                              "fill": "#F0EFEB",
+                              "cornerRadius": "$ds-radius-pill",
+                              "padding": [
+                                0,
+                                7
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ZuZrO",
+                                  "name": "Badge Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ARCHIVED",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "B5djU",
+                              "name": "Stored Status",
+                              "fill": "$ds-text-muted",
+                              "content": "was Backlog",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "KhWi0",
+                              "name": "Restore Action",
+                              "fill": "$ds-brand",
+                              "content": "Restore",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "wHRta",
+                          "name": "Archived Row SHIP-114",
+                          "width": "fill_container",
+                          "height": 44,
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Y0UwUL",
+                              "name": "Issue Id",
+                              "fill": "$ds-text-muted",
+                              "content": "SHIP-114",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "icon",
+                              "id": "ILnbJ",
+                              "name": "Status Circle",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "j5lKWL",
+                              "name": "Issue Title",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Old notification copy pass",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "WpgsR",
+                              "name": "Archived Badge",
+                              "height": 18,
+                              "fill": "#F0EFEB",
+                              "cornerRadius": "$ds-radius-pill",
+                              "padding": [
+                                0,
+                                7
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "hbwYv",
+                                  "name": "Badge Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ARCHIVED",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "DBBT2",
+                              "name": "Stored Status",
+                              "fill": "$ds-text-muted",
+                              "content": "was Todo",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "iQz2R",
+                              "name": "Restore Action",
+                              "fill": "$ds-brand",
+                              "content": "Restore",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ojeF2",
+      "x": 13701,
+      "y": 6321,
+      "name": "Screen / Projects - Archived",
+      "context": "Projects Archived view — list-only, read-only. Restore returns stored Planned/Active/Completed status. Kanban toggle hidden.",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "$ds-bg",
+      "cornerRadius": 16,
+      "stroke": "$ds-border-strong",
+      "strokeWidth": 1.5,
+      "layout": "none",
+      "children": [
+        {
+          "id": "F1RVpO",
+          "type": "ref",
+          "ref": "ePp64",
+          "name": "Projects App Shell",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "descendants": {
+            "sEAKC/zzLMZ": {
+              "fill": "$ds-sidebar",
+              "stroke": "#00000000",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "enabled": false,
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              }
+            },
+            "sEAKC/T8mgxW": {
+              "fill": "$ds-text"
+            },
+            "sEAKC/RNGZM": {
+              "content": "Dashboard",
+              "fill": "$ds-text",
+              "fontWeight": "500"
+            },
+            "sEAKC/iO4LY": {
+              "fill": "$ds-surface",
+              "stroke": "$ds-border",
+              "strokeWidth": 1,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000012",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              }
+            },
+            "sEAKC/eQYhL": {
+              "fill": "$ds-text"
+            },
+            "sEAKC/O0jBo": {
+              "fill": "$ds-text",
+              "fontWeight": "600"
+            },
+            "ZND29/F9fxa": {
+              "icon": "folder"
+            },
+            "ZND29/kLH9d": {
+              "content": "Projects"
+            },
+            "RJq6z": {
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "UJl2m",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Projects Page Column",
+                  "width": 1176,
+                  "height": 824,
+                  "fill": "$ds-surface",
+                  "cornerRadius": "$ds-radius-lg",
+                  "stroke": "$ds-border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "TxEtx",
+                      "name": "Projects Header Row",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "j1SeYq",
+                          "name": "Heading Texts",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "J9m26G",
+                              "name": "Projects Page Title",
+                              "fill": "$ds-text",
+                              "content": "Projects",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 24,
+                              "fontWeight": "700",
+                              "letterSpacing": -0.5
+                            },
+                            {
+                              "type": "text",
+                              "id": "MzQcw",
+                              "name": "Projects Page Subtitle",
+                              "fill": "$ds-text-muted",
+                              "content": "Track initiatives across your workspace.",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "vupc0",
+                          "name": "Header Actions",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "H8Wgq",
+                              "type": "ref",
+                              "ref": "M1Im2",
+                              "name": "New Project Button",
+                              "descendants": {
+                                "oLhjB": {
+                                  "content": "New project",
+                                  "name": "New Project Button Label"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MqLRV",
+                      "name": "Projects Toolbar Row",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "NTynI",
+                          "name": "Projects Top Row",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "krFkE",
+                              "name": "Top Left Tabs",
+                              "gap": 12,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "ERD7c",
+                                  "name": "Projects Tabs",
+                                  "gap": 20,
+                                  "alignItems": "end",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "n1RPf",
+                                      "name": "Tab Default All",
+                                      "layout": "vertical",
+                                      "gap": 6,
+                                      "padding": [
+                                        2,
+                                        2,
+                                        0,
+                                        2
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "RkPKu",
+                                          "name": "All Tab Label",
+                                          "gap": 6,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "RVQYA",
+                                              "name": "All Label",
+                                              "fill": "$ds-text-muted",
+                                              "content": "All",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12.5,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "GeU9v",
+                                              "name": "All Count",
+                                              "fill": "$ds-text-muted",
+                                              "content": "18",
+                                              "fontFamily": "$ds-font-mono",
+                                              "fontSize": 10,
+                                              "fontWeight": "600"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "PkcLX",
+                                          "name": "Inactive Tab Underline",
+                                          "width": 38,
+                                          "height": 2,
+                                          "fill": "#00000000",
+                                          "cornerRadius": 1
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "ByIyg",
+                                      "name": "Tab Active Archived",
+                                      "context": "Active tab — archived read-only list.",
+                                      "layout": "vertical",
+                                      "gap": 6,
+                                      "padding": [
+                                        2,
+                                        2,
+                                        0,
+                                        2
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "W2F9M",
+                                          "name": "Archived Tab Label",
+                                          "gap": 6,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "G1P1W",
+                                              "name": "Archived Label",
+                                              "fill": "$ds-brand",
+                                              "content": "Archived",
+                                              "fontFamily": "$ds-font-ui",
+                                              "fontSize": 12.5,
+                                              "fontWeight": "600"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "gFgl7",
+                                          "name": "Active Tab Underline",
+                                          "width": 44,
+                                          "height": 2,
+                                          "fill": "$ds-brand",
+                                          "cornerRadius": 1
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Y7JY95",
+                              "x": 1064,
+                              "y": 0,
+                              "name": "Projects View Switch",
+                              "context": "Hidden on Archived — list-only.",
+                              "enabled": false,
+                              "height": 34,
+                              "fill": "$ds-surface-subtle",
+                              "cornerRadius": "$ds-radius-md",
+                              "stroke": "$ds-border",
+                              "strokeWidth": 1,
+                              "gap": 2,
+                              "padding": 3,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "Qy1iK",
+                                  "name": "View / Active / List",
+                                  "width": 28,
+                                  "height": 28,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": 6,
+                                  "effect": {
+                                    "type": "shadow",
+                                    "shadowType": "outer",
+                                    "color": "#00000012",
+                                    "offset": {
+                                      "x": 0,
+                                      "y": 1
+                                    },
+                                    "blur": 3
+                                  },
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "GCpsC",
+                                      "name": "List View Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "list",
+                                      "library": "lucide",
+                                      "fill": "$ds-text"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "KK1PS",
+                                  "name": "View / Default / Kanban",
+                                  "width": 28,
+                                  "height": 28,
+                                  "fill": "#00000000",
+                                  "cornerRadius": 6,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "E3wzt",
+                                      "name": "Kanban View Icon",
+                                      "width": 14,
+                                      "height": 14,
+                                      "icon": "columns-3",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Ze0pP",
+                          "name": "Projects Bottom Row",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "PJgco",
+                              "name": "Projects Toolbar Controls",
+                              "gap": 8,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "o6MkF",
+                                  "name": "Project Search",
+                                  "width": 160,
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "UNXaU",
+                                      "name": "Project Search Icon",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "search",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "nL2XF",
+                                      "name": "Project Search Value",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Find projects…",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "puNTe",
+                                  "name": "Owner Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "e4cz2",
+                                      "name": "Owner Label Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "ae6b0",
+                                          "name": "Owner Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "user",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "Qd69L",
+                                          "name": "Owner Value",
+                                          "fill": "$ds-text",
+                                          "content": "Owner",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "yTr0X",
+                                      "name": "Owner Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "chevron-down",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "kiwia",
+                                  "name": "Start Date Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "keZCd",
+                                      "name": "Start Date Label Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "kYqbf",
+                                          "name": "Start Date Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "calendar",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "K8422",
+                                          "name": "Start Date Value",
+                                          "fill": "$ds-text",
+                                          "content": "Start",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "P8d2D",
+                                      "name": "Start Date Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "calendar-days",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "xc6xF",
+                                  "name": "Target Date Filter",
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    11
+                                  ],
+                                  "justifyContent": "space_between",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "r6E4u",
+                                      "name": "Target Date Label Cluster",
+                                      "gap": 6,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "icon",
+                                          "id": "u4wdLX",
+                                          "name": "Target Date Icon",
+                                          "width": 14,
+                                          "height": 14,
+                                          "icon": "flag",
+                                          "library": "lucide",
+                                          "fill": "$ds-text-muted"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "OfqHO",
+                                          "name": "Target Date Value",
+                                          "fill": "$ds-text",
+                                          "content": "Target",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 12,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "icon",
+                                      "id": "oKAvk",
+                                      "name": "Target Date Chevron",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "calendar-days",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Lnbkx",
+                                  "name": "Sort Direction Toggle",
+                                  "context": "Sort direction toggle asc/desc. Default Newest desc.",
+                                  "width": 34,
+                                  "height": 34,
+                                  "fill": "$ds-surface",
+                                  "cornerRadius": "$ds-radius-md",
+                                  "stroke": "$ds-border",
+                                  "strokeWidth": 1,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "lrmCd",
+                                      "name": "Sort Icon",
+                                      "width": 15,
+                                      "height": 15,
+                                      "icon": "arrow-down-a-z",
+                                      "library": "lucide",
+                                      "fill": "$ds-text-muted"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Ywuoa",
+                              "name": "Clear Filters",
+                              "gap": 4,
+                              "padding": [
+                                0,
+                                4
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "V1y2x",
+                                  "name": "Clear Text",
+                                  "fill": "$ds-brand",
+                                  "content": "Clear",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PZS9l",
+                      "name": "Projects Grouped List",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "$ds-surface",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "MIyf8",
+                          "name": "Group Header Archived",
+                          "width": "fill_container",
+                          "height": 36,
+                          "fill": "$ds-surface-subtle",
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "E94f4Z",
+                              "name": "Archive Icon",
+                              "width": 13,
+                              "height": 13,
+                              "icon": "archive",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "FdjCc",
+                              "name": "Group Label",
+                              "fill": "$ds-text",
+                              "content": "Archived",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "IEEqc",
+                              "name": "Group Count",
+                              "fill": "$ds-text-muted",
+                              "content": "3",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "U8eVo",
+                              "name": "Header Spacer",
+                              "width": "fill_container",
+                              "height": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "tPX8i",
+                          "name": "Archived Row Payroll V1",
+                          "context": "Read-only archived project.",
+                          "width": "fill_container",
+                          "height": 48,
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 12,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "q7xSG6",
+                              "name": "Go Arrow",
+                              "width": 16,
+                              "height": 16,
+                              "icon": "corner-down-right",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "A28je",
+                              "name": "Project Name",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Payroll V1",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "q9iYVm",
+                              "name": "Archived Badge",
+                              "height": 18,
+                              "fill": "#F0EFEB",
+                              "cornerRadius": "$ds-radius-pill",
+                              "padding": [
+                                0,
+                                7
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "QjGBt",
+                                  "name": "Badge Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ARCHIVED",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "D4pNO",
+                              "name": "Stored Status",
+                              "fill": "$ds-text-muted",
+                              "content": "was Active",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "UUeBa",
+                              "name": "Restore Action",
+                              "fill": "$ds-brand",
+                              "content": "Restore",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "W5u7n",
+                          "name": "Archived Row Old Mobile App",
+                          "width": "fill_container",
+                          "height": 48,
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 12,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "U3ltw",
+                              "name": "Go Arrow",
+                              "width": 16,
+                              "height": 16,
+                              "icon": "corner-down-right",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "y2sGq",
+                              "name": "Project Name",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Old Mobile App",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "lsBks",
+                              "name": "Archived Badge",
+                              "height": 18,
+                              "fill": "#F0EFEB",
+                              "cornerRadius": "$ds-radius-pill",
+                              "padding": [
+                                0,
+                                7
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "q9MiO",
+                                  "name": "Badge Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ARCHIVED",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "htapG",
+                              "name": "Stored Status",
+                              "fill": "$ds-text-muted",
+                              "content": "was Completed",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "jSUOt",
+                              "name": "Restore Action",
+                              "fill": "$ds-brand",
+                              "content": "Restore",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "NxRs8",
+                          "name": "Archived Row Legacy API",
+                          "width": "fill_container",
+                          "height": 48,
+                          "stroke": "$ds-border",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 12,
+                          "padding": [
+                            0,
+                            16
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "WrJ4v",
+                              "name": "Go Arrow",
+                              "width": 16,
+                              "height": 16,
+                              "icon": "corner-down-right",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "wdqmF",
+                              "name": "Project Name",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Legacy API",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "I5WFF",
+                              "name": "Archived Badge",
+                              "height": 18,
+                              "fill": "#F0EFEB",
+                              "cornerRadius": "$ds-radius-pill",
+                              "padding": [
+                                0,
+                                7
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "A65zuf",
+                                  "name": "Badge Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "ARCHIVED",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.7
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "Gl1At",
+                              "name": "Stored Status",
+                              "fill": "$ds-text-muted",
+                              "content": "was Planned",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 11.5,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "W6BsjL",
+                              "name": "Restore Action",
+                              "fill": "$ds-brand",
+                              "content": "Restore",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
         }
       ]
     }
