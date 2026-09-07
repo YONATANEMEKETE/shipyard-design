@@ -7920,7 +7920,7 @@
             {
               "type": "frame",
               "id": "bOkmd",
-              "name": "Sidebar Nav / Default / Notifications",
+              "name": "Sidebar Nav / Default / Activity",
               "height": 34,
               "fill": "$ds-sidebar",
               "cornerRadius": "$ds-radius-md",
@@ -7935,45 +7935,22 @@
                 {
                   "type": "icon",
                   "id": "Y1ujq",
-                  "name": "Notifications Nav Icon",
+                  "name": "Activity Nav Icon",
                   "width": 16,
                   "height": 16,
-                  "icon": "bell",
+                  "icon": "activity",
                   "library": "lucide",
                   "fill": "$ds-text"
                 },
                 {
                   "type": "text",
                   "id": "aGzDP",
-                  "name": "Notifications Nav Label",
+                  "name": "Activity Nav Label",
                   "fill": "$ds-text",
-                  "content": "Notifications",
+                  "content": "Activity",
                   "fontFamily": "$ds-font-ui",
                   "fontSize": 12,
                   "fontWeight": "500"
-                },
-                {
-                  "type": "frame",
-                  "id": "bZRBc",
-                  "name": "Notifications Badge",
-                  "fill": "$ds-accent",
-                  "cornerRadius": "$ds-radius-pill",
-                  "padding": [
-                    3,
-                    7
-                  ],
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "kCAdN",
-                      "name": "Inbox Badge Text",
-                      "fill": "#FFFFFF",
-                      "content": "3",
-                      "fontFamily": "$ds-font-mono",
-                      "fontSize": 8,
-                      "fontWeight": "700"
-                    }
-                  ]
                 }
               ]
             },
@@ -54753,6 +54730,1340 @@
           ]
         }
       ]
+    },
+    {
+      "id": "vAvXD",
+      "type": "ref",
+      "ref": "ePp64",
+      "name": "Screen / Activity",
+      "x": 18543,
+      "y": 13472,
+      "cornerRadius": 16,
+      "stroke": "$ds-border-strong",
+      "strokeWidth": 1.5,
+      "descendants": {
+        "sEAKC/zzLMZ": {
+          "fill": "$ds-sidebar",
+          "stroke": "#00000000",
+          "strokeWidth": 1,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "enabled": false,
+            "color": "#00000012",
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "blur": 3
+          }
+        },
+        "sEAKC/RNGZM": {
+          "fontWeight": "500"
+        },
+        "sEAKC/bOkmd": {
+          "fill": "$ds-surface",
+          "stroke": "$ds-border",
+          "strokeWidth": 1,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000012",
+            "offset": {
+              "x": 0,
+              "y": 1
+            },
+            "blur": 3
+          }
+        },
+        "sEAKC/aGzDP": {
+          "fontWeight": "600"
+        },
+        "ZND29/F9fxa": {
+          "icon": "activity"
+        },
+        "ZND29/kLH9d": {
+          "content": "Activity"
+        },
+        "q4mW7J": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "t9iLl",
+              "name": "Activity Page Column",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b3hMF2",
+                  "name": "Activity Header Row",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "crHgS",
+                      "name": "Heading Texts",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jNQFl",
+                          "name": "Activity Label",
+                          "fill": "$ds-brand",
+                          "content": "ACTIVITY",
+                          "fontFamily": "$ds-font-mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "VivnP",
+                          "name": "Activity Title",
+                          "fill": "$ds-text",
+                          "content": "Activity",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 28,
+                          "fontWeight": "700",
+                          "letterSpacing": -1
+                        },
+                        {
+                          "type": "text",
+                          "id": "Zkt8g",
+                          "name": "Activity Subcopy",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "A running record of everything happening across the workspace, newest first.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kK5ap",
+                  "name": "Area Tabs + Actor Filter Row",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "BRtAK",
+                      "name": "Area Filter Tabs",
+                      "fill": "$ds-surface-subtle",
+                      "cornerRadius": 8,
+                      "stroke": "$ds-border",
+                      "strokeWidth": 1,
+                      "gap": 2,
+                      "padding": 3,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "QqeMd",
+                          "name": "Area Tab Active — All",
+                          "height": 28,
+                          "fill": "$ds-surface",
+                          "cornerRadius": 8,
+                          "stroke": "$ds-border",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "V1A3n",
+                              "name": "Area Tab Label",
+                              "fill": "$ds-text",
+                              "content": "All",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "X7bJwQ",
+                          "name": "Area Tab — Workspace",
+                          "height": 28,
+                          "fill": "#00000000",
+                          "cornerRadius": 8,
+                          "stroke": "#00000000",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jKqEB",
+                              "name": "Area Tab Label",
+                              "fill": "$ds-text-muted",
+                              "content": "Workspace",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "FUieI",
+                          "name": "Area Tab — Members",
+                          "height": 28,
+                          "fill": "#00000000",
+                          "cornerRadius": 8,
+                          "stroke": "#00000000",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "lERjb",
+                              "name": "Area Tab Label",
+                              "fill": "$ds-text-muted",
+                              "content": "Members",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "OeopQ",
+                          "name": "Area Tab — Projects",
+                          "height": 28,
+                          "fill": "#00000000",
+                          "cornerRadius": 8,
+                          "stroke": "#00000000",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ZXJ4l",
+                              "name": "Area Tab Label",
+                              "fill": "$ds-text-muted",
+                              "content": "Projects",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "RxTHl",
+                          "name": "Area Tab — Issues",
+                          "height": 28,
+                          "fill": "#00000000",
+                          "cornerRadius": 8,
+                          "stroke": "#00000000",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Tt7pv",
+                              "name": "Area Tab Label",
+                              "fill": "$ds-text-muted",
+                              "content": "Issues",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "mhZJ3",
+                          "name": "Area Tab — Comments",
+                          "height": 28,
+                          "fill": "#00000000",
+                          "cornerRadius": 8,
+                          "stroke": "#00000000",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "zzkJS",
+                              "name": "Area Tab Label",
+                              "fill": "$ds-text-muted",
+                              "content": "Comments",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hXJNK",
+                          "name": "Area Tab — Cycles",
+                          "height": 28,
+                          "fill": "#00000000",
+                          "cornerRadius": 8,
+                          "stroke": "#00000000",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "I3vDAT",
+                              "name": "Area Tab Label",
+                              "fill": "$ds-text-muted",
+                              "content": "Cycles",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zRPQC",
+                      "name": "Actor Filter Button",
+                      "height": 34,
+                      "fill": "$ds-surface",
+                      "cornerRadius": 8,
+                      "stroke": "$ds-border",
+                      "strokeWidth": 1,
+                      "gap": 6,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Kddix",
+                          "name": "Actor Filter Icon",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "users",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "zUISF",
+                          "name": "Actor Filter Label",
+                          "fill": "$ds-text-muted",
+                          "content": "All members",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "EXaWL",
+                          "name": "Actor Filter Chevron",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "chevron-down",
+                          "library": "lucide",
+                          "fill": "$ds-text-muted"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wyWs1",
+                  "name": "Activity List",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "PD0GV",
+                      "name": "Day Group — TODAY",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "GdWvJ",
+                          "name": "Day Divider — TODAY",
+                          "width": "fill_container",
+                          "height": 24,
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "RsIsg",
+                              "name": "Day Divider Label",
+                              "fill": "$ds-text-muted",
+                              "content": "TODAY",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.5
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Y6x76a",
+                              "name": "Day Divider Rule",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ZQpy2",
+                          "name": "Activity Row — issues",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "woRZs",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$ds-brand-soft",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Xctc2",
+                                  "name": "Actor Initials",
+                                  "fill": "$ds-brand",
+                                  "content": "MA",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "YV0Dp",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle-check",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "TiBwu",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Maya moved SHIP-24 · Fix login from Todo to In Progress",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "xVVtp",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "10:47",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "CZmzv",
+                          "name": "Row Divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "H0dHkv",
+                          "name": "Activity Row — comments",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "AmT1W",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$ds-brand-soft",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "FGt6U",
+                                  "name": "Actor Initials",
+                                  "fill": "$ds-brand",
+                                  "content": "JW",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "f4BcD",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "message-square",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "W0GRda",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Jonas Weber commented on SHIP-24 · Fix login",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "P4M7uV",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "10:15",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "rJGzL",
+                          "name": "Row Divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "JrqKD",
+                          "name": "Activity Row — cycles",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "kPggb",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$ds-brand",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "e9HC2S",
+                                  "name": "Actor Initials",
+                                  "fill": "#FFFFFF",
+                                  "content": "O",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "o0arX3",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "calendar",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "a058d",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Owner started Sprint 13",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "oIyZx",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "09:58",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "vBJ7t",
+                          "name": "Row Divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VfVbz",
+                          "name": "Activity Row — members",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Csfii",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "#F0EFEB",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "lyR4w",
+                                  "name": "Actor Initials",
+                                  "fill": "$ds-text-muted",
+                                  "content": "@",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "M1Fo6b",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "users",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "L5esJo",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "bob@example.com declined the invite",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "yt8Hi",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "09:12",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VrTzd",
+                      "name": "Day Group — YESTERDAY",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "xtpQD",
+                          "name": "Day Divider — YESTERDAY",
+                          "width": "fill_container",
+                          "height": 24,
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "M0LqvX",
+                              "name": "Day Divider Label",
+                              "fill": "$ds-text-muted",
+                              "content": "YESTERDAY",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.5
+                            },
+                            {
+                              "type": "frame",
+                              "id": "SChrW",
+                              "name": "Day Divider Rule",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ppI55",
+                          "name": "Activity Row — members",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "gAoQ6",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$ds-brand",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Pqnts",
+                                  "name": "Actor Initials",
+                                  "fill": "#FFFFFF",
+                                  "content": "O",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "Hyztk",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "users",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "UvtbB",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Owner invited bob@example.com as Member",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "nY3qc",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "16:05",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "K5e6lv",
+                          "name": "Row Divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "E4zj7",
+                          "name": "Activity Row — issues",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "uAp18",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$ds-brand-soft",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "b5xm9f",
+                                  "name": "Actor Initials",
+                                  "fill": "$ds-brand",
+                                  "content": "JW",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "vXkoU",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle-check",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "y9SRK",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Jonas Weber moved SHIP-19 · Onboarding empty states to Done",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "aoWLY",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "15:22",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "yOZKf",
+                          "name": "Row Divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "M4IUl",
+                          "name": "Activity Row — projects",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "yHtZB",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$ds-brand-soft",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "q4yKc",
+                                  "name": "Actor Initials",
+                                  "fill": "$ds-brand",
+                                  "content": "MA",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "Or0o3",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "folder",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Us4nJ",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Maya Andersen created project Ship Payroll",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "d78sbr",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "11:40",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FomCf",
+                      "name": "Day Group — FRI, SEP 4",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "HQ7FD",
+                          "name": "Day Divider — FRI, SEP 4",
+                          "width": "fill_container",
+                          "height": 24,
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rcAxA",
+                              "name": "Day Divider Label",
+                              "fill": "$ds-text-muted",
+                              "content": "FRI, SEP 4",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.5
+                            },
+                            {
+                              "type": "frame",
+                              "id": "KbuRX",
+                              "name": "Day Divider Rule",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "bojBf",
+                          "name": "Activity Row — issues",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "ugtjs",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$ds-brand",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "CIvJd",
+                                  "name": "Actor Initials",
+                                  "fill": "#FFFFFF",
+                                  "content": "O",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "rTwkf",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "circle-check",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "SEiUR",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Owner deleted SHIP-18 · Fix login redirect",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "bqVgV",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "18:11",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "a2SsZq",
+                          "name": "Row Divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Cc2hv",
+                          "name": "Activity Row — workspace",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "JpWaA",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$ds-brand-soft",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "zayWf",
+                                  "name": "Actor Initials",
+                                  "fill": "$ds-brand",
+                                  "content": "MA",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "RbNrf",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "ship",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "B2nbnH",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Maya Andersen renamed the workspace to Harbor Labs",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "hnLzQ",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "16:40",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "o7kd2",
+                          "name": "Row Divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "$ds-border"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "caLS3",
+                          "name": "Activity Row — members",
+                          "width": "fill_container",
+                          "height": 44,
+                          "cornerRadius": 6,
+                          "gap": 10,
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "i3myYT",
+                              "name": "Actor Avatar",
+                              "width": 24,
+                              "height": 24,
+                              "fill": "$ds-brand",
+                              "cornerRadius": 999,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Y0qGq",
+                                  "name": "Actor Initials",
+                                  "fill": "#FFFFFF",
+                                  "content": "O",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 8,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "LfxRc",
+                              "name": "Area Icon",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "users",
+                              "library": "lucide",
+                              "fill": "$ds-text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Nj1mJ",
+                              "name": "Event Summary",
+                              "fill": "$ds-text",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Owner changed Jonas Weber's role to Admin",
+                              "fontFamily": "$ds-font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "LTCS3",
+                              "name": "Event Time",
+                              "fill": "$ds-text-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 40,
+                              "content": "11:26",
+                              "textAlign": "right",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NSXYS",
+                  "name": "Load More Row",
+                  "width": "fill_container",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "mzbMt",
+                      "type": "ref",
+                      "ref": "zagTT",
+                      "name": "Button Load Older Activity"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   ],
   "variables": {
