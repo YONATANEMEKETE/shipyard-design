@@ -49376,7 +49376,7 @@
                       "type": "frame",
                       "id": "tGEFQ",
                       "name": "Notification Row",
-                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show the amber accent bar; read rows are muted. Row is never removed on open — only via delete/clear-all.",
+                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show an amber dot before the timestamp; read rows are muted. Row is never removed on open — only via delete/clear-all.",
                       "width": "fill_container",
                       "gap": 10,
                       "padding": [
@@ -49387,15 +49387,6 @@
                       ],
                       "alignItems": "center",
                       "children": [
-                        {
-                          "type": "frame",
-                          "id": "TomWG",
-                          "name": "Unread Accent",
-                          "width": 3,
-                          "height": 32,
-                          "fill": "$ds-brand",
-                          "cornerRadius": 2
-                        },
                         {
                           "type": "frame",
                           "id": "nFy0n",
@@ -49481,6 +49472,14 @@
                           ]
                         },
                         {
+                          "type": "ellipse",
+                          "id": "fRQNi",
+                          "name": "Unread Dot",
+                          "fill": "$ds-brand",
+                          "width": 7,
+                          "height": 7
+                        },
+                        {
                           "type": "text",
                           "id": "hYUfZ",
                           "name": "Relative Time",
@@ -49505,7 +49504,7 @@
                       "type": "frame",
                       "id": "yhzO0",
                       "name": "Notification Row",
-                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show the amber accent bar; read rows are muted. Row is never removed on open — only via delete/clear-all.",
+                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show an amber dot before the timestamp; read rows are muted. Row is never removed on open — only via delete/clear-all.",
                       "width": "fill_container",
                       "gap": 10,
                       "padding": [
@@ -49516,15 +49515,6 @@
                       ],
                       "alignItems": "center",
                       "children": [
-                        {
-                          "type": "frame",
-                          "id": "sojaM",
-                          "name": "Unread Accent",
-                          "width": 3,
-                          "height": 32,
-                          "fill": "$ds-brand",
-                          "cornerRadius": 2
-                        },
                         {
                           "type": "frame",
                           "id": "iKECv",
@@ -49610,6 +49600,14 @@
                           ]
                         },
                         {
+                          "type": "ellipse",
+                          "id": "mxSy3",
+                          "name": "Unread Dot",
+                          "fill": "$ds-brand",
+                          "width": 7,
+                          "height": 7
+                        },
+                        {
                           "type": "text",
                           "id": "PLX38",
                           "name": "Relative Time",
@@ -49634,7 +49632,7 @@
                       "type": "frame",
                       "id": "o47zz",
                       "name": "Notification Row",
-                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show the amber accent bar; read rows are muted. Row is never removed on open — only via delete/clear-all.",
+                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show an amber dot before the timestamp; read rows are muted. Row is never removed on open — only via delete/clear-all.",
                       "width": "fill_container",
                       "gap": 10,
                       "padding": [
@@ -49788,7 +49786,7 @@
                       "type": "frame",
                       "id": "labht",
                       "name": "Notification Row",
-                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show the amber accent bar; read rows are muted. Row is never removed on open — only via delete/clear-all.",
+                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show an amber dot before the timestamp; read rows are muted. Row is never removed on open — only via delete/clear-all.",
                       "width": "fill_container",
                       "gap": 10,
                       "padding": [
@@ -49908,7 +49906,7 @@
                       "type": "frame",
                       "id": "Y61qA",
                       "name": "Notification Row",
-                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show the amber accent bar; read rows are muted. Row is never removed on open — only via delete/clear-all.",
+                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show an amber dot before the timestamp; read rows are muted. Row is never removed on open — only via delete/clear-all.",
                       "width": "fill_container",
                       "gap": 10,
                       "padding": [
@@ -50062,7 +50060,7 @@
                       "type": "frame",
                       "id": "smhST",
                       "name": "Notification Row",
-                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show the amber accent bar; read rows are muted. Row is never removed on open — only via delete/clear-all.",
+                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show an amber dot before the timestamp; read rows are muted. Row is never removed on open — only via delete/clear-all.",
                       "width": "fill_container",
                       "gap": 10,
                       "padding": [
@@ -50182,7 +50180,7 @@
                       "type": "frame",
                       "id": "sqYTt",
                       "name": "Notification Row",
-                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show the amber accent bar; read rows are muted. Row is never removed on open — only via delete/clear-all.",
+                      "context": "Opens the related issue (mention scrolls to #comment-id) and marks the row read on click. Unread rows show an amber dot before the timestamp; read rows are muted. Row is never removed on open — only via delete/clear-all.",
                       "width": "fill_container",
                       "gap": 10,
                       "padding": [
