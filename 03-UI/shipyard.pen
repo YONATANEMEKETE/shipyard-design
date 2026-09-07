@@ -56055,7 +56055,2670 @@
                       "id": "mzbMt",
                       "type": "ref",
                       "ref": "zagTT",
-                      "name": "Button Load Older Activity"
+                      "name": "Button Load Older Activity",
+                      "descendants": {
+                        "mBNLs": {
+                          "enabled": false
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "s4L8ST",
+      "type": "ref",
+      "ref": "ePp64",
+      "name": "Screen / Dashboard",
+      "x": 20143,
+      "y": 13472,
+      "cornerRadius": 16,
+      "stroke": "$ds-border-strong",
+      "strokeWidth": 1.5,
+      "descendants": {
+        "ZND29/F9fxa": {
+          "icon": "layout-dashboard"
+        },
+        "ZND29/kLH9d": {
+          "content": "Dashboard"
+        },
+        "q4mW7J": {
+          "children": [
+            {
+              "type": "frame",
+              "id": "X84577",
+              "name": "Dashboard Page Column",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "I1nBK",
+                  "name": "Dashboard Header Row",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OQv0F",
+                      "name": "Heading Texts",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "M70ZrD",
+                          "name": "Dashboard Label",
+                          "fill": "$ds-brand",
+                          "content": "DASHBOARD",
+                          "fontFamily": "$ds-font-mono",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "X0AJl6",
+                          "name": "Dashboard Greeting",
+                          "fill": "$ds-text",
+                          "content": "Good morning, Maya",
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 28,
+                          "fontWeight": "700",
+                          "letterSpacing": -1
+                        },
+                        {
+                          "type": "text",
+                          "id": "ao5H3",
+                          "name": "Dashboard Subcopy",
+                          "fill": "$ds-text-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Friday, September 5 · Here's where Harbor Labs stands today.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$ds-font-ui",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Fjmnw",
+                      "name": "Quick Actions",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "b6HUb",
+                          "type": "ref",
+                          "ref": "M1Im2",
+                          "name": "Button Create Issue",
+                          "descendants": {
+                            "ZNFT2": {
+                              "icon": "plus"
+                            },
+                            "oLhjB": {
+                              "content": "Create issue"
+                            }
+                          }
+                        },
+                        {
+                          "id": "sMQiy",
+                          "type": "ref",
+                          "ref": "zagTT",
+                          "name": "Button Create Project"
+                        },
+                        {
+                          "id": "fP40Q",
+                          "type": "ref",
+                          "ref": "zagTT",
+                          "name": "Button Create Cycle"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "JgvQ5",
+                  "name": "Dashboard Body",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "cPio7",
+                      "name": "My Work Column",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "htCkc",
+                          "name": "My Work Header",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "T7FD80",
+                              "name": "My Work Label",
+                              "fill": "$ds-text-muted",
+                              "content": "MY WORK",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.5
+                            },
+                            {
+                              "type": "frame",
+                              "id": "CBYth",
+                              "name": "View All Issues Link",
+                              "gap": 4,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "sM1TQ",
+                                  "name": "View All Issues Text",
+                                  "fill": "$ds-brand",
+                                  "content": "View all issues",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "mhIto",
+                                  "name": "View All Issues Icon",
+                                  "width": 13,
+                                  "height": 13,
+                                  "icon": "arrow-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "x1yLz",
+                          "name": "My Work Grouped List",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "vqJKs",
+                              "name": "Group Header Assigned to you",
+                              "width": "fill_container",
+                              "height": 36,
+                              "fill": "$ds-surface-subtle",
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "v4JHR",
+                                  "name": "Group Icon",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "user-check",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "f60c9x",
+                                  "name": "Group Label",
+                                  "fill": "$ds-text",
+                                  "content": "Assigned to you",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "QHQYh",
+                                  "name": "Group Count",
+                                  "fill": "$ds-text-muted",
+                                  "content": "4",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "u82iy",
+                                  "name": "Header Spacer",
+                                  "width": "fill_container",
+                                  "height": 1
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "tHy6R",
+                              "name": "Issue Row SHIP-24",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "iCUH5",
+                                  "name": "Priority Pill High",
+                                  "height": 18,
+                                  "fill": "$ds-warning-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "NRI29",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-warning",
+                                      "content": "High",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "U2Q5ZX",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-24",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "J7v5YS",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "loader",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "BnrpU",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Fix login",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "d0Gbum",
+                                  "name": "Due Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Sep 8",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "x9cHcW",
+                                  "name": "Assignee Avatar",
+                                  "width": 20,
+                                  "height": 20,
+                                  "fill": "$ds-brand",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "giwqq",
+                                      "name": "Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "MA",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "eElye",
+                              "name": "Issue Row SHIP-31",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "Y2bJXD",
+                                  "name": "Priority Pill Urgent",
+                                  "height": 18,
+                                  "fill": "$ds-danger-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "T2TIQp",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-danger",
+                                      "content": "Urgent",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Dbx9c",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-31",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "uSrp0",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "circle",
+                                  "library": "lucide",
+                                  "fill": "$ds-info"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "o2f3z",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Add CSV export to reports",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Io1eW",
+                                  "name": "Due Text",
+                                  "fill": "$ds-danger",
+                                  "content": "Sep 2",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "sbbri",
+                                  "name": "Assignee Avatar",
+                                  "width": 20,
+                                  "height": 20,
+                                  "fill": "$ds-brand",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "wlHzi",
+                                      "name": "Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "MA",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "u9a3B",
+                              "name": "Issue Row SHIP-22",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "S6MH3z",
+                                  "name": "Priority Pill High",
+                                  "height": 18,
+                                  "fill": "$ds-warning-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "OQlPf",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-warning",
+                                      "content": "High",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "KSPvs",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-22",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "lU2Qt",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "loader",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "YBk33",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Rate limit the public API",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "iN1Ky",
+                                  "name": "Blocked Badge",
+                                  "height": 18,
+                                  "fill": "$ds-danger-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "gap": 4,
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "ZrhRc",
+                                      "name": "Blocked Icon",
+                                      "width": 10,
+                                      "height": 10,
+                                      "icon": "octagon-alert",
+                                      "library": "lucide",
+                                      "fill": "$ds-danger"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "gg2k6",
+                                      "name": "Blocked Text",
+                                      "fill": "$ds-danger",
+                                      "content": "Blocked",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "oEUnR",
+                                  "name": "Due Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "—",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Z3dGkD",
+                                  "name": "Assignee Avatar",
+                                  "width": 20,
+                                  "height": 20,
+                                  "fill": "$ds-brand",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "okVnX",
+                                      "name": "Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "MA",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "OHh1C",
+                              "name": "Issue Row SHIP-35",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "r5df3",
+                                  "name": "Priority Pill None",
+                                  "height": 18,
+                                  "fill": "#F0EFEB",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "sYxy7",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-text-muted",
+                                      "content": "No Priority",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "qoIdt",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-35",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "OaQKm",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "circle-dashed",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "O5SMr",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Update onboarding copy",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "S603y",
+                                  "name": "Due Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "—",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "lFLox",
+                                  "name": "Assignee Avatar",
+                                  "width": 20,
+                                  "height": 20,
+                                  "fill": "$ds-brand",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "zzyVV",
+                                      "name": "Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "MA",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "WpEgg",
+                              "name": "Group Header Created by you",
+                              "width": "fill_container",
+                              "height": 36,
+                              "fill": "$ds-surface-subtle",
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "RG47f",
+                                  "name": "Group Icon",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "pen-line",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "B9CsNd",
+                                  "name": "Group Label",
+                                  "fill": "$ds-text",
+                                  "content": "Created by you",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "SHTZD",
+                                  "name": "Group Count",
+                                  "fill": "$ds-text-muted",
+                                  "content": "3",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "v0vArn",
+                                  "name": "Header Spacer",
+                                  "width": "fill_container",
+                                  "height": 1
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "RmCLS",
+                              "name": "Issue Row SHIP-19",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "lAirC",
+                                  "name": "Priority Pill Medium",
+                                  "height": 18,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "KcQw1",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-brand",
+                                      "content": "Medium",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "tod85",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-19",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "SMApV",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "circle",
+                                  "library": "lucide",
+                                  "fill": "$ds-info"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "iNvgj",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Onboarding empty states",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Q0ZhNa",
+                                  "name": "Due Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Sep 12",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "sI7cg",
+                                  "name": "Assignee Avatar",
+                                  "width": 20,
+                                  "height": 20,
+                                  "fill": "$ds-info",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "Z3fA5K",
+                                      "name": "Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "JW",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "K3QWoW",
+                              "name": "Issue Row SHIP-27",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "DkBAX",
+                                  "name": "Priority Pill None",
+                                  "height": 18,
+                                  "fill": "#F0EFEB",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "uzxxQ",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-text-muted",
+                                      "content": "No Priority",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "tVkQl",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-27",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "m4NzGO",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "loader",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "s7g1t",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Add export to CSV",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "JVPXr",
+                                  "name": "Due Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "—",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "eKD55",
+                                  "name": "Assignee Avatar",
+                                  "width": 20,
+                                  "height": 20,
+                                  "fill": "$ds-brand",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "zNgOL",
+                                      "name": "Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "MA",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "IIR2Z",
+                              "name": "Issue Row SHIP-29",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "DtKft",
+                                  "name": "Priority Pill Low",
+                                  "height": 18,
+                                  "fill": "$ds-info-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "W5Syh",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-info",
+                                      "content": "Low",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "ZaacS",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-29",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "G0JfBN",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "circle-dashed",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "hsK5z",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Write migration guide",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "yHkfy",
+                                  "name": "Due Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "—",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "sk49N",
+                                  "name": "Assignee Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Unassigned",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "HpHyp",
+                              "name": "Group Header Recently viewed",
+                              "width": "fill_container",
+                              "height": 36,
+                              "fill": "$ds-surface-subtle",
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "lE6uU",
+                                  "name": "Group Icon",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "history",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "blMvb",
+                                  "name": "Group Label",
+                                  "fill": "$ds-text",
+                                  "content": "Recently viewed",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Uu2y3",
+                                  "name": "Group Count",
+                                  "fill": "$ds-text-muted",
+                                  "content": "3",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "TrmIS",
+                                  "name": "Header Spacer",
+                                  "width": "fill_container",
+                                  "height": 1
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "h3gwf",
+                              "name": "Issue Row SHIP-24",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "jHXjR",
+                                  "name": "Priority Pill High",
+                                  "height": 18,
+                                  "fill": "$ds-warning-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "NXjKf",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-warning",
+                                      "content": "High",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "sthxf",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-24",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "NqMs4",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "loader",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Gs4vv",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Fix login",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Qycl0",
+                                  "name": "Due Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Sep 8",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "s6NHc",
+                                  "name": "Assignee Avatar",
+                                  "width": 20,
+                                  "height": 20,
+                                  "fill": "$ds-brand",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "Tt1n5",
+                                      "name": "Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "MA",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "eWZrm",
+                              "name": "Issue Row SHIP-14",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "qEAp5",
+                                  "name": "Priority Pill None",
+                                  "height": 18,
+                                  "fill": "#F0EFEB",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "BveVF",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-text-muted",
+                                      "content": "No Priority",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "gxmdD",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-14",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "J8LtKM",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "circle-dashed",
+                                  "library": "lucide",
+                                  "fill": "$ds-text-muted"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "kpDpX",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Legacy billing page",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Hifsh",
+                                  "name": "Archived Badge",
+                                  "height": 18,
+                                  "fill": "#F0EFEB",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "VWvPO",
+                                      "name": "Archived Text",
+                                      "fill": "$ds-text-muted",
+                                      "content": "Archived",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "KWMJ6",
+                                  "name": "Due Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "—",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "KU4o7",
+                                  "name": "Assignee Avatar",
+                                  "width": 20,
+                                  "height": 20,
+                                  "fill": "$ds-brand",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "fS6RS",
+                                      "name": "Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "MA",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "KDjzg",
+                              "name": "Issue Row SHIP-12",
+                              "width": "fill_container",
+                              "height": 44,
+                              "stroke": "$ds-border",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 10,
+                              "padding": [
+                                0,
+                                16
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "auEOP",
+                                  "name": "Priority Pill Medium",
+                                  "height": 18,
+                                  "fill": "$ds-brand-soft",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "padding": [
+                                    0,
+                                    7
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "QiJnq",
+                                      "name": "Priority Text",
+                                      "fill": "$ds-brand",
+                                      "content": "Medium",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 10,
+                                      "fontWeight": "500"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "C6xTfl",
+                                  "name": "Issue Id",
+                                  "fill": "$ds-text-muted",
+                                  "content": "SHIP-12",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "dU5SQ",
+                                  "name": "Status Circle",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "circle-check",
+                                  "library": "lucide",
+                                  "fill": "$ds-success"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "s26su8",
+                                  "name": "Issue Title",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Checkout webhook retries",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "CTR54",
+                                  "name": "Due Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Aug 29",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 11.5,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "h5fLx2",
+                                  "name": "Assignee Avatar",
+                                  "width": 20,
+                                  "height": 20,
+                                  "fill": "$ds-success",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "K49Y3d",
+                                      "name": "Initials",
+                                      "fill": "#FFFFFF",
+                                      "content": "PS",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 8,
+                                      "fontWeight": "700"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zuMcP",
+                      "name": "Right Rail",
+                      "width": 420,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ex7PC",
+                          "name": "Current Cycle Panel",
+                          "context": "The workspace's single Active cycle. Progress is derived from issue counts (completed/total); the segmented bar shows the distribution across the four workflow states. '4 days left' tint is warning when <= 5 days remain, neutral otherwise.",
+                          "width": "fill_container",
+                          "fill": "$ds-surface-subtle",
+                          "cornerRadius": "$ds-radius-lg",
+                          "stroke": "$ds-border",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": 12,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "p6uNaR",
+                              "name": "Cycle Panel Header",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "iZwe7",
+                                  "name": "Cycle Panel Label",
+                                  "fill": "$ds-text-muted",
+                                  "content": "CURRENT CYCLE",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 10,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 1.5
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "z3ovLX",
+                                  "name": "Days Left Chip",
+                                  "fill": "$ds-warning-soft",
+                                  "cornerRadius": 999,
+                                  "gap": 5,
+                                  "padding": [
+                                    3,
+                                    8
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "rUjkB",
+                                      "name": "Days Left Icon",
+                                      "width": 11,
+                                      "height": 11,
+                                      "icon": "timer",
+                                      "library": "lucide",
+                                      "fill": "$ds-warning"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "gJxUr",
+                                      "name": "Days Left Text",
+                                      "fill": "$ds-warning",
+                                      "content": "4 days left",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Y52As",
+                              "name": "Cycle Name Row",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "LrP3c",
+                                  "name": "Cycle Name",
+                                  "fill": "$ds-text",
+                                  "content": "Sprint 13",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 15,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "hme90",
+                                  "name": "Cycle Date Range",
+                                  "fill": "$ds-text-muted",
+                                  "content": "Sep 1 → Sep 12",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "q8qAYp",
+                              "name": "Cycle Overview Row",
+                              "width": "fill_container",
+                              "gap": 20,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "ZqZQ3",
+                                  "name": "Cycle Donut Chart",
+                                  "context": "Chart: donut of the 21 cycle issues by workflow status. Arc spans are proportional to counts (12/4/3/2) with 24° gaps; 16px rounded strokes match the status dot colors (Done=success, In Progress=brand, Todo=info, Backlog=border-strong). Center stack shows completion percent and fraction.",
+                                  "width": 128,
+                                  "height": 128,
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "path",
+                                      "id": "L4zNV",
+                                      "x": 0,
+                                      "y": 0,
+                                      "name": "Donut Segment Done",
+                                      "geometry": "M64 8a56 56 0 0 1 27.27 104.91",
+                                      "viewBox": [
+                                        0,
+                                        0,
+                                        128,
+                                        128
+                                      ],
+                                      "width": 128,
+                                      "height": 128,
+                                      "stroke": "$ds-success",
+                                      "strokeWidth": 16,
+                                      "strokeLinejoin": "round",
+                                      "strokeLinecap": "round"
+                                    },
+                                    {
+                                      "type": "path",
+                                      "id": "FGZwS",
+                                      "x": 0,
+                                      "y": 0,
+                                      "name": "Donut Segment In Progress",
+                                      "geometry": "M69.02 119.77a56 56 0 0 1-44.72-16.27",
+                                      "viewBox": [
+                                        0,
+                                        0,
+                                        128,
+                                        128
+                                      ],
+                                      "width": 128,
+                                      "height": 128,
+                                      "stroke": "$ds-brand",
+                                      "strokeWidth": 16,
+                                      "strokeLinejoin": "round",
+                                      "strokeLinecap": "round"
+                                    },
+                                    {
+                                      "type": "path",
+                                      "id": "szPLI",
+                                      "x": 0,
+                                      "y": 0,
+                                      "name": "Donut Segment Todo",
+                                      "geometry": "M11.67 83.94a56 56 0 0 1-1.26-36.18",
+                                      "viewBox": [
+                                        0,
+                                        0,
+                                        128,
+                                        128
+                                      ],
+                                      "width": 128,
+                                      "height": 128,
+                                      "stroke": "$ds-info",
+                                      "strokeWidth": 16,
+                                      "strokeLinejoin": "round",
+                                      "strokeLinecap": "round"
+                                    },
+                                    {
+                                      "type": "path",
+                                      "id": "ptpeH",
+                                      "x": 0,
+                                      "y": 0,
+                                      "name": "Donut Segment Backlog",
+                                      "geometry": "M21.64 27.37a56 56 0 0 1 19.58-14.53",
+                                      "viewBox": [
+                                        0,
+                                        0,
+                                        128,
+                                        128
+                                      ],
+                                      "width": 128,
+                                      "height": 128,
+                                      "stroke": "$ds-border-strong",
+                                      "strokeWidth": 16,
+                                      "strokeLinejoin": "round",
+                                      "strokeLinecap": "round"
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "p6Pjm4",
+                                      "x": 0,
+                                      "y": 36,
+                                      "name": "Donut Center Text",
+                                      "width": 128,
+                                      "layout": "vertical",
+                                      "gap": 2,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "oBXrB",
+                                          "name": "Donut Percent",
+                                          "fill": "$ds-text",
+                                          "content": "57%",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 24,
+                                          "fontWeight": "700",
+                                          "letterSpacing": -0.5
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "XMBzS",
+                                          "name": "Donut Fraction",
+                                          "fill": "$ds-text",
+                                          "content": "12 of 21",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 10,
+                                          "fontWeight": "600"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "kDfjz",
+                                          "name": "Donut Fraction Label",
+                                          "fill": "$ds-text-muted",
+                                          "content": "issues done",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 10,
+                                          "fontWeight": "normal"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "d8IG7",
+                                  "name": "Cycle Legend Column",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 12,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "b1dVwC",
+                                      "name": "Legend — Done",
+                                      "width": "fill_container",
+                                      "gap": 8,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "ellipse",
+                                          "id": "QaW5Z",
+                                          "name": "Legend Dot",
+                                          "fill": "$ds-success",
+                                          "width": 8,
+                                          "height": 8
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "TZYzU",
+                                          "name": "Legend Label",
+                                          "fill": "$ds-text-muted",
+                                          "textGrowth": "fixed-width",
+                                          "width": "fill_container",
+                                          "content": "Done",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 11.5,
+                                          "fontWeight": "normal"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "Zvral",
+                                          "name": "Legend Count",
+                                          "fill": "$ds-text",
+                                          "content": "12",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 11,
+                                          "fontWeight": "700"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "jIwRW",
+                                      "name": "Legend — In Progress",
+                                      "width": "fill_container",
+                                      "gap": 8,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "ellipse",
+                                          "id": "exRdW",
+                                          "name": "Legend Dot",
+                                          "fill": "$ds-brand",
+                                          "width": 8,
+                                          "height": 8
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "tDBZn",
+                                          "name": "Legend Label",
+                                          "fill": "$ds-text-muted",
+                                          "textGrowth": "fixed-width",
+                                          "width": "fill_container",
+                                          "content": "In Progress",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 11.5,
+                                          "fontWeight": "normal"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "E1avTu",
+                                          "name": "Legend Count",
+                                          "fill": "$ds-text",
+                                          "content": "4",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 11,
+                                          "fontWeight": "700"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "kWqkV",
+                                      "name": "Legend — Todo",
+                                      "width": "fill_container",
+                                      "gap": 8,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "ellipse",
+                                          "id": "Q0g9R",
+                                          "name": "Legend Dot",
+                                          "fill": "$ds-info",
+                                          "width": 8,
+                                          "height": 8
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "Xp4Sz",
+                                          "name": "Legend Label",
+                                          "fill": "$ds-text-muted",
+                                          "textGrowth": "fixed-width",
+                                          "width": "fill_container",
+                                          "content": "Todo",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 11.5,
+                                          "fontWeight": "normal"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "EpSPT",
+                                          "name": "Legend Count",
+                                          "fill": "$ds-text",
+                                          "content": "3",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 11,
+                                          "fontWeight": "700"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "GJRQ9",
+                                      "name": "Legend — Backlog",
+                                      "width": "fill_container",
+                                      "gap": 8,
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "ellipse",
+                                          "id": "p4aDvf",
+                                          "name": "Legend Dot",
+                                          "fill": "$ds-border-strong",
+                                          "width": 8,
+                                          "height": 8
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "BWOWq",
+                                          "name": "Legend Label",
+                                          "fill": "$ds-text-muted",
+                                          "textGrowth": "fixed-width",
+                                          "width": "fill_container",
+                                          "content": "Backlog",
+                                          "fontFamily": "$ds-font-ui",
+                                          "fontSize": 11.5,
+                                          "fontWeight": "normal"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "id": "Qlfkr",
+                                          "name": "Legend Count",
+                                          "fill": "$ds-text",
+                                          "content": "2",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 11,
+                                          "fontWeight": "700"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "V0qcSb",
+                          "name": "Projects Section Header",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "vArtu",
+                              "name": "Projects Label",
+                              "fill": "$ds-text-muted",
+                              "content": "ACTIVE PROJECTS",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.5
+                            },
+                            {
+                              "type": "frame",
+                              "id": "hicvv",
+                              "name": "View All Projects Link",
+                              "gap": 4,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "D2ZOH",
+                                  "name": "View All Projects Text",
+                                  "fill": "$ds-brand",
+                                  "content": "View all",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "iEjPg",
+                                  "name": "View All Projects Icon",
+                                  "width": 13,
+                                  "height": 13,
+                                  "icon": "arrow-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "sEZeC",
+                          "name": "Active Projects List",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "v5Yyo",
+                              "name": "Project Row — Ship Payroll",
+                              "width": "fill_container",
+                              "height": 44,
+                              "cornerRadius": 6,
+                              "gap": 12,
+                              "padding": [
+                                0,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "LWxvk",
+                                  "name": "Project Name",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Ship Payroll",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "MtZyI",
+                                  "name": "Project Progress Track",
+                                  "width": 72,
+                                  "height": 6,
+                                  "fill": "$ds-border",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "p24f0i",
+                                      "name": "Project Progress Fill",
+                                      "width": 46,
+                                      "height": 6,
+                                      "fill": "$ds-brand",
+                                      "cornerRadius": "$ds-radius-pill"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "zV6Xs",
+                                  "name": "Project Percent",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": 34,
+                                  "content": "64%",
+                                  "textAlign": "right",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 11,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "LkGJZ",
+                              "name": "Row Divider",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "O7gO7",
+                              "name": "Project Row — Checkout Revamp",
+                              "width": "fill_container",
+                              "height": 44,
+                              "cornerRadius": 6,
+                              "gap": 12,
+                              "padding": [
+                                0,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Y6ZWgl",
+                                  "name": "Project Name",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Checkout Revamp",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "R3VC6R",
+                                  "name": "Project Progress Track",
+                                  "width": 72,
+                                  "height": 6,
+                                  "fill": "$ds-border",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "S2dGU",
+                                      "name": "Project Progress Fill",
+                                      "width": 29,
+                                      "height": 6,
+                                      "fill": "$ds-brand",
+                                      "cornerRadius": "$ds-radius-pill"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "tXkIJ",
+                                  "name": "Project Percent",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": 34,
+                                  "content": "41%",
+                                  "textAlign": "right",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 11,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "zJjbJ",
+                              "name": "Row Divider",
+                              "width": "fill_container",
+                              "height": 1,
+                              "fill": "$ds-border"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "jfi85",
+                              "name": "Project Row — Onboarding Revamp",
+                              "width": "fill_container",
+                              "height": 44,
+                              "cornerRadius": 6,
+                              "gap": 12,
+                              "padding": [
+                                0,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "rL9qU",
+                                  "name": "Project Name",
+                                  "fill": "$ds-text",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Onboarding Revamp",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 13,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "UXS1h",
+                                  "name": "Project Progress Track",
+                                  "width": 72,
+                                  "height": 6,
+                                  "fill": "$ds-border",
+                                  "cornerRadius": "$ds-radius-pill",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "JihHB",
+                                      "name": "Project Progress Fill",
+                                      "width": 63,
+                                      "height": 6,
+                                      "fill": "$ds-brand",
+                                      "cornerRadius": "$ds-radius-pill"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "O06kCY",
+                                  "name": "Project Percent",
+                                  "fill": "$ds-text-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": 34,
+                                  "content": "88%",
+                                  "textAlign": "right",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 11,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "W9KAZ",
+                          "name": "Activity Section Header",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n6t9E3",
+                              "name": "Activity Label",
+                              "fill": "$ds-text-muted",
+                              "content": "RECENT ACTIVITY",
+                              "fontFamily": "$ds-font-mono",
+                              "fontSize": 10,
+                              "fontWeight": "600",
+                              "letterSpacing": 1.5
+                            },
+                            {
+                              "type": "frame",
+                              "id": "bXNMC",
+                              "name": "View All Activity Link",
+                              "gap": 4,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "kscat",
+                                  "name": "View All Activity Text",
+                                  "fill": "$ds-brand",
+                                  "content": "View all",
+                                  "fontFamily": "$ds-font-ui",
+                                  "fontSize": 12,
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "SdxVw",
+                                  "name": "View All Activity Icon",
+                                  "width": 13,
+                                  "height": 13,
+                                  "icon": "arrow-right",
+                                  "library": "lucide",
+                                  "fill": "$ds-brand"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "GFwjZ",
+                          "name": "Recent Activity Timeline",
+                          "context": "Workspace activity stream (issue/comment events only, bound 20). Day-grouped with a connecting spine behind avatars — reads as a stream of events, distinct from the data lists above. Rows are transparent with hover; times are clock times under a day label. Events mirror the Activity page feed.",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 6,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "z5T0aE",
+                              "name": "Day Label — TODAY",
+                              "width": "fill_container",
+                              "height": 16,
+                              "padding": [
+                                0,
+                                0,
+                                0,
+                                18
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "IwmEo",
+                                  "name": "Day Label Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "TODAY",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 1.2
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "CRTFQ",
+                              "name": "Day Group",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "lHPRx",
+                                  "layoutPosition": "absolute",
+                                  "x": 18,
+                                  "y": 16,
+                                  "name": "Timeline Spine",
+                                  "width": 1,
+                                  "height": 64,
+                                  "fill": "$ds-border"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Ydwm4",
+                                  "name": "Activity Row",
+                                  "width": "fill_container",
+                                  "height": 32,
+                                  "cornerRadius": 6,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    8
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "ISvFK",
+                                      "name": "Actor Avatar",
+                                      "width": 20,
+                                      "height": 20,
+                                      "fill": "$ds-brand-soft",
+                                      "cornerRadius": 999,
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "r5rYU",
+                                          "name": "Actor Initials",
+                                          "fill": "$ds-brand",
+                                          "content": "MA",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 7,
+                                          "fontWeight": "700"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "f4qHL",
+                                      "name": "Event Summary",
+                                      "fill": "$ds-text",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Maya moved SHIP-24 from Todo to In Progress",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "xgF6V",
+                                      "name": "Event Time",
+                                      "fill": "$ds-text-muted",
+                                      "content": "10:47",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "rdpja",
+                                  "name": "Activity Row",
+                                  "width": "fill_container",
+                                  "height": 32,
+                                  "cornerRadius": 6,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    8
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "mC1YC",
+                                      "name": "Actor Avatar",
+                                      "width": 20,
+                                      "height": 20,
+                                      "fill": "$ds-brand-soft",
+                                      "cornerRadius": 999,
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "aclFj",
+                                          "name": "Actor Initials",
+                                          "fill": "$ds-brand",
+                                          "content": "JW",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 7,
+                                          "fontWeight": "700"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "rH7cS",
+                                      "name": "Event Summary",
+                                      "fill": "$ds-text",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Jonas Weber commented on SHIP-24 · Fix login",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "rhB8r",
+                                      "name": "Event Time",
+                                      "fill": "$ds-text-muted",
+                                      "content": "10:15",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "T39PDp",
+                                  "name": "Activity Row",
+                                  "width": "fill_container",
+                                  "height": 32,
+                                  "cornerRadius": 6,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    8
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "c3KCIl",
+                                      "name": "Actor Avatar",
+                                      "width": 20,
+                                      "height": 20,
+                                      "fill": "$ds-brand-soft",
+                                      "cornerRadius": 999,
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "eV7oY",
+                                          "name": "Actor Initials",
+                                          "fill": "$ds-brand",
+                                          "content": "DK",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 7,
+                                          "fontWeight": "700"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "g4CDua",
+                                      "name": "Event Summary",
+                                      "fill": "$ds-text",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Daniel Kim assigned SHIP-35 to Maya Andersen",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "bAsUf",
+                                      "name": "Event Time",
+                                      "fill": "$ds-text-muted",
+                                      "content": "09:31",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "G8mZ5l",
+                              "name": "Day Label — YESTERDAY",
+                              "width": "fill_container",
+                              "height": 16,
+                              "padding": [
+                                0,
+                                0,
+                                0,
+                                18
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "I4r521",
+                                  "name": "Day Label Text",
+                                  "fill": "$ds-text-muted",
+                                  "content": "YESTERDAY",
+                                  "fontFamily": "$ds-font-mono",
+                                  "fontSize": 9,
+                                  "fontWeight": "600",
+                                  "letterSpacing": 1.2
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "tADna",
+                              "name": "Day Group",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "NPXIG",
+                                  "layoutPosition": "absolute",
+                                  "x": 18,
+                                  "y": 16,
+                                  "name": "Timeline Spine",
+                                  "width": 1,
+                                  "height": 32,
+                                  "fill": "$ds-border"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "Imybl",
+                                  "name": "Activity Row",
+                                  "width": "fill_container",
+                                  "height": 32,
+                                  "cornerRadius": 6,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    8
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "qKGjD",
+                                      "name": "Actor Avatar",
+                                      "width": 20,
+                                      "height": 20,
+                                      "fill": "$ds-brand-soft",
+                                      "cornerRadius": 999,
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "xq80e",
+                                          "name": "Actor Initials",
+                                          "fill": "$ds-brand",
+                                          "content": "JW",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 7,
+                                          "fontWeight": "700"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "b0url",
+                                      "name": "Event Summary",
+                                      "fill": "$ds-text",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Jonas Weber moved SHIP-19 to Done",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "g7ze7",
+                                      "name": "Event Time",
+                                      "fill": "$ds-text-muted",
+                                      "content": "15:22",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "YbYt8",
+                                  "name": "Activity Row",
+                                  "width": "fill_container",
+                                  "height": 32,
+                                  "cornerRadius": 6,
+                                  "gap": 8,
+                                  "padding": [
+                                    0,
+                                    8
+                                  ],
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "r4oTv",
+                                      "name": "Actor Avatar",
+                                      "width": 20,
+                                      "height": 20,
+                                      "fill": "$ds-brand-soft",
+                                      "cornerRadius": 999,
+                                      "justifyContent": "center",
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "id": "GVtMI",
+                                          "name": "Actor Initials",
+                                          "fill": "$ds-brand",
+                                          "content": "MA",
+                                          "fontFamily": "$ds-font-mono",
+                                          "fontSize": 7,
+                                          "fontWeight": "700"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "TRJZI",
+                                      "name": "Event Summary",
+                                      "fill": "$ds-text",
+                                      "textGrowth": "fixed-width",
+                                      "width": "fill_container",
+                                      "content": "Maya marked SHIP-22 as blocked",
+                                      "fontFamily": "$ds-font-ui",
+                                      "fontSize": 12,
+                                      "fontWeight": "normal"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "d39K8",
+                                      "name": "Event Time",
+                                      "fill": "$ds-text-muted",
+                                      "content": "09:47",
+                                      "fontFamily": "$ds-font-mono",
+                                      "fontSize": 10,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
