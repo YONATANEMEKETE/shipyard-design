@@ -1,7 +1,7 @@
 # Post-MVP Roadmap
 
 **Status:** Living backlog — candidates for after the MVP release, not commitments
-**Last updated:** 2026-09-04
+**Last updated:** 2026-09-17
 **Sources:** `Out of scope` / deferred / handoff sections across `04-Engineering/features/*` (auth → settings, plus activity), `00-architecture.md`, `Implementation Plan.md` §7, and design discussions 2026-09-04 (MCP, Activity Log).
 
 > Rule for promoting anything below into the MVP or the first post-MVP milestone: evidence first (user reports, measured pain, or a blocking dependency) — never preemptive building.
@@ -10,7 +10,7 @@
 
 ## First after MVP (positioned, not yet scheduled)
 
-- **MCP server** — remote Streamable HTTP endpoint, user-scoped tokens (PATs → OAuth), read tools first, non-destructive writes second, agent attribution in the activity log. Needs `features/mcp/` spec (spec → data-model → api-design, per repo flow).
+- **MCP server** — remote Streamable HTTP endpoint, user-scoped tokens (PATs → OAuth), read tools first, non-destructive writes second, agent attribution in the activity log. **Design complete (2026-09-17):** `features/mcp/spec.md` → `data-model.md` → `api-design.md`, with `ADR-005` recording the surface decision (endpoint in `apps/api`, exposed through the existing Next.js proxy, JSON responses only, PATs first). Implementation not started — ordered sub-milestones M0–M9 in `Implementation Plan.md` §9 (tracked as F13).
 - **Activity Log feed swap** — dashboard Recent Activity migrates onto the activity log when it lands (recorded F9 handoff). MVP-adjacent; do it before any analytics work that would otherwise fork feed logic.
 
 ---

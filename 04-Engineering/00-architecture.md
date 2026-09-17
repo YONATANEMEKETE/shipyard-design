@@ -17,7 +17,8 @@ This document is the **map of the entire Shipyard system**. It defines the high-
 | `adr/ADR-002-repo-layout.md` | Monorepo layout, pnpm workspaces, Turborepo, shared contracts | ✅ done |
 | `adr/ADR-003-web-api-communication.md` | Next.js proxy, internal API, no CORS | ✅ done |
 | `adr/ADR-004-deployment-infra.md` | Oracle VPS, Neon, R2, Caddy, CI/CD | ✅ done |
-| `features/*` | Per-feature behavior specs (`spec.md`); technical design produced at each feature's implementation step | ⏳ next |
+| `adr/ADR-005-mcp-server-surface.md` | MCP server surface & hosting (endpoint in the API behind the Next proxy, workspace-bound tokens, JSON responses) | ✅ done |
+| `features/*` | Per-feature behavior specs (`spec.md`); technical design produced at each feature's implementation step | ✅ F1–F11 implemented · F13 (MCP) designed, implementation next |
 | `deployment.md` | Compose layout, CI/CD pipeline, backups, observability runbook | ⏳ planned |
 
 **Reading order:** 00-architecture → ADRs → features (behavior specs) → deployment. Per-feature technical design is produced during each feature's implementation step (Implementation Plan §5, Step 2).
@@ -292,6 +293,7 @@ See `deployment.md` and ADR-004 for detail. Summary:
 | 14 | Email | Resend (verification, invites, password reset) | ADR-001 |
 | 15 | Observability | Pino + Sentry (Grafana stack post-MVP) | ADR-004 |
 | 16 | Environments | Local dev + single production | ADR-004 |
+| 17 | MCP server surface | Endpoint in `apps/api`, exposed through the Next.js proxy; workspace-bound personal access tokens (OAuth later); JSON responses in v1 | ADR-005 |
 
 ---
 

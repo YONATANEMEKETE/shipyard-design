@@ -197,17 +197,21 @@ Some dependencies are intentionally completed through integration checkpoints:
 |---|---|---|---|
 | F0 | Repository and engineering foundation | None | ✅ complete |
 | F1 | Auth and identity | F0 | ✅ complete |
-| F2 | Workspace lifecycle | F1 | ⏳ next |
-| F3 | Members, invitations, and RBAC | F1, F2, F4 integration | planned |
-| F4 | Projects | F1, F2, F3 core | planned |
-| F5 | Issues and labels | F1, F2, F3, F4 | planned |
-| F6 | Notifications | F5 | planned |
-| F7 | Cycles | F5, F6 contracts | planned |
-| F8 | Comments and mentions | F5, F6, F3 | planned |
-| F9 | Dashboard | F4, F5, F7 | planned |
-| F10 | Search | F3, F4, F5, F7 | planned |
-| F11 | Settings and preferences | F1–F10 ownership contracts | planned |
-| F12 | MVP hardening and release readiness | F1–F11 | planned |
+| F2 | Workspace lifecycle | F1 | ✅ complete |
+| F3 | Members, invitations, and RBAC | F1, F2, F4 integration | ✅ complete |
+| F4 | Projects | F1, F2, F3 core | ✅ complete |
+| F5 | Issues and labels | F1, F2, F3, F4 | ✅ complete |
+| F6 | Notifications | F5 | ✅ complete |
+| F7 | Cycles | F5, F6 contracts | ✅ complete |
+| F8 | Comments and mentions | F5, F6, F3 | ✅ complete |
+| F9 | Dashboard | F4, F5, F7 | ✅ complete |
+| F10 | Search | F3, F4, F5, F7 | ✅ complete |
+| F11 | Settings and preferences | F1–F10 ownership contracts | ✅ complete |
+| F12 | MVP hardening and release readiness | F1–F11 | ◐ partial — runtime hardening done (error mapping, request ids, rate limits, health/readiness, graceful shutdown, test coverage); deployment/ops open (Dockerfiles, compose services, Caddy config, GHCR publish, SSH deploy, Sentry) |
+| F13 | MCP server | F1–F11 (post-MVP, not part of the MVP sequence) | ⏳ design complete — implementation not started (§9) |
+
+F1–F11 are implemented in the `shipyard` repository; this plan's per-feature sections remain the record of what each milestone required. **F13 is tracked here for continuity but is not part of the MVP release gate** — it is the first post-MVP milestone and is specified in `features/mcp/` with `ADR-005` recording the surface decision. Its ordered sub-milestones are in §9.
+
 
 ---
 
@@ -875,30 +879,60 @@ The MVP remains a modular monolith with synchronous transactions, polling for no
 
 ---
 
-## 8. Immediate next milestone
+## 8. Immediate next milestones
 
-The most recently completed milestone is:
+The MVP feature milestones **F1–F11 are implemented** in the `shipyard` repository — auth and identity, workspace lifecycle, members and RBAC, projects, issues and labels, notifications, cycles, comments and mentions, dashboard, search, and settings and preferences — each as a vertical slice (shared contracts → migration → API module → web surface → tests).
 
-```text
-F1 — Auth and identity
-```
-
-F1 delivered registration, email verification, password reset and change, Google and GitHub OAuth, Better Auth sessions mounted under `/api/v1/auth`, session middleware consumed by other modules, and the post-auth routing decision (pending invitation → onboarding → dashboard → workspace selection).
-
-The next implementation milestone is:
+The remaining MVP milestone is:
 
 ```text
-F2 — Workspace lifecycle
+F12 — MVP hardening and release readiness
 ```
 
-Before starting F2, prepare:
+Runtime hardening is already in place: centralized error mapping, structured logs with request ids, rate limiting, health and readiness endpoints, graceful shutdown, and unit/integration coverage of the critical invariants. Still open on the deployment and operations side: production Dockerfiles for web and API, the full compose layout (web, api, caddy alongside the dev database), Caddy configuration with the API internal-only, GHCR image publishing and SSH deployment in CI, `prisma migrate deploy` on release, and Sentry capture.
 
-- Workspace data model and migration plan
-- URL-based workspace context resolution design
-- Shared `requireWorkspaceMember` guard chain approach
-- Owner membership invariant enforcement plan
-- Archive/restore semantics and confirmed deletion cascade contract
-- Workspace-scoped error codes and response envelope conventions
-- Onboarding creation, selection, switching, archive/restore, and danger-zone deletion screen checklist
+By deliberate sequencing, **the MCP server (F13, §9) is implemented before F12's deployment work**: it is feature work that runs entirely in the local environment, and nothing in it depends on the deployment pipeline. F12 remains the gate for the MVP release.
 
-F2 is complete only when a verified user can create a workspace and become its Owner, move between zero, one, and multiple workspace states, switch workspaces through the approved flows, and every workspace-scoped request validates membership without leaking cross-workspace resource existence.
+---
+
+## 9. Post-MVP milestone — F13 MCP server
+
+**Specification:** [`features/mcp/spec.md`](../features/mcp/spec.md)
+**Technical design:** [`features/mcp/data-model.md`](../features/mcp/data-model.md) · [`features/mcp/api-design.md`](../features/mcp/api-design.md)
+**Decision record:** [`adr/ADR-005-mcp-server-surface.md`](../adr/ADR-005-mcp-server-surface.md)
+**Source:** `05-Post-MVP.md` §First after MVP
+**Depends on:** F1–F11 (session auth, workspace context, roles, and every service a tool calls)
+
+### Scope
+
+Expose Shipyard to a member's AI agent over the **MCP protocol** (revision `2026-07-28`, remote Streamable HTTP transport): the agent reads work, then creates and updates it, then — gated — removes it. The surface is a second interface to the same domain: tools call existing services, so validation, transactions, permissions, notifications, and activity recording are unchanged, and a member's token can never exceed that member's abilities.
+
+### Ordered sub-milestones
+
+| # | Milestone | Ends when | Depends on |
+|---|---|---|---|
+| M0 | Design record: `features/mcp/` spec, data model, api design, ADR-005 | The three docs exist and the tool inventory is frozen | — |
+| M1 | Contracts (`packages/shared/src/mcp/*`) + `mcp_token` migration | Migration applies on a clean DB; shared schemas compile | M0 |
+| M2 | Token issuance & management (API + account-settings surface) | A member can create a token (shown once), list it, and revoke it | M1 |
+| M3 | MCP endpoint skeleton: transport validation + `server/discover` + `tools/list` | Transport tests pass; an MCP client connects and receives a valid tool list | M1 |
+| M4 | Credential resolution (bearer → workspace context) + per-token limits | Every `401` case tested; a valid token yields the same context the cookie path yields | M2, M3 |
+| M5 | The eight read tools | An agent answers real questions without being told which tool to use | M4 |
+| M6 | stdio dev variant + dogfooding loop | A week of real use; every wrong tool choice, oversized result, or unhelpful error fixed in the definitions | M5 |
+| M7 | The six additive write tools | Writes land with their history, activity, and notification rows, asserted against the database | M6 |
+| M8 | Gated destructive tools (archive / restore / delete) | Delete requires scope + `OWNER\|ADMIN` + explicit human confirmation | M7 |
+| M9 | Deployment and hardening (with F12) | A real agent works against the deployed HTTPS endpoint and appears attributed in the activity log | M8 |
+
+### Operating rules for this milestone
+
+1. **One milestone, one branch, one PR**, each ending with the repository gate (`pnpm check`, `pnpm test`).
+2. **No write milestone before the read tools have been dogfooded** — evidence first, per `05-Post-MVP.md`.
+3. **Design docs move with the code**: when implementation diverges from `features/mcp/*`, the same PR updates it.
+
+### Done when
+
+- An agent can answer "what's blocked in the current cycle?", "find anything about login", "what changed yesterday?", and "who's working on what?" from a plain-language request, with correct data and no tool named by the user.
+- A token can only touch its own workspace, proven by tests, with identical not-found behaviour for non-members and non-existent resources.
+- A read-only token cannot see or call a write tool.
+- Every domain failure returns a readable, actionable result; every transport failure returns the correct status and JSON-RPC code.
+- Destructive actions require a human, and agent-performed writes appear attributed in the activity log.
+

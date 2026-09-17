@@ -6,7 +6,7 @@ This repository contains all product documentation, UX artifacts, UI designs, te
 
 The application source code is maintained separately in the [**shipyard**](https://github.com/YONATANEMEKETE/shipyard) repository — created when engineering kicks off.
 
-**Status (2026-08-22):** Product ✅ · UX ✅ · UI ✅ (Harbor Amber design system finalized, shadcn v4 theme exported to `03-UI/exports/`) · Engineering ⏳ (per-feature behavior specs in `04-engineering/features/*/spec.md`; technical design is produced per feature at implementation time) — next: F1 Auth (Implementation Plan)
+**Status (2026-09-17):** Product ✅ · UX ✅ · UI ✅ (Harbor Amber design system finalized, shadcn v4 theme exported to `03-UI/exports/`) · Engineering ⏳ — MVP feature milestones **F1–F11 implemented** in the [shipyard](https://github.com/YONATANEMEKETE/shipyard) repository against the specs in `04-Engineering/features/*`; **F12 (MVP hardening and release readiness)** partially complete (runtime hardening done, deployment/ops open); **F13 (MCP server)** — the first post-MVP feature — is fully designed (`04-Engineering/features/mcp/`, `ADR-005`) and next to implement (Implementation Plan §9)
 
 ---
 
