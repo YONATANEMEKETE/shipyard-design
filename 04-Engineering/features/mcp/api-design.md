@@ -97,6 +97,20 @@ A token's scopes are a subset of what its owner may do **at issuance time**:
 
 Requesting a scope above the caller's role ⇒ `403` with a message naming the permission and the reason. This is a *convenience* ceiling, not the security boundary: the role check runs again on every action, so a member whose role was later downgraded loses the ability even though the token still carries the scope.
 
+### 3.3 Management-route errors (implementation note)
+
+The token-management routes answer with the standard HTTP envelope. Module-owned codes:
+
+| Code | HTTP | When |
+|---|---|---|
+| `SCOPE_NOT_PERMITTED` | `403` | A creation request asked for a scope above the caller's role (§3.2). The message names the offending scopes and the caller's role |
+| `TOKEN_EXPIRY_INVALID` | `400` | `expiresAt` is in the past. Rejected rather than minted dead-on-arrival, so the first `/mcp` request cannot fail with an unexplainable `401` |
+| `TOKEN_NOT_FOUND` | `404` | The token id is unknown, belongs to another workspace, **or** belongs to another member while the caller is neither that member nor an Owner/Admin. All three answer identically so revocation cannot be used to probe other members' credentials |
+
+Reused from the workspace module rather than duplicated: `WORKSPACE_NOT_FOUND` (unknown slug / non-member), `WORKSPACE_ARCHIVED` (creation in an archived workspace), `FORBIDDEN_ROLE`, `VALIDATION_ERROR`.
+
+Per-route archived-workspace behaviour is deliberate: **create** requires an active workspace (`rejectArchived: true`), while **list** and **revoke** also work while archived — a member must always be able to see and kill their credentials, and killing a leaked one must never be blocked by lifecycle state. `?all=true` is honoured for `OWNER|ADMIN`; any other member silently receives their own list, because the flag is a view request and never a permission claim.
+
 ---
 
 ## 4. Guard chain (canonical)
