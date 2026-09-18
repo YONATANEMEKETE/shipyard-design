@@ -44541,11 +44541,13 @@
                                   "descendants": {
                                     "FkMhJ": {
                                       "icon": "plus",
-                                      "name": "Add Issue Icon"
+                                      "name": "Add Issue Icon",
+                                      "enabled": false
                                     },
                                     "Tn0Xr": {
                                       "content": "Add issue",
-                                      "name": "Add Issue Label"
+                                      "name": "Add Issue Label",
+                                      "enabled": false
                                     }
                                   }
                                 }
