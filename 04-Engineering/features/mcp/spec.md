@@ -35,6 +35,7 @@ Through their agent, a member can:
 - Tokens are shown **once** at creation, are identified by a label, expire if an expiry was set, and can be revoked at any time. Revocation takes effect on the next request.
 - A revoked or expired token can be **deleted**, which removes it from the list for good. Revocation keeps the record (it is the history), deletion clears it (it is the housekeeping) — and since there is no un-revoke, deletion is what keeps the list from growing without limit.
 - An agent authenticates with a token only. Session cookies are never accepted on the MCP surface.
+- The token travels in the `Authorization: Bearer` header on **every** request — there are no sessions to carry it — and it is never placed in a URL or a query string, where it would leak into logs and history. A request with no usable token is refused before any work happens.
 
 ### 3.2 Read behavior
 

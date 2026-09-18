@@ -87,6 +87,13 @@ Failure modes and their single answer:
 
 One message for every unusable-credential case: the holder of a stolen token learns nothing about *why* it stopped working, and there is exactly one code path to keep correct.
 
+Two classes of answer, told apart by status:
+
+- a problem with the **message** — malformed envelope, mirrored header disagreement, unsupported version, unknown method, unknown tool — is a JSON-RPC `error` (`-32020`, `-32022`, `-32600`, `-32601`, `-32602`, `-32700`);
+- a problem with the **caller** — untrusted `Origin`, unusable credential, exhausted request budget — is the platform's own envelope: `403 FORBIDDEN`, `401 UNAUTHORIZED` (byte-identical to what the cookie path answers, so the two doors cannot be told apart), `429 RATE_LIMITED`.
+
+Not in v1: the `WWW-Authenticate` header and the Protected Resource Metadata document. Both exist to point a client at an **authorization server**, and personal access tokens have none — a member pastes the token by hand. They arrive with OAuth (§12).
+
 ### 3.2 Scope issuance ceiling
 
 A token's scopes are a subset of what its owner may do **at issuance time**:
@@ -301,11 +308,11 @@ Rules: a domain failure is **never** a protocol error; a protocol error is **nev
 | Concern | Choice |
 |---|---|
 | Edge limit | Per-IP limit at Caddy/Express (protects the box) |
-| Per-token limit | App-level, counted per token hash — agents can share an IP, so per-IP is not fairness |
-| Limit breach | Tool result with a retry hint (§8.2), never a bare `429` |
+| Per-token limit | App-level, counted per **token id** — the credential is the only identity on this surface, and agents share an IP with everything else on the machine, so per-IP is not fairness. Fixed window, `MCP_RATE_LIMIT_WINDOW_MS` / `MCP_RATE_LIMIT_MAX` (default 60s / 120). Per-process store, like the API's own limiter; a shared store is a deployment concern (M9) |
+| Limit breach | `tools/call` ⇒ a tool result with a retry hint (§8.2), so the model paces itself; every other method ⇒ `429 RATE_LIMITED` with `Retry-After` and `details.retryAfterMs` — discovery has no tool-result channel to carry the hint, and a bare `429` with no hint is a dead end. Nothing is counted before the credential resolves, so a refused request cannot exhaust anyone's budget |
 | Log fields | request id, token id (not hash, not plaintext), user id, workspace id, tool name, argument **keys** (not values), duration ms, result bytes, `isError` |
 | Never logged | The raw token, the hash, `Authorization` header contents, member emails, full tool argument values |
-| `lastUsedAt` | Updated at most once per minute, outside the tool's transaction (data-model D6) |
+| `lastUsedAt` | Best-effort, at most one write per minute, outside the tool's transaction (data-model D6) — the throttle is a condition in the `WHERE` of a single statement, so concurrent calls cannot both stamp it and a failed stamp never fails the call |
 | Redaction | The `shp_` prefix makes the pattern greppable in logs, scanners, and error reports |
 
 ---
@@ -314,8 +321,9 @@ Rules: a domain failure is **never** a protocol error; a protocol error is **nev
 
 | Layer | Assertions |
 |---|---|
-| **Unit** (`test/unit/mcp/`) | Error mapper (`AppError` → `isError` + code in `_meta`; unknown → generic + request id, no stack); portmanteau argument mapping (`me`, `SHIP-###` → `(workspaceId, seqNumber)`, cuid passthrough); scope filter removes write tools by name; scope issuance ceiling per role |
-| **Transport** (integration, no DB) | Untrusted `Origin` ⇒ `403`; `GET`/`DELETE` ⇒ `405`; missing `MCP-Protocol-Version` ⇒ `400` + `-32020`; `Mcp-Name` ≠ body ⇒ `400` + `-32020`; unknown version ⇒ `400` + `-32022`; unknown method ⇒ `404` + `-32601`; notification ⇒ `202`; no/bad/revoked/expired token ⇒ `401` |
+| **Unit** (`test/unit/mcp/`) | Error mapper (`AppError` → `isError` + code in `_meta`; unknown → generic + request id, no stack); bearer parsing (scheme case-insensitive, another scheme / whitespace inside the value / bare scheme ⇒ not a credential); the per-token budget (allow up to the max, refuse after, reset when the window passes, one budget per token, nothing counted before resolution); portmanteau argument mapping (`me`, `SHIP-###` → `(workspaceId, seqNumber)`, cuid passthrough); scope filter removes write tools by name; scope issuance ceiling per role |
+| **Transport** (integration) | Untrusted `Origin` ⇒ `403` + `FORBIDDEN`; `GET`/`DELETE` ⇒ `405`; missing `MCP-Protocol-Version` ⇒ `400` + `-32020`; `Mcp-Name` ≠ body ⇒ `400` + `-32020`; unknown version ⇒ `400` + `-32022`; unknown method ⇒ `404` + `-32601`; notification ⇒ `202`; no credential, and a revoked one ⇒ `401` + `UNAUTHORIZED` **before dispatch**; the (max+1)th call for one token ⇒ `429` + `Retry-After`, while a second token from the same client is unaffected |
+| **Credentials** (integration, Testcontainers Postgres) | Every unusable credential — missing/empty header, wrong scheme, not a token, unknown hash, revoked, expired, deleted, membership removed — asserted **identical** (status, code, message); a session cookie alone authenticates nothing; a valid token's context **equals** the one the cookie path builds for the same member; `lastUsedAt` stamped once per window and never on a refused request; no log record contains the token, its prefix, or its hash |
 | **Protocol & tools** (integration, Testcontainers Postgres) | `server/discover` shape; `tools/list` deterministic order + `ttlMs` + `cacheScope: private` + scope pruning by name; every tool's happy path asserted **against the database**; writes assert history/activity/notification rows; cross-workspace identifier ⇒ same flat not-found as a fake one; archived issue ⇒ actionable tool result; role failure ⇒ actionable tool result; per-token limit ⇒ retry hint |
 | **Not testable** | Whether an agent *chooses* the right tool or whether a result is the right size — that is measured by dogfooding a stdio dev variant and by the call log (§10), then fixed in the tool definitions |
 
