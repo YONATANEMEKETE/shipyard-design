@@ -240,6 +240,39 @@ Names, scopes, annotations and backing services. `RO` = `readOnlyHint`, `DES` = 
 | `shipyard_restore_issue` | Return an archived issue to its previous state | `issue` | RO `false`, DES `false`, IDEM `true` | `issuesService.restore` |
 | `shipyard_delete_issue` | Permanent deletion | `issue` (+ human confirmation per spec §3.4) | RO `false`, DES `true`, IDEM `true` | `issuesService.remove` |
 
+### 6.4 Implementation notes (M5)
+
+Shipped with the eight read tools. These are the decisions the tables above do
+not carry.
+
+- **One contract, two consumers.** Each tool's arguments are a Zod schema in
+  `packages/shared/src/mcp/tools.ts`. The handler validates with that schema, and
+  the JSON Schema advertised in `tools/list` is **generated** from it
+  (`z.toJSONSchema`), with properties carrying defaults removed from `required` —
+  a model should not be told it must send every default when omitting it is the
+  intended path.
+- **`includeArchived` means "as well as".** The list queries answer one state per
+  call, so a tool asking for both makes two calls and concatenates: active first,
+  archived after. `total` is the sum, so the truncation count stays honest.
+- **Names are input; ids are never required.** `assignee` takes a name, an email,
+  or `me`; `project`, `cycle` and `labels` take names (labels also by id).
+  Resolution happens in the tool layer with one members/projects/cycles/labels
+  read per call — the services keep taking ids, as the HTTP routes do.
+- **An identifier is what a person says.** `SHIP-42` resolves through the same
+  `q` filter the UI's search box uses (the list service maps it to `seqNumber`);
+  an internal id is accepted too. A one-character identifier resolves to nothing
+  rather than to an arbitrary issue, because that filter ignores queries shorter
+  than two characters. Reading by identifier is not a browse: an archived issue
+  is returned, and the result says it is archived.
+- **Emails are matched, never returned.** An address may be used as *input*
+  because that is how people refer to each other; `shipyard_list_members` answers
+  with name + role only.
+- **The scope gate is at dispatch.** `tools/call` re-checks the credential's
+  scopes against the registry entry before the handler runs, so a tool that was
+  not advertised is not callable — the scope list is a gate, not advice.
+- **Each call logs keys, not values** (§10): tool name, argument *names*,
+  duration, result size, `isError`, token id.
+
 **Deliberately absent:** member invitations/roles/ownership, workspace lifecycle, account settings, notification management, label/project/cycle deletion, bulk operations, and any generic "make an HTTP request" capability. Absence is a design decision (spec §6), not a backlog.
 
 ---
@@ -250,7 +283,7 @@ Names, scopes, annotations and backing services. `RO` = `readOnlyHint`, `DES` = 
 |---|---|
 | Compact lists | List tools return card projections (identifier, title, status, priority, assignee name, project/cycle name, due date, labels) — never descriptions, comment bodies, or internal ids beyond what actions need |
 | Bounded | Every list tool takes `limit` with a server-side maximum; the server always applies min(requested, max) |
-| Honest truncation | List results include `returned`, `total`, and `truncated`; the text block says "showing 25 of 84 — narrow the filters or pass a cursor" |
+| Honest truncation | List results include `returned`, `truncated`, and `total` where the source knows its own size; the text says which of the two situations it is: with a next page available, "25 shown — pass the cursor for the next page"; otherwise "25 of 84 shown — narrow the filters or raise the limit". Only `shipyard_recent_activity` pages by cursor in v1 |
 | Identifiers | `SHIP-###` is returned verbatim and accepted as input; internal ids are accepted but never required |
 | Minimal PII | Member projections return name + role (+ id for actions). **Email is not exposed** on the agent surface (spec §7 Q2) |
 | Deterministic | Same filters ⇒ same order; ties broken by id |
@@ -277,7 +310,7 @@ Reserved for calls that cannot be understood at all.
 
 | Domain outcome | HTTP-envelope analogue | Tool result text must say |
 |---|---|---|
-| Zod validation failure on arguments | `400 VALIDATION_ERROR` | The offending field, the allowed values/bounds, and a valid example ("`limit` max is 50; retry with `limit: 50`") |
+| Zod validation failure on arguments | **Tool result**, `isError: true`, `INVALID_ARGUMENTS` in `_meta` | Every failing argument, not just the first: its name, the bound or enum it broke, and an invitation to call again with corrected arguments. Deliberately *not* a JSON-RPC error — the message was understood, and the model is the party that can fix it, so a 4xx would only teach it to abandon a tool it is allowed to use |
 | Missing scope | `403` (conceptually) | Which permission the token lacks and that a new token or a UI action is needed |
 | Role failure (`FORBIDDEN_ROLE`) | `403` | The required role, the caller's role, and what they can do instead |
 | Not found / cross-workspace (`ISSUE_NOT_FOUND`, `*_NOT_IN_WORKSPACE`) | `404` | The identifier that failed + "verify it in this workspace". **Identical** wording for a non-existent and a non-visible resource |
