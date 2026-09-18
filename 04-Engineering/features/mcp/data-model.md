@@ -37,7 +37,7 @@ Nothing else: no session table (the protocol has no sessions — ADR-005), no co
 // isolation principle). D2: only the SHA-256 hash of the token is stored; the
 // plaintext exists once, in the creation response. D3: a token is bound to
 // exactly one workspace; there is no workspace argument anywhere in the tool
-// surface. D5: revocation is a timestamp — rows are never deleted.
+// surface. D5: revocation is a timestamp; only an explicit delete removes a row.
 
 enum McpTokenScope {
   READ           // all read tools
@@ -143,7 +143,9 @@ The token row is never the parent of anything, so no other table changes behavio
 
 ### D5 — Revocation is a timestamp, not a deleted row
 
-**Decision:** `revokedAt` set; the row stays. *Rationale:* the UI must be able to show "revoked on …" and the last-used time that preceded it; a deleted row destroys the evidence a member needs when deciding whether a leaked token was ever used. Filtering active tokens is `revokedAt: null`. *Rejected:* hard deletion (loses the audit trail, and a revoke-then-recreate cycle silently loses history).
+**Decision:** `revokedAt` set; the row stays. *Rationale:* the UI must be able to show "revoked on …" and the last-used time that preceded it; a deleted row destroys the evidence a member needs when deciding whether a leaked token was ever used. Filtering active tokens is `revokedAt: null`. *Rejected:* revocation-as-deletion (loses the audit trail, and a revoke-then-recreate cycle silently loses history).
+
+**Amendment (deletion is explicit, never implicit):** with no un-revoke, a revoked row can only accumulate, so the surface gained an explicit delete (`DELETE …/agent-tokens/:tokenId`, api-design §2 #5) that removes the row and its hash. Additivity is the point: revocation is still never a delete, and nothing deletes a row on the member's behalf — a `McpToken` row disappears only because someone asked for that specific row to disappear. Deleting a live token is allowed and behaves as revoke-and-forget (one predicate still rejects it at auth time). 
 
 ### D6 — `lastUsedAt` is best-effort, throttled to once per minute
 
@@ -182,7 +184,7 @@ The token row is never the parent of anything, so no other table changes behavio
 | **Expired** | `expiresAt` in the past | `401` (same as revoked) | Listed, marked expired, offer "create a new one" |
 | **Revoked** | Member revokes; or owner removes it | `401` | Listed, marked revoked, shows `revokedAt` |
 
-Transitions: `Active → Revoked` (irreversible, D5) and `Active → Expired` (time-based, D7). There is no un-revoke: a new credential is created instead, which keeps the history honest.
+Transitions: `Active → Revoked` (irreversible, D5), `Active → Expired` (time-based, D7), and `{Active, Revoked, Expired} → Deleted` (explicit removal, D5 amendment — the row is gone). There is no un-revoke and no undelete: a new credential is created instead, which keeps the history honest without letting it grow forever.
 
 ---
 

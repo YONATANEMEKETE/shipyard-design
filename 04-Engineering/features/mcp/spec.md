@@ -33,6 +33,7 @@ Through their agent, a member can:
 - A token carries **permissions (scopes)** that are a subset of what its owner may do — never more. A read-only token is the default.
 - The member's **workspace role** (Owner / Admin / Member) still governs every action on top of the token's scopes. Tokens can never widen what a person may do.
 - Tokens are shown **once** at creation, are identified by a label, expire if an expiry was set, and can be revoked at any time. Revocation takes effect on the next request.
+- A revoked or expired token can be **deleted**, which removes it from the list for good. Revocation keeps the record (it is the history), deletion clears it (it is the housekeeping) — and since there is no un-revoke, deletion is what keeps the list from growing without limit.
 - An agent authenticates with a token only. Session cookies are never accepted on the MCP surface.
 
 ### 3.2 Read behavior
@@ -79,6 +80,7 @@ Through their agent, a member can:
 4. **Update work:** "move SHIP-42 to in progress and leave a note" — status change plus comment, each recorded.
 5. **Remove work (gated):** "delete SHIP-42" → the agent reports that a human must confirm; confirmation happens in the person's own interface.
 6. **Revoke:** account settings → see last-used times → revoke a token → the agent stops working immediately.
+7. **Delete:** account settings → delete a revoked (or unused) token → it leaves the list for good. The token cannot be restored; a replacement is a new connection.
 
 ## 5. Business rules
 

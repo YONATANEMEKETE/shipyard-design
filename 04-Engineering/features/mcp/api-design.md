@@ -30,7 +30,7 @@
 
 ## 2. Endpoint inventory
 
-Three HTTP routes: one protocol endpoint plus two token-management routes (create/list, revoke).
+Four HTTP routes: one protocol endpoint plus three token-management routes (create/list, revoke, delete).
 
 | # | Method | Path | Guard chain | Behavior |
 |---|---|---|---|---|
@@ -38,12 +38,15 @@ Three HTTP routes: one protocol endpoint plus two token-management routes (creat
 | 2 | `POST` | `/api/v1/workspaces/:slug/agent-tokens` | `requireSession` → `resolveWorkspaceContext(slug)` → any member | Create a token for **the caller**, bound to this workspace. Scopes requested must be within the caller's abilities (§3.2). Response contains the plaintext token **once**. |
 | 3 | `GET` | `/api/v1/workspaces/:slug/agent-tokens` | `requireSession` → `resolveWorkspaceContext(slug)` → any member (own) / `OWNER\|ADMIN` (all) | List tokens: a member sees their own; Owner/Admin may pass `?all=true` to see every active token in the workspace. Never returns hashes or plaintext. |
 | 4 | `POST` | `/api/v1/workspaces/:slug/agent-tokens/:tokenId/revoke` | `requireSession` → `resolveWorkspaceContext(slug)` → owner of the token, or `OWNER\|ADMIN` | Sets `revokedAt` (idempotent: revoking an already-revoked token returns `200`). |
+| 5 | `DELETE` | `/api/v1/workspaces/:slug/agent-tokens/:tokenId` | `requireSession` → `resolveWorkspaceContext(slug)` → owner of the token, or `OWNER\|ADMIN` | Removes the row **and its hash** for good — the only way a revoked or expired connection leaves the list. Requires the product's standard `{ confirm: true }` body (missing ⇒ `400 VALIDATION_ERROR`). Not idempotent: a second call is `404 TOKEN_NOT_FOUND`, which the surface treats as done. |
 
 > **Why one MCP route:** the protocol defines one endpoint and routes inside the JSON-RPC envelope. A route per tool would be a second, parallel API — exactly the duplication `packages/shared` exists to prevent.
 >
 > **Why token creation is any-member, not Owner/Admin:** a member's token can never exceed that member's own abilities (roles still gate every action at use time), so restricting issuance would only stop ordinary members from using agents while adding no security. Owner/Admin get the *revocation* power instead, because the real incident story is "a token leaked — kill it", not "members must not have tokens".
 >
 > **Why revocation is idempotent:** revocation is an emergency action; a double-click or a retried request must not fail.
+>
+> **Why deletion exists on top of revocation:** revocation is a timestamp — it stops the credential but keeps the row, because the row is the evidence ("was this used after I stopped using it?"). With no un-revoke in the product, that evidence accumulates forever, so deletion is the explicit housekeeping path: an `Active` token may be deleted too (the hash row leaves with it, so it rejects under the same one-predicate rule as a revoked one), which means "kill it and take it off my list" is one action instead of two.
 
 ### 2.1 Non-endpoints (explicitly not routes)
 
@@ -54,7 +57,7 @@ Three HTTP routes: one protocol endpoint plus two token-management routes (creat
 | Notifications | Owning services | Same recipients as the UI; no MCP-specific endpoints |
 | Tool registry management | Code | No runtime registration, no DB rows (data-model §2.5) |
 | Session endpoints | — | The protocol has no sessions; a credential is presented per request |
-| Token editing | — | Tokens are immutable after creation except for revocation (scopes/label changes = revoke + create) |
+| Token editing | — | Tokens are immutable after creation except for revocation and deletion (scopes/label changes = revoke + create) |
 
 ---
 
@@ -105,11 +108,11 @@ The token-management routes answer with the standard HTTP envelope. Module-owned
 |---|---|---|
 | `SCOPE_NOT_PERMITTED` | `403` | A creation request asked for a scope above the caller's role (§3.2). The message names the offending scopes and the caller's role |
 | `TOKEN_EXPIRY_INVALID` | `400` | `expiresAt` is in the past. Rejected rather than minted dead-on-arrival, so the first `/mcp` request cannot fail with an unexplainable `401` |
-| `TOKEN_NOT_FOUND` | `404` | The token id is unknown, belongs to another workspace, **or** belongs to another member while the caller is neither that member nor an Owner/Admin. All three answer identically so revocation cannot be used to probe other members' credentials |
+| `TOKEN_NOT_FOUND` | `404` | The token id is unknown, belongs to another workspace, **or** belongs to another member while the caller is neither that member nor an Owner/Admin. All three answer identically so revocation (and deletion) cannot be used to probe other members' credentials |
 
 Reused from the workspace module rather than duplicated: `WORKSPACE_NOT_FOUND` (unknown slug / non-member), `WORKSPACE_ARCHIVED` (creation in an archived workspace), `FORBIDDEN_ROLE`, `VALIDATION_ERROR`.
 
-Per-route archived-workspace behaviour is deliberate: **create** requires an active workspace (`rejectArchived: true`), while **list** and **revoke** also work while archived — a member must always be able to see and kill their credentials, and killing a leaked one must never be blocked by lifecycle state. `?all=true` is honoured for `OWNER|ADMIN`; any other member silently receives their own list, because the flag is a view request and never a permission claim.
+Per-route archived-workspace behaviour is deliberate: **create** requires an active workspace (`rejectArchived: true`), while **list**, **revoke** and **delete** also work while archived — a member must always be able to see, kill and clear out their credentials, and neither killing a leaked one nor clearing a dead one may be blocked by lifecycle state. `?all=true` is honoured for `OWNER|ADMIN`; any other member silently receives their own list, because the flag is a view request and never a permission claim.
 
 ---
 
