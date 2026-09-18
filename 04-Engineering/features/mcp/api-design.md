@@ -168,6 +168,8 @@ The two doors that matter on every call: **the credential** (who) and the **live
 
 Mirror validation is mandatory (the confused-deputy rule): any disagreement between a mirrored header and the body is rejected, and a value that arrives base64-wrapped in the `=?base64?…?=` sentinel is decoded before comparison. v1 uses **no** `x-mcp-header` parameters, so no `Mcp-Param-*` headers exist to validate — the mechanism is documented here for the day a proxy needs one.
 
+**Era note (M6):** `MCP-Protocol-Version` is required in **both** eras, but the three mirror checks above belong to `2026-07-28` and therefore apply to modern requests only — a legacy client has no `Mcp-Method` or `Mcp-Name` to send, so holding it to them would be a contract its revision never had (§5.6).
+
 ### 5.2 Status codes
 
 | Situation | Response |
@@ -201,6 +203,38 @@ Returns `supportedVersions: ["2026-07-28"]`, `capabilities: { tools: {} }`, `ser
 - The handler builds the `WorkspaceRequestContext` (already resolved) → calls the owning service → maps the outcome.
 - Results are `resultType: "complete"` with `content` (text) and, where the shape is stable, `structuredContent`. Errors are `isError: true` with an actionable sentence (§8.2).
 - **No elicitation / `input_result` in v1**, so no multi-round-trip resumability is required. When phase 3 adds human confirmation, the MRTR flow arrives with it (api-design §12).
+
+### 5.6 The two eras
+
+The endpoint serves **two revisions on one URL** (ADR-005 amendment):
+`2026-07-28` (preferred) and `2025-11-25` — the newest revision of the era before
+it, and the newest that any shipped client negotiates. Every request is classified
+from the request itself, because the server is stateless and has no session to
+remember an era in.
+
+| Signal in the request | Era it means | Why |
+|---|---|---|
+| `method` is `initialize` or `notifications/initialized` | legacy | Those methods do not exist in `2026-07-28`, so sending one *is* the declaration — whatever revision the client proposes |
+| `params._meta` present | modern | Outranks the header, so a request cannot escape the mirrored-header checks by putting a legacy revision in a header. `_meta` naming a legacy revision is served as modern: stricter rules, nothing skipped |
+| `MCP-Protocol-Version` header only | that revision's era | The post-handshake shape of the legacy era |
+| Nothing at all | — | `400` + `-32600` naming `params._meta`. Deliberately **not** "assume the oldest era" — a modern client that forgets its envelope must be told |
+| A revision we do not speak | — | `400` + `-32022` with `supported` + `requested`, answered **before** the envelope rules: a legacy request has no `_meta` to fail, so the version answer is the only one it can act on |
+
+Per era:
+
+| | modern `2026-07-28` | legacy `2025-11-25` |
+|---|---|---|
+| Opens with | `server/discover` | `initialize` → `notifications/initialized` (answered `202`) |
+| Revision & identity | per request, in `params._meta` | once, in the handshake — `serverInfo` top-level |
+| Mirrored headers | required, and must agree with the body | **not applicable**: those fields do not exist in that revision |
+| Session | none | none — the handshake answer carries no `Mcp-Session-Id` |
+| Results | `resultType`, `ttlMs`, `cacheScope` | the same content with that frame projected away; `_meta` diagnostics kept |
+| `GET` / `DELETE` | `405` | `405` (that revision permits it; the measured client accepts it) |
+| `server/discover` | served | not served — that era never knew the method |
+
+Both eras carry the **same** credential rules, the same `Origin` guard, the same
+per-token budget, and the same error envelopes — a refusal is identical whichever
+door was used. The era changes the *frame*, never the permission model.
 
 ---
 
@@ -360,7 +394,8 @@ Rules: a domain failure is **never** a protocol error; a protocol error is **nev
 | **Transport** (integration) | Untrusted `Origin` ⇒ `403` + `FORBIDDEN`; `GET`/`DELETE` ⇒ `405`; missing `MCP-Protocol-Version` ⇒ `400` + `-32020`; `Mcp-Name` ≠ body ⇒ `400` + `-32020`; unknown version ⇒ `400` + `-32022`; unknown method ⇒ `404` + `-32601`; notification ⇒ `202`; no credential, and a revoked one ⇒ `401` + `UNAUTHORIZED` **before dispatch**; the (max+1)th call for one token ⇒ `429` + `Retry-After`, while a second token from the same client is unaffected |
 | **Credentials** (integration, Testcontainers Postgres) | Every unusable credential — missing/empty header, wrong scheme, not a token, unknown hash, revoked, expired, deleted, membership removed — asserted **identical** (status, code, message); a session cookie alone authenticates nothing; a valid token's context **equals** the one the cookie path builds for the same member; `lastUsedAt` stamped once per window and never on a refused request; no log record contains the token, its prefix, or its hash |
 | **Protocol & tools** (integration, Testcontainers Postgres) | `server/discover` shape; `tools/list` deterministic order + `ttlMs` + `cacheScope: private` + scope pruning by name; every tool's happy path asserted **against the database**; writes assert history/activity/notification rows; cross-workspace identifier ⇒ same flat not-found as a fake one; archived issue ⇒ actionable tool result; role failure ⇒ actionable tool result; per-token limit ⇒ retry hint |
-| **Not testable** | Whether an agent *chooses* the right tool or whether a result is the right size — that is measured by dogfooding a stdio dev variant and by the call log (§10), then fixed in the tool definitions |
+| **Legacy era** (integration) | `initialize` answered statelessly — our revision, `serverInfo` top-level, **no** `Mcp-Session-Id` in header or body — against the request shape measured from the shipped client; `notifications/initialized` ⇒ `202`; `tools/list` and `tools/call` in that era's envelope (no `resultType`/`ttlMs`/`cacheScope`) with `_meta` diagnostics preserved; an unspoken revision in the header ⇒ `400` + `-32022` with the supported list; a revoked credential and a removed membership ⇒ the **same** `401` as the modern door, compared field by field; `GET`/`DELETE` ⇒ `405`; and the modern path still enforces both mirrors |
+| **Not testable** | Whether an agent *chooses* the right tool or whether a result is the right size — measured by dogfooding with a real client over the endpoint (the legacy era exists so a shipped client can connect) plus the call log (§10), then fixed in the tool definitions. Not a week-long programme: one session of real questions, then the definitions that failed it |
 
 ---
 
@@ -375,3 +410,4 @@ Rules: a domain failure is **never** a protocol error; a protocol error is **nev
 | Per-tool permissions beyond the four scopes | Evidence that scopes are too coarse |
 | `x-mcp-header` parameters | A gateway/proxy that must route or throttle on an argument — and then the workspace-selector case is explicitly *not* it (the workspace is bound to the token) |
 | Tool-call audit table | A member-visible agent-activity view or retention need (data-model D9) |
+| MCP-UI / task / skill extensions (`io.modelcontextprotocol/ui`, `…/tasks`, `…/skills`) | The shipped client advertises all three in its handshake (measured, M6 probe). We ignore them and return text blocks, which is the v1 answer; revisit when a member-visible UI inside the agent, long-running task semantics, or packaged skills are actually asked for |

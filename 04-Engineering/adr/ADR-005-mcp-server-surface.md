@@ -55,3 +55,43 @@ Putting the code in the process that owns the domain rules is what makes the too
   - `/mcp` needs its **own** rate-limit policy rather than inheriting the `/api/v1` one, because agents share IPs.
   - The MVP ships no sessions and no GET stream (current protocol revision), so old clients hitting `GET`/`DELETE` get `405` and any `Mcp-Session-Id` is ignored (`features/mcp/api-design.md` §5).
 - **Revisit when:** the MCP surface needs independent scaling or release cadence, requires long-lived streams as a core feature, or external clients need OAuth-based connection — at which point move the module to `apps/mcp` with a `packages/core` extraction (`features/mcp/api-design.md` §12).
+
+## Amendment (M6): the legacy era is served too
+
+**Changes the Decision above in one place:** the surface no longer speaks a single
+revision.
+
+What forced it, measured rather than assumed: a throwaway server answering a
+legacy handshake and logging every request, driven by
+`@modelcontextprotocol/inspector@2.7.0` (which bundles
+`@modelcontextprotocol/sdk` 1.30.0 — newest revision `2025-11-25`). **No shipped
+client negotiates `2026-07-28`.** A modern-only server therefore cannot be
+connected to by a real agent at all, which makes M6's own gate (dogfooding) and
+M9's external-client story impossible without either a second era or a bridge we
+would have to build, ship and maintain.
+
+The decision: **both eras, one endpoint, stateless in both.**
+
+- `initialize` is answered with a handshake carrying **our** legacy revision
+  (`2025-11-25`) and `serverInfo` top-level, with **no `Mcp-Session-Id`** — that
+  revision permits a session-less server, the shipped client was measured
+  accepting one, so the original "no sessions" decision survives intact.
+- The era is derived per request from the request itself
+  (`mcp/transport.ts: detectRequestEra`): the handshake names its era outright,
+  `params._meta` means modern and outranks the header, otherwise the version
+  header decides, and no version signal at all is an error rather than an
+  assumption.
+- **Accepted cost.** The mirrored-header rule (`MCP-Protocol-Version`,
+  `Mcp-Method`, `Mcp-Name` agreeing with the body) is a `2026-07-28` control, and
+  a legacy request has no such fields to send. Era support therefore weakens the
+  confused-deputy posture *for requests that declare the older era*, and for those
+  only. On the modern path every check is unchanged, and both halves are asserted
+  in the transport suite. Everything era-independent — the `Origin` guard,
+  credential resolution, the per-token budget, the error envelopes, and the
+  rule that a refusal is identical whichever door was used — applies to both.
+- **Dropped:** refusing `initialize` with a version diagnostic. That message
+  existed to explain a door that did not open.
+
+**Revisit when:** every client we care about speaks `2026-07-28`. Then delete the
+legacy branch, its schemas and its tests, and the mirror rule becomes
+unconditional again.
