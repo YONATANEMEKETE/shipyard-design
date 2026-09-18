@@ -360,6 +360,51 @@ Shipped with the six additive write tools. What the tables above do not carry.
   transport, so the write tools contain no era awareness — and the legacy suite
   asserts the same tool list and the same envelopes.
 
+### 6.6 Implementation notes (M8)
+
+Shipped with the three gated lifecycle tools. The tables above give their names
+and scopes; these are the decisions behind them.
+
+- **Reversible and irreversible are told apart in three places at once**: the
+  description says which one it is, the result says so again ("reversible —
+  nothing was deleted" against "permanent — this cannot be undone"), and
+  `destructiveHint` is `true` for the delete tool only. A host turns that
+  annotation into its confirmation prompt, so the distinction is machine-readable
+  rather than prose a model has to interpret.
+- **The confirmation is the person's, delivered by their client.** spec §3.4 is
+  explicit that a model-typed confirmation is never consent, so **none of these
+  tools asks the caller to repeat an identifier**, and no argument is treated as
+  an approval. What the server can enforce, it does: the scope is checked at
+  discovery *and* re-checked at dispatch, the role is re-asserted against the
+  live membership inside the owning service on every call, and the
+  identifier-confirmation contract the HTTP delete demands is satisfied with the
+  identifier this tool resolved from the caller's reference. The in-protocol half
+  — a confirmation the server can require and verify — is the elicitation/MRTR
+  item §12 still carries.
+- **The role gate is the *live* membership, never the issuance ceiling.**
+  `ISSUES_DELETE` cannot be issued to anybody but an Owner or Admin, but that is
+  convenience: a credential minted before a downgrade stops working on its next
+  call, because `issuesService.remove` re-checks the role it is handed. Asserted
+  by hand-building a delete-scoped credential owned by a member and watching the
+  call refuse.
+- **The service's own `confirm` flag is satisfied by the tool**, not asked of the
+  caller: on the HTTP surface the flag exists to make a stray request impossible,
+  and a call named `shipyard_archive_issue`, naming one issue, is already that
+  intent stated.
+- **No new deletion logic, and the blast radius is the product's**: comments,
+  mention and assignment notifications, label joins and history go with the
+  issue, and the activity row is written **after** the row is gone so the record
+  of the deletion survives it (issues D3 — plain-text identifier, no foreign
+  key). Deleting an already-archived issue is allowed, as F5 says: nothing about
+  the archive state shields it.
+- **Archive and restore refuse rather than pretending to be idempotent**: an
+  archived issue is `409 ALREADY_ARCHIVED`, a live one restored is
+  `409 NOT_ARCHIVED`, both as readable tool results. Succeeding silently would
+  tell a model something happened that did not.
+- **Absence is still a decision.** Deleting a comment, a project, a cycle or a
+  label is not offered: each would need its own blast-radius story before it
+  earns a tool.
+
 **Deliberately absent:** member invitations/roles/ownership, workspace lifecycle, account settings, notification management, label/project/cycle deletion, bulk operations, and any generic "make an HTTP request" capability. Absence is a design decision (spec §6), not a backlog.
 
 ---
@@ -422,7 +467,7 @@ A write follows the same discipline, with one addition: **a write that cannot do
 | Token active, workspace `ARCHIVED` | ✅ (mirrors read-when-archived) | ❌ `409 WORKSPACE_ARCHIVED` as a tool result | ❌ |
 | Token revoked / expired | ❌ `401` | ❌ `401` | ❌ `401` |
 | Member removed from the workspace | ❌ `401` | ❌ `401` | ❌ `401` |
-| Issue archived | ✅ read | ❌ `ISSUE_ARCHIVED` + restore hint | ✅ `OWNER\|ADMIN` (delete allowed regardless of archive state — F5 #7) |
+| Issue archived | ✅ read, and listed with `includeArchived` | ✅ `shipyard_restore_issue`; `shipyard_archive_issue` refuses with `ALREADY_ARCHIVED` | ✅ `OWNER\|ADMIN` — delete allowed regardless of archive state (F5 #7) |
 | Read-only token | ✅ | ❌ tool not even listed; direct call ⇒ readable scope failure | ❌ |
 | Member role downgraded, token scopes unchanged | ✅ | Depends on the new role — the role check runs live | ❌ |
 
@@ -449,7 +494,7 @@ A write follows the same discipline, with one addition: **a write that cannot do
 | **Unit** (`test/unit/mcp/`) | Error mapper (`AppError` → `isError` + code in `_meta`; unknown → generic + request id, no stack); bearer parsing (scheme case-insensitive, another scheme / whitespace inside the value / bare scheme ⇒ not a credential); the per-token budget (allow up to the max, refuse after, reset when the window passes, one budget per token, nothing counted before resolution); portmanteau argument mapping (`me`, `SHIP-###` → `(workspaceId, seqNumber)`, cuid passthrough); scope filter removes write tools by name; scope issuance ceiling per role |
 | **Transport** (integration) | Untrusted `Origin` ⇒ `403` + `FORBIDDEN`; `GET`/`DELETE` ⇒ `405`; missing `MCP-Protocol-Version` ⇒ `400` + `-32020`; `Mcp-Name` ≠ body ⇒ `400` + `-32020`; unknown version ⇒ `400` + `-32022`; unknown method ⇒ `404` + `-32601`; notification ⇒ `202`; no credential, and a revoked one ⇒ `401` + `UNAUTHORIZED` **before dispatch**; the (max+1)th call for one token ⇒ `429` + `Retry-After`, while a second token from the same client is unaffected |
 | **Credentials** (integration, Testcontainers Postgres) | Every unusable credential — missing/empty header, wrong scheme, not a token, unknown hash, revoked, expired, deleted, membership removed — asserted **identical** (status, code, message); a session cookie alone authenticates nothing; a valid token's context **equals** the one the cookie path builds for the same member; `lastUsedAt` stamped once per window and never on a refused request; no log record contains the token, its prefix, or its hash |
-| **Protocol & tools** (integration, Testcontainers Postgres) | `server/discover` shape; `tools/list` deterministic order + `ttlMs` + `cacheScope: private` + scope pruning by name (reads-then-writes, 14 tools; a `READ` credential still sees exactly 8); every tool's happy path asserted **against the database**; the six writes (`mcp-write-tools.test.ts`) assert their `issue_history`, `activity_event` and `notification` rows, that a name matching nobody writes nothing, that a contradicting request is refused, and that no result carries an email address or token fragment; cross-workspace identifier ⇒ same flat not-found as a fake one; archived issue ⇒ actionable tool result; role failure ⇒ actionable tool result; per-token limit ⇒ retry hint |
+| **Protocol & tools** (integration, Testcontainers Postgres) | `server/discover` shape; `tools/list` deterministic order + `ttlMs` + `cacheScope: private` + scope pruning by name (reads-then-writes, 17 tools; a `READ` credential still sees exactly 8, and a delete scope adds only the three lifecycle tools); every tool's happy path asserted **against the database**; the six writes (`mcp-write-tools.test.ts`) assert their `issue_history`, `activity_event` and `notification` rows, that a name matching nobody writes nothing, that a contradicting request is refused, and that no result carries an email address or token fragment; the three lifecycle tools (`mcp-lifecycle-tools.test.ts`) assert the live-role refusal on a hand-built delete-scoped credential, the cascade of a permanent delete measured against the tables (row, comments, joins, history, notifications gone; the activity row surviving), archive/restore round-tripping in place, and that only the irreversible call is annotated destructive; cross-workspace identifier ⇒ same flat not-found as a fake one; archived issue ⇒ actionable tool result; role failure ⇒ actionable tool result; per-token limit ⇒ retry hint |
 | **Legacy era** (integration) | `initialize` answered statelessly — our revision, `serverInfo` top-level, **no** `Mcp-Session-Id` in header or body — against the request shape measured from the shipped client; `notifications/initialized` ⇒ `202`; `tools/list` and `tools/call` in that era's envelope (no `resultType`/`ttlMs`/`cacheScope`) with `_meta` diagnostics preserved; an unspoken revision in the header ⇒ `400` + `-32022` with the supported list; a revoked credential and a removed membership ⇒ the **same** `401` as the modern door, compared field by field; `GET`/`DELETE` ⇒ `405`; and the modern path still enforces both mirrors |
 | **Not testable** | Whether an agent *chooses* the right tool or whether a result is the right size — measured by dogfooding with a real client over the endpoint (the legacy era exists so a shipped client can connect) plus the call log (§10), then fixed in the tool definitions. Not a week-long programme: one session of real questions, then the definitions that failed it |
 
@@ -460,7 +505,7 @@ A write follows the same discipline, with one addition: **a write that cannot do
 | Item | Trigger |
 |---|---|
 | SSE responses (`text/event-stream`) | A tool that benefits from progress (e.g. bulk import) — today everything completes synchronously |
-| Human confirmation via elicitation / MRTR | Phase 3 destructive tools (spec §3.4): host-driven consent first, in-protocol confirmation second |
+| Human confirmation via elicitation / MRTR — the **in-protocol** half | The host-driven half shipped with M8 (§6.6): a `destructiveHint` call is approved by the person in their own client, and no tool accepts a model-typed confirmation (spec §3.4). What remains is a confirmation the *server* can require and verify inside one call, for a host that cannot prompt |
 | `subscriptions/listen` for tool-list changes | Only if the registry ever becomes dynamic per workspace/role |
 | OAuth 2.1 (resource-server role, PRM, client metadata docs, audience validation) | External agent clients that cannot paste a token (spec §7 Q1) |
 | Per-tool permissions beyond the four scopes | Evidence that scopes are too coarse |
