@@ -31,6 +31,7 @@ Through their agent, a member can:
 
 - A token belongs to **exactly one workspace** and to **one member**. There is no workspace argument anywhere: the workspace is a property of the credential, never of a request parameter.
 - A token carries **permissions (scopes)** that are a subset of what its owner may do — never more. A read-only token is the default.
+- `Read` is **granted with every connection** and cannot be turned off: a credential that cannot read cannot usefully write, so a write scope always arrives with it, and no surface offers to remove it.
 - The member's **workspace role** (Owner / Admin / Member) still governs every action on top of the token's scopes. Tokens can never widen what a person may do.
 - Tokens are shown **once** at creation, are identified by a label, expire if an expiry was set, and can be revoked at any time. Revocation takes effect on the next request.
 - A revoked or expired token can be **deleted**, which removes it from the list for good. Revocation keeps the record (it is the history), deletion clears it (it is the housekeeping) — and since there is no un-revoke, deletion is what keeps the list from growing without limit.

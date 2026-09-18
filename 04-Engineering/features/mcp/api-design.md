@@ -105,7 +105,9 @@ A token's scopes are a subset of what its owner may do **at issuance time**:
 | `COMMENTS_WRITE` | Any member |
 | `ISSUES_DELETE` | `OWNER` or `ADMIN` only (issue deletion is role-gated — F5 #7) |
 
-Requesting a scope above the caller's role ⇒ `403` with a message naming the permission and the reason. This is a *convenience* ceiling, not the security boundary: the role check runs again on every action, so a member whose role was later downgraded loses the ability even though the token still carries the scope.
+Requesting a scope above the caller's role ⇒ `403` with a message naming the permission and the reason. This is a *convenience* ceiling, not the security boundary: the role check runs again on every action, so a member whose role is later downgraded loses the ability even though the token still carries the scope.
+
+**`READ` is always granted.** A request that lists only a write scope comes back carrying `READ` as well — unioned at issuance, never rejected, because "let this connection edit issues" and "connections must be able to read" are separate statements and a `400` over a scope the member wanted anyway would be a worse surface (spec §3.1). The table above therefore describes what a member may **choose**, not the set a credential ends up with, and the ceiling still applies to the union: `READ` is added, nothing is elevated, and a member cannot reach `ISSUES_DELETE` by asking for it twice.
 
 ### 3.3 Management-route errors (implementation note)
 
