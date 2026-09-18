@@ -917,7 +917,7 @@ Expose Shipyard to a member's AI agent over the **MCP protocol** (revision `2026
 | M3 | MCP endpoint skeleton: transport validation + `server/discover` + `tools/list` | Transport tests pass; an MCP client connects and receives a valid tool list | M1 |
 | M4 | Credential resolution (bearer → workspace context) + per-token limits | Every `401` case tested; a valid token yields the same context the cookie path yields | M2, M3 |
 | M5 | The eight read tools | An agent answers real questions without being told which tool to use | M4 |
-| M6 | stdio dev variant + dogfooding loop | A week of real use; every wrong tool choice, oversized result, or unhelpful error fixed in the definitions | M5 |
+| M6 | Dual-era transport (the legacy `2025-11-25` handshake served alongside the modern revision) + the first dogfooding session. The planned stdio dev variant was dropped: a bridge would dogfood a path nobody deploys | The Inspector connects and lists tools, and one session of plain questions is read back from the call log; the definitions that failed it are fixed the same day | M5 |
 | M7 | The six additive write tools | Writes land with their history, activity, and notification rows, asserted against the database | M6 |
 | M8 | Gated destructive tools (archive / restore / delete) | Delete requires scope + `OWNER\|ADMIN` + explicit human confirmation | M7 |
 | M9 | Deployment and hardening (with F12) | A real agent works against the deployed HTTPS endpoint and appears attributed in the activity log | M8 |

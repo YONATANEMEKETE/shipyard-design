@@ -1,7 +1,7 @@
 # MCP Server — API Design
 
 **Status:** Draft for review
-**Last updated:** 2026-09-17
+**Last updated:** 2026-09-18
 **Sources:** `features/mcp/spec.md` · `features/mcp/data-model.md` (locked — `mcp_token`, D1–D9) · `features/issues/api-design.md` (F5 precedent — list filters/sort, `SHIP-###` identifier lookup, archive semantics, error envelope) · `features/projects/api-design.md` · `features/cycles/api-design.md` · `features/comments/api-design.md` (F8 — authorship rules reuse) · `features/search/api-design.md` (F10 — grouped bounded reads) · `features/dashboard/api-design.md` (F9 — one composed read) · `features/activity/api-design.md` (emission is internal-only; pages are read-only) · `features/members/api-design.md` (F3 — role matrix, token-hash precedent) · `features/settings/api-design.md` (F11 — account-scoped surface, delegated sections as links) · `features/workspace/api-design.md` (F2 — `:slug` context, read-when-archived, leak-free 404s) · `features/auth/api-design.md` (F1 — session cookie on the browser surface only) · `00-architecture.md` §5–§8 · `ADR-001`–`ADR-003` · `ADR-005` (surface & hosting) · `05-Post-MVP.md`
 **Owner:** `apps/api` — hand-written Shipyard code through the canonical pipeline (`route → validation → permission check → controller → service → repository → Prisma`), plus the MCP protocol layer (`features/mcp/`: transport validation → credential resolution → JSON-RPC dispatch → tool handler → owning service).
 
@@ -307,6 +307,59 @@ not carry.
 - **Each call logs keys, not values** (§10): tool name, argument *names*,
   duration, result size, `isError`, token id.
 
+### 6.5 Implementation notes (M7)
+
+Shipped with the six additive write tools. What the tables above do not carry.
+
+- **One rule for "leave it" and "unset", taken from the service.** An omitted
+  field is left as it is; `null` unsets it. So `project: null` detaches from the
+  project, `cycle: null` takes the issue out of its cycle, `assignee: null`
+  unassigns, and `dueDate: null` clears the date. The tool surface restates
+  `UpdateIssueSchema` verbatim rather than inventing a second convention a model
+  would have to learn separately.
+- **Everything resolves before anything is written.** A create resolves its
+  assignee, project and labels first; an update resolves the project or cycle it
+  was asked to move the issue into. A reference that matches nobody is a tool
+  result naming it and **changes nothing** — a create that failed halfway would
+  otherwise leave an issue wearing three of its four labels.
+- **A mutation matches a person exactly.** An assignee is a full display name, an
+  email address, a user id, or `me` (the credential's owner). A partial name —
+  a first name — is **refused**, with the accepted shapes named in the message:
+  two members can share a first name, and a mutation that picked one of them
+  would hand somebody else's work over silently. The read path's filters are
+  unchanged.
+- **A request that contradicts itself is refused, not half-applied.** Two cases:
+  `blocked: false` carrying a reason (`REASON_WITHOUT_BLOCKED`), and an update
+  carrying nothing to change (`NOTHING_TO_CHANGE`). Both are tool results with
+  `isError: true`, both name what to send instead.
+- **A write reports the change it made.** The result lists the fields it changed
+  (`old → new`) and then the issue as it now stands — one line, compact. A
+  write that changed nothing (the status it already had, the assignee it already
+  had, the blocked state it already had) says so and writes nothing.
+- **What a write lands is the service's, unchanged**: one `issue_history` row per
+  changed concern (`CREATED`, `STATUS_CHANGED`, `TITLE_CHANGED`,
+  `PRIORITY_CHANGED`, `ASSIGNED`/`UNASSIGNED`, `BLOCKED_SET`/`BLOCKED_CLEARED`,
+  `PROJECT_CHANGED`, `CYCLE_CHANGED`, `DUE_DATE_CHANGED`), an `activity_event`
+  row for state changes, and a `notification` row for an assignment or a mention
+  — never for the actor's own. Content edits (title, description, priority,
+  dates, relations) are audited in history only; the feed carries state. Moving a
+  blocked issue to `DONE` clears the flag implicitly, and the result says so.
+- **`shipyard_add_comment` is its own scope** (`COMMENTS_WRITE`): a connection
+  allowed to edit work is not automatically allowed to speak on somebody's
+  behalf. Mentions are re-parsed server-side from the body, so nothing about
+  notification is the tool's business.
+- **Writes name names and echo nothing back.** A result carries the identifier
+  and the changed fields — never an internal id, never an email address, and
+  never the comment body quoted back (the model wrote it; every echoed token is
+  paid for on every later turn).
+- **The registry order is reads-then-writes**, fourteen tools, and a credential
+  carrying only `READ` still discovers exactly the eight read tools. Writes are
+  **pruned** from the list, not merely absent, and the pruning is asserted by
+  name. `ISSUES_DELETE` advertises nothing until the M8 tools exist.
+- **Every write is exercised in both eras.** The era projection sits at the
+  transport, so the write tools contain no era awareness — and the legacy suite
+  asserts the same tool list and the same envelopes.
+
 **Deliberately absent:** member invitations/roles/ownership, workspace lifecycle, account settings, notification management, label/project/cycle deletion, bulk operations, and any generic "make an HTTP request" capability. Absence is a design decision (spec §6), not a backlog.
 
 ---
@@ -320,6 +373,7 @@ not carry.
 | Honest truncation | List results include `returned`, `truncated`, and `total` where the source knows its own size; the text says which of the two situations it is: with a next page available, "25 shown — pass the cursor for the next page"; otherwise "25 of 84 shown — narrow the filters or raise the limit". Only `shipyard_recent_activity` pages by cursor in v1 |
 | Identifiers | `SHIP-###` is returned verbatim and accepted as input; internal ids are accepted but never required |
 | Minimal PII | Member projections return name + role (+ id for actions). **Email is not exposed** on the agent surface (spec §7 Q2) |
+| Minimal PII (writes) | A write returns a **projection**, not the service's object: `issueProjection` carries identifier, title, status, priority, assignee *name*, due date, blocked state and label *names* — no internal ids, no email, and no echo of a comment body |
 | Deterministic | Same filters ⇒ same order; ties broken by id |
 | Text + structure | Every result carries a short human-readable text block; machine-stable shapes also carry `structuredContent` |
 | No secrets | Tool results never include tokens, hashes, `tokenPrefix`, or another member's private fields |
@@ -355,6 +409,8 @@ Reserved for calls that cannot be understood at all.
 | Unexpected failure | `500` | A generic sentence + the request id. Never a stack trace, SQL, or a Prisma message |
 
 Rules: a domain failure is **never** a protocol error; a protocol error is **never** a tool result; no failure message discloses what the caller may not see; and every message is written for the consumer that will read it — the model.
+
+A write follows the same discipline, with one addition: **a write that cannot do what it was asked never writes anything.** An unresolved reference (`ISSUE_NOT_FOUND`, `ASSIGNEE_NOT_FOUND`, `PROJECT_NOT_FOUND`, `CYCLE_NOT_FOUND`, `LABEL_NOT_FOUND`) and a self-contradicting request (`REASON_WITHOUT_BLOCKED`, `NOTHING_TO_CHANGE`) are tool results that name the reference that failed and the shapes that resolve it, and the transaction is never entered.
 
 ---
 
@@ -393,7 +449,7 @@ Rules: a domain failure is **never** a protocol error; a protocol error is **nev
 | **Unit** (`test/unit/mcp/`) | Error mapper (`AppError` → `isError` + code in `_meta`; unknown → generic + request id, no stack); bearer parsing (scheme case-insensitive, another scheme / whitespace inside the value / bare scheme ⇒ not a credential); the per-token budget (allow up to the max, refuse after, reset when the window passes, one budget per token, nothing counted before resolution); portmanteau argument mapping (`me`, `SHIP-###` → `(workspaceId, seqNumber)`, cuid passthrough); scope filter removes write tools by name; scope issuance ceiling per role |
 | **Transport** (integration) | Untrusted `Origin` ⇒ `403` + `FORBIDDEN`; `GET`/`DELETE` ⇒ `405`; missing `MCP-Protocol-Version` ⇒ `400` + `-32020`; `Mcp-Name` ≠ body ⇒ `400` + `-32020`; unknown version ⇒ `400` + `-32022`; unknown method ⇒ `404` + `-32601`; notification ⇒ `202`; no credential, and a revoked one ⇒ `401` + `UNAUTHORIZED` **before dispatch**; the (max+1)th call for one token ⇒ `429` + `Retry-After`, while a second token from the same client is unaffected |
 | **Credentials** (integration, Testcontainers Postgres) | Every unusable credential — missing/empty header, wrong scheme, not a token, unknown hash, revoked, expired, deleted, membership removed — asserted **identical** (status, code, message); a session cookie alone authenticates nothing; a valid token's context **equals** the one the cookie path builds for the same member; `lastUsedAt` stamped once per window and never on a refused request; no log record contains the token, its prefix, or its hash |
-| **Protocol & tools** (integration, Testcontainers Postgres) | `server/discover` shape; `tools/list` deterministic order + `ttlMs` + `cacheScope: private` + scope pruning by name; every tool's happy path asserted **against the database**; writes assert history/activity/notification rows; cross-workspace identifier ⇒ same flat not-found as a fake one; archived issue ⇒ actionable tool result; role failure ⇒ actionable tool result; per-token limit ⇒ retry hint |
+| **Protocol & tools** (integration, Testcontainers Postgres) | `server/discover` shape; `tools/list` deterministic order + `ttlMs` + `cacheScope: private` + scope pruning by name (reads-then-writes, 14 tools; a `READ` credential still sees exactly 8); every tool's happy path asserted **against the database**; the six writes (`mcp-write-tools.test.ts`) assert their `issue_history`, `activity_event` and `notification` rows, that a name matching nobody writes nothing, that a contradicting request is refused, and that no result carries an email address or token fragment; cross-workspace identifier ⇒ same flat not-found as a fake one; archived issue ⇒ actionable tool result; role failure ⇒ actionable tool result; per-token limit ⇒ retry hint |
 | **Legacy era** (integration) | `initialize` answered statelessly — our revision, `serverInfo` top-level, **no** `Mcp-Session-Id` in header or body — against the request shape measured from the shipped client; `notifications/initialized` ⇒ `202`; `tools/list` and `tools/call` in that era's envelope (no `resultType`/`ttlMs`/`cacheScope`) with `_meta` diagnostics preserved; an unspoken revision in the header ⇒ `400` + `-32022` with the supported list; a revoked credential and a removed membership ⇒ the **same** `401` as the modern door, compared field by field; `GET`/`DELETE` ⇒ `405`; and the modern path still enforces both mirrors |
 | **Not testable** | Whether an agent *chooses* the right tool or whether a result is the right size — measured by dogfooding with a real client over the endpoint (the legacy era exists so a shipped client can connect) plus the call log (§10), then fixed in the tool definitions. Not a week-long programme: one session of real questions, then the definitions that failed it |
 
@@ -411,3 +467,4 @@ Rules: a domain failure is **never** a protocol error; a protocol error is **nev
 | `x-mcp-header` parameters | A gateway/proxy that must route or throttle on an argument — and then the workspace-selector case is explicitly *not* it (the workspace is bound to the token) |
 | Tool-call audit table | A member-visible agent-activity view or retention need (data-model D9) |
 | MCP-UI / task / skill extensions (`io.modelcontextprotocol/ui`, `…/tasks`, `…/skills`) | The shipped client advertises all three in its handshake (measured, M6 probe). We ignore them and return text blocks, which is the v1 answer; revisit when a member-visible UI inside the agent, long-running task semantics, or packaged skills are actually asked for |
+| Projecting the **read** tools' `structuredContent` through the shape the writes use | The write results carry no email address (`issueProjection`), but the read tools still return the service's own card/detail objects, whose `assignee` and `creator` include one — while §7 promises email is not exposed. The text of every read already satisfies §7; the structured half does not. Trigger: the next time the read tools are touched, or the next agent-surface review |
