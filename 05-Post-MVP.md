@@ -10,7 +10,7 @@
 
 ## First after MVP (positioned, not yet scheduled)
 
-- **MCP server** — remote Streamable HTTP endpoint, user-scoped tokens (PATs → OAuth), read tools first, non-destructive writes second, agent attribution in the activity log. **Design complete (2026-09-17):** `features/mcp/spec.md` → `data-model.md` → `api-design.md`, with `ADR-005` recording the surface decision (endpoint in `apps/api`, exposed through the existing Next.js proxy, JSON responses only, PATs first). Implementation not started — ordered sub-milestones M0–M9 in `Implementation Plan.md` §9 (tracked as F13).
+- **MCP server** — remote Streamable HTTP endpoint, user-scoped tokens (PATs → OAuth), read tools first, non-destructive writes second, agent attribution in the activity log. **Design complete (2026-09-17):** `features/mcp/spec.md` → `data-model.md` → `api-design.md`, with `ADR-005` recording the surface decision (endpoint in `apps/api`, reachable at the API origin (`/mcp`), JSON responses only, PATs first). Implementation not started — ordered sub-milestones M0–M9 in `Implementation Plan.md` §9 (tracked as F13).
 - **Activity Log feed swap** — dashboard Recent Activity migrates onto the activity log when it lands (recorded F9 handoff). MVP-adjacent; do it before any analytics work that would otherwise fork feed logic.
 
 ---
@@ -50,8 +50,8 @@
 ## Platform & scale
 
 - Queues + background workers (email digests, cleanup janitors); outbox pattern
-- Presigned direct-to-R2 uploads; public browser-to-API access + CORS
-- Mobile app (API reachability decision); multi-region deployment
+- Presigned direct-to-R2 uploads
+- Mobile app (API reachability solved by ADR-006); multi-region deployment
 - Billing and usage limits; Kubernetes/microservices (only with demonstrated need)
 
 ---

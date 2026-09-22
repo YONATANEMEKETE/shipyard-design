@@ -21,7 +21,7 @@
 | Concern | Choice |
 |---|---|
 | Base path | `/api/v1/workspaces/:slug/cycles` and `/api/v1/workspaces/:slug/cycles/:cycleId` — mirrors projects; `:slug` is the F2 immutable workspace token; `:cycleId` is the cycle's `cuid()` (data-model D2 — no cycle slug, same reasoning as projects D5). Issue↔cycle writes live on the issues resource (`PATCH /issues/:issueId` extended with `cycleId`, §5.2) — there is no cycle-side `/cycles/:id/issues` writer. |
-| Next.js proxy | Browser never hits the API directly (ADR-003); `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*`, cookies forwarded. |
+| Browser → API | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`, ADR-006) — cross-origin with credentials and exact-origin CORS; session cookies are first-party to the API origin (shared across subdomains in production). |
 | Auth transport | HttpOnly Better Auth session cookie read by `requireSession` (F1) — `req.session.userId` is the only identity input. |
 | Validation | Zod schemas from `packages/shared` (`data-model.md` §4) at the route boundary. Dates are `YYYY-MM-DD` strings end-to-end (`@db.Date`, D4). |
 | Envelope | Success: resource JSON directly (or `{ cycles: [...] }` for collections). Failure: `{ "error": { "code", "message", "details"? } }` via the global error handler. Guard-failure conflicts carry `details.conflictingCycle: cycleCard` so the UI can name it (data-model §10 — spec Q3 resolved). |

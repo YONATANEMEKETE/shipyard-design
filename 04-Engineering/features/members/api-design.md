@@ -20,7 +20,7 @@
 |---|---|
 | Base path (workspace-scoped) | `/api/v1/workspaces/:slug/members` and `/api/v1/workspaces/:slug/invitations` — mirrors `features/workspace/api-design.md` §1; `:slug` is the same immutable short token, disambiguates duplicate names; inter-table references stay on `id` |
 | Base path (token-gated) | `/api/v1/invitations/:token` — global, not workspace-scoped; the token is the only key; preview/accept/decline live here so a non-member can reach them without a workspace context |
-| Next.js proxy | Browser never hits the API directly (ADR-003); `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*`, cookies forwarded; Caddy exposes only `web:3000` |
+| Browser → API | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`, ADR-006) — cross-origin with credentials and exact-origin CORS; session cookies are first-party to the API origin (shared across subdomains in production). |
 | Auth transport | HttpOnly Better Auth session cookie read by `requireSession` from F1; nothing new — `req.session.userId` + `user.emailVerified` are the only identity inputs |
 | Validation | Zod schemas from `packages/shared` (`data-model.md` §4) at the route boundary; API rejects anything the client UI would never send |
 | Envelope | Success: resource JSON directly (or `{ members: [...] }` / `{ invitations: [...] }` for collections). Failure: `{ "error": { "code": "...", "message": "...", "details"? } }` matching the F1/F2 global error handler |

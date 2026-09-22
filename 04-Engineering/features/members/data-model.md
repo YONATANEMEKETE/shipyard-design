@@ -448,4 +448,4 @@ SELECT workspace_id, lower(email), count(*) FROM invitation WHERE status='PENDIN
 
 ---
 
-*Next artifact: `api-design.md` — endpoint inventory over these two tables, the canonical guard chain per route, error codes/envelopes, and app-flow sequences (Next proxy → Express → guard chain → service → repository).*
+*Next artifact: `api-design.md` — endpoint inventory over these two tables, the canonical guard chain per route, error codes/envelopes, and app-flow sequences (client → Express → guard chain → service → repository).*

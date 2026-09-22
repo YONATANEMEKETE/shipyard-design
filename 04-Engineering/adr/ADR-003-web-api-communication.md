@@ -1,7 +1,9 @@
 # ADR-003: Web ↔ API Communication — Next.js Proxy
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR-006 (2026-09-22)
 - **Date:** 2026-08-12
+
+> **Superseded:** the API is now a public origin and the browser calls it directly (ADR-006) — CORS with an exact-origin allowlist replaced the proxy. Kept for history: the decision below describes the system as it was designed before the split.
 
 ## Context
 

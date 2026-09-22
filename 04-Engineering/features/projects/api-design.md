@@ -19,7 +19,7 @@
 | Concern | Choice |
 |---|---|
 | Base path | `/api/v1/workspaces/:slug/projects` and `/api/v1/workspaces/:slug/projects/:projectId` — mirrors members; `:slug` is the F2 immutable workspace token; `:projectId` is the project's `cuid()` (data-model D5 — no project slug). View preference lives at `/api/v1/workspaces/:slug/view-preferences/:scope` (generic, shared with Issues F5). |
-| Next.js proxy | Browser never hits the API directly (ADR-003); `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*`, cookies forwarded. |
+| Browser → API | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`, ADR-006) — cross-origin with credentials and exact-origin CORS; session cookies are first-party to the API origin (shared across subdomains in production). |
 | Auth transport | HttpOnly Better Auth session cookie read by `requireSession` (F1) — `req.session.userId` is the only identity input. |
 | Validation | Zod schemas from `packages/shared` (`data-model.md` §4) at the route boundary. |
 | Envelope | Success: resource JSON directly (or `{ projects: [...] }` for collections). Failure: `{ "error": { "code", "message", "details"? } }` via the global error handler. |

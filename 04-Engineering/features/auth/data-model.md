@@ -319,4 +319,4 @@ Local dev: `docker-compose` Postgres or Neon branch; `DATABASE_URL` from `apps/a
 
 ---
 
-*Next artifact: `api-design.md` — Better Auth endpoints mounted at `/api/v1/auth` (all provided, plus any custom wrapper) and Next proxy behavior per ADR-003.*
+*Next artifact: `api-design.md` — Better Auth endpoints mounted at `/api/v1/auth` (all provided, plus any custom wrapper) and the cross-origin call path per ADR-006.*

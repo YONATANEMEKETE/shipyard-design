@@ -7,7 +7,7 @@
 
 > **Protocol revision:** MCP `2026-07-28` (no `initialize` handshake, no sessions, no GET stream — every request is self-contained). Tool definitions are code, not data: the registry ships with the server binary.
 >
-> **Surface decision:** the MCP endpoint lives in `apps/api` and is reached publicly through the existing Next.js proxy (ADR-005) — one public door, no new deployable, tools call services in-process.
+> **Surface decision:** the MCP endpoint lives in `apps/api` and is reached publicly at the API origin, `https://api.shipyard.yonatanem.com/mcp` (ADR-005, amended by ADR-006) — no new deployable, tools call services in-process.
 
 ---
 

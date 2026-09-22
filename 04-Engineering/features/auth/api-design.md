@@ -14,7 +14,7 @@
 |---|---|
 | Better Auth `basePath` | `/api/auth` (library default) |
 | Express mount (per Implementation Plan F1) | `app.use("/api/v1/auth", toNodeHandler(auth))` — so effective external path is `/api/v1/auth/*` |
-| Next.js proxy (ADR-003) | Browser never hits `api:4000` directly. `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*` with cookies forwarded. Caddy exposes only `web:3000`. |
+| Browser → API (ADR-006) | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`): cross-origin with credentials and exact-origin CORS. Session cookies are first-party to the API origin and shared across subdomains in production (`COOKIE_DOMAIN`). |
 | Auth handler type | `betterAuth({ database: prismaAdapter(prisma, {provider:"postgresql"}), ... })` + `toNodeHandler` (Express). |
 | Cookie name | `better-auth.session_token` (HttpOnly, `SameSite=lax`, `Secure` in prod via `useSecureCookies` + `BETTER_AUTH_URL=https`). |
 | OpenAPI | Better Auth exposes `ok` (`GET /api/v1/auth/ok` → `{status:"ok"}`) and plugin-generated OpenAPI if `openAPI` plugin added (not for MVP). |
@@ -190,7 +190,7 @@ Requires session. Body `{newEmail, callbackURL}` → `200` (generic even if emai
 
 | Header | Direction | Notes |
 |---|---|---|
-| `Cookie: better-auth.session_token=<token>` | Req | Set by Better Auth, forwarded by Next proxy verbatim. |
+| `Cookie: better-auth.session_token=<token>` | Req | Set by Better Auth on the API origin; sent cross-origin by the browser (credentials). |
 | `Set-Cookie` | Res | `HttpOnly; SameSite=Lax; Secure (prod); Path=/; Max-Age=604800` (or `0` on sign-out). |
 | `Origin` / `Referer` | Req | Validated against `trustedOrigins` + `baseURL`. |
 | `X-Forwarded-For` | Req | Used for `ipAddress` + rate limit if `trustProxy` configured. |
@@ -242,7 +242,7 @@ If a future need arises (e.g., `POST /api/v1/auth/verify-password` for re-auth b
 ## 9. Sequence (register example)
 
 ```
-Browser → Next /sign-up (form) → POST /api/v1/auth/sign-up/email (via Next proxy, cookie forwarded)
+Browser → Next /sign-up (form) → POST {API}/api/v1/auth/sign-up/email (cross-origin, credentials)
 → Better Auth validates Zod → checks email unique → hashes scrypt → creates user+account+verification (tx)
 → enqueues sendVerificationEmail via Resend → returns 200 generic
 → Browser shows /verify-pending → user clicks email link → GET /verify-email?token=...
@@ -267,4 +267,4 @@ Same pattern for OAuth (303 via `sign-in/social` → `callback`).
 
 ---
 
-*Next artifact (if needed): `system-design.md` — session middleware, Next proxy details, workspace resolution guard chain. For Auth, data-model + api-design cover F1's technical design per Plan §5 Step 2.*
+*Next artifact (if needed): `system-design.md` — session middleware, cross-origin cookie details, workspace resolution guard chain. For Auth, data-model + api-design cover F1's technical design per Plan §5 Step 2.*

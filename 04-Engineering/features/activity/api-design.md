@@ -12,7 +12,7 @@
 | Concern | Choice |
 |---|---|
 | Base path | `/api/v1/workspaces/:slug/activity` — workspace-scoped collection (NOT global like notifications — the log belongs to one workspace's page). Single `GET` list route; emission is internal-only, never HTTP (data-model D2). |
-| Next.js proxy | Browser never hits the API directly (ADR-003); `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*`, cookies forwarded. |
+| Browser → API | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`, ADR-006) — cross-origin with credentials and exact-origin CORS; session cookies are first-party to the API origin (shared across subdomains in production). |
 | Auth transport | HttpOnly Better Auth session cookie read by `requireSession` (F1). |
 | Validation | Zod query schemas from `packages/shared` at the route boundary (`area`, `actorId`, `entityType`, `limit`, `cursor`). No body. |
 | Envelope | Success: `{ events: [...], nextCursor }`. Failure: `{ "error": { "code", "message", "details"? } }` via the global error handler. |

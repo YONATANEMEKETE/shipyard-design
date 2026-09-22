@@ -12,7 +12,7 @@
 | Concern | Choice |
 |---|---|
 | Base path | `/api/v1/workspaces/:slug/search` — workspace-scoped collection (rule 1 is absolute — no global variant, unlike notifications). Single `GET` route; suggestions are `limit=5` on the same route (§2). |
-| Next.js proxy | Browser never hits the API directly (ADR-003); `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*`, cookies forwarded. |
+| Browser → API | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`, ADR-006) — cross-origin with credentials and exact-origin CORS; session cookies are first-party to the API origin (shared across subdomains in production). |
 | Auth transport | HttpOnly Better Auth session cookie read by `requireSession` (F1). |
 | Validation | Zod query schemas from `packages/shared` at the route boundary (`q` trim 1–200, `type`, `limit`). Blank-after-trim `q` ⇒ `200` empty groups (never 400 — spec rule 4). |
 | Envelope | Success: `searchResultsSchema` directly (with `q` echo). Failure: `{ "error": { "code", "message", "details"? } }` via the global error handler. |

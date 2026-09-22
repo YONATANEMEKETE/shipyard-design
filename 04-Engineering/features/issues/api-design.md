@@ -19,7 +19,7 @@
 | Concern | Choice |
 |---|---|
 | Base path | `/api/v1/workspaces/:slug/issues` and `/api/v1/workspaces/:slug/issues/:issueId` — mirrors projects; `:slug` is the F2 immutable workspace token; `:issueId` is the issue's `cuid()` (never the `SHIP-###` display identifier in URLs — identifiers are display-only, `id` is the reference key, same reasoning as projects D5). Labels live at `/api/v1/workspaces/:slug/labels...`; attach/detach nests under the issue. History reads at `.../issues/:issueId/history`. |
-| Next.js proxy | Browser never hits the API directly (ADR-003); `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*`, cookies forwarded. |
+| Browser → API | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`, ADR-006) — cross-origin with credentials and exact-origin CORS; session cookies are first-party to the API origin (shared across subdomains in production). |
 | Auth transport | HttpOnly Better Auth session cookie read by `requireSession` (F1) — `req.session.userId` is the only identity input. |
 | Validation | Zod schemas from `packages/shared` (`data-model.md` §4) at the route boundary. |
 | Envelope | Success: resource JSON directly (or `{ issues: [...], nextCursor }` for collections). Failure: `{ "error": { "code", "message", "details"? } }` via the global error handler. |

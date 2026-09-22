@@ -280,4 +280,4 @@ pnpm --filter @shipyard/api db:generate
 
 ---
 
-*Next artifact: `api-design.md` — endpoint inventory over these two tables, the canonical guard chain, error codes/envelopes, and app-flow sequence (Next proxy → Express → guard chain → service → repository).*
+*Next artifact: `api-design.md` — endpoint inventory over these two tables, the canonical guard chain, error codes/envelopes, and app-flow sequence (client → Express → guard chain → service → repository).*

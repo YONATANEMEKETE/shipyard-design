@@ -15,11 +15,13 @@ This document is the **map of the entire Shipyard system**. It defines the high-
 | `00-architecture.md` | This document — system context, principles, modules, request lifecycle | ✅ done |
 | `adr/ADR-001-stack.md` | Tech stack decisions (Next.js, Express, Prisma, Better Auth, Zod) | ✅ done |
 | `adr/ADR-002-repo-layout.md` | Monorepo layout, pnpm workspaces, Turborepo, shared contracts | ✅ done |
-| `adr/ADR-003-web-api-communication.md` | Next.js proxy, internal API, no CORS | ✅ done |
-| `adr/ADR-004-deployment-infra.md` | Oracle VPS, Neon, R2, Caddy, CI/CD | ✅ done |
-| `adr/ADR-005-mcp-server-surface.md` | MCP server surface & hosting (endpoint in the API behind the Next proxy, workspace-bound tokens, JSON responses) | ✅ done |
+| `adr/ADR-003-web-api-communication.md` | Next.js proxy, internal API, no CORS | ⛔ superseded by ADR-006 |
+| `adr/ADR-004-deployment-infra.md` | Oracle VPS, Neon, R2, Caddy, CI/CD | ⛔ superseded by ADR-007 |
+| `adr/ADR-005-mcp-server-surface.md` | MCP server surface & hosting (endpoint in the API, workspace-bound tokens, JSON responses) | ✅ done — amended by ADR-006 |
+| `adr/ADR-006-public-web-api-split.md` | Public API origin, direct browser calls, CORS allowlist, shared session cookie | ✅ done |
+| `adr/ADR-007-hosting-vercel-render.md` | Vercel (web) + Render (API); Neon/R2/Resend kept; platform deploys | ✅ done |
 | `features/*` | Per-feature behavior specs (`spec.md`); technical design produced at each feature's implementation step | ✅ F1–F11 implemented · F13 (MCP) designed, implementation next |
-| `deployment.md` | Compose layout, CI/CD pipeline, backups, observability runbook | ⏳ planned |
+| `deployment.md` | Topology, env matrix, deploy flow, migrations, DNS, smoke test, runbook | ✅ done |
 
 **Reading order:** 00-architecture → ADRs → features (behavior specs) → deployment. Per-feature technical design is produced during each feature's implementation step (Implementation Plan §5, Step 2).
 
@@ -27,34 +29,20 @@ This document is the **map of the entire Shipyard system**. It defines the high-
 
 ## 2. System Context
 
-```
-                        ┌──────────────────────────────────────────────┐
-                        │              Oracle VPS (Ampere)              │
-   Browser              │  ┌──────────┐   ┌──────────────────────────┐  │
-     │   HTTPS          │  │  Caddy   │──▶│  Docker Compose network  │  │
-     ▼                  │  │  :80/443 │   │  ┌────────────────────┐  │  │
-  ┌────────┐            │  │ (TLS)    │   │  │ Next.js web :3000  │  │  │
-  │  User  │            │  └──────────┘   │  │  (public surface)  │  │  │
-  └────────┘            │                 │  └─────────┬──────────┘  │  │
-     │                  │                 │            │ proxied     │  │
-     ▼                  │                 │  ┌─────────▼──────────┐  │  │
-  shipyard.yonatanem.com│                 │  │ Express API :4000  │  │  │
-                        │                 │  │ (internal only)    │  │  │
-                        │                 │  └─────────┬──────────┘  │  │
-                        │                 │            │ (future:    │  │
-                        │                 │            │  worker)    │  │
-                        └─────────────────┼────────────┼─────────────┘
-                                          │            │
-                     ┌────────────────────┼────────────┼─────────────────────┐
-                     │  Managed services  │            │                     │
-                     │  ┌──────────────┐  │   ┌────────▼─────────┐  ┌───────▼──┐
-                     │  │ Neon Postgres │◀─┘   │ Cloudflare R2    │  │  Resend  │
-                     │  │ (managed DB)  │      │ (avatars, logos) │  │ (email)  │
-                     │  └──────────────┘      └──────────────────┘  └──────────┘
-                     │  Google OAuth ──┐       GitHub OAuth ──┐      Sentry (errors)
-                     └────────────────┴──────────────────────┴──────────────────┘
+```text
+Browser ──HTTPS──▶ shipyard.yonatanem.com        (Vercel — Next.js web)
+   │                    │
+   │                    └─ server-side session check ──▶ API
+   │
+   └─ cross-origin fetch, credentials ──▶ api.shipyard.yonatanem.com
+Agent ──HTTPS /mcp─────────────────────▶ (Render — Express API, public)
+                                           │
+                                           ├─▶ Neon Postgres
+                                           ├─▶ Cloudflare R2
+                                           ├─▶ Resend
+                                           └─▶ Sentry
 
-   CI/CD: GitHub Actions ── lint → typecheck → test → build → push GHCR → SSH deploy
+   CI/CD: GitHub Actions quality gate + platform git deploys (push to main)
 ```
 
 **External services:** Neon Postgres (prod DB) · Cloudflare R2 (object storage) · Resend (transactional email) · Google & GitHub OAuth (Better Auth) · Sentry (error tracking).
@@ -70,7 +58,7 @@ This document is the **map of the entire Shipyard system**. It defines the high-
 5. **Archive ≠ delete.** Archived resources are read-only and reversible; permanent deletion is a separate, confirmed, atomic operation.
 6. **Contracts are shared.** Zod schemas in `packages/shared` are the single source of truth between web and API (and future mobile).
 7. **Validation at the edge.** All input is validated at the API boundary before any business logic runs.
-8. **One public surface.** Caddy → Next.js is the only externally reachable entry point in production.
+8. **Two origins, one product.** The web app (`shipyard.yonatanem.com`, Vercel) and the API (`api.shipyard.yonatanem.com`, Render) are separate public origins of the same site (ADR-006); the API is public by design — every route authenticates on its own.
 
 ---
 
@@ -153,9 +141,8 @@ Route (HTTP mapping)
 
 ```
 Browser
-  → TanStack Query (client component) or server component fetch
-  → Next.js route handler / server fetch
-  → http://api:4000/api/v1/issues   (internal Docker network, cookie forwarded)
+  → TanStack Query (client component) — direct fetch to the API origin
+  → https://api.shipyard.yonatanem.com/api/v1/issues  (cross-origin, credentials + CORS)
   → request-id middleware (assigns + logs request id)
   → Pino structured log (method, path, request-id, user, duration)
   → Better Auth session check (authn)         [401 if invalid]
@@ -193,7 +180,7 @@ Same path up to the service, then:
 
 - All incoming data is untrusted until Zod validation (per `Backend System Mental Model`).
 - Workspace/resource ids come from the session context, never trusted from the client body.
-- The browser never talks to the API directly; it only sees Next.js responses.
+- The browser talks to the API directly, cross-origin; the API trusts only its own authentication (session cookie or bearer token) and validates every input regardless of caller.
 
 ---
 
@@ -208,7 +195,7 @@ Same path up to the service, then:
 | **Logging** | Pino structured logs with request-id correlation |
 | **Error tracking** | Sentry (API + web); captures only unexpected errors |
 | **Rate limiting** | Per-IP limits on auth endpoints (login, register, resend) + global API limits |
-| **Security headers** | Caddy + Helmet-equivalent on Express; strict CORS disabled (no cross-origin browser calls); CSP via Next |
+| **Security headers** | Helmet on Express; exact-origin CORS with credentials (ADR-006); CSP via Next (planned) |
 | **Health & shutdown** | `/healthz` + `/readyz` endpoints; graceful shutdown (drain connections, close DB) |
 | **Idempotency** | Required where PRD demands atomicity (ownership transfer, project delete + unassignment); duplicate-submission guards on creation flows |
 | **File uploads** | Through the API: validate type/size → upload to R2 server-side → store URL (presigned uploads deferred to post-MVP attachments) |
@@ -219,7 +206,7 @@ Same path up to the service, then:
 
 - **ORM:** Prisma; schema owned per module but defined in one Prisma schema file (or split schema files, decided at implementation).
 - **Database:** Neon Postgres in production (managed — backups, PITR, SSL); local Postgres container in dev (Docker Compose); Neon branch optional for dev DB parity.
-- **Migrations:** `prisma migrate` — generated in dev, applied in CI before deploy (`prisma migrate deploy`), never hand-edited.
+- **Migrations:** `prisma migrate` — generated in dev, applied by the API container's start command on deploy (`prisma migrate deploy`), never hand-edited (ADR-007; Render free has no pre-deploy step).
 - **Full-text search:** `tsvector` generated columns + GIN index; `ts_rank` ordering; English config (post-MVP: Meilisearch).
 - **Archival pattern:** archived resources carry archived state + timestamp; read-only; restoration returns to stored pre-archive state (PRD).
 - **Transactions:** all multi-step writes (ownership transfer, project deletion + unassignment, notification side-effects) run in single Prisma transactions.
@@ -242,7 +229,7 @@ Same path up to the service, then:
 - **No queues, no WebSockets, no background workers in the MVP.**
 - Notifications are created synchronously inside the owning transaction (assignment/mention).
 - Client refreshes via polling; no push.
-- **Reserved slot:** a `worker` container on the same VPS compose file for future background work (email digests, cleanup jobs, later integrations). Outbox pattern (per curriculum) is the post-MVP path if async side-effects grow.
+- **Reserved slot:** a Render background worker (or scheduled job) for future background work (email digests, cleanup jobs, later integrations). Outbox pattern is the post-MVP path if async side-effects grow.
 
 ---
 
@@ -250,25 +237,25 @@ Same path up to the service, then:
 
 See `deployment.md` and ADR-004 for detail. Summary:
 
-- **Host:** Oracle Cloud Always Free — 1× Ampere A1 VM (2 OCPU / 4GB RAM), Ubuntu 24.04, ~50GB block storage.
-- **Runtime:** Docker Compose — `caddy` (TLS, `shipyard.yonatanem.com`), `web` (Next.js :3000), `api` (Express :4000, internal only); Postgres **not** on the VPS.
-- **Managed services:** Neon (Postgres, IP-allowlisted to VPS, SSL required) · Cloudflare R2 (10GB free, zero egress) · Resend (100 emails/day free) · Sentry (free tier).
-- **CI/CD:** GitHub Actions on `main`: lint → typecheck → test → build → push image to GHCR → SSH deploy → `prisma migrate deploy`.
-- **Environments:** local dev (compose with local Postgres) + one production. No staging for MVP.
+- **Web:** Vercel (Hobby) — Next.js from the monorepo, `shipyard.yonatanem.com`; `NEXT_PUBLIC_API_URL` is its only API configuration.
+- **API:** Render (Free web service, Docker) — `api.shipyard.yonatanem.com`, health check `/healthz`; public by design (session cookies + bearer tokens, ADR-006).
+- **Managed services:** Neon (Postgres, SSL required; no IP allowlist on the free plan) · Cloudflare R2 (10GB free, zero egress) · Resend (100 emails/day free; HTTPS API) · Sentry (free tier).
+- **CI/CD:** GitHub Actions is the quality gate (lint → typecheck → format → test → build); deployment is the platforms' git integrations on `main`. Migrations run from the API container's start command.
+- **Environments:** local dev (compose with local Postgres; the web app on :3000 calls the API on :4000 cross-origin) + one production. No staging for MVP.
 - **Backups:** Neon managed backups/PITR; R2 data is re-uploadable (avatars/logos only).
-- **Monitoring:** health checks + Pino logs + Sentry now; Grafana + Loki + Prometheus as post-MVP hardening on the same box.
+- **Monitoring:** health checks + Pino logs + Sentry now; Grafana/Loki/Prometheus remains post-MVP hardening.
 
 ---
 
 ## 13. Security Model
 
-- Single public entry point (Caddy → Next); API port never published to the host.
-- Session-based auth via Better Auth (HttpOnly cookies); CSRF protections per PRD.
+- Two public origins (web + API, ADR-006); the API authenticates every route itself (session cookie or bearer token) and is rate-limited per IP and per token.
+- Session-based auth via Better Auth (HttpOnly cookies, shared across subdomains in production); CSRF protections per PRD (origin checks against the trusted-origin allowlist).
 - RBAC enforced server-side on every route (PRD permission matrix).
 - Workspace isolation: every query scoped by workspace membership; cross-workspace access returns 403/404.
 - Secrets: only in server environment (`.env` on host / GitHub secrets); never bundled into the client bundle.
-- Managed DB locked down: SSL required + IP allowlist (VPS public IP).
-- Uploads: type/size validation server-side; stored under private R2 bucket, served via signed URLs.
+- Managed DB locked down: SSL required + long credentials held only in platform env (Neon free has no IP allowlist — recorded deviation in ADR-007).
+- Uploads: type/size validation server-side; stored in the public-read R2 bucket under unguessable keys (avatars and future public assets only — private objects need a separate bucket).
 - Rate limits on auth + global API; security headers; input validation at every boundary.
 
 ---
@@ -283,17 +270,17 @@ See `deployment.md` and ADR-004 for detail. Summary:
 | 4 | Auth | Better Auth (email/password, OAuth, sessions) | ADR-001 |
 | 5 | Validation/contracts | Zod in `packages/shared` | ADR-001 |
 | 6 | Repo layout | Monorepo: pnpm workspaces + Turborepo (`apps/web`, `apps/api`, `packages/shared`) | ADR-002 |
-| 7 | Web ↔ API | Next.js proxies; API internal-only (no CORS) | ADR-003 |
+| 7 | Web ↔ API | Public API origin; browser calls it directly (CORS allowlist, credentials, shared cookie) | ADR-006 |
 | 8 | API versioning | `/api/v1` from day one | ADR-001 |
-| 9 | Deployment | Oracle VPS + Docker Compose + Caddy + GH Actions | ADR-004 |
-| 10 | Database hosting | Neon managed (prod), local Postgres (dev) | ADR-004 |
-| 11 | Object storage | Cloudflare R2, uploads through API | ADR-004 |
+| 9 | Deployment | Vercel (web) + Render (API) + GH Actions quality gate + platform deploys | ADR-007 |
+| 10 | Database hosting | Neon managed (prod), local Postgres (dev) | ADR-004 · retained by ADR-007 |
+| 11 | Object storage | Cloudflare R2, uploads through API | ADR-004 · retained by ADR-007 |
 | 12 | Search | Postgres full-text (`tsvector` + `ts_rank`) | ADR-001 |
 | 13 | Notifications | Light polling (~60s), no realtime in MVP | ADR-001 |
 | 14 | Email | Resend (verification, invites, password reset) | ADR-001 |
 | 15 | Observability | Pino + Sentry (Grafana stack post-MVP) | ADR-004 |
 | 16 | Environments | Local dev + single production | ADR-004 |
-| 17 | MCP server surface | Endpoint in `apps/api`, exposed through the Next.js proxy; workspace-bound personal access tokens (OAuth later); JSON responses in v1 | ADR-005 |
+| 17 | MCP server surface | Endpoint in `apps/api`, reachable at the API origin (`/mcp`); workspace-bound personal access tokens (OAuth later); JSON responses in v1 | ADR-005 · amended by ADR-006 |
 
 ---
 
@@ -301,8 +288,8 @@ See `deployment.md` and ADR-004 for detail. Summary:
 
 | Item | Notes |
 |---|---|
-| Neon free cold starts | First request after idle adds ~1–2s; acceptable; optional keep-alive ping from VPS cron |
-| Free-tier limits | Neon 0.5GB, R2 10GB, Resend 100 emails/day — ample for MVP traffic; revisit at scale |
-| Mobile app (future) | API stays internal; future mobile reachability decided when that project starts |
+| Neon free cold starts | First query after idle adds ~1 s; acceptable; the API's own cold start dominates (Render free spins down after 15 idle minutes) |
+| Free-tier limits | Neon 0.5 GB / 100 CU-hrs, R2 10 GB, Resend 100 emails/day, Render 750 instance-hrs (one always-awake service ≈ 744) — ample for MVP traffic; revisit at scale |
+| Mobile app (future) | The API is public (ADR-006), so a mobile client can call it directly; its origin joins the CORS/trusted-origin allowlist when that project starts |
 | Contributors/self-hosters | Repo ships `docker-compose.yml` with bundled Postgres for self-hosters; reference deployment uses Neon/R2 (documented in `deployment.md`) |
 | Search quality | English-only stemming acceptable for MVP; Meilisearch is the post-MVP upgrade path |

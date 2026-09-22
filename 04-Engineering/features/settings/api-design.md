@@ -14,7 +14,7 @@
 | Concern | Choice |
 |---|---|
 | Base paths | `/api/v1/settings/profile`, `/api/v1/settings/appearance`, `/api/v1/settings/avatar` — user-scoped, no `:slug`. View toggles stay on `/api/v1/workspaces/:slug/view-preferences/:scope` (F4, untouched). |
-| Next.js proxy | Browser never hits the API directly (ADR-003); `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*`, cookies forwarded. |
+| Browser → API | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`, ADR-006) — cross-origin with credentials and exact-origin CORS; session cookies are first-party to the API origin (shared across subdomains in production). |
 | Auth transport | HttpOnly Better Auth session cookie read by `requireSession` (F1) — `req.session.userId` scopes every read and write to self. No workspace context, no roles — your settings are yours regardless of membership. |
 | Validation | Zod from `packages/shared` at the route boundary; profile schema is `.strict()` (an `email` key is a `400`, D5). Avatar validated pre-buffer against MIME allowlist + 2MB cap (D3). |
 | Envelope | Success: resource JSON directly. Failure: `{ "error": { "code", "message", "details"? } }` via the global error handler. |

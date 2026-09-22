@@ -20,7 +20,7 @@
 |---|---|
 | Base path | `/api/v1/workspaces` (per ADR-001 versioning; Express router mounted by `apps/api` composition root) |
 | Item addressing | `:slug` in URLs (`/api/v1/workspaces/:slug`) per data-model D3 — stable, immutable, disambiguates duplicate names; inter-table references stay on `id` |
-| Next.js proxy | Browser never hits the API directly (ADR-003); `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*`, cookies forwarded; Caddy exposes only `web:3000` |
+| Browser → API | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`, ADR-006) — cross-origin with credentials and exact-origin CORS; session cookies are first-party to the API origin (shared across subdomains in production). |
 | Auth transport | HttpOnly Better Auth session cookie read by session middleware from F1 (`requireSession`); nothing new |
 | Validation | Zod schemas from `packages/shared` (`data-model.md` §4) at the route boundary; API rejects anything the client UI would never send |
 | Envelope | Success: resource JSON directly. Failure: `{ "error": { "code": "...", "message": "...", "details"? } }` matching the F1 global error handler |

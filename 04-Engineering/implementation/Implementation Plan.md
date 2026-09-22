@@ -207,7 +207,7 @@ Some dependencies are intentionally completed through integration checkpoints:
 | F9 | Dashboard | F4, F5, F7 | ✅ complete |
 | F10 | Search | F3, F4, F5, F7 | ✅ complete |
 | F11 | Settings and preferences | F1–F10 ownership contracts | ✅ complete |
-| F12 | MVP hardening and release readiness | F1–F11 | ◐ partial — runtime hardening done (error mapping, request ids, rate limits, health/readiness, graceful shutdown, test coverage); deployment/ops open (Dockerfiles, compose services, Caddy config, GHCR publish, SSH deploy, Sentry) |
+| F12 | MVP hardening and release readiness | F1–F11 | ◐ partial — runtime hardening done (error mapping, request ids, rate limits, health/readiness, graceful shutdown, test coverage) and the public web/API split shipped (ADR-006); deployment/ops open (API Dockerfile, Vercel + Render projects, migrations in the start command, Sentry) |
 | F13 | MCP server | F1–F11 (post-MVP, not part of the MVP sequence) | ⏳ design complete — implementation not started (§9) |
 
 F1–F11 are implemented in the `shipyard` repository; this plan's per-feature sections remain the record of what each milestone required. **F13 is tracked here for continuity but is not part of the MVP release gate** — it is the first post-MVP milestone and is specified in `features/mcp/` with `ADR-005` recording the surface decision. Its ordered sub-milestones are in §9.
@@ -245,7 +245,7 @@ Implement the account and session foundation using Better Auth as decided in ADR
 ### Shared and web work
 
 - Add auth request and response contracts where custom wrapping is needed.
-- Add the Next.js proxy behavior from ADR-003.
+- Wire the auth client to the API origin (ADR-006).
 - Build the approved custom auth screens:
   - Sign up
   - Sign in
@@ -692,14 +692,12 @@ This is the final MVP readiness milestone rather than a product module.
 
 ### Deployment and operations
 
-- Add the Docker Compose development and self-host configuration.
-- Add web and API production Dockerfiles.
-- Add Caddy configuration and internal-only API networking.
-- Add GHCR image publishing to CI.
-- Add SSH deployment to the Oracle VPS.
-- Run `prisma migrate deploy` during deployment.
+- Keep the Docker Compose development and self-host configuration (the self-hoster's file; unchanged).
+- Add the API production Dockerfile (serves Render and self-hosters; the web app deploys from source on Vercel).
+- Configure the Vercel (web) and Render (API) projects, domains, and environment values (ADR-007).
+- Run `prisma migrate deploy` from the API container's start command.
 - Configure Neon, R2, Resend, OAuth, and Sentry secrets outside the repository.
-- Add backup, restore, health, and incident runbook documentation.
+- Add backup, restore, health, and incident runbook documentation (`deployment.md`).
 
 ### Release gate
 
@@ -866,7 +864,6 @@ The following are not part of the feature sequence unless the product plan chang
 - WebSockets and realtime updates
 - Queues and background workers
 - Notification push delivery
-- Public browser-to-API access and CORS
 - Mobile application
 - Meilisearch or another external search engine
 - Presigned attachment uploads
@@ -875,7 +872,7 @@ The following are not part of the feature sequence unless the product plan chang
 - Multi-region deployment
 - Kubernetes and microservices
 
-The MVP remains a modular monolith with synchronous transactions, polling for notifications, PostgreSQL full-text search, and one public Next.js surface.
+The MVP remains a modular monolith with synchronous transactions, polling for notifications, PostgreSQL full-text search, and two public origins (web + API) of one product.
 
 ---
 
@@ -889,7 +886,7 @@ The remaining MVP milestone is:
 F12 — MVP hardening and release readiness
 ```
 
-Runtime hardening is already in place: centralized error mapping, structured logs with request ids, rate limiting, health and readiness endpoints, graceful shutdown, and unit/integration coverage of the critical invariants. Still open on the deployment and operations side: production Dockerfiles for web and API, the full compose layout (web, api, caddy alongside the dev database), Caddy configuration with the API internal-only, GHCR image publishing and SSH deployment in CI, `prisma migrate deploy` on release, and Sentry capture.
+Runtime hardening is already in place: centralized error mapping, structured logs with request ids, rate limiting, health and readiness endpoints, graceful shutdown, and unit/integration coverage of the critical invariants. The public web/API split has shipped (ADR-006): direct browser calls, an exact-origin CORS allowlist, the cross-subdomain session cookie, and absolute auth redirects. Still open on the deployment and operations side: the API production Dockerfile, the Vercel and Render projects with their environment values, `prisma migrate deploy` from the container start command, and Sentry capture — all specified in `deployment.md` (ADR-007).
 
 By deliberate sequencing, **the MCP server (F13, §9) is implemented before F12's deployment work**: it is feature work that runs entirely in the local environment, and nothing in it depends on the deployment pipeline. F12 remains the gate for the MVP release.
 

@@ -1,8 +1,10 @@
 # ADR-005: MCP Server Surface & Hosting
 
-- **Status:** Accepted
+- **Status:** Accepted — amended by ADR-006 (2026-09-22)
 - **Date:** 2026-09-17
-- **Related:** `ADR-003` (Web ↔ API communication — Next.js proxy, API internal-only) · `05-Post-MVP.md` (MCP server as the first post-MVP milestone)
+- **Related:** `ADR-003` (superseded by `ADR-006` — public web/API split) · `05-Post-MVP.md` (MCP server as the first post-MVP milestone)
+
+> **Amendment (2026-09-22, ADR-006):** the MCP endpoint is reachable **directly** at the API origin — `https://api.shipyard.yonatanem.com/mcp`; the Next.js rewrite is gone with the rest of the proxy. Everything else in this ADR stands: the module lives in `apps/api`, credentials are workspace-bound personal access tokens, responses are JSON, and tools call services in-process. The "one public door" rationale below was superseded by ADR-006's deployment reasoning, and the alternative it rejected — publishing the API directly — is now, in effect, the chosen topology for the whole API.
 
 ## Context
 

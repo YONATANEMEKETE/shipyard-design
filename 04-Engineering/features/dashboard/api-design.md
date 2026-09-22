@@ -19,7 +19,7 @@
 | Concern | Choice |
 |---|---|
 | Base path | `/api/v1/workspaces/:slug/dashboard` — singular resource under the workspace, like `/view-preferences/:scope`. One route, one shape. |
-| Next.js proxy | Browser never hits the API directly (ADR-003); `apps/web` forwards `/api/v1/*` → `http://api:4000/api/v1/*`, cookies forwarded. |
+| Browser → API | The browser calls the API directly on its own origin (`NEXT_PUBLIC_API_URL`, ADR-006) — cross-origin with credentials and exact-origin CORS; session cookies are first-party to the API origin (shared across subdomains in production). |
 | Auth transport | HttpOnly Better Auth session cookie read by `requireSession` (F1) — `req.session.userId` is the only identity input (drives the personal panels). |
 | Validation | No body, no query params in MVP — the only input is `:slug` (validated as a slug string at the boundary). Fixed panel bounds live server-side (§5). |
 | Envelope | Success: `dashboardSchema` directly. Failure: `{ "error": { "code", "message", "details"? } }` via the global error handler. Empty panels are data (`null`/`[]`), never errors. |
