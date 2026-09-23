@@ -57,6 +57,8 @@ Local dev needs no API-origin configuration — both sides default to `localhost
 | `API_RATE_LIMIT_*` · `AUTH_RATE_LIMIT_*` · `MCP_RATE_LIMIT_*` | defaults | tune against real traffic |
 | `SENTRY_API_DSN` | shipyard-api project DSN | error monitoring. Write-only (safe to expose) but per-project, so the value lives in Render, never the repo |
 | `SENTRY_RELEASE` | *(empty)* | Render injects `RENDER_GIT_COMMIT` at runtime; set only on hosts that expose no commit SHA |
+| `POSTHOG_PROJECT_TOKEN` | PostHog project token (`phc_…`) | product analytics. Write-only (safe to expose) but per-product, so the value lives in Render, never the repo. Empty = the reporter stays off |
+| `POSTHOG_HOST` | `https://us.i.posthog.com` | the **ingestion** origin — not the dashboard URL (`us.posthog.com`) |
 
 ### Web — Vercel
 
@@ -66,6 +68,8 @@ Local dev needs no API-origin configuration — both sides default to `localhost
 | `NEXT_PUBLIC_SENTRY_DSN` | shipyard-web project DSN | inlined at build; empty disables the reporter entirely |
 | `SENTRY_ORG` · `SENTRY_PROJECT` | `yonatanemk` · `shipyard-web` | read by `withSentryConfig` |
 | `SENTRY_AUTH_TOKEN` | organization token (Sentry → Developer Settings → Organization Tokens) | build-time only; uploads source maps. Treat as a secret |
+| `NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN` | the same PostHog project token | inlined at build; empty disables the reporter entirely |
+| `NEXT_PUBLIC_POSTHOG_HOST` | `https://us.i.posthog.com` | ingestion origin, also inlined — a change needs a redeploy |
 
 ## 4. Deploy flow
 
@@ -98,6 +102,8 @@ Local dev needs no API-origin configuration — both sides default to `localhost
 - Pino structured logs with request ids (Render log stream).
 - **Sentry (as built 2026-09-23):** errors only — tracing, replays, logs and metrics stay off by design. The API reports what crosses the error middleware's *unexpected* branch (expected 4xx traffic stays in the logs), tagged `RENDER_GIT_COMMIT` as release and `NODE_ENV` as environment. The web app reports browser, server and edge errors, tagged with the Vercel commit SHA so the uploaded source maps resolve; its build uploads maps through `SENTRY_AUTH_TOKEN` and relays browser events through `/sentry-tunnel` so ad blockers do not eat them.
 - **Privacy posture:** automatic collection is cut to what debugging needs — no request or response bodies, no bound SQL parameters, no user identity, no cookies. `Sentry.setUser()` is the one path by which user data could attach, and it is not called.
+- **Product analytics (as built 2026-09-23):** PostHog (US region) carries the traffic and Core Web Vitals graphs and the nine product events declared in `packages/shared/src/analytics`. The browser reports pageviews, masked autocapture and Web Vitals; the API reports each event where its write commits, beside the existing business-event log line — so an event exists exactly when the thing it describes does, whichever door the request came through. Identity is the Shipyard user id, never an email or a name.
+- **Analytics privacy posture:** ids and canonical enums only — no names, emails, issue titles or comment bodies; autocapture keeps the shape of an interaction but neither its text nor its attributes; a `before_send` hook rewrites one-time tokens out of pageview URLs, referrers and clicked hrefs (the invite / verify / reset links carry them in the path or the query); no token means no reporter, so tests and self-hosting stay silent. **Open decision:** EU visitors — add a consent banner, or run cookieless (`persistence: 'memory'`, losing person-level features; the org's US region cannot serve EU data residency either way).
 - **Alerts:** an uptime monitor on `https://api.shipyard.yonatanem.com/readyz` every 5 minutes — it doubles as the keep-warm ping that keeps the free instance awake — plus issue alerts (new issue, regression; production environment only) delivered by email. Configured in the Sentry dashboard; nothing about them lives in the repo.
 - **Cold starts:** Render free spins down after 15 idle minutes (~1 min wake). Optional keep-warm: a scheduled ping every ~14 minutes (fits inside 750 instance-hours/month; one always-awake service ≈ 744). The web middleware degrades to cookie presence when the API is unreachable, so page loads never hang on a cold API.
 - Render may restart free services at any time — graceful shutdown (`SHUTDOWN_TIMEOUT_MS`) drains connections.
