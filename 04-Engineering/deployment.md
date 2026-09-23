@@ -1,7 +1,7 @@
 # Deployment
 
 **Status:** Draft v1 — written against ADR-006 and ADR-007
-**Last updated:** 2026-09-22
+**Last updated:** 2026-09-23
 **Sources:** `adr/ADR-006-public-web-api-split.md` · `adr/ADR-007-hosting-vercel-render.md` · `adr/ADR-005-mcp-server-surface.md` · `00-architecture.md` §12
 **Owner:** `shipyard` repo — operational document; every value here must match the running system.
 
@@ -55,12 +55,17 @@ Local dev needs no API-origin configuration — both sides default to `localhost
 | `R2_PUBLIC_BASE_URL` | `https://assets.yonatanem.com` | custom domain, not the r2.dev dev URL |
 | `LOG_LEVEL` | `info` | |
 | `API_RATE_LIMIT_*` · `AUTH_RATE_LIMIT_*` · `MCP_RATE_LIMIT_*` | defaults | tune against real traffic |
+| `SENTRY_API_DSN` | shipyard-api project DSN | error monitoring. Write-only (safe to expose) but per-project, so the value lives in Render, never the repo |
+| `SENTRY_RELEASE` | *(empty)* | Render injects `RENDER_GIT_COMMIT` at runtime; set only on hosts that expose no commit SHA |
 
 ### Web — Vercel
 
 | Variable | Value | Notes |
 |---|---|---|
 | `NEXT_PUBLIC_API_URL` | `https://api.shipyard.yonatanem.com` | inlined at build — changing it requires a redeploy |
+| `NEXT_PUBLIC_SENTRY_DSN` | shipyard-web project DSN | inlined at build; empty disables the reporter entirely |
+| `SENTRY_ORG` · `SENTRY_PROJECT` | `yonatanemk` · `shipyard-web` | read by `withSentryConfig` |
+| `SENTRY_AUTH_TOKEN` | organization token (Sentry → Developer Settings → Organization Tokens) | build-time only; uploads source maps. Treat as a secret |
 
 ## 4. Deploy flow
 
@@ -90,7 +95,10 @@ Local dev needs no API-origin configuration — both sides default to `localhost
 ## 7. Health, observability, operations
 
 - `GET /healthz` (liveness) · `GET /readyz` (readiness). Render's health check uses `/healthz`.
-- Pino structured logs with request ids (Render log stream); Sentry captures unexpected errors.
+- Pino structured logs with request ids (Render log stream).
+- **Sentry (as built 2026-09-23):** errors only — tracing, replays, logs and metrics stay off by design. The API reports what crosses the error middleware's *unexpected* branch (expected 4xx traffic stays in the logs), tagged `RENDER_GIT_COMMIT` as release and `NODE_ENV` as environment. The web app reports browser, server and edge errors, tagged with the Vercel commit SHA so the uploaded source maps resolve; its build uploads maps through `SENTRY_AUTH_TOKEN` and relays browser events through `/sentry-tunnel` so ad blockers do not eat them.
+- **Privacy posture:** automatic collection is cut to what debugging needs — no request or response bodies, no bound SQL parameters, no user identity, no cookies. `Sentry.setUser()` is the one path by which user data could attach, and it is not called.
+- **Alerts:** an uptime monitor on `https://api.shipyard.yonatanem.com/readyz` every 5 minutes — it doubles as the keep-warm ping that keeps the free instance awake — plus issue alerts (new issue, regression; production environment only) delivered by email. Configured in the Sentry dashboard; nothing about them lives in the repo.
 - **Cold starts:** Render free spins down after 15 idle minutes (~1 min wake). Optional keep-warm: a scheduled ping every ~14 minutes (fits inside 750 instance-hours/month; one always-awake service ≈ 744). The web middleware degrades to cookie presence when the API is unreachable, so page loads never hang on a cold API.
 - Render may restart free services at any time — graceful shutdown (`SHUTDOWN_TIMEOUT_MS`) drains connections.
 - Secrets live only in the platforms' environment settings; the repository ships `.env.example` only.
