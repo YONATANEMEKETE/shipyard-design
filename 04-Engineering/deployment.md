@@ -1,7 +1,7 @@
 # Deployment
 
 **Status:** Draft v1 — written against ADR-006 and ADR-007
-**Last updated:** 2026-09-23
+**Last updated:** 2026-09-24
 **Sources:** `adr/ADR-006-public-web-api-split.md` · `adr/ADR-007-hosting-vercel-render.md` · `adr/ADR-005-mcp-server-surface.md` · `00-architecture.md` §12
 **Owner:** `shipyard` repo — operational document; every value here must match the running system.
 
@@ -18,7 +18,8 @@ Agent ────▶ https://api.shipyard.yonatanem.com/mcp
                         ├─▶ Neon Postgres (SSL required)
                         ├─▶ Cloudflare R2 (avatars; public-read, unguessable keys)
                         ├─▶ Resend (verification, reset, invites)
-                        └─▶ Sentry (unexpected errors)
+                        ├─▶ Sentry (unexpected errors)
+                        └─▶ Grafana Cloud (traces, metrics, logs over OTLP)
 ```
 
 - Two public origins under one registrable domain (`yonatanem.com`) → same-site, cross-origin: `SameSite=Lax` session cookies keep working.
@@ -59,6 +60,9 @@ Local dev needs no API-origin configuration — both sides default to `localhost
 | `SENTRY_RELEASE` | *(empty)* | Render injects `RENDER_GIT_COMMIT` at runtime; set only on hosts that expose no commit SHA |
 | `POSTHOG_PROJECT_TOKEN` | PostHog project token (`phc_…`) | product analytics. Write-only (safe to expose) but per-product, so the value lives in Render, never the repo. Empty = the reporter stays off |
 | `POSTHOG_HOST` | `https://us.i.posthog.com` | the **ingestion** origin — not the dashboard URL (`us.posthog.com`) |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp-gateway-prod-eu-west-2.grafana.net/otlp` | Grafana Cloud OTLP gateway. Unset disables all server telemetry (tests, self-hosters) |
+| `OTEL_EXPORTER_OTLP_HEADERS` | `Authorization=Basic <base64 instanceID:token>` | OTLP token from the stack's OpenTelemetry tile. Treat as a secret; the value lives in Render, never the repo |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | `http/protobuf` | the OTLP exporter's default, set explicitly so the blueprint carries the full contract |
 
 ### Web — Vercel
 
@@ -104,7 +108,9 @@ Local dev needs no API-origin configuration — both sides default to `localhost
 - **Privacy posture:** automatic collection is cut to what debugging needs — no request or response bodies, no bound SQL parameters, no user identity, no cookies. `Sentry.setUser()` is the one path by which user data could attach, and it is not called.
 - **Product analytics (as built 2026-09-23):** PostHog (US region) carries the traffic and Core Web Vitals graphs and the nine product events declared in `packages/shared/src/analytics`. The browser reports pageviews, masked autocapture and Web Vitals; the API reports each event where its write commits, beside the existing business-event log line — so an event exists exactly when the thing it describes does, whichever door the request came through. Identity is the Shipyard user id, never an email or a name.
 - **Analytics privacy posture:** ids and canonical enums only — no names, emails, issue titles or comment bodies; autocapture keeps the shape of an interaction but neither its text nor its attributes; a `before_send` hook rewrites one-time tokens out of pageview URLs, referrers and clicked hrefs (the invite / verify / reset links carry them in the path or the query); no token means no reporter, so tests and self-hosting stay silent. **Open decision:** EU visitors — add a consent banner, or run cookieless (`persistence: 'memory'`, losing person-level features; the org's US region cannot serve EU data residency either way).
-- **Alerts:** an uptime monitor on `https://api.shipyard.yonatanem.com/readyz` every 5 minutes — it doubles as the keep-warm ping that keeps the free instance awake — plus issue alerts (new issue, regression; production environment only) delivered by email. Configured in the Sentry dashboard; nothing about them lives in the repo.
+- **Server telemetry (as built 2026-09-24):** OpenTelemetry in the API exports traces, metrics and logs over OTLP straight to Grafana Cloud — no collector in between, so the backend is an env var, not a rewrite. Traces: a span tree per request (HTTP → route → Prisma operation → pg query → outbound call) plus `email.send` and `mcp.tool_call` spans. Metrics: RED per route (`http_server_request_duration_seconds`), outbound calls, DB operation duration and pool (count, state, pending), runtime (event loop, heap), and one `email_sends_total{result}` counter. Logs: the pino lines themselves, carrying `trace_id`/`span_id` so Grafana jumps from a span to its logs and back. Every signal is tagged `service.name=shipyard-api`, `deployment.environment=NODE_ENV` and `service.version=RENDER_GIT_COMMIT`; the SDK is gated on `OTEL_EXPORTER_OTLP_ENDPOINT` being set, so tests and self-hosting stay silent. A `Shipyard API` dashboard covers RED, database, integrations and runtime.
+- **Telemetry privacy posture:** span attributes and metric labels are ids, enums and route patterns only — never slugs, user or workspace ids, issue or comment content, or tokens; pino's redaction list keeps authorization headers and cookies out of the shipped lines too. Retention is the free tier's 14 days for all three signals.
+- **Alerts:** an uptime monitor on `https://api.shipyard.yonatanem.com/readyz` every 5 minutes — it doubles as the keep-warm ping that keeps the free instance awake — plus issue alerts (new issue, regression; production environment only) delivered by email. Configured in the Sentry dashboard; nothing about them lives in the repo. Grafana Cloud adds three rule-based alerts, evaluated on the production environment only — 5xx share > 5% for 10m, p95 request duration > 1s for 10m, DB pool pending requests > 0 for 10m — delivered by email; configured in Grafana, nothing in the repo.
 - **Cold starts:** Render free spins down after 15 idle minutes (~1 min wake). Optional keep-warm: a scheduled ping every ~14 minutes (fits inside 750 instance-hours/month; one always-awake service ≈ 744). The web middleware degrades to cookie presence when the API is unreachable, so page loads never hang on a cold API.
 - Render may restart free services at any time — graceful shutdown (`SHUTDOWN_TIMEOUT_MS`) drains connections.
 - Secrets live only in the platforms' environment settings; the repository ships `.env.example` only.
@@ -114,7 +120,7 @@ Local dev needs no API-origin configuration — both sides default to `localhost
 - **DB:** Neon managed backups/PITR (free-plan history window: 6 hours).
 - **R2:** avatars/logos only — re-uploadable; no backup taken.
 - **Rollback:** Vercel deployment rollback; Render deploy rollback (last two). Migrations are forward-only — roll back with a compensating migration, never by editing history.
-- **Incident basics:** Render events + logs, Sentry issues, Neon dashboard; probe `/healthz` from outside to confirm liveness.
+- **Incident basics:** Render events + logs, Sentry issues, Grafana Cloud (traces, logs, dashboards), Neon dashboard; probe `/healthz` from outside to confirm liveness.
 
 ## 9. Self-hosting
 
@@ -129,3 +135,4 @@ The repo ships the dev `docker-compose.yml` (bundled Postgres) and the API Docke
 5. Avatar upload renders from `https://assets.yonatanem.com`.
 6. Password reset round-trip (email link → API validates → redirects to the web reset page).
 7. An MCP client connects to `https://api.shipyard.yonatanem.com/mcp` with a workspace token and its writes appear in the activity log (F13 M9 acceptance).
+8. Grafana Cloud shows the deployment's telemetry: traces, metrics and logs tagged `deployment_environment = "production"` (Explore → Tempo / Prometheus / Loki).
