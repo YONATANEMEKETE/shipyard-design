@@ -429,6 +429,10 @@ export const issueCardSchema = z.object({
   blocked: z.boolean(),
   blockedReason: z.string().nullable(),
   labels: z.array(labelCardSchema),
+  // Live comment count for the card badge (board/list). Added when the kanban
+  // card's hardcoded comment counter was wired up — the conversation view
+  // still fetches its own full comment list.
+  commentCount: z.number().int().nonnegative(),
   archivedAt: z.string().datetime().nullable(),
   createdAt: z.string().datetime(),
   updatedAt: z.string().datetime(),
